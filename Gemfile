@@ -6,7 +6,7 @@ gem 'rails', '4.0.0'
 #better watching of mac filesystem
 gem 'rb-fsevent'
 
-group :test, :development do
+group :development, :test do
   gem 'turn'
   gem 'guard-rspec', '2.5.0'
   gem 'ruby_gntp'
