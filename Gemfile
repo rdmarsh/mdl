@@ -7,10 +7,10 @@ gem 'rails', '4.0.0'
 gem 'rb-fsevent'
 
 group :test, :development do
-	gem 'turn'
+  gem 'turn'
   gem 'guard-rspec', '2.5.0'
-	gem 'ruby_gntp'
-	gem 'launchy'
+  gem 'ruby_gntp'
+  gem 'launchy'
   gem 'sqlite3', '1.3.7'
   gem 'rspec-rails', '2.13.1'
 end
