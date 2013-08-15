@@ -1,2 +1,6 @@
-<h1>Organisations#index</h1>
-<p>Find me in app/views/organisations/index.html.erb</p>
+<h1>Organisations</h1>
+<ul>
+  <% for organisation in @organisations %>
+  <li><%= organisation.reference %></li>
+  <% end %>
+</ul>
