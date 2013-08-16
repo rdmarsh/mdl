@@ -3,8 +3,13 @@ ruby '2.0.0'
 
 gem 'rails', '4.0.0'
 
-#better watching of mac filesystem
+# better watching of mac filesystem
 gem 'rb-fsevent'
+
+# HTML Abstraction Markup Language
+gem 'haml'
+
+gem 'bootstrap-sass', '2.3.2.0'
 
 group :development, :test do
   gem 'turn'
@@ -16,6 +21,7 @@ group :development, :test do
 end
 
 group :test do
+  gem 'selenium-webdriver', '2.0.0'
   gem 'capybara', '2.1.0'
 end
 
