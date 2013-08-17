@@ -1,0 +1,12 @@
+- content_for(:title, @organisation.reference)
+
+%h1= yield(:title)
+%h2= @organisation.name
+
+
+
+%p
+  .btn-group
+    = link_to "Edit", [:edit, @organisation], :class => "btn"
+    = link_to "Edit", [:edit, @organisation], :class => "btn"
+    = link_to "Delete", [:edit, @organisation], :class => "btn btn-danger"

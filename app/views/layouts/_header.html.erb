@@ -1,19 +1,24 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header class="navbar navbar-fixed-top ">
   <div class="navbar-inner">
-    <div class="container">
-      <%= link_to "MDL", root_path, id: "logo" %>
-		<form class="navbar-search pull-right">
-		  <input type="text" class="search-query" placeholder="Search">
-		</form>
-        <nav>
-          <ul class="nav pull-left">
-            <li><%= link_to "Home", root_path %></li>
-            <li><%= link_to "Help", help_path %>/li>
-            <li><%= link_to "Sign in", '#' %></li>
-  	  </ul>
-		
-		
-      </nav>
+    <div class="container-fluid">
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="nav-collapse collapse">
+        <ul class="nav nav-pills nav-justified">
+          <li class="active"><%= link_to t('home').humanize, root_path %></li>
+          <li><%= link_to t('help').humanize, help_path %></li>
+          <li><%= link_to t('about').humanize, about_path %></li>
+          <li><%= link_to t('contact').humanize, contact_path %></li>
+          <li><%= link_to t('organisations').humanize, organisations_path %></li>
+          <li><%= link_to "Sign in", '#' %></li>
+        </ul>
+        <form class="navbar-search pull-right">
+          <input type="text" class="search-query" placeholder="Search">
+        </form>
+      </div><!--/.nav-collapse -->
     </div>
   </div>
 </header>

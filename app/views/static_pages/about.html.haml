@@ -1,6 +1,9 @@
+- content_for(:title, t('about').humanize)
+- content_for(:subtitle, 'Master Device List - A CMDB tracking tool')
+
 .page-header
-  %h1 About
-  %h2 Master Device List - A CMDB tracking tool
+  %h1= yield(:title)
+  %p.lead= yield(:subtitle)
 
 .media
   .pull-left

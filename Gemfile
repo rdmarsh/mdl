@@ -10,6 +10,7 @@ gem 'rb-fsevent'
 gem 'haml'
 
 gem 'bootstrap-sass', '2.3.2.0'
+gem 'faker', '1.1.2'
 
 group :development, :test do
   gem 'turn'

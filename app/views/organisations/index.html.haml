@@ -1,7 +1,19 @@
-%h1 Organisations
-%table
+- content_for(:title, t('organisations').humanize)
+
+%h1= yield(:title)
+ 
+%table.table.table-hover.table-condensed
   %tbody
-    - @organisations.each do |row|
+    %thead
+      %th= t('reference').humanize
+      %th= t('name').humanize
+      %th= t('service').humanize
+      %th= t('support').humanize
+      %th &nbsp;
+    - @organisations.each do |o|
       %tr
-        - row.each do |column|
-          %td= column
+        %td= link_to o.reference, o
+        %td= o.name
+        %td= o.service
+        %td= o.support
+        %td <i class="icon-edit"></i>
