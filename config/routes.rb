@@ -1,4 +1,5 @@
 Mdl::Application.routes.draw do
+  get "supportlevels/edit"
   resources :organisations
   resources :supportlevels
 

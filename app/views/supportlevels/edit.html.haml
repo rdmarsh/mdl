@@ -1,0 +1,16 @@
+%h1 Supportlevels#edit
+%p Find me in app/views/supportlevels/edit.html.haml
+
+
+- form_tag :supportlevels do
+  = label_tag :supportlevel, 'Support level:'
+  = text_field_tag :supportlevel
+  
+  = label_tag :supporthours, 'Support hours:'
+  = text_field_tag :supporthours
+  
+  = label_tag :supportdays, "Support days:"
+  = check_box_tag :supportdays
+  
+  = submit_tag 'Save Changes'
+
