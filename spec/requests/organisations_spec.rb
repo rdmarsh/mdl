@@ -26,20 +26,20 @@ describe "Organisations" do
         ].each { |a| page.should have_link(a[0], a[1]) }
     end
     
-    describe "edit" do
+#    describe "edit" do
 #      let(:user) { FactoryGirl.create(:user) }
 #      before { visit edit_user_path(user) }
 
-      describe "page" do
-        it { should have_content("Edit ") }
-      }
-      end
+ #     describe "page" do
+  #      it { should have_content("Edit ") }
+   #   }
+    #  end
 
-      describe "with invalid information" do
-        before { click_button "Save changes" }
+#      describe "with invalid information" do
+ #       before { click_button "Save changes" }
 
-        it { should have_content('error') }
-      end
-    end
+  #      it { should have_content('error') }
+   #   end
+    #end
   end
 end
