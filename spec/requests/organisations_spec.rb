@@ -1,11 +1,45 @@
 require 'spec_helper'
 
 describe "Organisations" do
-  describe "GET /organisations" do
-    it "works! (now write some real specs)" do
-      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-      get organisations_index_path
-      response.status.should be(200)
+  
+  subject { page }
+  
+  describe "Organisations pages" do
+    before { visit organisations_path }
+    
+    it { should have_content('Organisations') }
+    it { should have_title(full_title('')) }
+    it { should have_title(full_title('Organisations')) }
+
+    it "should have following links from this array" do
+        [
+          #nav stuff
+          ['Home', href: root_path],
+          ['Help', href: help_path],
+          ['About', href: about_path],
+          ['Contact', href: contact_path],
+            
+          #item links - restful
+          ['Show', href: edit_organisation_path],
+          ['Edit', href: edit_organisation_path],
+          
+        ].each { |a| page.should have_link(a[0], a[1]) }
+    end
+    
+    describe "edit" do
+#      let(:user) { FactoryGirl.create(:user) }
+#      before { visit edit_user_path(user) }
+
+      describe "page" do
+        it { should have_content("Edit ") }
+      }
+      end
+
+      describe "with invalid information" do
+        before { click_button "Save changes" }
+
+        it { should have_content('error') }
+      end
     end
   end
 end

@@ -1,19 +1,29 @@
 - content_for(:title, t('organisations').humanize)
 
 %h1= yield(:title)
- 
+
 %table.table.table-hover.table-condensed
   %tbody
     %thead
       %th= t('reference').humanize
       %th= t('name').humanize
-      %th= t('service').humanize
-      %th= t('support').humanize
-      %th &nbsp;
+      %th= t('servicelevel').humanize
+      %th= t('supportlevel').humanize
+      %th= t('relationship').humanize
+      %th= t('active').humanize
+      %th= t('show').humanize
+      %th= t('edit').humanize
     - @organisations.each do |o|
-      %tr
+      %tr{:class => tr_attributes(o.active)}
         %td= link_to o.reference, o
         %td= o.name
-        %td= o.service
-        %td= o.support
-        %td <i class="icon-edit"></i>
+        %td= o.servicelevel
+        %td= o.supportlevel
+        %td= o.relationship
+        %td= o.active
+        %td
+          %a{ :title => t('showrecord').humanize, :href => o }
+            %i{ :class => 'icon-edit' }
+        %td
+          %a{ :title => t('editrecord').humanize, :href => edit_organisation_path(o) }
+            %i{ :class => 'icon-edit' }

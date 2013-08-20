@@ -1,6 +1,7 @@
+
 require 'spec_helper'
 
-describe StaticPagesController do
+describe StaticpagesController do
 
   describe "GET 'home'" do
     it "returns http success" do

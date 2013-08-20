@@ -1,10 +1,11 @@
 Mdl::Application.routes.draw do
   resources :organisations
+  resources :supportlevels
 
-  root 'static_pages#home'
-  match '/help',    to: 'static_pages#help',    via: 'get'
-  match '/about',   to: 'static_pages#about',   via: 'get'
-  match '/contact', to: 'static_pages#contact', via: 'get'
+  root 'staticpages#home'
+  match '/help',    to: 'staticpages#help',    via: 'get'
+  match '/about',   to: 'staticpages#about',   via: 'get'
+  match '/contact', to: 'staticpages#contact', via: 'get'
 
 
 

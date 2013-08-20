@@ -9,4 +9,10 @@ module ApplicationHelper
       "#{base_title} | #{page_title}"
     end
   end
+
+  def tr_attributes(tr_status)
+    if tr_status == false
+      "error"
+    end
+  end
 end

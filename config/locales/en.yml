@@ -20,14 +20,24 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
-  home: "home"
-  help: "help"
-  about: "about"
-  contact: "contact"
-  search: "seach"
-  organisations: "organisations"
-  reference: "reference"
-  name: "name"
-  service: "service"
-  support: "support"
+  home: home
+  help: help
+  about: about
+  contact: contact
+  search: seach
+  organisations: organisations
+  reference: reference
+  name: name
+  relationship: relationship
+  active: active
+  edit: edit
+  editrecord: edit record
+  show: show
+  showrecord: show record
+  servicelevel: service level
+  supportlevels: support levels
+  supportlevel: support level
+  supporthours: support hours
+  supportdays: support days
+  supportexclusions: support exclusions
+  supportdescription: support description

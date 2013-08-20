@@ -1,0 +1,12 @@
+= form_for :organisation, (@organisation) do
+  = label_tag :reference, 'Reference:'
+  = text_field_tag :reference
+  
+  = label_tag :name, 'Name:'
+  = text_field_tag :name
+  
+  = label_tag :active, "Active:"
+  = check_box_tag :active
+  
+  
+= submit_tag 'Save Changes'

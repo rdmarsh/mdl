@@ -11,17 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130817105008) do
+ActiveRecord::Schema.define(version: 20130820104357) do
 
   create_table "organisations", force: true do |t|
     t.string   "reference"
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "service"
-    t.string   "support"
+    t.string   "servicelevel"
+    t.string   "supportlevel"
+    t.string   "relationship"
+    t.boolean  "active"
   end
 
   add_index "organisations", ["reference"], name: "index_organisations_on_reference", unique: true
+
+  create_table "supportlevels", force: true do |t|
+    t.string   "supportlevel"
+    t.text     "supportdescription"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "supporthours"
+    t.string   "supportdays"
+    t.string   "supportexclusions"
+  end
+
+  add_index "supportlevels", ["supportlevel"], name: "index_supportlevels_on_supportlevel", unique: true
 
 end

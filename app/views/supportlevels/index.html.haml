@@ -1,0 +1,24 @@
+- content_for(:title, t('supportlevels').humanize)
+
+%h1= yield(:title)
+
+%table.table.table-hover.table-condensed
+  %tbody
+    %thead
+      %th= t('supportlevel').humanize
+      %th= t('supporthours').humanize
+      %th= t('supportdays').humanize
+      %th= t('supportexclusions').humanize
+      %th= t('supportdescription').humanize
+      %th= t('edit').humanize
+    - @supportlevels.each do |sl|
+      %tr
+        %td= sl.supportlevel
+        %td= sl.supporthours
+        %td= sl.supportdays
+        %td= sl.supportexclusions
+        %td= sl.supportdescription
+        %td
+          %a{ :title => t('editrecord').humanize, :href => edit_supportlevel_path(sl) }
+            %i{ :class => 'icon-edit' }
+        
