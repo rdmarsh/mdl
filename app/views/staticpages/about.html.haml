@@ -1,20 +1,23 @@
 - content_for(:title, t('about').humanize)
-- content_for(:subtitle, 'Master Device List - A CMDB tracking tool')
+- content_for(:subtitle, 'One Master Device List - A CMDB tracking tool')
 
 .page-header
   %h1= yield(:title)
   %p.lead= yield(:subtitle)
 
 .media
-  .pull-left
-    .media-object
-      = image_tag("rails.png")
-    .media-body
-      %h4 Licence
-      %p Copyright (C) 2013  David Marsh
-      %p This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
-      %p This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
-      %p You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  = link_to "#", :class => "pull-left" do
+    = image_tag "rails.png", :class => "media-object"
+  .media-body
+    %h4.media-heading Licence
+    %p Copyright (C) 2013  David Marsh
+    %p This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+    %p This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+    %p You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-.well
-  %p hello
+.row
+  .span11
+    .offset1
+      .well
+        %i
+          .text-center One List to rule them all, One List to find them, One List to bring them all and in the darkness bind them.
