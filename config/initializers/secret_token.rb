@@ -26,5 +26,5 @@ def secure_token
   end
 end
 
-Mdl::Application.config.secret_key_base = secure_token
+Onemdl::Application.config.secret_key_base = secure_token
 

@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Mdl::Application.load_tasks
+Onemdl::Application.load_tasks
