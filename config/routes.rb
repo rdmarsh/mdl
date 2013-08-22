@@ -1,13 +1,14 @@
 Onemdl::Application.routes.draw do
+  get "staticpages/faq"
   get "supportlevels/edit"
   resources :organisations
   resources :supportlevels
 
   root 'staticpages#home'
-  match '/help',    to: 'staticpages#help',    via: 'get'
-  match '/about',   to: 'staticpages#about',   via: 'get'
-  match '/contact', to: 'staticpages#contact', via: 'get'
-
+  match '/help',    to: 'staticpages#help',     via: 'get'
+  match '/about',   to: 'staticpages#about',    via: 'get'
+  match '/contact', to: 'staticpages#contact',  via: 'get'
+  match '/faq',     to: 'staticpages#faq',      via: 'get'
 
 
   

@@ -19,6 +19,7 @@ describe "Supportlevels" do
           ['Help', href: help_path],
           ['About', href: about_path],
           ['Contact', href: contact_path],
+          ['FAQ', href: faq_path],
         ].each { |a| page.should have_link(a[0], a[1]) }
       end
       

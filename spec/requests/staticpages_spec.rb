@@ -17,7 +17,8 @@ describe "Static pages" do
           ['Home', href: root_path],
           ['Help', href: help_path],
           ['About', href: about_path],
-          ['Contact', href: contact_path]
+          ['Contact', href: contact_path],
+          ['FAQ', href: faq_path],
         ].each { |a| page.should have_link(a[0], a[1]) }
     end
   end
@@ -35,7 +36,8 @@ describe "Static pages" do
           ['Home', href: root_path],
           ['Help', href: help_path],
           ['About', href: about_path],
-          ['Contact', href: contact_path]
+          ['Contact', href: contact_path],
+          ['FAQ', href: faq_path],
         ].each { |a| page.should have_link(a[0], a[1]) }
     end
   end
@@ -53,7 +55,8 @@ describe "Static pages" do
           ['Home', href: root_path],
           ['Help', href: help_path],
           ['About', href: about_path],
-          ['Contact', href: contact_path]
+          ['Contact', href: contact_path],
+          ['FAQ', href: faq_path],
         ].each { |a| page.should have_link(a[0], a[1]) }
     end
   end
@@ -71,8 +74,29 @@ describe "Static pages" do
           ['Home', href: root_path],
           ['Help', href: help_path],
           ['About', href: about_path],
-          ['Contact', href: contact_path]
+          ['Contact', href: contact_path],
+          ['FAQ', href: faq_path],
         ].each { |a| page.should have_link(a[0], a[1]) }
     end
   end
+  
+  describe "FAQ page" do
+    before { visit contact_path }
+
+    it { should have_content('FAQ') }
+    it { should have_title(full_title('')) }
+    it { should have_title(full_title('FAQ')) }
+
+    it "should have following links from this array" do
+        [
+          #nav stuff
+          ['Home', href: root_path],
+          ['Help', href: help_path],
+          ['About', href: about_path],
+          ['Contact', href: contact_path],
+          ['FAQ', href: faq_path],
+        ].each { |a| page.should have_link(a[0], a[1]) }
+    end
+  end
+  
 end

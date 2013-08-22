@@ -17,7 +17,8 @@ describe "Organisations" do
           ['Home', href: root_path],
           ['Help', href: help_path],
           ['About', href: about_path],
-          ['Contact', href: contact_path],
+          ['Contact', href: contact_path]
+          ['FAQ', href: faq_path],
             
           #item links - restful
           ['Show', href: edit_organisation_path],
