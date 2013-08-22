@@ -37,6 +37,8 @@ en:
   news: news
   
   organisations: organisations
+  
+  poweredby: powered by
 
   reference: reference
   relationship: relationship
@@ -45,9 +47,10 @@ en:
   servicelevel: service level
   show: show
   showrecord: show record
+
   supportdays: support days
-  supportdescription: support description  
-  supportexclusions: support exclusions
+  supportdescription: description
+  supportexclusions: exclusions
   supporthours: support hours
   supportlevel: support level
   supportlevels: support levels
