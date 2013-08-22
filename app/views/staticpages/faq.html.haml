@@ -1,0 +1,32 @@
+- content_for(:title, t('faq').upcase)
+- content_for(:subtitle, "Frequently Ask Questions")
+
+.page-header
+  %h1= yield(:title)
+  %p.lead= yield(:subtitle)
+
+.row-fluid
+  .span6
+    %dl.dl-horizontal
+      %dt= Faker::Lorem.sentence
+      %dd= Faker::Lorem.paragraph(sentence_count = 3, random_sentences_to_add = 10)
+      %dt= Faker::Lorem.sentence
+      %dd= Faker::Lorem.paragraph(sentence_count = 3, random_sentences_to_add = 10)
+      %dt= Faker::Lorem.sentence
+      %dd= Faker::Lorem.paragraph(sentence_count = 3, random_sentences_to_add = 10)
+      %dt= Faker::Lorem.sentence
+      %dd= Faker::Lorem.paragraph(sentence_count = 3, random_sentences_to_add = 10)
+  .span6
+    %dl.dl-horizontal
+      %dt A term goes here
+      %dd= Faker::Lorem.paragraph(sentence_count = 3, random_sentences_to_add = 10)
+      %dt= Faker::Lorem.sentence
+      %dd= Faker::Lorem.paragraph(sentence_count = 3, random_sentences_to_add = 10)
+      %dt= Faker::Lorem.sentence
+      %dd= Faker::Lorem.paragraph(sentence_count = 3, random_sentences_to_add = 10)
+      %dt= Faker::Lorem.sentence
+      %dd= Faker::Lorem.paragraph(sentence_count = 3, random_sentences_to_add = 10)
+      %dt= Faker::Lorem.sentence
+      %dd= Faker::Lorem.paragraph(sentence_count = 3, random_sentences_to_add = 10)
+
+
