@@ -1,0 +1,18 @@
+- content_for(:title, t('environments').humanize)
+
+%h1= yield(:title)
+
+%table.table.table-hover.table-condensed
+  %tbody
+    %thead
+      %th= t('environments').humanize
+      %th= t('description').humanize
+      %th= t('edit').humanize
+    - @environments.each do |e|
+      %tr
+        %td= e.environments
+        %td= e.description
+        %td
+          %a{ :title => t('editrecord').humanize, :href => edit_environments_path(sl) }
+            %i{ :class => 'icon-edit' }
+        

@@ -1,8 +1,7 @@
 Onemdl::Application.routes.draw do
-  get "staticpages/faq"
-  get "supportlevels/edit"
   resources :organisations
   resources :supportlevels
+  resources :environments
 
   root 'staticpages#home'
   match '/help',    to: 'staticpages#help',     via: 'get'

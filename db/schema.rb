@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130820104357) do
+ActiveRecord::Schema.define(version: 20130822234315) do
+
+  create_table "environments", force: true do |t|
+    t.string   "environment"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "environments", ["environment"], name: "index_environments_on_environment", unique: true
 
   create_table "organisations", force: true do |t|
     t.string   "reference"
