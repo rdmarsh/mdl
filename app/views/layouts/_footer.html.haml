@@ -1,6 +1,6 @@
 %footer.footer
-  =succeed " by David Marsh" do
-    =link_to 'One Master Device List', "http://onemdl.com"
+  = surround 'powered by ', ' by David Marsh' do
+    =link_to 'omdl', "http://onemdl.com"
   %nav
     %ul.nav
       %li= link_to t('about').humanize, about_path
