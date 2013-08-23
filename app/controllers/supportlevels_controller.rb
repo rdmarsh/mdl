@@ -4,11 +4,11 @@ class SupportlevelsController < ApplicationController
   end
 
   def show
-    @supportlevels = Supportlevel.find(params[:id])
+    @supportlevel = Supportlevel.find(params[:id])
   end
   
   def edit
-    @supportlevels = Supportlevel.find(params[:id])
+    @supportlevel = Supportlevel.find(params[:id])
   end
   
 end
