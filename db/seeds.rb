@@ -12,4 +12,10 @@ Supportlevel.create(supportlevel: "Unknown", supporthours: "n/a", supportdays: "
 Supportlevel.create(supportlevel: "None", supporthours: "n/a", supportdays: "n/a", supportexclusions: "n/a", supportdescription: "No support is provided. Any support will occur time and material fees, which needs written authorisation from a customers representative before being undertaken.")
 
 Environment.create(environment: "Production", description: "Lorem")
+Environment.create(environment: "UAT", description: "Lorem")
+Environment.create(environment: "Development", description: "Lorem")
+Environment.create(environment: "Decommissioned", description: "Lorem")
+Environment.create(environment: "Pre-production", description: "Lorem")
+Environment.create(environment: "Disaster recovery", description: "Lorem")
+
 

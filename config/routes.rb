@@ -1,4 +1,5 @@
 Onemdl::Application.routes.draw do
+  get "environments/edit"
   resources :organisations
   resources :supportlevels
   resources :environments
