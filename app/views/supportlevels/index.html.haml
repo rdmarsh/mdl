@@ -13,7 +13,7 @@
       %th= t('edit').humanize
     - @supportlevels.each do |sl|
       %tr
-        %td= sl.supportlevel
+        %td= link_to sl.supportlevel, sl
         %td= sl.supporthours
         %td= sl.supportdays
         %td= sl.supportexclusions

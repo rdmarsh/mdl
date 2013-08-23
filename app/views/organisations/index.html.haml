@@ -2,6 +2,9 @@
 
 %h1= yield(:title)
 
+%p
+  %button= link_to "Add a new organisation", new_organisation_path
+
 %table.table.table-hover.table-condensed
   %tbody
     %thead
@@ -11,8 +14,6 @@
       %th= t('supportlevel').humanize
       %th= t('relationship').humanize
       %th= t('active').humanize
-      %th= t('show').humanize
-      %th= t('edit').humanize
     - @organisations.each do |o|
       %tr{:class => tr_attributes(o.active)}
         %td= link_to o.reference, o
@@ -21,9 +22,6 @@
         %td= o.supportlevel
         %td= o.relationship
         %td= o.active
-        %td
-          %a{ :title => t('showrecord').humanize, :href => o }
-            %i{ :class => 'icon-edit' }
-        %td
-          %a{ :title => t('editrecord').humanize, :href => edit_organisation_path(o) }
-            %i{ :class => 'icon-edit' }
+
+
+
