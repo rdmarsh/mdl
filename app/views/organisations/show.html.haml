@@ -1,7 +1,10 @@
 - content_for(:title, @organisation.reference)
 
+.content
+  = render 'layouts/recordnav', :info => @environment
+
 %h1= yield(:title)
 %h2= @organisation.name
 
 .content
-  = render 'layouts/recordnav', :info => @organisation
+  = render 'layouts/recordcrud', :info => @organisation
