@@ -11,3 +11,6 @@
 
 .content
   = render 'layouts/recordcrud', :info => @organisation
+
+.content
+  = simple_format @organisation.name
