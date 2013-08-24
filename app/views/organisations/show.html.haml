@@ -1,17 +1,7 @@
 - content_for(:title, @organisation.reference)
 
-.content
-  = render 'layouts/recordnav', :info => @organisation
-
 %h1= yield(:title)
 %h2= @organisation.name
 
-
-
-%p
-  .controls
-    .btn-group
-      = link_to "Edit", [:edit, @organisation], :class => "btn"
-      = link_to "Edit", [:edit, @organisation], :class => "btn"
-      = link_to "Delete", [:edit, @organisation], :class => "btn btn-danger"
-    
+.content
+  = render 'layouts/recordnav', :info => @organisation

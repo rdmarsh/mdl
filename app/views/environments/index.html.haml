@@ -10,7 +10,7 @@
       %th= t('edit').humanize
     - @environments.each do |e|
       %tr
-        %td= e.environment
+        %td= link_to e.environment, e
         %td= e.description
         %td
           %a{ :title => t('editrecord').humanize, :href => edit_environment_path(e) }
