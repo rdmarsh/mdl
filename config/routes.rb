@@ -1,5 +1,5 @@
 Onemdl::Application.routes.draw do
-  get "environments/edit"
+  
   resources :organisations
   resources :supportlevels
   resources :environments
@@ -9,7 +9,6 @@ Onemdl::Application.routes.draw do
   match '/about',   to: 'staticpages#about',    via: 'get'
   match '/contact', to: 'staticpages#contact',  via: 'get'
   match '/faq',     to: 'staticpages#faq',      via: 'get'
-
 
   
   # The priority is based upon order of creation: first created -> highest priority.

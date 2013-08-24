@@ -1,7 +1,6 @@
 class SupportlevelsController < ApplicationController
   def index
-    @search = Supportlevel.search(params[:q])
-    @supportlevels = @search.result
+    @supportlevels = Supportlevel.all
   end
 
   def show

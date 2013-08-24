@@ -6,11 +6,11 @@
 %table.table.table-hover.table-condensed
   %tbody
     %thead
-      %th= sort_link @search, :supportlevel, t('supportlevel').humanize
-      %th= sort_link @search, :supporthours, t('supporthours').humanize
-      %th= sort_link @search, :supportdays, t('supportdays').humanize
-      %th= sort_link @search, :supportexclusions, t('supportexclusions').humanize
-      %th= sort_link @search, :supportdescription, t('supportdescription').humanize
+      %th= t('supportlevel').humanize
+      %th= t('supporthours').humanize
+      %th= t('supportdays').humanize
+      %th= t('supportexclusions').humanize
+      %th= t('supportdescription').humanize
       %th= t('edit').humanize
     - @supportlevels.each do |sl|
       %tr

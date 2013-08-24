@@ -1,7 +1,6 @@
 class EnvironmentsController < ApplicationController
   def index
-    @search = Environment.search(params[:q])
-    @environments = @search.result
+    @environments = Environment.all
     
   end
   

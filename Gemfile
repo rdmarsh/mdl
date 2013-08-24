@@ -18,7 +18,6 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 #gem 'taps', '~>0.3.24'
-gem 'ransack'
 
 group :development, :test do
   gem 'turn'
