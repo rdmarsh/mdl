@@ -3,15 +3,22 @@
 
 = render 'layouts/indexheading'
 
+= search_form_for @search do |f|
+  .field
+    = f.label :reference_cont, "Name contains"
+    = f.text_field :reference_cont
+  .actions
+    = f.submit "Search"
+    
 %table.table.table-hover.table-condensed
   %tbody
     %thead
-      %th= t('reference').humanize
-      %th= t('name').humanize
-      %th= t('servicelevel').humanize
-      %th= t('supportlevel').humanize
-      %th= t('relationship').humanize
-      %th= t('active').humanize
+      %th= sort_link @search, :reference, t('reference').humanize
+      %th= sort_link @search, :name, t('name').humanize
+      %th= sort_link @search, :servicelevel, t('servicelevel').humanize
+      %th= sort_link @search, :supportlevel, t('supportlevel').humanize
+      %th= sort_link @search, :relationship, t('relationship').humanize
+      %th= sort_link @search, :active, t('active').humanize
     - @organisations.each do |o|
       %tr{:class => tr_attributes(o.active)}
         %td= link_to o.reference, o
