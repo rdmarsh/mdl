@@ -1,9 +1,14 @@
 %p
   .btn-group
-    = link_to "Back", "#", :class => "btn btn-info"    
+    %span.btn.btn-mini
+      %i.icon-arrow-left
+    %span.btn.btn-mini
+      %i.icon-arrow-right
+%p
+  .btn-group
+    = link_to "Show All", "#", :class => "btn btn-info"    
   .btn-group
     = link_to "Create", "#", :class => "btn"  
     = link_to "Edit", "#", :class => "btn"
   .btn-group
     = link_to "Delete", "#", :class => "btn btn-danger"
-  
