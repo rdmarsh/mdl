@@ -27,6 +27,7 @@ en:
   contact: contact
 
   description: description
+  delete: delete
   
   edit: edit
   editrecord: edit record
