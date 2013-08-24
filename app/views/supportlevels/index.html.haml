@@ -1,5 +1,10 @@
 - content_for(:title, t('supportlevels').humanize)
 
+%p.text-right
+  = link_to new_supportlevel_path, class: "btn btn-success btn-mini" do
+    %i.icon-white.icon-plus
+    = t('newsupportlevel').humanize
+
 %h1= yield(:title)
 
 %table.table.table-hover.table-condensed

@@ -1,10 +1,11 @@
 - content_for(:title, t('organisations').humanize)
 
-%h1= yield(:title)
-
 %p.text-right
-%span.btn-success.btn-large
-  %link_to "Create a new " + t('organisations').humanize, new_organisation_path
+  = link_to new_organisation_path, class: "btn btn-success btn-mini" do
+    %i.icon-white.icon-plus
+    = t('neworganisation').humanize
+
+%h1= yield(:title)
 
 %table.table.table-hover.table-condensed
   %tbody
