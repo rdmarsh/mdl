@@ -2,8 +2,9 @@
 
 %h1= yield(:title)
 
-%p
-  %button= link_to "Add a new organisation", new_organisation_path
+%p.text-right
+%span.btn-success.btn-large
+  %link_to "Create a new " + t('organisations').humanize, new_organisation_path
 
 %table.table.table-hover.table-condensed
   %tbody
