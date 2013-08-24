@@ -6,12 +6,12 @@
 %table.table.table-hover.table-condensed
   %tbody
     %thead
-      %th= t('supportlevel').humanize
-      %th= t('supporthours').humanize
-      %th= t('supportdays').humanize
-      %th= t('supportexclusions').humanize
-      %th= t('supportdescription').humanize
-      %th= t('edit').humanize
+      %th= sortable "supportlevel"
+      %th= sortable "supporthours"
+      %th= sortable "supportdays"
+      %th= sortable "supportexclusions"
+      %th= sortable "supportdescription"
+      %th= sortable "edit"
     - @supportlevels.each do |sl|
       %tr
         %td= link_to sl.supportlevel, sl

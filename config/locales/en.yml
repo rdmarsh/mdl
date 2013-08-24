@@ -39,6 +39,8 @@ en:
 
   help: help
   home: home
+  
+  id: id
 
   name: name
   news: news

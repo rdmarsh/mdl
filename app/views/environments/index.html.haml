@@ -6,9 +6,9 @@
 %table.table.table-hover.table-condensed
   %tbody
     %thead
-      %th= t('environment').humanize
-      %th= t('description').humanize
-      %th= t('edit').humanize
+      %th= sortable "environment"
+      %th= sortable "description"
+      %th= sortable "edit"
     - @environments.each do |e|
       %tr
         %td= link_to e.environment, e
