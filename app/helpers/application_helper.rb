@@ -16,6 +16,9 @@ module ApplicationHelper
     end
   end
   
+  def button_new_path(path)
+    path
+  end
 end
 
 

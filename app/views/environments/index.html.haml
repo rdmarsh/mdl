@@ -1,11 +1,7 @@
 - content_for(:title, t('environments').humanize)
+- content_for(:new_button_path, 'new_environment_path')
 
-%p.text-right
-  = link_to new_environment_path, class: "btn btn-success btn-mini" do
-    %i.icon-white.icon-plus
-    = t('newenvironment').humanize
-
-%h1= yield(:title)
+= render 'layouts/indexheading'
 
 %table.table.table-hover.table-condensed
   %tbody
