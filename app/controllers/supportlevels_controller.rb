@@ -2,7 +2,7 @@ class SupportlevelsController < ApplicationController
   helper_method :sort_column, :sort_direction
   
   def index
-    @supportlevels = Supportlevel.order(sort_column + " " + sort_direction)
+    @supportlevels = Supportlevel.all
   end
 
   def show
