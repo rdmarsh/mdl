@@ -1,0 +1,14 @@
+- content_for(:title, @environment.environment)
+
+.content
+  = render 'layouts/recordnav', :info => @environment
+
+%h1= yield(:title)
+-#%h2= @environment.supportlevel
+
+.content
+  = @environment.description
+  
+.content
+  = render 'layouts/recordcrud', :info => @environment
+  
