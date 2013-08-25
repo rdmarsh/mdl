@@ -14,12 +14,12 @@ class SupportlevelsController < ApplicationController
   end
   
   def create
-    @supportlevel = Supportlevel.new(params[:supportlevel])
-    if @supportlevel.save
-      redirect_to @supportlevel, notice: "Successfully created new support level."
-    else
-      render :new
-    end
+    @supportlevel = Supportlevel.create(supportlevel_params)
+#    if @supportlevel.save
+#      redirect_to @supportlevel, notice: "Successfully created new support level."
+#    else
+#      render :new
+#    end
   end
   
   def edit
@@ -27,12 +27,12 @@ class SupportlevelsController < ApplicationController
   end
   
   def update
-    @supportlevel = Supportlevel.find(params[:id])
-    if @supportlevel.update_attributes(params[:supportlevel])
-      redirect_to @supportlevel, notice: "Successfully updated support level."
-    else
-      render :edit
-    end
+    @supportlevel = Supportlevel.update(supportlevel_params)
+#    if @supportlevel.update_attributes(params[:supportlevel])
+#      redirect_to @supportlevel, notice: "Successfully updated support level."
+#    else
+#      render :edit
+#    end
   end
   
   def destroy
@@ -40,10 +40,11 @@ class SupportlevelsController < ApplicationController
     @supportlevel.destroy
     redirect_to supportlevels_url, notice: "Successfully destroyed support level."
   end
-  
+
   private
-  def supportlevel_params    
-    params.require(:supportlevel).permit(:supportlevel, :supporthours, :supportdays, :supportexclusions, :supportdescription)
+
+  def supportlevel_params
+    params.require(:supportlevel, :supporthours, :supportdays).permit(:supportexclusions, :supportdescription)
   end
-  
+    
 end
