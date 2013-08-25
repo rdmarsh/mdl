@@ -2,7 +2,7 @@ class EnvironmentsController < ApplicationController
   helper_method :sort_column, :sort_direction
   
   def index
-    @environments = Environment.all
+    @environments = Environment.order("environment")
   end
   
   def show

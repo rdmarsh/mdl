@@ -5,27 +5,4 @@
 
 %h1= yield(:title)
 
-.row
-  .span6.offset3
-    = form_tag supportlevels_path do
-      = field_set_tag do
-  
-        = label_tag :supportlevel, 'Support level:'
-        = text_field_tag :supportlevel
-  
-        = label_tag :supporthours, 'Support hours:'
-        = text_field_tag :supporthours
-  
-        = label_tag :supportdays, "Support days:"
-        = text_field_tag :supportdays
-
-        = label_tag :supportexclusions, "Support exclusions:"
-        = text_field_tag :supportexclusions
-    
-        = label_tag :supportdescription, "Support description:"
-        = text_field_tag :supportdescription
-  
-        = submit_tag 'Save Changes'
-
-
-
+= render 'form'
