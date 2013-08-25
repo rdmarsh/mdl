@@ -40,4 +40,10 @@ class SupportlevelsController < ApplicationController
     @supportlevel.destroy
     redirect_to supportlevels_url, notice: "Successfully destroyed support level."
   end
+  
+  private
+  def supportlevel_params    
+    params.require(:supportlevel).permit(:supportlevel, :supporthours, :supportdays, :supportexclusions, :supportdescription)
+  end
+  
 end
