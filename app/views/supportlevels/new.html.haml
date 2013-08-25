@@ -1,0 +1,8 @@
+- content_for(:title, t('supportlevel').humanize)
+
+.content
+  = render 'layouts/recordnav', :info => @environment
+
+%h1= yield(:title)
+
+= render 'form'
