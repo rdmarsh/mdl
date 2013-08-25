@@ -1,8 +1,21 @@
-%p
-  .btn-group
-    = link_to "Show All", "#", :class => "btn btn-info"    
-  .btn-group
-    = link_to "Create", "#", :class => "btn"  
-    = link_to "Edit", "#", :class => "btn"
-  .btn-group
-    = link_to "Delete", "#", :class => "btn btn-danger"
+.btn-group
+  = link_to "#", :class => "btn btn-info btn-mini" do
+    %i.icon-white.icon-th-list
+    = t('showall').humanize
+.btn-group
+  = link_to yield(:new_button_path), class: "btn btn-success btn-mini" do
+    %i.icon-white.icon-plus
+    = t('add').humanize
+.btn-group
+  %span.btn.btn-mini
+    %i.icon-arrow-left
+    prev
+  %span.btn.btn-mini
+    next
+    %i.icon-arrow-right
+.btn-group
+  = link_to "#", class: "btn btn-danger btn-mini" do
+    %i.icon-white.icon-trash
+    = t('delete').humanize
+
+

@@ -1,4 +1,8 @@
-%p.text-right
+%nav
+  = link_to "#", :class => "btn btn-info btn-mini" do
+    %i.icon-white.icon-th-list
+    = t('showall').humanize
+  = render 'layouts/recordnav', :info => @environment
   = link_to "#", class: "btn btn-danger btn-mini" do
     %i.icon-white.icon-trash
     = t('delete').humanize
