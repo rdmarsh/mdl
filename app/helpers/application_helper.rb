@@ -16,10 +16,6 @@ module ApplicationHelper
     end
   end
   
-  def button_new_path(path)
-    path
-  end
-  
   def sortable(column, title = nil)
     title ||= t(column).humanize
     css_class = column == sort_column ? "current #{sort_direction}" : nil

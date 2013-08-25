@@ -1,7 +1,8 @@
 - content_for(:title, @organisation.reference)
 - content_for(:new_button_path, new_organisation_path)
+- content_for(:index_button_path, organisations_path)
 
-= render 'layouts/recordcrud', :info => @organisation
+= render 'layouts/showheading'
 
 %h1= yield(:title)
 %h2= @organisation.name

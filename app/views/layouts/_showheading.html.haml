@@ -1,5 +1,5 @@
 %nav
-  = link_to "#", :class => "btn btn-info btn-mini" do
+  = link_to yield(:index_button_path), :class => "btn btn-info btn-mini" do
     %i.icon-white.icon-th-list
     = t('showall').humanize
   = render 'layouts/recordnav', :info => @environment
