@@ -61,11 +61,13 @@ en:
   
   showall: show all
 
-  supportdays: support days
-  supportdescription: description
-  supportexclusions: exclusions
-  supporthours: support hours
-  supportlevel: support level
+  days: days
+  description: description
+  exclusions: exclusions
+  hours: hours
+  level: level
   newsupportlevel: new support level
+  levels: support levels
   supportlevels: support levels
+  supportlevel: support level
 

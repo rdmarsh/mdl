@@ -1,7 +1,7 @@
 class Supportlevel < ActiveRecord::Base
   has_many :organisations
   
-  validates_presence_of :supportlevel
-  validates_presence_of :supporthours
-  validates_presence_of :supportdays
+  validates_presence_of :level
+  validates_presence_of :hours
+  validates_presence_of :days
 end

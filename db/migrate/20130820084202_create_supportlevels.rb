@@ -1,11 +1,11 @@
 class CreateSupportlevels < ActiveRecord::Migration
   def change
     create_table :supportlevels do |t|
-      t.string :supportlevel
-      t.text :supportdescription
+      t.string :level
+      t.text :description
 
       t.timestamps
     end
-    add_index :supportlevels, :supportlevel, unique: true
+    add_index :supportlevels, :level, unique: true
   end
 end

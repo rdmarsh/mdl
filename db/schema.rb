@@ -36,15 +36,15 @@ ActiveRecord::Schema.define(version: 20130822234315) do
   add_index "organisations", ["reference"], name: "index_organisations_on_reference", unique: true
 
   create_table "supportlevels", force: true do |t|
-    t.string   "supportlevel"
-    t.text     "supportdescription"
+    t.string   "level"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "supporthours"
-    t.string   "supportdays"
-    t.string   "supportexclusions"
+    t.string   "hours"
+    t.string   "days"
+    t.string   "exclusions"
   end
 
-  add_index "supportlevels", ["supportlevel"], name: "index_supportlevels_on_supportlevel", unique: true
+  add_index "supportlevels", ["level"], name: "index_supportlevels_on_level", unique: true
 
 end

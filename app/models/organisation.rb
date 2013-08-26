@@ -3,8 +3,8 @@ class Organisation < ActiveRecord::Base
   validates :reference, presence: true
   validates :name, presence: true
   
-  belongs_to :supportlevel
-#  validates :supportlevel, presence: true
+ belongs_to :supportlevel
+# validates :supportlevel, presence: true
 
   belongs_to :environment  
 end

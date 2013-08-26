@@ -1,9 +1,9 @@
 <%= simple_form_for @supportlevel, :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.error_notification %>
-  <%= f.input :supportlevel %>
-  <%= f.input :supporthours %>
-  <%= f.input :supportdays %>
-  <%= f.input :supportexclusions %>
-  <%= f.input :supportdescription, hint: "Type in a description" %>
+  <%= f.input :level %>
+  <%= f.input :hours %>
+  <%= f.input :days %>
+  <%= f.input :exclusions %>
+  <%= f.input :description, hint: "Type in a description" %>
   <%= f.button :submit %>
 <% end %>

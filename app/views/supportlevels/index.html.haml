@@ -6,19 +6,19 @@
 %table.table.table-hover.table-condensed
   %tbody
     %thead
-      %th= t('supportlevel').humanize
-      %th= t('supporthours').humanize
-      %th= t('supportdays').humanize
-      %th= t('supportexclusions').humanize
-      %th= t('supportdescription').humanize
+      %th= t('level').humanize
+      %th= t('hours').humanize
+      %th= t('days').humanize
+      %th= t('exclusions').humanize
+      %th= t('description').humanize
       %th= t('edit').humanize
     - @supportlevels.each do |sl|
       %tr
-        %td= link_to sl.supportlevel, sl
-        %td= sl.supporthours
-        %td= sl.supportdays
-        %td= sl.supportexclusions
-        %td= sl.supportdescription
+        %td= link_to sl.level, sl
+        %td= sl.hours
+        %td= sl.days
+        %td= sl.exclusions
+        %td= sl.description
         %td
           %a{ :title => t('editrecord').humanize, :href => edit_supportlevel_path(sl) }
             %i{ :class => 'icon-edit' }
