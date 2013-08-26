@@ -18,11 +18,10 @@ class SupportlevelsController < ApplicationController
      @supportlevel = Supportlevel.new(supportlevel_params) 
      
      if @supportlevel.save
-       redirect_to root_url, notice: "New support level created!"
+       redirect_to supportlevels_url, notice: "New support level created!"
      else
        render "new"
      end
-     
   end
   
   def edit
@@ -33,9 +32,9 @@ class SupportlevelsController < ApplicationController
     @supportlevel = Supportlevel.find(params[:id])
     
     if @supportlevel.update_attributes(supportlevel_params) 
-      redirect_to root_url, notice: "Successfully updated support level."
+      redirect_to supportlevels_url, notice: "Successfully updated support level."
     else
-      render "new"
+      render "edit"
     end
   end
   
