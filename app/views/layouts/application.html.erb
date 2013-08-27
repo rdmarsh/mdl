@@ -9,10 +9,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <%= render 'layouts/header' %>
-    <div class="container">
-      <%= yield %>
-      <%= render 'layouts/footer' %>
+    <div class='container-fluid'>
+      <div class='row-fluid'>
+        <div class='span3'>
+          <div class='well sidebar-nav'>
+            <%= render 'layouts/header' %>
+            <%= render 'layouts/navlist' %>
+          </div>
+        </div>
+        <div class='span9'>
+          <div class='row-fluid'>
+            <div class='content'>
+              <h1>title</h1>
+              <%= render 'layouts/breadcrumb' %>
+              <%= yield %>
+              <%= render 'layouts/footer' %>
+            </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
