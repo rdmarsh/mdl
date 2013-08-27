@@ -14,6 +14,13 @@ class OrganisationsController < ApplicationController
   end
 
   def create
+    @organisation = Organisation.new(organisation_params)
+    
+    if @organisation.save
+      redirect_to organisations_url, notice: "New organisation created!"
+    else
+      render "new"
+    end
   end
   
   def edit
@@ -22,15 +29,24 @@ class OrganisationsController < ApplicationController
   
   def update
     @organisation = Organisation.find(params[:id])
+    
     if @organisation.update_attributes(organisation_params)
-      # Handle a successful update.
-      flash[:success] = "Profile updated"
+      redirect_to organisations_url, notice: "Successfully updated organisation."
     else
       render 'edit'
     end
   end
   
   def destroy
+    @organisation = Organisation.find(params[:id])
+    @organisation.destroy
+    redirect_to organisations_url, notice: "Successfully destroyed organisation."
+  end
+  
+  private
+
+  def organisation_params
+    params.require(:organisation).permit!
   end
   
 end
