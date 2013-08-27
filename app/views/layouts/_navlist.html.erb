@@ -1,5 +1,11 @@
 <ul class="nav nav-list">
-  <li class="nav-header">List header</li>
-  <li class="active"><a href="#">Organisation</a></li>
-  <li><a href="#">Library</a></li>
+  <li class="nav-header">Navigation</li>
+  <li class="<%= 'active' if current_page?(organisations_path) %>"> <%= link_to t('organisations').humanize, organisations_path %></li>
+
+  <li class="divider-vertical"></li>
+  <li class="nav-header">header</li>
+
+  <li class="<%= 'active' if current_page?(supportlevels_path) %>"> <%= link_to t('supportlevels').humanize, supportlevels_path %></li>
+  <li class="<%= 'active' if current_page?(environments_path) %>"> <%= link_to t('environments').humanize, environments_path %></li>
+
 </ul>

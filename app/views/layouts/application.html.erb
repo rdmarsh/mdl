@@ -10,18 +10,16 @@
   </head>
   <body>
     <div class='container-fluid'>
+      <%= render 'layouts/header' %>
       <div class='row-fluid'>
         <div class='span3'>
           <div class='well sidebar-nav'>
-            <%= render 'layouts/header' %>
             <%= render 'layouts/navlist' %>
           </div>
         </div>
         <div class='span9'>
           <div class='row-fluid'>
-            <div class='content'>
-              <h1>title</h1>
-              <%= render 'layouts/breadcrumb' %>
+            <div class='content'>    
               <%= yield %>
               <%= render 'layouts/footer' %>
             </div>

@@ -1,7 +1,9 @@
 - content_for(:title, t('organisations').humanize)
 - content_for(:new_button_path, new_organisation_path)
 
-= render 'layouts/indexheading'
+= render 'layouts/heading'
+= render 'layouts/breadcrumb'
+= render 'layouts/tabs'
 
 %table.table.table-hover.table-condensed
   %tbody

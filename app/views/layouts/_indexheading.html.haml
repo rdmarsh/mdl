@@ -1,8 +1,0 @@
--#Called from all index pages, adds a "new" button on the right
-
-%p.text-right
-  = link_to yield(:new_button_path), class: "btn btn-success btn-mini" do
-    %i.icon-white.icon-plus
-    = t('add').humanize
-
-%h1= yield(:title)
