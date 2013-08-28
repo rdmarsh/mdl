@@ -1,4 +1,5 @@
 - content_for(:title, t('organisations').humanize)
+- content_for(:heading, 'List of ' + t('organisations').humanize)
 - content_for(:new_button_path, new_organisation_path)
 
 = render 'layouts/heading'

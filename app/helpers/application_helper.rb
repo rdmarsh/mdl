@@ -9,7 +9,16 @@ module ApplicationHelper
       "#{base_title} | #{page_title}"
     end
   end
-
+  
+  def full_heading(heading)
+    base_title = "omdl"
+    if :heading.empty?
+      base_title
+    else
+      "#{heading}"
+    end
+  end
+  
   def tr_attributes(tr_status)
     if tr_status == false
       "error"
