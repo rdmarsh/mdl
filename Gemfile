@@ -20,6 +20,7 @@ gem 'jbuilder', '~> 1.2'
 #gem 'taps', '~>0.3.24'
 gem 'simple_form'
 
+
 group :development, :test do
   gem 'turn'
   gem 'guard-rspec', '2.5.0'
@@ -45,6 +46,6 @@ end
 
 group :production do
   gem 'pg', '0.15.1'
-  gem 'rails_12factor', '0.0.2'
+  gem 'rails_12factor', '0.0.2' #for heroku
   gem 'unicorn'
 end
