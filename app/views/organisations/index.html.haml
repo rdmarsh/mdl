@@ -9,7 +9,6 @@
 %table.table.table-hover.table-condensed
   %tbody
     %thead
-      %th= sortable "id"
       %th= sortable "reference"
       %th= sortable "name"
       %th= sortable "servicelevel"
@@ -18,7 +17,6 @@
       %th= sortable "active"
     - @organisations.each do |o|
       %tr{:class => tr_attributes(o.active)}
-        %td= o.id
         %td= link_to o.reference, o
         %td= o.name
         %td= o.servicelevel

@@ -1,0 +1,28 @@
+.row-fluid
+  .span12
+    .tabbable
+      %ul.nav.nav-tabs
+        %li
+          = link_to yield(:list_button_path) do
+            %i.icon-th-list
+            = t('list').humanize
+        %li
+          = link_to yield(:new_button_path) do
+            %i.icon-plus
+            = t('new').humanize
+        %li.disabled
+          = link_to yield(:edit_button_path) do
+            %i.icon-pencil
+            = t('edit').humanize
+        %li
+          %a{ :title => "Export", :href => "#" } 
+            %i.icon-share-alt
+            Export
+        %li
+          %a{ :title => "History", :href => "#" } 
+            %i.icon-book
+            History
+        %li.pull-right
+          %a{ :title => "Other", :href => "#" } 
+            %i.icon-chevron-down
+            Other
