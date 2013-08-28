@@ -17,18 +17,13 @@
         %td= sl.exclusions
         %td= sl.description
         %td
-          .btn-toolbar
-            .btn-group
-              %button.btn.btn-mini
-                %a{ :title => t('editrecord').humanize, :href => edit_supportlevel_path(sl) }
-                  %i{ :class => 'icon-pencil' }
-              %button.btn.btn-mini
-                %a{ :title => t('editrecord').humanize, :href => edit_supportlevel_path(sl) }
-                  %i{ :class => 'icon-pencil' }
-              %button.btn.btn-mini
-                %a{ :title => t('editrecord').humanize, :href => edit_supportlevel_path(sl) }
-                  %i{ :class => 'icon-pencil' }
-            .btn-group
-              %button.btn.btn-mini
-                %a{ :title => t('editrecord').humanize, :href => edit_supportlevel_path(sl) }
-                  %i{ :class => 'icon-pencil' }
+          %ul.inline
+            %li
+              %a{ :title => t('showrecord').humanize, :href => supportlevel_path(sl) }
+                %i{ :class => 'icon-info-sign' }
+            %li
+              %a{ :title => t('editrecord').humanize, :href => edit_supportlevel_path(sl) }
+                %i{ :class => 'icon-pencil' }
+            %li
+              %a{ :title => t('editrecord').humanize, :href => edit_supportlevel_path(sl) }
+                %i{ :class => 'icon-trash' }

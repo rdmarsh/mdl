@@ -1,9 +1,3 @@
-- content_for(:title, @supportlevel.level)
-
-%h1= yield(:title)
-%h2= @supportlevel.level
-
-.content
-  = render 'layouts/recordcrud', :info => @supportlevel
+= render 'head'
 
 = render 'form'

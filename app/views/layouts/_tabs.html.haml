@@ -22,7 +22,21 @@
           %a{ :title => "History", :href => "#" } 
             %i.icon-book
             History
-        %li.pull-right
-          %a{ :title => "Other", :href => "#" } 
-            %i.icon-chevron-down
-            Other
+        %li.dropdown.pull-right
+          %a.dropdown-toggle{:'data-toggle' => "dropdown", :title => "Export", :href => "#" }
+            %i.icon-share-alt
+            Export
+            %b.caret
+          %ul.dropdown-menu
+            %li
+              %a{ :title => "CSV", :href => "#" }
+                %i.icon-file
+                CSV
+            %li
+              %a{ :title => "PDF", :href => "#" } 
+                %i.icon-file
+                PDF
+            %li
+              %a{ :title => "Print", :href => "#" }
+                %i.icon-print
+                Print
