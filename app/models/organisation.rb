@@ -4,7 +4,7 @@ class Organisation < ActiveRecord::Base
   validates :name, presence: true
   
  belongs_to :supportlevel
-# validates :supportlevel, presence: true
+ validates :supportlevel, presence: true
 
-  belongs_to :environment  
+  belongs_to :environment 
 end

@@ -1,3 +1,13 @@
 = render 'head'
 
-= render 'form'
+= form_for @supportlevel do |f|
+  =f.simple_fields_for :level do |level_form|
+    %level_form.input :title
+
+    
+%p= @supportlevel.level
+%p= @supportlevel.hours
+%p= @supportlevel.days
+%p= @supportlevel.exclusions
+%p= @supportlevel.description
+
