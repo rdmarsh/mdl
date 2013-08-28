@@ -41,6 +41,7 @@ en:
   home: home
   
   id: id
+  list: list
 
   name: name
   news: news

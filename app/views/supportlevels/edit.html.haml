@@ -1,5 +1,8 @@
 - content_for(:title, t('supportlevel').humanize)
+- content_for(:heading, 'Edit ' + t('supportlevel').humanize)
 
-%h1= yield(:title)
+= render 'layouts/heading'
+= render 'layouts/breadcrumb'
+= render 'layouts/tabs'
 
 = render 'form'

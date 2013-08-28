@@ -11,12 +11,11 @@
     %thead
       %th= t('environment').humanize
       %th= t('description').humanize
-      %th= t('edit').humanize
+      %th
     - @environments.each do |e|
       %tr
         %td= link_to e.environment, e
         %td= e.description
-        %td
+        %td.nowrap
           %a{ :title => t('editrecord').humanize, :href => edit_environment_path(e) }
             %i{ :class => 'icon-edit' }
-        

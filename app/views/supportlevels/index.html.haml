@@ -1,9 +1,6 @@
 - content_for(:title, t('supportlevels').humanize)
-- content_for(:heading, 'List of ' + t('supportlevels').humanize)
-- content_for(:new_button_path, new_supportlevel_path)
 
 = render 'layouts/heading'
-= render 'layouts/breadcrumb'
 = render 'layouts/tabs'
 
 %table.table.table-hover.table-condensed
@@ -14,7 +11,7 @@
       %th= t('days').humanize
       %th= t('exclusions').humanize
       %th= t('description').humanize
-      %th &nbsp;
+      %th
     - @supportlevels.each do |sl|
       %tr
         %td= link_to sl.level, sl
@@ -23,10 +20,18 @@
         %td= sl.exclusions
         %td= sl.description
         %td
-          .content
-          %a{ :title => t('editrecord').humanize, :href => edit_supportlevel_path(sl) }
-            %i{ :class => 'icon-pencil' }
-          %a{ :title => t('editrecord').humanize, :href => edit_supportlevel_path(sl) }
-            %i{ :class => 'icon-pencil' }
-          %a{ :title => t('editrecord').humanize, :href => edit_supportlevel_path(sl) }
-            %i{ :class => 'icon-pencil' }
+          .btn-toolbar
+            .btn-group
+              %button.btn.btn-mini
+                %a{ :title => t('editrecord').humanize, :href => edit_supportlevel_path(sl) }
+                  %i{ :class => 'icon-pencil' }
+              %button.btn.btn-mini
+                %a{ :title => t('editrecord').humanize, :href => edit_supportlevel_path(sl) }
+                  %i{ :class => 'icon-pencil' }
+              %button.btn.btn-mini
+                %a{ :title => t('editrecord').humanize, :href => edit_supportlevel_path(sl) }
+                  %i{ :class => 'icon-pencil' }
+            .btn-group
+              %button.btn.btn-mini
+                %a{ :title => t('editrecord').humanize, :href => edit_supportlevel_path(sl) }
+                  %i{ :class => 'icon-pencil' }

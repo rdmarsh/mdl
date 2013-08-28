@@ -1,4 +1,5 @@
 - content_for(:title, t('faq').upcase)
+- content_for(:heading, 'List of ' + t('supportlevels').humanize)
 - content_for(:subtitle, "Frequently Ask Questions")
 
 .page-header
@@ -30,3 +31,29 @@
       %dd= Faker::Lorem.paragraph(sentence_count = 3, random_sentences_to_add = 10)
 
 
+.accordion.accordion2
+  .accordion-group
+    .accordion-heading
+      %a.accordion-toggle data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+        Collapsible Group Item #1
+      </a>
+    </div>
+    <div id="collapseOne" class="accordion-body collapse in">
+      <div class="accordion-inner">
+        Anim pariatur cliche...
+      </div>
+    </div>
+  </div>
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+        Collapsible Group Item #2
+      </a>
+    </div>
+    <div id="collapseTwo" class="accordion-body collapse">
+      <div class="accordion-inner">
+        Anim pariatur cliche...
+      </div>
+    </div>
+  </div>
+</div>
