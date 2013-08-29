@@ -1,8 +1,10 @@
 = render 'head'
 
-= show_for @supportlevel do |f|
-  = f.attribute :level
-  = f.attribute :hours
-  = f.attribute :days
-  = f.attribute :exclusions
-  = f.attribute :description
+= simple_form_for @supportlevel, :html => { :class => 'form-horizontal' } do |f|
+  = f.error_notification
+  = f.input :level, disabled: true
+  = f.attribute :hours, disabled: true
+  = f.attribute :days, disabled: true
+  = f.attribute :exclusions, disabled: true
+  = f.attribute :description, disabled: true
+  = f.submit 'Edit'
