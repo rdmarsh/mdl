@@ -2,9 +2,10 @@
 
 = simple_form_for @supportlevel, :html => { :class => 'form-horizontal' } do |f|
   = f.error_notification
-  = f.input :level, disabled: true
-  = f.attribute :hours, disabled: true
-  = f.attribute :days, disabled: true
-  = f.attribute :exclusions, disabled: true
-  = f.attribute :description, disabled: true
-  = f.submit 'Edit'
+  = f.input :level, hint: "Support level this will be refered to as", disabled: true
+  = f.input :hours, hint: "Supported hours of the day", disabled: true
+  = f.input :days, hint: "Supported days of the week", disabled: true
+  = f.input :exclusions, hint: "Any support exclusions", disabled: true
+  = f.input :description, hint: "Description of the support", disabled: true
+  = button_to 'Edit this entry', :href => edit_supportlevel_path(f)
+
