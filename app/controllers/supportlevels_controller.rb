@@ -41,11 +41,7 @@ class SupportlevelsController < ApplicationController
     @supportlevel = Product.find(params[:id])
     @supportlevel.destroy
     redirect_to supportlevels_url, notice: "Successfully destroyed support level."
-  end
-  
-  def Cancel
-  end
-  
+  end  
 
   private
 
