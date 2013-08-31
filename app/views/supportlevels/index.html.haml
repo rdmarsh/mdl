@@ -8,7 +8,6 @@
       %th= t('days').humanize
       %th= t('exclusions').humanize
       %th= t('description').humanize
-      %th
     - @supportlevels.each do |sl|
       %tr
         %td= link_to sl.level, sl
@@ -16,14 +15,3 @@
         %td= sl.days
         %td= sl.exclusions
         %td= sl.description
-        %td
-          %ul.inline
-            %li
-              %a{ :title => t('showrecord').humanize, :href => supportlevel_path(sl) }
-                %i{ :class => 'icon-info-sign' }
-            %li
-              %a{ :title => t('editrecord').humanize, :href => edit_supportlevel_path(sl) }
-                %i{ :class => 'icon-pencil' }
-            %li
-              %a{ :title => t('editrecord').humanize, :href => edit_supportlevel_path(sl) }
-                %i{ :class => 'icon-trash' }

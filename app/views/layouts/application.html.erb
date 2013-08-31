@@ -14,7 +14,9 @@
       <%= render 'layouts/header' %>
       <div class='row-fluid'>
         <div class='span3'>
-          <div class='well sidebar-nav'>
+
+            <div class="well sidebar-nav">
+            
             <%= render 'layouts/navlist' %>
           </div>
         </div>
@@ -23,9 +25,12 @@
             <div class='content'>    
               <%= yield %>
               <%= render 'layouts/footer' %>
-            </div>
+              
+            </div>            
         </div>
+
+        
       </div>
     </div>
   </body>
-</html>
+</html>      

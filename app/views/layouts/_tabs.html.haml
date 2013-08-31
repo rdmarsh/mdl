@@ -2,23 +2,27 @@
   .span12
     .tabbable
       %ul.nav.nav-tabs
-        %li
+        = tab_link 'index', yield(:list_button_path), 'icon-th-list'
+        = tab_link 'new', yield(:new_button_path), 'icon-plus'
+        = tab_link 'show', yield(:show_button_path), 'icon-info-sign'
+        
+        %li{ :class => (action_name == "index" ? "active" : "") }
           = link_to yield(:list_button_path) do
             %i.icon-th-list
             = t('list').humanize
-        %li
+        %li{ :class => (action_name == "new" ? "active" : "") }
           = link_to yield(:new_button_path) do
             %i.icon-plus
             = t('new').humanize
-        %li
-          %a{ :title => "Show", :href => "#" } 
+        %li{ :class => (action_name == "show" ? "active" : "disabled") }
+          %a{ :title => "Show", :href => "#", :class => "disabled"} 
             %i.icon-info-sign
             Show
-        %li
+        %li{ :class => (action_name == "edit" ? "active" : "disabled") }
           = link_to yield(:edit_button_path) do
             %i.icon-pencil
             = t('edit').humanize
-        %li
+        %li{ :class => (action_name == "history" ? "disabled" : "disabled") }
           %a{ :title => "History", :href => "#" } 
             %i.icon-book
             History

@@ -9,8 +9,7 @@
       <a class="brand" href="<%= root_path %>">omdl</a>
       <div class="nav-collapse">
         <ul class="nav">
-
-          <li class="<%= 'active' if current_page?(root_path) %>">          <%= link_to t('home').humanize, root_path %></li>
+          <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to t('home').humanize, root_path %></li>
           <li class="divider-vertical"></li>
           <li class="<%= 'active' if current_page?(help_path) %>">          <%= link_to t('help').humanize, help_path %></li>
           <li class="divider-vertical"></li>

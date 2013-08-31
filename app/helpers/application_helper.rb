@@ -33,11 +33,16 @@ module ApplicationHelper
   end
 
 
-  def action?(*action)
-    action.include?(params[:action])
+  def tab_link(link_text, link_path, link_icon)
+    class_name = action_name == link_text ? 'active' : nil
+
+    content_tag(:li, :class => class_name) do
+      content_tag(:a, :title => link_text, :href => link_path) do
+        t(link_text).humanize
+      end
+    end
   end
 
-  
 end
 
 
