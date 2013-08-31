@@ -2,11 +2,11 @@
   .span12
     .tabbable
       %ul.nav.nav-tabs
-        %li{:class => "active"}
+        %li{:class => @selected == :list ? "active" : nil }
           = link_to yield(:list_button_path) do
             %i.icon-th-list
             = t('list').humanize
-        %li
+        %li{:class => @selected == :new ? "active" : nil }
           = link_to yield(:new_button_path) do
             %i.icon-plus
             = t('new').humanize

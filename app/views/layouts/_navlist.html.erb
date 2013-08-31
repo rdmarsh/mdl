@@ -5,7 +5,7 @@
   <li class="divider-vertical"></li>
   <li class="nav-header">header</li>
 
-  <li class="<%= 'active' if current_page?(supportlevels_path) %>"> <%= link_to t('supportlevels').humanize, supportlevels_path %></li>
+  <li class="<%= 'active' if current_page?(controller: 'supportlevels') %>"> <%= link_to t('supportlevels').humanize, supportlevels_path %></li>
   <li class="<%= 'active' if current_page?(environments_path) %>"> <%= link_to t('environments').humanize, environments_path %></li>
 
 </ul>
