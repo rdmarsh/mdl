@@ -37,12 +37,11 @@ module ApplicationHelper
     class_name = action_name == link_text ? 'active' : nil
 
     content_tag(:li, :class => class_name) do
-      content_tag(:a, :title => link_text, :href => link_path) do
+      link_to link_path do
         t(link_text).humanize
       end
     end
   end
-
 end
 
 
