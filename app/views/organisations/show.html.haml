@@ -1,12 +1,11 @@
-- content_for(:title, @organisation.reference)
-- content_for(:new_button_path, new_organisation_path)
-- content_for(:index_button_path, organisations_path)
+= render 'head'
 
-= render 'layouts/showheading'
-
-%h1= yield(:title)
-%h2= @organisation.name
-
-.content
-  = simple_format @organisation.name
-
+= simple_form_for @organisation, :html => { :class => 'form-horizontal' } do |f|
+  = f.error_notification
+  = f.input :reference, hint: "Support level this will be refered to as", disabled: true
+  = f.input :name, hint: "Supported hours of the day", disabled: true
+  = f.input :servicelevel, hint: "Supported days of the week", disabled: true
+  = f.input :supportlevel, hint: "Any support exclusions", disabled: true
+  = f.input :relationship, hint: "Description of the support", disabled: true
+  = f.input :active, hint: "Description of the support", disabled: true
+  = button_to 'Change this entry', :href => edit_supportlevel_path(f)

@@ -2,12 +2,11 @@
   .span12
     .tabbable
       %ul.nav.nav-tabs
-        = tab_link 'index', yield(:list_button_path), 'icon-th-list'
-        = tab_link 'new', yield(:new_button_path), 'icon-plus'
-        = tab_link 'show', yield(:show_button_path), 'icon-info-sign'
-        = tab_link 'edit', yield(:edit_button_path), 'icon-pencil'
-        = tab_link 'history', yield(:edit_button_path), 'icon-book'
-        
+        = tab_link 'index', yield(:list_button_path), 'icon-th-list', nil
+        = tab_link 'new', yield(:new_button_path), 'icon-plus', nil
+        = tab_link 'show', yield(:show_button_path), 'icon-info-sign', "disabled"
+        = tab_link 'edit', yield(:edit_button_path), 'icon-pencil', "disabled"
+        = tab_link 'history', yield(:edit_button_path), 'icon-book', nil
         %li.dropdown.pull-right
           %a.dropdown-toggle{:'data-toggle' => "dropdown", :title => "Export", :href => "#" }
             %i.icon-share-alt
@@ -18,7 +17,6 @@
               %a{ :title => "CSV", :href => "#" }
                 %i.icon-file
                 CSV
-            = tab_link 'history', yield(:edit_button_path), 'icon-book'
             %li
               %a{ :title => "PDF", :href => "#" } 
                 %i.icon-file

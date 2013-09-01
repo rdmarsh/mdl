@@ -25,6 +25,7 @@ en:
   add: add
   
   contact: contact
+  csv: csv
 
   description: description
   delete: delete
