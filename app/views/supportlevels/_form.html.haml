@@ -6,5 +6,10 @@
   = f.input :exclusions, hint: "Any support exclusions"
   = f.input :description, hint: "Description of the support"
 
-  = f.submit :class => "btn"
-  = link_to "Cancel", :back, :class => "btn"
+  .form-actions
+    %button.btn.btn-primary{:type => "submit", :name => "Save"}
+      %i.icon-white.icon-ok
+      Save
+    %a.btn{:href => @supportlevel, :class => "btn"}
+      %i.icon-remove
+      Cancel

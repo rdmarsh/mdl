@@ -7,5 +7,6 @@
   = f.input :days, hint: "Supported days of the week", disabled: true
   = f.input :exclusions, hint: "Any support exclusions", disabled: true
   = f.input :description, hint: "Description of the support", disabled: true
-  = link_to 'Change this entry', edit_supportlevel_path(@supportlevel), :class => "btn"
+  .form-actions
+    = link_to 'Change', edit_supportlevel_path(@supportlevel), :class => "btn btn-info"
   
