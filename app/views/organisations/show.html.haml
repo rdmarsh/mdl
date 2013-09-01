@@ -2,10 +2,11 @@
 
 = simple_form_for @organisation, :html => { :class => 'form-horizontal' } do |f|
   = f.error_notification
-  = f.input :reference, hint: "Support level this will be refered to as", disabled: true
-  = f.input :name, hint: "Supported hours of the day", disabled: true
+  = f.input :reference, hint: "Organisation unique reference", disabled: true
+  = f.input :name, hint: "Organisation full name", disabled: true
   = f.input :servicelevel, hint: "Supported days of the week", disabled: true
   = f.input :supportlevel, hint: "Any support exclusions", disabled: true
   = f.input :relationship, hint: "Description of the support", disabled: true
   = f.input :active, hint: "Description of the support", disabled: true
-  = button_to 'Change this entry', :href => edit_supportlevel_path(f)
+  = button_to 'Change this entry', :href => edit_organisation_path(@organisation), :class => "btn btn-primary"
+

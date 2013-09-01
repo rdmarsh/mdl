@@ -5,6 +5,7 @@ class Organisation < ActiveRecord::Base
   validates :name, presence: true
   validates :supportlevel, presence: true
   
-  belongs_to :supportlevel
-  belongs_to :environment 
+  has_one :support_level, :class_name => 'SupportLevel'
+
+  
 end
