@@ -6,7 +6,7 @@
   %li.divider-vertical
   %li.nav-header
     Supporting Data
-  %li{ :class => ("active" if controller_name == "supportlevels") }
-    = link_to t('supportlevels').humanize, supportlevels_path
+  %li{ :class => ("active" if controller_name == "support_levels") }
+    = link_to t('supportlevels').humanize, support_levels_path
   %li{ :class => ("active" if controller_name == "environments") }
     = link_to t('environments').humanize, environments_path

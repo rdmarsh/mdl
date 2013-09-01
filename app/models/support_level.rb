@@ -1,4 +1,4 @@
-class Supportlevel < ActiveRecord::Base
+class SupportLevel < ActiveRecord::Base
   has_many :organisations
   
   validates_presence_of :level

@@ -1,20 +1,20 @@
-class SupportlevelsController < ApplicationController
+class SupportLevelsController < ApplicationController
   helper_method :sort_column, :sort_direction
   
   def index
-    @supportlevels = Supportlevel.order("level")
+    @supportlevels = SupportLevel.order("level")
   end
 
   def show
-    @supportlevel = Supportlevel.find(params[:id])
+    @supportlevel = SupportLevel.find(params[:id])
   end
   
   def new
-    @supportlevel = Supportlevel.new
+    @supportlevel = SupportLevel.new
   end
   
   def create
-    @supportlevel = Supportlevel.new(supportlevel_params) 
+    @supportlevel = SupportLevel.new(supportlevel_params) 
      
     if @supportlevel.save
       redirect_to @supportlevel, notice: "New support level created!"
@@ -24,11 +24,11 @@ class SupportlevelsController < ApplicationController
   end
   
   def edit
-    @supportlevel = Supportlevel.find(params[:id])
+    @supportlevel = SupportLevel.find(params[:id])
   end
   
   def update
-    @supportlevel = Supportlevel.find(params[:id])
+    @supportlevel = SupportLevel.find(params[:id])
     
     if @supportlevel.update_attributes(supportlevel_params) 
       redirect_to @supportlevel, notice: "Successfully updated support level."

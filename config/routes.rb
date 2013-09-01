@@ -1,7 +1,7 @@
 Onemdl::Application.routes.draw do
   
   resources :organisations
-  resources :supportlevels
+  resources :support_levels
   resources :environments
 
   root 'staticpages#home'

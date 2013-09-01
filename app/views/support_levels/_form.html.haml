@@ -5,11 +5,7 @@
   = f.input :days, hint: "Supported days of the week"
   = f.input :exclusions, hint: "Any support exclusions"
   = f.input :description, hint: "Description of the support"
-
   .form-actions
-    %button.btn.btn-primary{:type => "submit", :name => "Save"}
-      %i.icon-white.icon-ok
-      Save
-    %a.btn{:href => @supportlevel, :class => "btn"}
-      %i.icon-remove
-      Cancel
+    = f.button :submit, :class => 'btn btn-primary'
+    = submit_tag 'Reset Form', :type => :reset, :class => "btn btn-danger"
+    = link_to "Cancel", @supportlevel, :class => "btn btn-link"
