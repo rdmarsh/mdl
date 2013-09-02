@@ -20,6 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  helloworld: hello world
   about: about
   active: active
   add: add

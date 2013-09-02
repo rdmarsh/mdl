@@ -1,18 +1,21 @@
 %footer
-  =link_to 'powered by onemdl', "http://onemdl.com", :class => "muted"
   %nav
+    =link_to 'powered by onemdl', "http://onemdl.com", :class => "muted"
     %ul
       %li
         = link_to yield(:about_path) do
-          %i.icon-th-list
+          %i.icon-info-sign
           = t('about').humanize
       %li
-        = link_to yield(:about_path) do
-          %i.icon-th-list
+        = link_to yield(:contact_path) do
+          %i.icon-envelope
           = t('contact').humanize
-          
-      %li= link_to t('about').humanize, about_path
-      %li= link_to t('contact').humanize, contact_path
-      %li= link_to t('faq').upcase, faq_path
-      %li= link_to t('support').humanize, "https://github.com/rdmarsh/onemdl/issues"
+      %li
+        = link_to yield(:faq_path) do
+          %i.icon-question-sign
+          = t('faq').upcase
+      %li
+        = link_to "https://github.com/rdmarsh/onemdl/issues" do
+          %i.icon-bookmark
+          = t('support').humanize
       %li= link_to t('news').humanize, "#"
