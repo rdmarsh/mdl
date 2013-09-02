@@ -1,11 +1,8 @@
 = simple_form_for @supportlevel, :html => { :class => 'form-horizontal' } do |f|
   = f.error_notification
-  = f.input :level, hint: "Support level this will be refered to as"
+  = f.input :support_level, hint: "Support level this will be refered to as"
   = f.input :hours, hint: "Supported hours of the day"
   = f.input :days, hint: "Supported days of the week"
   = f.input :exclusions, hint: "Any support exclusions"
   = f.input :description, hint: "Description of the support"
-  .form-actions
-    = f.button :submit, :class => 'btn btn-primary'
-    = submit_tag 'Reset Form', :type => :reset, :class => "btn btn-danger"
-    = link_to "Cancel", @supportlevel, :class => "btn btn-link"
+  = f.button :submit, :class => 'btn'

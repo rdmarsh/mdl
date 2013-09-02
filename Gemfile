@@ -19,7 +19,9 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 #gem 'taps', '~>0.3.24'
 gem 'simple_form'
-gem "show_for", "~> 0.2.4"
+#gem "show_for", "~> 0.2.4"
+gem 'inherited_resources'
+gem 'prawn'
 
 group :development, :test do
   gem 'turn'

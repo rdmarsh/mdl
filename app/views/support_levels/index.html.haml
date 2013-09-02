@@ -10,7 +10,7 @@
       %th= t('description').humanize
     - @supportlevels.each do |sl|
       %tr
-        %td= link_to sl.level, sl
+        %td= link_to sl.support_level, sl
         %td= sl.hours
         %td= sl.days
         %td= sl.exclusions
