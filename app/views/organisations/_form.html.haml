@@ -3,9 +3,12 @@
   = f.input :reference, hint: "Organisation Reference"
   = f.input :name, hint: "Supported hours of the day"
   = f.input :servicelevel, hint: "Supported days of the week"
-  = f.input :supportlevel, hint: "Any support exclusions"
+  = f.collection_select :support_level, SupportLevel.all,:id,:support_level, hint: "Support level"
   = f.input :relationship, hint: "Description of the support"
   = f.input :active, hint: "Current organisation?"
+  
+
+  
   = f.submit
   or
   = link_to "Cancel", :back

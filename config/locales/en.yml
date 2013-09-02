@@ -61,7 +61,7 @@ en:
   relationship: relationship
   
   search: seach  
-  servicelevel: service level
+  service_level: service level
   show: show
   showrecord: show record
   support: support
@@ -73,8 +73,8 @@ en:
   exclusions: exclusions
   hours: hours
   level: level
-  newsupportlevel: new support level
+  new_support_level: new support level
   levels: support levels
-  supportlevels: support levels
-  supportlevel: support level
+  support_levels: support levels
+  support_level: support level
 

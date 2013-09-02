@@ -1,24 +1,19 @@
-- content_for(:title, t('organisations').humanize)
-- content_for(:heading, 'List of ' + t('organisations').humanize)
-- content_for(:new_button_path, new_organisation_path)
-
-= render 'layouts/heading'
-= render 'layouts/tabs'
+=render 'head'
 
 %table.table.table-hover.table-condensed
   %tbody
     %thead
       %th= sortable "reference"
       %th= sortable "name"
-      %th= sortable "servicelevel"
-      %th= sortable "supportlevel"
+      %th= sortable "service_level"
+      %th= sortable "support_level"
       %th= sortable "relationship"
       %th= sortable "active"
     - @organisations.each do |o|
       %tr{:class => tr_attributes(o.active)}
         %td= link_to o.reference, o
         %td= o.name
-        %td= o.servicelevel
-        %td= o.supportlevel
+        %td= o.service_level
+        %td= o.support_level
         %td= o.relationship
         %td= o.active

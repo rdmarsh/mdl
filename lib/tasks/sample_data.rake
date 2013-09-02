@@ -11,16 +11,16 @@ namespace :db do
       ref  = Faker::Lorem.word + "#{n+1}"
       
       name  = Faker::Company.name
-      servicelevel = @servicelevels.sample
-      supportlevel = @supportlevels.sample
+      service_level = @servicelevels.sample
+      support_level = @supportlevels.sample
       relationship = @relationships.sample
       active = [true, false].sample
       
       Organisation.create!(
         reference: ref,
         name: name,
-        servicelevel: servicelevel,
-        supportlevel: supportlevel,
+        service_level: service_level,
+        support_level: support_level,
         relationship: relationship,
         active: active)
         
