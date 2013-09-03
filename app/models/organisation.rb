@@ -1,5 +1,5 @@
 class Organisation < ActiveRecord::Base
-  has_one :support_level
+  belongs_to :support_level
   
   
   
@@ -9,7 +9,7 @@ class Organisation < ActiveRecord::Base
   
   validates :reference, presence: true
   validates :name, presence: true
-  validates :support_level, presence: true
+  validates :support_level_id, presence: true
   
 
   

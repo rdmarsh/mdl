@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130902233642) do
+ActiveRecord::Schema.define(version: 20130903033324) do
 
   create_table "environments", force: true do |t|
     t.string   "environment"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20130902233642) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "service_level"
-    t.string   "support_level"
+    t.string   "support_level_id"
     t.string   "relationship"
     t.boolean  "active"
   end
