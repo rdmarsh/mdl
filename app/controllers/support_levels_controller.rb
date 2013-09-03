@@ -5,20 +5,18 @@ class SupportLevelsController < ApplicationController
   helper_method :sort_column, :sort_direction
   
   def index
-    @supportlevels = SupportLevel.order("support_level")
+    @supportlevels = SupportLevel.order("support_reference")
     respond_with(@supportlevels)
   end
 
   def show
     @supportlevel = SupportLevel.find(params[:id])
     respond_with(@supportlevel)
-    
   end
   
   def new
     @supportlevel = SupportLevel.new
     respond_with(@supportlevel)
-    
   end
   
   def create

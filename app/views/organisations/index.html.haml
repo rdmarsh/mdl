@@ -11,9 +11,9 @@
       %th= sortable "active"
     - @organisations.each do |o|
       %tr{:class => tr_attributes(o.active)}
-        %td= link_to o.reference, o
+        %td= link_to o.organisation_reference, o
         %td= o.name
-        %td= o.service_level
-        %td= o.support_level_id
+        %td= o.service_reference
+        %td= o.support_level.name
         %td= o.relationship
         %td= o.active

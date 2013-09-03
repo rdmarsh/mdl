@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130903033324) do
+ActiveRecord::Schema.define(version: 20130903125926) do
 
   create_table "environments", force: true do |t|
     t.string   "environment"
@@ -23,20 +23,20 @@ ActiveRecord::Schema.define(version: 20130903033324) do
   add_index "environments", ["environment"], name: "index_environments_on_environment", unique: true
 
   create_table "organisations", force: true do |t|
-    t.string   "reference"
+    t.string   "organisation_reference"
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "service_level"
-    t.string   "support_level_id"
+    t.string   "service_reference"
+    t.integer  "support_level_id",       limit: 255
     t.string   "relationship"
     t.boolean  "active"
   end
 
-  add_index "organisations", ["reference"], name: "index_organisations_on_reference", unique: true
+  add_index "organisations", ["organisation_reference"], name: "index_organisations_on_organisation_reference", unique: true
 
   create_table "support_levels", force: true do |t|
-    t.string   "support_level"
+    t.string   "name"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -45,6 +45,6 @@ ActiveRecord::Schema.define(version: 20130903033324) do
     t.string   "exclusions"
   end
 
-  add_index "support_levels", ["support_level"], name: "index_support_levels_on_support_level", unique: true
+  add_index "support_levels", ["name"], name: "index_support_levels_on_name", unique: true
 
 end

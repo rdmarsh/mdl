@@ -5,6 +5,7 @@ Onemdl::Application.routes.draw do
   resources :environments
 
   root 'staticpages#home'
+  
   match '/help',    to: 'staticpages#help',     via: 'get'
   match '/about',   to: 'staticpages#about',    via: 'get'
   match '/contact', to: 'staticpages#contact',  via: 'get'

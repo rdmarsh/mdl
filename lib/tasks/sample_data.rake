@@ -8,19 +8,18 @@ namespace :db do
     
     99.times do |n|
       
-      ref  = Faker::Lorem.word + "#{n+1}"
-      
+      organisation_ref  = Faker::Lorem.word + "#{n+1}"
       name  = Faker::Company.name
-      service_level = @servicelevels.sample
-      support_level = @supportlevels.sample
+      service_ref = @servicelevels.sample
+      support_ref = @supportlevels.sample
       relationship = @relationships.sample
       active = [true, false].sample
       
       Organisation.create!(
-        reference: ref,
+        organisation_reference: organisation_ref,
         name: name,
-        service_level: service_level,
-        support_level: support_level,
+        service_reference: service_ref,
+        support_reference: support_ref,
         relationship: relationship,
         active: active)
         

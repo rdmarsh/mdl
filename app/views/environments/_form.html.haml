@@ -5,7 +5,5 @@
   = f.input :days, hint: "Supported days of the week"
   = f.input :exclusions, hint: "Any support exclusions"
   = f.input :description, hint: "Description of the support"
-  .form-actions
-    = f.submit
-    or
-    = link_to "Cancel", :back
+  = f.error :base
+  = f.button :submit, :class => 'btn'

@@ -3,14 +3,14 @@
 %table.table.table-hover.table-condensed
   %tbody
     %thead
-      %th= t('level').humanize
+      %th= t('type').humanize
       %th= t('hours').humanize
       %th= t('days').humanize
       %th= t('exclusions').humanize
       %th= t('description').humanize
     - @supportlevels.each do |sl|
       %tr
-        %td= link_to sl.support_level, sl
+        %td= link_to sl.name, sl
         %td= sl.hours
         %td= sl.days
         %td= sl.exclusions

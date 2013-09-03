@@ -67,6 +67,9 @@ en:
   support: support
   
   showall: show all
+  type: type
+  
+  reference: reference
 
   days: days
   description: description

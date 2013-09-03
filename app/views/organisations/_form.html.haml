@@ -1,16 +1,13 @@
 = simple_form_for @organisation, :html => { :class => 'form-horizontal' } do |f|
   = f.error_notification
-  = f.input :reference, hint: "Organisation Reference"
+  = f.input :organisation_reference, hint: "Organisation Reference"
   = f.input :name, hint: "Supported hours of the day"
-  = f.input :service_level, hint: "Supported days of the week"
+  = f.input :service_reference, hint: "Supported days of the week"
   = f.association :support_level
   = f.input :relationship, hint: "Description of the support"
   = f.input :active, hint: "Current organisation?"
   = f.error :base
-  
-
-  
-  = f.submit
+  = f.button :submit, :class => 'btn'
   or
   = link_to "Cancel", :back
   
