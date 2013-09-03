@@ -18,4 +18,7 @@
         = link_to "https://github.com/rdmarsh/onemdl/issues" do
           %i.icon-bookmark
           = t('support').humanize
-      %li= link_to t('news').humanize, "#"
+      %li
+        = link_to t('news').humanize, "#" do
+          %i.icon-bullhorn
+          = t('news').humanize
