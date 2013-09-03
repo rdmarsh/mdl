@@ -5,7 +5,7 @@ class SupportLevelsController < ApplicationController
   helper_method :sort_column, :sort_direction
   
   def index
-    @supportlevels = SupportLevel.order("support_reference")
+    @supportlevels = SupportLevel.order("name")
     respond_with(@supportlevels)
   end
 

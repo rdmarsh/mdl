@@ -21,5 +21,18 @@
   = f.attribute :exclusions, hint: "Any support exclusions", disabled: true
   = f.attribute :description, hint: "Description of the support", disabled: true
   = link_to 'Change', edit_support_level_path(@supportlevel), :class => "btn"
+  
+  
+  = btn-group
+    = "btn dropdown-toggle" data-toggle="dropdown" href="#">
+      Action
+      <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+      <!-- dropdown menu links -->
+    </ul>
+  </div>
+  
+  %ul
   = link_to "Destroy", @supportlevel, :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-danger"
 
