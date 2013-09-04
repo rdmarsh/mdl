@@ -1,0 +1,36 @@
+%p#notice= notice
+
+%p
+  %b Companyname:
+  = @configuration.CompanyName
+%p
+  %b Companytagline:
+  = @configuration.CompanyTagline
+%p
+  %b Companyphone:
+  = @configuration.CompanyPhone
+%p
+  %b Companyfax:
+  = @configuration.CompanyFax
+%p
+  %b Companyemail:
+  = @configuration.CompanyEmail
+%p
+  %b Companyaddress 1:
+  = @configuration.CompanyAddress_1
+%p
+  %b Companyaddress 2:
+  = @configuration.CompanyAddress_2
+%p
+  %b Companycity:
+  = @configuration.CompanyCity
+%p
+  %b Companypostcode:
+  = @configuration.CompanyPostCode
+%p
+  %b Companycountry:
+  = @configuration.CompanyCountry
+
+= link_to 'Edit', edit_configuration_path(@configuration)
+\|
+= link_to 'Back', configurations_path

@@ -1,5 +1,7 @@
 Onemdl::Application.routes.draw do
   
+  resources :configurations
+
   resources :organisations
   resources :support_levels
   resources :environments

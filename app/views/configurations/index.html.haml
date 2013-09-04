@@ -1,0 +1,37 @@
+%h1 Listing configurations
+
+%table
+  %tr
+    %th Companyname
+    %th Companytagline
+    %th Companyphone
+    %th Companyfax
+    %th Companyemail
+    %th Companyaddress 1
+    %th Companyaddress 2
+    %th Companycity
+    %th Companypostcode
+    %th Companycountry
+    %th
+    %th
+    %th
+
+  - @configurations.each do |configuration|
+    %tr
+      %td= configuration.CompanyName
+      %td= configuration.CompanyTagline
+      %td= configuration.CompanyPhone
+      %td= configuration.CompanyFax
+      %td= configuration.CompanyEmail
+      %td= configuration.CompanyAddress_1
+      %td= configuration.CompanyAddress_2
+      %td= configuration.CompanyCity
+      %td= configuration.CompanyPostCode
+      %td= configuration.CompanyCountry
+      %td= link_to 'Show', configuration
+      %td= link_to 'Edit', edit_configuration_path(configuration)
+      %td= link_to 'Destroy', configuration, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Configuration', new_configuration_path

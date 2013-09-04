@@ -1,0 +1,1 @@
+json.extract! @configuration, :CompanyName, :CompanyTagline, :CompanyPhone, :CompanyFax, :CompanyEmail, :CompanyAddress_1, :CompanyAddress_2, :CompanyCity, :CompanyPostCode, :CompanyCountry, :created_at, :updated_at
