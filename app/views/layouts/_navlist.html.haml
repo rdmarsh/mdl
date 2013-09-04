@@ -10,3 +10,9 @@
     = link_to t('support_levels').humanize, support_levels_path
   %li{ :class => ("active" if controller_name == "environments") }
     = link_to t('environments').humanize, environments_path
+  %li.divider-vertical
+  %li.nav-header
+    Configuration
+  %li{ :class => ("active" if controller_name == "settings") }
+    = link_to t('settings').humanize, settings_path
+  

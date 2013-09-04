@@ -31,7 +31,6 @@ class SupportLevelsController < ApplicationController
   def edit
     @supportlevel = SupportLevel.find(params[:id])
     respond_with(@supportlevel)
-    
   end
   
   def update
@@ -41,7 +40,6 @@ class SupportLevelsController < ApplicationController
       flash[:notice] = "Successfully updated support level"
     end
     respond_with(@supportlevel)
-    
   end
   
   def destroy

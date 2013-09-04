@@ -70,6 +70,7 @@ en:
   type: type
   
   reference: reference
+  settings: settings
 
   days: days
   description: description
