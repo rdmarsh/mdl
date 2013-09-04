@@ -1,0 +1,2 @@
+module OnemdlConfigsHelper
+end

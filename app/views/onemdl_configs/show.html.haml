@@ -1,0 +1,36 @@
+%p#notice= notice
+
+%p
+  %b Companyname:
+  = @onemdl_config.CompanyName
+%p
+  %b Companytagline:
+  = @onemdl_config.CompanyTagline
+%p
+  %b Companyphone:
+  = @onemdl_config.CompanyPhone
+%p
+  %b Companyfax:
+  = @onemdl_config.CompanyFax
+%p
+  %b Companyemail:
+  = @onemdl_config.CompanyEmail
+%p
+  %b Companyaddress 1:
+  = @onemdl_config.CompanyAddress_1
+%p
+  %b Companyaddress 2:
+  = @onemdl_config.CompanyAddress_2
+%p
+  %b Companycity:
+  = @onemdl_config.CompanyCity
+%p
+  %b Companypostcode:
+  = @onemdl_config.CompanyPostCode
+%p
+  %b Companycountry:
+  = @onemdl_config.CompanyCountry
+
+= link_to 'Edit', edit_onemdl_config_path(@onemdl_config)
+\|
+= link_to 'Back', onemdl_configs_path
