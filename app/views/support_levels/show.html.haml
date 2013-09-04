@@ -1,18 +1,16 @@
 = render 'head'
 
-=#= simple_form_for @supportlevel, :html => { :class => 'form-horizontal' } do |f|
-=#  = f.error_notification
-=#  = f.input :support_level, hint: "Support level this will be refered to as", disabled: true
-=#  = f.input :hours, hint: "Supported hours of the day", disabled: true
-=#  = f.input :days, hint: "Supported days of the week", disabled: true
-=#  = f.input :exclusions, hint: "Any support exclusions", disabled: true
-=#  = f.input :description, hint: "Description of the support", disabled: true
-=#  = link_to 'Change', edit_support_level_path(@supportlevel), :class => "btn"
-=#  = link_to "Destroy", @supportlevel, :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-danger"
+= simple_form_for @supportlevel, :html => { :class => 'form-horizontal' } do |f|
+  = f.error_notification
+  = f.input :name, hint: "Support level this will be refered to as", disabled: true
+  = f.input :hours, hint: "Supported hours of the day", disabled: true
+  = f.input :days, hint: "Supported days of the week", disabled: true
+  = f.input :exclusions, hint: "Any support exclusions", disabled: true
+  = f.input :description, hint: "Description of the support", disabled: true
+  = link_to 'Change', edit_support_level_path(@supportlevel), :class => "btn"
+  = link_to "Destroy", @supportlevel, :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-danger"
 
-
-
-
+%hr
 
 = show_for @supportlevel do |f|
   = f.attribute :name, hint: "Support level this will be refered to as", disabled: true
@@ -23,16 +21,3 @@
   = link_to 'Change', edit_support_level_path(@supportlevel), :class => "btn"
   
   
-  = btn-group
-    = "btn dropdown-toggle" data-toggle="dropdown" href="#">
-      Action
-      <span class="caret"></span>
-    </a>
-    <ul class="dropdown-menu">
-      <!-- dropdown menu links -->
-    </ul>
-  </div>
-  
-  %ul
-  = link_to "Destroy", @supportlevel, :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-danger"
-
