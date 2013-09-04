@@ -11,24 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130904225331) do
-
-  create_table "configurations", force: true do |t|
-    t.string   "CompanyName"
-    t.string   "CompanyTagline"
-    t.string   "CompanyPhone"
-    t.string   "CompanyFax"
-    t.string   "CompanyEmail"
-    t.string   "CompanyAddress_1"
-    t.string   "CompanyAddress_2"
-    t.string   "CompanyCity"
-    t.string   "CompanyPostCode"
-    t.string   "CompanyCountry"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "configurations", ["CompanyName"], name: "index_configurations_on_CompanyName"
+ActiveRecord::Schema.define(version: 20130904225801) do
 
   create_table "environments", force: true do |t|
     t.string   "environment"
