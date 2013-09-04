@@ -11,7 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130903125926) do
+ActiveRecord::Schema.define(version: 20130904225331) do
+
+  create_table "configurations", force: true do |t|
+    t.string   "CompanyName"
+    t.string   "CompanyTagline"
+    t.string   "CompanyPhone"
+    t.string   "CompanyFax"
+    t.string   "CompanyEmail"
+    t.string   "CompanyAddress_1"
+    t.string   "CompanyAddress_2"
+    t.string   "CompanyCity"
+    t.string   "CompanyPostCode"
+    t.string   "CompanyCountry"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "configurations", ["CompanyName"], name: "index_configurations_on_CompanyName"
 
   create_table "environments", force: true do |t|
     t.string   "environment"
@@ -34,6 +51,21 @@ ActiveRecord::Schema.define(version: 20130903125926) do
   end
 
   add_index "organisations", ["organisation_reference"], name: "index_organisations_on_organisation_reference", unique: true
+
+  create_table "settings", force: true do |t|
+    t.string   "company_name"
+    t.string   "company_tagline"
+    t.string   "company_phone"
+    t.string   "company_fax"
+    t.string   "company_email"
+    t.string   "company_address_1"
+    t.string   "company_address_2"
+    t.string   "company_city"
+    t.string   "company_postcode"
+    t.string   "company_country"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "support_levels", force: true do |t|
     t.string   "name"

@@ -1,0 +1,15 @@
+= simple_form_for @settings, :html => { :class => 'form-horizontal' } do |f|
+  = f.error_notification
+  = f.input :name, hint: "Support level this will be refered to as", disabled: true
+  = f.input :hours, hint: "Supported hours of the day", disabled: true
+  = f.input :days, hint: "Supported days of the week", disabled: true
+  = f.input :exclusions, hint: "Any support exclusions", disabled: true
+  = f.input :description, hint: "Description of the support", disabled: true
+  = link_to 'Change', edit_support_level_path(@supportlevel), :class => "btn btn-primary"
+  .btn-group.task_controller
+    %a{:class => 'btn btn-danger dropdown-toggle', "data-toggle" => 'dropdown', :href => '#'}
+      %i.icon-trash.icon-white
+      Delete
+      %span{:class => 'caret'}
+    %ul.dropdown-menu
+      %li= link_to "Delete '#{@supportlevel.name}'?", @supportlevel, :confirm => 'Are you sure?', :method => :delete

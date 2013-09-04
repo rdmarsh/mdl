@@ -1,12 +1,14 @@
 Onemdl::Application.routes.draw do
   
-  resources :configurations
-
   resources :organisations
   resources :support_levels
   resources :environments
 
   root 'staticpages#home'
+  
+  get "settings/edit"
+  match '/settings',    to: 'settings#show',     via: 'get'
+  
   
   match '/help',    to: 'staticpages#help',     via: 'get'
   match '/about',   to: 'staticpages#about',    via: 'get'
