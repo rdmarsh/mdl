@@ -21,6 +21,9 @@ gem 'jbuilder', '~> 1.2'
 gem 'simple_form'
 gem "show_for", "~> 0.2.4"
 gem 'inherited_resources'
+gem "rails-settings-cached", "0.3.1"
+
+
 
 group :development, :test do
   gem 'turn'

@@ -5,9 +5,10 @@ Onemdl::Application.routes.draw do
   resources :environments
 
   root 'staticpages#home'
+
   
-  match '/settings',      to: 'settings#show',     via: 'get'
-  match '/settings/edit', to: 'settings#edit',     via: 'get'
+  # match '/settings',      to: 'settings#show',     via: 'get'
+  # match '/settings/edit', to: 'settings#edit',     via: 'get'
   
   
   match '/help',    to: 'staticpages#help',     via: 'get'

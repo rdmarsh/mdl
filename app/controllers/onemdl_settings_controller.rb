@@ -1,0 +1,2 @@
+class OnemdlSettingsController < ApplicationController
+end

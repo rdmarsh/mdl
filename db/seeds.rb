@@ -23,4 +23,4 @@ Environment.create(environment: "Unknown", description: "The environment is curr
 Organisation.create(organisation_reference: "Unknown", name: "Unknown", service_reference: "Unknown", support_level_id: 0, relationship: "Unknown", active: true)
 Organisation.create(organisation_reference: "Dave", name: "Dave", service_reference: "Unknown", support_level_id: 1, relationship: "Unknown", active: true)
 
-Settings.create(company_name: "omdl")
+# OnemdlSetting.create(company_name: "omdl")
