@@ -1,2 +1,2 @@
-class OnemdlSettings < RailsSettings::CachedSettings
+class OnemdlSettings < ActiveRecord::Base
 end

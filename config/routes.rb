@@ -1,5 +1,7 @@
 Onemdl::Application.routes.draw do
   
+  get "onemdl_settings/show"
+  get "onemdl_settings/edit"
   resources :organisations
   resources :support_levels
   resources :environments

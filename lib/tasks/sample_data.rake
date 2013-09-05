@@ -6,7 +6,7 @@ namespace :db do
     @supportlevels = ["Business Hours", "After Hours", "Unknown", "None"]
     @relationships = ["Customer", "Partner", "Supplier", "Unknown"]
     
-    1024.times do |n|
+    128.times do |n|
       
       organisation_ref  = Faker::Lorem.word + "#{n+1}"
       name  = Faker::Company.name
