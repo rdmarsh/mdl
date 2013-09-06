@@ -1,7 +1,5 @@
 Onemdl::Application.routes.draw do
   
-  get "onemdl_settings/show"
-  get "onemdl_settings/edit"
   resources :organisations
   resources :support_levels
   resources :environments
@@ -9,8 +7,8 @@ Onemdl::Application.routes.draw do
   root 'staticpages#home'
 
   
-  # match '/settings',      to: 'settings#show',     via: 'get'
-  # match '/settings/edit', to: 'settings#edit',     via: 'get'
+  match '/onemdl_settings',      to: 'onemdl_settings#show',     via: 'get'
+  match '/onemdl_settings/edit', to: 'onemdl_settings#edit',     via: 'get'
   
   
   match '/help',    to: 'staticpages#help',     via: 'get'

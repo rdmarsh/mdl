@@ -1,2 +1,13 @@
-%h1 OnemdlSettings#show
-%p Find me in app/views/onemdl_settings/show.html.haml
+= show_for @onemdlsettings do |f|
+  = f.attribute :company_name
+  = f.attribute :company_tagline
+  = f.attribute :company_phone
+  = f.attribute :company_fax
+  = f.attribute :company_email
+  = f.attribute :company_address_1
+  = f.attribute :company_address_2
+  = f.attribute :company_city
+  = f.attribute :company_postcode
+  = f.attribute :company_country
+  = f.attribute :updated_at
+  / = link_to 'Change', edit_onemdl_settings_path, :class => "btn btn-primary"

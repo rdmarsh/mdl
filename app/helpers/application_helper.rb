@@ -32,8 +32,6 @@ module ApplicationHelper
     link_to title, {:sort => column, :direction => direction}, {:class => css_class}
   end
 
-
-
   def tab_link(link_text, link_path, link_icon, off_link_state)
     class_name = action_name == link_text ? 'active' : off_link_state
         
