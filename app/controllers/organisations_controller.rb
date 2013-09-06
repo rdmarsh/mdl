@@ -9,17 +9,14 @@ class OrganisationsController < ApplicationController
   end
 
   def show
-
     @organisation = Organisation.find(params[:id])
   end
 
   def new
-
     @organisation = Organisation.new
   end
 
   def create
-    
     @organisation = Organisation.new(organisation_params)
     
     if @organisation.save
@@ -35,7 +32,6 @@ class OrganisationsController < ApplicationController
   end
   
   def update
-    
     @organisation = Organisation.find(params[:id])
     
     if @organisation.update_attributes(organisation_params)

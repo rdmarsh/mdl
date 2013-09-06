@@ -9,9 +9,8 @@ Onemdl::Application.routes.draw do
   # resources :onemdl_settings
 
   
-  match '/onemdl_settings',      to: 'onemdl_settings#show',     via: 'get'
+  match '/onemdl_settings',      to: 'onemdl_settings#index',     via: 'get'
   match '/onemdl_settings/edit', to: 'onemdl_settings#edit',     via: 'get'
-  
   
   match '/help',    to: 'staticpages#help',     via: 'get'
   match '/about',   to: 'staticpages#about',    via: 'get'

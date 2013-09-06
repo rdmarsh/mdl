@@ -47,8 +47,7 @@ class SupportLevelsController < ApplicationController
     @supportlevel.destroy
     flash[:notice] = "Successfully destroyed support level"
     respond_with(@supportlevel)
-    
-  end  
+  end
 
   private
 

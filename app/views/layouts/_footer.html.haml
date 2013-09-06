@@ -1,5 +1,5 @@
 %footer
-  =link_to 'powered by onemdl', "http://onemdl.com", :class => "muted"
+  =link_to "powered by #{Rails.application.class.parent_name.downcase}", "http://onemdl.com", :class => "muted"
   %ul
     %li
       = link_to help_path do

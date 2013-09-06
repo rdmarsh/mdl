@@ -3,9 +3,9 @@
   = f.input :organisation_reference, hint: "Organisation Reference"
   = f.input :name, hint: "Supported hours of the day"
   = f.input :service_reference, hint: "Supported days of the week"
-  = f.association :support_level
-  = f.input :relationship, hint: "Description of the support"
-  = f.input :active, hint: "Current organisation?"
+  = f.association :support_level, hint: "Description of the support"
+  = f.input :relationship
+  = f.input :active, hint: "Current organisation?", inline_label: 'Yes, remember me'
   = f.error :base
   = f.button :submit, :class => 'btn'
   or
