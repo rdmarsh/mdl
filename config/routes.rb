@@ -6,6 +6,8 @@ Onemdl::Application.routes.draw do
 
   root 'staticpages#home'
 
+  # resources :onemdl_settings
+
   
   match '/onemdl_settings',      to: 'onemdl_settings#show',     via: 'get'
   match '/onemdl_settings/edit', to: 'onemdl_settings#edit',     via: 'get'

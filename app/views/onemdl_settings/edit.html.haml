@@ -1,2 +1,14 @@
-%h1 OnemdlSettings#edit
-%p Find me in app/views/onemdl_settings/edit.html.haml
+= form_for @onemdlsetting, :html => { :class => 'form-horizontal' } do |f|
+  = f.error_notification
+  = f.input :company_name
+  = f.input :company_tagline
+  = f.input :company_phone
+  = f.input :company_fax
+  = f.input :company_email
+  = f.input :company_address_1
+  = f.input :company_address_2
+  = f.input :company_city
+  = f.input :company_postcode
+  = f.input :company_country
+  = f.error :base
+  = f.button :submit, :class => 'btn'

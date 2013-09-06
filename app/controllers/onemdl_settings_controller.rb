@@ -4,6 +4,6 @@ class OnemdlSettingsController < ApplicationController
   end
 
   def edit
-    @onemdlsettings = OnemdlSettings.find(1)    
+    @onemdlsetting = OnemdlSettings.find(1)    
   end
 end
