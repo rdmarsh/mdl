@@ -24,13 +24,10 @@ en:
   about: about
   active: active
   add: add
-  
   contact: contact
   csv: csv
-
   description: description
   delete: delete
-  
   edit: edit
   editrecord: edit record
   environment: environment
@@ -42,6 +39,7 @@ en:
   help: help
   home: home
   history: history
+  hours: hours
   
   index: index
   id: id

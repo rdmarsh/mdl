@@ -1,19 +1,27 @@
+-content_for(:empty_msg, "Currently no #{t('organisations').downcase}")
+
 =render 'head'
 
-%table.table.table-hover.table-condensed
-  %tbody
-    %thead
-      %th= sortable "reference"
-      %th= sortable "name"
-      %th= sortable "service_level"
-      %th= sortable "support_level"
-      %th= sortable "relationship"
-      %th= sortable "active"
-    - @organisations.each do |o|
-      %tr{:class => tr_attributes(o.active)}
-        %td= link_to o.organisation_reference, o
-        %td= o.name
-        %td= o.service_reference
-        %td= o.support_level_id
-        %td= o.relationship
-        %td= o.active
+- if @organisations.empty?
+  %p= yield(:empty_msg)  
+- else
+  %table.table.table-hover.table-condensed
+    %tbody
+      %thead
+        %th= sortable "id"
+        %th= sortable "reference"
+        %th= sortable "name"
+        %th= sortable "service_level"
+        %th= sortable "support_level"
+        %th= sortable "relationship"
+        %th= sortable "active"
+      - @organisations.each do |r|
+        %tr{:class => tr_attributes(r.active)}
+          %td= r.id
+          %td= link_to r.reference, r
+          %td= r.name
+          %td= r.service_reference
+          %td= r.support_level_id
+          %td= r.relationship
+          %td= r.active
+  

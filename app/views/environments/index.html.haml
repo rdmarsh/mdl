@@ -1,11 +1,18 @@
+-content_for(:empty_msg, "Currently no #{t('environments').downcase}")
+
 =render 'head'
 
-%table.table.table-hover.table-condensed
-  %tbody
-    %thead
-      %th= t('environment').humanize
-      %th= t('description').humanize
-    - @environments.each do |e|
-      %tr
-        %td= link_to e.environment, e
-        %td= e.description
+- if @environments.empty?
+  %p= yield(:empty_msg)  
+- else
+  %table.table.table-hover.table-condensed
+    %tbody
+      %thead
+        %th= sortable "id"
+        %th= sortable "environment"
+        %th= sortable "description"
+      - @environments.each do |r|
+        %tr
+          %td= r.id
+          %td= link_to r.environment, r
+          %td= r.description

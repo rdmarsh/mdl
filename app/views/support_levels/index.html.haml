@@ -8,15 +8,17 @@
   %table.table.table-hover.table-condensed
     %tbody
       %thead
-        %th= t('name').humanize
-        %th= t('hours').humanize
-        %th= t('days').humanize
-        %th= t('exclusions').humanize
-        %th= t('description').humanize
-      - @supportlevels.each do |sl|
+        %th= sortable "id"
+        %th= sortable "name"
+        %th= sortable "hours"
+        %th= sortable "days"
+        %th= sortable "exclusions"
+        %th= sortable "description"
+      - @supportlevels.each do |r|
         %tr
-          %td= link_to sl.name, sl
-          %td= sl.hours
-          %td= sl.days
-          %td= sl.exclusions
-          %td= sl.description
+          %td= r.id
+          %td= link_to r.name, r
+          %td= r.hours
+          %td= r.days
+          %td= r.exclusions
+          %td= r.description

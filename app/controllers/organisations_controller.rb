@@ -1,8 +1,4 @@
 class OrganisationsController < ApplicationController
-  respond_to :html, :xml, :json
-
-
-  helper_method :sort_column, :sort_direction
   
   def index
     @organisations = Organisation.order(sort_column + " " + sort_direction)
@@ -52,5 +48,10 @@ class OrganisationsController < ApplicationController
   def organisation_params
     params.require(:organisation).permit!
   end
+  
+  def sort_column
+    Organisation.column_names.include?(params[:sort]) ? params[:sort] : "id"
+  end
+  
   
 end

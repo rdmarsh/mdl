@@ -1,9 +1,5 @@
 class SupportLevelsController < ApplicationController
   
-  respond_to :html, :xml, :json
-  
-  helper_method :sort_column, :sort_direction
-  
   def index
     @supportlevels = SupportLevel.order("name")
     respond_with(@supportlevels)
@@ -54,5 +50,10 @@ class SupportLevelsController < ApplicationController
   def supportlevel_params
     params.require(:support_level).permit!
   end
+  
+  def sort_column
+    SupportLevel.column_names.include?(params[:sort]) ? params[:sort] : "id"
+  end
+  
   
 end
