@@ -1,17 +1,22 @@
+-content_for(:empty_msg, "Currently no #{t('support_levels').downcase}")
+
 =render 'head'
 
-%table.table.table-hover.table-condensed
-  %tbody
-    %thead
-      %th= t('name').humanize
-      %th= t('hours').humanize
-      %th= t('days').humanize
-      %th= t('exclusions').humanize
-      %th= t('description').humanize
-    - @supportlevels.each do |sl|
-      %tr
-        %td= link_to sl.name, sl
-        %td= sl.hours
-        %td= sl.days
-        %td= sl.exclusions
-        %td= sl.description
+- if @supportlevels.empty?
+  %p= yield(:empty_msg)  
+- else
+  %table.table.table-hover.table-condensed
+    %tbody
+      %thead
+        %th= t('name').humanize
+        %th= t('hours').humanize
+        %th= t('days').humanize
+        %th= t('exclusions').humanize
+        %th= t('description').humanize
+      - @supportlevels.each do |sl|
+        %tr
+          %td= link_to sl.name, sl
+          %td= sl.hours
+          %td= sl.days
+          %td= sl.exclusions
+          %td= sl.description
