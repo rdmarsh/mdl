@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130908050804) do
+ActiveRecord::Schema.define(version: 20130908113718) do
 
   create_table "environments", force: true do |t|
     t.string   "name"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20130908050804) do
     t.string   "company_country"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "time_zone"
   end
 
   add_index "onemdl_settings", ["company_name"], name: "index_onemdl_settings_on_company_name"

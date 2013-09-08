@@ -44,6 +44,7 @@ module ApplicationHelper
     end
   end
   
+  # flash notice
   def flash_class(level)
     case level
     when :notice then "alert alert-info"

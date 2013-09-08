@@ -13,6 +13,10 @@ There is a demo available at http://onemdl.herokuapp.com/
 
 ## Installation
 
+Set your timezone in /config/application.rb
+
+    config.time_zone = 'Central Time (US & Canada)'
+
 ### Installing Ruby and Rails
 
 ### System dependencies
