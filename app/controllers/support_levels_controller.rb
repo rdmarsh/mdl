@@ -1,7 +1,10 @@
 class SupportLevelsController < ApplicationController
   
+  respond_to :html, :xml, :json
+  helper_method :sort_column, :sort_direction
+  
   def index
-    @supportlevels = SupportLevel.order("name")
+    @supportlevels = SupportLevel.order(sort_column + " " + sort_direction)
     respond_with(@supportlevels)
   end
 
@@ -41,19 +44,20 @@ class SupportLevelsController < ApplicationController
   def destroy
     @supportlevel = SupportLevel.find(params[:id])
     @supportlevel.destroy
-    flash[:notice] = "Successfully destroyed support level"
+    flash[:notice] = "Successfully deleted support level"
     respond_with(@supportlevel)
   end
 
   private
-
-  def supportlevel_params
-    params.require(:support_level).permit!
-  end
   
+  # for sorting columns
   def sort_column
     SupportLevel.column_names.include?(params[:sort]) ? params[:sort] : "id"
   end
-  
+
+  # for allowing editing on fields
+  def supportlevel_params
+    params.require(:support_level).permit!
+  end
   
 end
