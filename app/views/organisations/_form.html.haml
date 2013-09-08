@@ -3,7 +3,7 @@
   = f.input :reference, hint: "Organisation reference"
   = f.input :name, hint: "Organisation name"
   = f.input :service_reference, hint: "Service level"
-  = f.association :support_level, include_blank: false, hint: "Support level", prompt: "Choose a support level"
+  = f.association :support_level, include_blank: false, hint: "Support level", prompt: "Choose a support level", collection: SupportLevel.order('name ASC')
   = f.input :relationship
   = f.input :active, hint: "Current organisation?", inline_label: 'Yes, remember me'
   = f.error :base
