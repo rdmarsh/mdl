@@ -3,14 +3,16 @@ class OnemdlSettingsController < ApplicationController
   
   def index
     @onemdlsettings = OnemdlSetting.find(1)
+    respond_with(@onemdlsettings)
   end
 
   def edit
-    @onemdlsetting = OnemdlSetting.(params[:id])
+    @onemdlsetting = OnemdlSetting.find(1)
+    respond_with(@onemdlsetting)
   end
   
   def update
-    @onemdlsetting = OnemdlSetting.(params[:id])
+    @onemdlsetting = OnemdlSetting.find(1)
     
     if @onemdlsetting.update_attributes(onemdlsetting_params) 
       flash[:notice] = "Successfully updated OnMDL Settings"

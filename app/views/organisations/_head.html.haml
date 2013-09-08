@@ -2,6 +2,8 @@
 
 - content_for(:list_button_path, organisations_path)
 - content_for(:new_button_path, new_organisation_path)
+/ - content_for(:show_button_path, show_organisation_path(@organisation))
+/ - content_for(:edit_button_path, edit_organisation_path(@organisation))
 
 = render 'layouts/heading'
 = render 'layouts/tabs'

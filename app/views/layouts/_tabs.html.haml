@@ -4,7 +4,7 @@
       %ul.nav.nav-tabs
         = tab_link 'index', yield(:list_button_path), 'icon-th-list', nil
         = tab_link 'new', yield(:new_button_path), 'icon-plus', nil
-        - if current_page?("aeou todo work this bit out")
+        - if params[:action] == "show" or params[:action] == "edit"
           = tab_link 'show', yield(:show_button_path), 'icon-info-sign', nil
           = tab_link 'edit', yield(:edit_button_path), 'icon-pencil', nil
         - else
