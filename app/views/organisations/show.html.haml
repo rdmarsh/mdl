@@ -1,13 +1,11 @@
 = render 'head'
 
-= simple_form_for @organisation, :html => { :class => 'form-horizontal' } do |f|
-  = f.error_notification
-  = f.input :reference, hint: "Organisation unique reference", disabled: true
-  = f.input :name, hint: "Organisation full name", disabled: true
-  = f.input :service_reference, hint: "Supported days of the week", disabled: true
-  = f.input :support_level_id, hint: "Support type", disabled: true
-  = f.input :relationship, hint: "Description of the support", disabled: true
-  = f.input :active, hint: "Description of the support", disabled: true
+= show_for @organisation do |f|
+  = f.attribute :reference
+  = f.attribute :name
+  = f.attribute :service_reference
+  = f.attribute :support_level_id
+  = f.attribute :relationship
+  = f.attribute :active
   = f.attribute :updated_at
-  = button_to 'Change this entry', :href => edit_organisation_path(@organisation), :class => "btn btn-primary"
-
+  = link_to "Change", edit_organisation_path(@organisation), :class => "btn btn-primary"
