@@ -20,12 +20,11 @@ $.rails.showConfirmDialog = (link) ->
              <h3>#{message}</h3>
            </div>
            <div class="modal-body">
-             <p>Are you sure you want to delete?</p>
              <p class="small">This cannot be undone.</p>
            </div>
            <div class="modal-footer">
              <a data-dismiss="modal" class="btn">Cancel</a>
-             <a data-dismiss="modal" class="btn btn-danger confirm"><i class="icon-trash icon-white"></i> Delete</a>
+             <a data-dismiss="modal" class="btn btn-danger confirm">Delete</a>
            </div>
          </div>
          """

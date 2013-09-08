@@ -48,7 +48,6 @@ class EnvironmentsController < ApplicationController
     respond_with(@environment)
   end
   
-  
   private
   
   # for sorting columns

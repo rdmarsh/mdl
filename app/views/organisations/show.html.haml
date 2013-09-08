@@ -8,5 +8,6 @@
   = f.input :support_level_id, hint: "Any support exclusions", disabled: true
   = f.input :relationship, hint: "Description of the support", disabled: true
   = f.input :active, hint: "Description of the support", disabled: true
+  = f.attribute :updated_at
   = button_to 'Change this entry', :href => edit_organisation_path(@organisation), :class => "btn btn-primary"
 

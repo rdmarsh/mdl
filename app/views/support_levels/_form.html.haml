@@ -6,4 +6,12 @@
   = f.input :exclusions, hint: "Any support exclusions"
   = f.input :description, hint: "Description of the support"
   = f.error :base
-  = f.button :submit, :class => 'btn'
+  = f.button :submit, :class => 'btn btn-primary'
+  .btn-group.task_controller
+    %a{:class => 'btn btn-danger dropdown-toggle', 'data-toggle' => 'dropdown', :href => '#'}
+      Delete
+      %span{:class => 'caret'}
+    %ul.dropdown-menu
+      %li= link_to "Delete '#{@supportlevel.name}'?", @supportlevel, :confirm => 'Are you sure?', :method => :delete
+  or
+  = link_to "Cancel", :back

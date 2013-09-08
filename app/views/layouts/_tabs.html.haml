@@ -4,8 +4,12 @@
       %ul.nav.nav-tabs
         = tab_link 'index', yield(:list_button_path), 'icon-th-list', nil
         = tab_link 'new', yield(:new_button_path), 'icon-plus', nil
-        = tab_link 'show', yield(:show_button_path), 'icon-info-sign', "disabled"
-        = tab_link 'edit', yield(:edit_button_path), 'icon-pencil', "disabled"
+        - if current_page?("aeou todo work this bit out")
+          = tab_link 'show', yield(:show_button_path), 'icon-info-sign', nil
+          = tab_link 'edit', yield(:edit_button_path), 'icon-pencil', nil
+        - else
+          = tab_link 'show', yield(:show_button_path), 'icon-info-sign', "disabled"
+          = tab_link 'edit', yield(:edit_button_path), 'icon-pencil', "disabled"
         = tab_link 'history', yield(:history_button_path), 'icon-book', nil
         %li.dropdown.pull-right
           %a.dropdown-toggle{:'data-toggle' => "dropdown", :title => "Export", :href => "#" }

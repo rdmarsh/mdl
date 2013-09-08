@@ -1,14 +1,7 @@
-- content_for(:title, @environment.environment)
+= render 'head'
 
-.content
-  = render 'layouts/recordnav', :info => @environment
-
-%h1= yield(:title)
--#%h2= @environment.supportlevel
-
-.content
-  = @environment.description
-  
-.content
-  = render 'layouts/recordcrud', :info => @environment
-  
+= show_for @environment do |f|
+  = f.attribute :name
+  = f.attribute :description
+  = f.attribute :updated_at
+  = link_to "Change", edit_environment_path(@environment), :class => "btn btn-primary"

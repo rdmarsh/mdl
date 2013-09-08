@@ -9,10 +9,10 @@
     %tbody
       %thead
         %th= sortable "id"
-        %th= sortable "environment"
+        %th= sortable "name"
         %th= sortable "description"
       - @environments.each do |r|
         %tr
           %td= r.id
-          %td= link_to r.environment, r
+          %td= link_to r.name, r
           %td= r.description

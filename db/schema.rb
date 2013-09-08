@@ -11,16 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130907011125) do
+ActiveRecord::Schema.define(version: 20130908050804) do
 
   create_table "environments", force: true do |t|
-    t.string   "environment"
+    t.string   "name"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "environments", ["environment"], name: "index_environments_on_environment", unique: true
+  add_index "environments", ["name"], name: "index_environments_on_name", unique: true
 
   create_table "onemdl_settings", force: true do |t|
     t.string   "company_name"
