@@ -3,10 +3,10 @@ class Organisation < ActiveRecord::Base
   
   before_save { self.name = name.downcase }
   
-  validates_format_of :reference, :with => /\A[a-zA-Z\d]+\z/, :message => "Can only contain letters and numbers."
+  validates_format_of :name, :with => /\A[a-zA-Z\d]+\z/, :message => "Can only contain letters and numbers."
   
-  validates :reference, presence: true
   validates :name, presence: true
+  validates :full_name, presence: true
   validates :support_level_id, presence: true
   
 end

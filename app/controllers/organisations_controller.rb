@@ -52,7 +52,7 @@ class OrganisationsController < ApplicationController
   end
   
   def sort_column
-    Organisation.column_names.include?(params[:sort]) ? params[:sort] : "reference"
+    Organisation.column_names.include?(params[:sort]) ? params[:sort] : "name"
   end
   
   

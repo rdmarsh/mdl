@@ -9,8 +9,8 @@
     %tbody
       %thead
         %th= sortable "id"
-        %th= sortable "reference"
         %th= sortable "name"
+        %th= sortable "full_name"
         %th= sortable "service_level"
         %th= sortable "support_level"
         %th= sortable "relationship"
@@ -18,8 +18,8 @@
       - @organisations.each do |r|
         %tr{:class => tr_attributes(r.active)}
           %td= r.id
-          %td= link_to r.reference, r
-          %td= r.name
+          %td= link_to r.name, r
+          %td= r.full_name
           %td= r.service_reference
           %td= r.support_level_id
           %td= r.relationship

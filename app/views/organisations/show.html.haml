@@ -1,8 +1,8 @@
 = render 'head'
 
 = show_for @organisation do |f|
-  = f.attribute :reference
   = f.attribute :name
+  = f.attribute :full_name
   = f.attribute :service_reference
   = f.attribute :support_level_id
   = f.attribute :relationship

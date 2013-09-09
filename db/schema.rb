@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130908113718) do
+ActiveRecord::Schema.define(version: 20130909082616) do
 
   create_table "environments", force: true do |t|
     t.string   "name"
@@ -41,8 +41,8 @@ ActiveRecord::Schema.define(version: 20130908113718) do
   add_index "onemdl_settings", ["company_name"], name: "index_onemdl_settings_on_company_name"
 
   create_table "organisations", force: true do |t|
-    t.string   "reference"
     t.string   "name"
+    t.string   "full_name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "service_reference"
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20130908113718) do
     t.boolean  "active"
   end
 
-  add_index "organisations", ["reference"], name: "index_organisations_on_reference", unique: true
+  add_index "organisations", ["name"], name: "index_organisations_on_name", unique: true
 
   create_table "support_levels", force: true do |t|
     t.string   "name"

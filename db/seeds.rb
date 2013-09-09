@@ -20,7 +20,7 @@ Environment.create(name: "Pre-production", description: "Lorem ipsum dolor sit a
 Environment.create(name: "Disaster recovery", description: "Lorem")
 Environment.create(name: "Unknown", description: "The environment is currently unknown.")
 
-Organisation.create(organisation_reference: "Unknown", name: "Unknown", service_reference: "Unknown", support_level_id: 0, relationship: "Unknown", active: true)
-Organisation.create(organisation_reference: "Dave", name: "Dave", service_reference: "Unknown", support_level_id: 1, relationship: "Unknown", active: true)
+Organisation.create(name: "Unknown", full_name: "Unknown", service_reference: "Unknown", support_level_id: 0, relationship: "Unknown", active: true)
+Organisation.create(name: "Dave", full_name: "Dave", service_reference: "Unknown", support_level_id: 1, relationship: "Unknown", active: true)
 
 OnemdlSettings.create(company_name: "omdl")

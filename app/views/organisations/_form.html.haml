@@ -1,7 +1,7 @@
 = simple_form_for @organisation, :html => { :class => 'form-horizontal' } do |f|
   = f.error_notification
-  = f.input :reference, hint: "Organisation reference"
   = f.input :name, hint: "Organisation name"
+  = f.input :full_name, hint: "Organisation full name"
   = f.input :service_reference, hint: "Service level"
   = f.association :support_level, include_blank: false, hint: "Support level", prompt: "Choose a support level", collection: SupportLevel.order('name ASC')
   = f.input :relationship
