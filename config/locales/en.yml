@@ -48,7 +48,7 @@ en:
   name: name
   news: news
   new: new
-  full_name: full name
+  full_name: full name 
   
   organisations: organisations
   organisation: organisation  
@@ -82,3 +82,7 @@ en:
   support_levels: support levels
   support_level: support level
 
+# timeformat for iso8601
+  time:
+    formats:
+      iso8601: "%Y-%m-%d %H:%M:%S"

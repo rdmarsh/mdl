@@ -8,5 +8,11 @@
   = f.input :active, hint: "Current organisation?", inline_label: 'Yes, remember me'
   = f.error :base
   = f.button :submit, :class => 'btn btn-primary'
+  .btn-group.task_controller
+    %a{:class => 'btn btn-danger dropdown-toggle', 'data-toggle' => 'dropdown', :href => '#'}
+      Delete
+      %span{:class => 'caret'}
+    %ul.dropdown-menu
+      %li= link_to "Delete '#{@organisation.name}'?", @organisation, :confirm => 'Are you sure?', :method => :delete
   or
   = link_to "Cancel", :back

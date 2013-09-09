@@ -6,5 +6,5 @@
   = f.attribute :days
   = f.attribute :exclusions
   = f.attribute :description
-  = f.attribute :updated_at
+  = f.attribute :updated_at, :format => :iso8601
   = link_to "Change", edit_support_level_path(@supportlevel), :class => "btn btn-primary"

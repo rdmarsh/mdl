@@ -4,8 +4,8 @@
   = f.attribute :name
   = f.attribute :full_name
   = f.attribute :service_reference
-  = f.attribute :support_level_id
+  = f.attribute :name, :in => :support_level
   = f.attribute :relationship
-  = f.attribute :active
+  = f.attribute :active?
   = f.attribute :updated_at
   = link_to "Change", edit_organisation_path(@organisation), :class => "btn btn-primary"
