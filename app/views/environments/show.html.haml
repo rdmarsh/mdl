@@ -5,4 +5,5 @@
 = show_for @environment do |f|
   = f.attribute :name
   = f.attribute :description
-  = f.attribute :updated_at
+  = f.attribute :created_at, :format => :iso8601
+  = f.attribute :updated_at, :format => :iso8601
