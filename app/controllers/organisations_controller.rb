@@ -4,7 +4,6 @@ class OrganisationsController < ApplicationController
   
   def index
     @organisations = Organisation.order(sort_column + " " + sort_direction)
-    @supportlevel = SupportLevel.find(@organisation.support_level_id);
   end
 
   def show
