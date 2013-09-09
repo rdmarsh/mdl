@@ -1,7 +1,8 @@
+- content_for(:edit_button_path, edit_environment_path(@environment))
+
 = render 'head'
 
 = show_for @environment do |f|
   = f.attribute :name
   = f.attribute :description
   = f.attribute :updated_at
-  = link_to "Change", edit_environment_path(@environment), :class => "btn btn-primary"
