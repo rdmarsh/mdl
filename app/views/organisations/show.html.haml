@@ -1,3 +1,5 @@
+- content_for(:edit_button_path, edit_organisation_path(@organisation))
+
 = render 'head'
 
 = show_for @organisation do |f|
@@ -14,7 +16,7 @@
   = f.attribute :address_2
   = f.attribute :city
   = f.attribute :postcode
+  = f.attribute :state
   = f.attribute :country
   = f.attribute :created_at, :format => :iso8601
   = f.attribute :updated_at, :format => :iso8601
-  = link_to "Change", edit_organisation_path(@organisation), :class => "btn btn-primary"

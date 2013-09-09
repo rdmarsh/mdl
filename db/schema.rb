@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130909111451) do
+ActiveRecord::Schema.define(version: 20130909231213) do
 
   create_table "environments", force: true do |t|
     t.string   "name"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20130909111451) do
     t.string   "city"
     t.string   "postcode"
     t.string   "country"
+    t.string   "state"
   end
 
   add_index "organisations", ["name"], name: "index_organisations_on_name", unique: true
