@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130909082616) do
+ActiveRecord::Schema.define(version: 20130909111451) do
 
   create_table "environments", force: true do |t|
     t.string   "name"
@@ -49,6 +49,14 @@ ActiveRecord::Schema.define(version: 20130909082616) do
     t.integer  "support_level_id",  limit: 255
     t.string   "relationship"
     t.boolean  "active"
+    t.string   "phone"
+    t.string   "fax"
+    t.string   "email"
+    t.string   "address_1"
+    t.string   "address_2"
+    t.string   "city"
+    t.string   "postcode"
+    t.string   "country"
   end
 
   add_index "organisations", ["name"], name: "index_organisations_on_name", unique: true

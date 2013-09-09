@@ -6,6 +6,14 @@
   = f.association :support_level, include_blank: false, hint: "Support level", prompt: "Choose a support level", collection: SupportLevel.order('name ASC')
   = f.input :relationship
   = f.input :active, hint: "Current organisation?", inline_label: 'Yes, remember me'
+  = f.input :phone
+  = f.input :fax
+  = f.input :email, placeholder: 'user@domain.com'
+  = f.input :address_1
+  = f.input :address_2
+  = f.input :city
+  = f.input :postcode
+  = f.input :country, priority: [ "Australia", "India", "New Zealand", "United Kingdom", "United States"], include_blank: true
   = f.error :base
   = f.button :submit, :class => 'btn btn-primary'
   .btn-group.task_controller

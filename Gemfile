@@ -22,7 +22,7 @@ gem 'simple_form'
 gem "show_for", "~> 0.2.4"
 gem 'inherited_resources'
 # gem "rails-settings-cached", "0.3.1"
-
+gem 'country_select'
 
 
 group :development, :test do
