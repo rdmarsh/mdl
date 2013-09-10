@@ -1,6 +1,7 @@
 namespace :db do
   desc "Fill database with sample data"
   task populate: :environment do
+    Faker::Config.locale = "en-au"
     
     @servicelevels = ["Managed", "Colocation", "Mixed", "Unknown"]
     # @supportlevels = ["Business Hours", "After Hours", "Unknown", "None"]
@@ -19,6 +20,7 @@ namespace :db do
       fax = Faker::PhoneNumber.phone_number
       email = Faker::Internet.email
       city = Faker::Address.city
+      postcode = Faker::Address.postcode
       country = Faker::Address.country
       state = Faker::Address.state
       
