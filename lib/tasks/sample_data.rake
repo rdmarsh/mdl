@@ -15,6 +15,13 @@ namespace :db do
       support_ref = @supportlevels.sample
       relationship = @relationships.sample
       active = [true, false].sample
+      phone = Faker::PhoneNumber.phone_number
+      fax = Faker::PhoneNumber.phone_number
+      email = Faker::Internet.email
+      city = Faker::Address.city
+      country = Faker::Address.country
+      state = Faker::Address.state
+      
       
       Organisation.create!(
         name: name,
@@ -22,7 +29,18 @@ namespace :db do
         service_reference: service_ref,
         support_level_id: support_ref,
         relationship: relationship,
-        active: active)
+        active: active,
+        phone: phone,
+        fax: fax,
+        email: email,
+        # address_1: address_1,
+        # address_2: address_2,
+        city: city,
+        postcode: postcode,
+        country: country,
+        state: state
+        
+        )
         
     end
   end

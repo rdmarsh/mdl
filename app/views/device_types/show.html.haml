@@ -1,0 +1,9 @@
+- content_for(:edit_button_path, edit_device_type_path(@devicetype))
+
+= render 'head'
+
+= show_for @devicetype do |f|
+  = f.attribute :name
+  = f.attribute :description
+  = f.attribute :created_at, :format => :iso8601
+  = f.attribute :updated_at, :format => :iso8601
