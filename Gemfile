@@ -8,6 +8,7 @@ gem 'rb-fsevent'
 
 # HTML Abstraction Markup Language
 gem 'haml'
+gem 'haml-rails'
 
 gem 'bootstrap-sass', '~> 2.3.2.1'
 gem 'faker', '1.1.2'
@@ -35,7 +36,6 @@ group :development, :test do
   gem 'spork-rails', github: 'sporkrb/spork-rails'
   gem 'guard-spork', '1.5.0'
   gem 'childprocess', '0.3.9'
-  gem 'haml-rails'
 end
 
 group :test do
