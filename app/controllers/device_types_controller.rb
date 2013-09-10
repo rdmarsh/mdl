@@ -21,7 +21,9 @@ class DeviceTypesController < ApplicationController
     @devicetype = DeviceType.new(device_type_params)
     
     if @devicetype.save
-      flash[:notice] = "New device type created!"
+      flash[:notice] = "New device type '" + @devicetype.name + "' created"
+    else
+      flash[:error] = "Could not create device type"
     end
     respond_with(@devicetype)
   end
@@ -35,7 +37,7 @@ class DeviceTypesController < ApplicationController
     @devicetype = DeviceType.find(params[:id])
     
     if @devicetype.update_attributes(device_type_params)
-      flash[:notice] = "Successfully updated device type"
+      flash[:notice] = "Successfully updated device type '" + @devicetype.name + "'"
     else
       render 'edit'
     end
@@ -44,8 +46,11 @@ class DeviceTypesController < ApplicationController
   
   def destroy
     @devicetype = DeviceType.find(params[:id])
-    @devicetype.destroy
-    flash[:notice] = "Successfully deleted device type"
+    if @devicetype.destroy
+      flash[:notice] = "Successfully deleted device type '" + @devicetype.name + "'"
+    else
+      flash[:error] = "Could not delete device type '" + @devicetype.name + "'"
+    end
     respond_with(@devicetype)
   end
   
