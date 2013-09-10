@@ -1,5 +1,4 @@
 class EnvironmentsController < ApplicationController
-
   respond_to :html, :xml, :json
   helper_method :sort_column, :sort_direction
   
@@ -19,7 +18,7 @@ class EnvironmentsController < ApplicationController
   end
   
   def create
-    @environment = Environment.new(environment_params) 
+    @environment = Environment.new(environment_params)
     
     if @environment.save
       flash[:notice] = "New environment created!"
@@ -35,8 +34,10 @@ class EnvironmentsController < ApplicationController
   def update
     @environment = Environment.find(params[:id])
     
-    if @environment.update_attributes(environment_params) 
+    if @environment.update_attributes(environment_params)
       flash[:notice] = "Successfully updated environment"
+    else
+      render 'edit'
     end
     respond_with(@environment)
   end
@@ -54,10 +55,9 @@ class EnvironmentsController < ApplicationController
   def sort_column
     Environment.column_names.include?(params[:sort]) ? params[:sort] : "id"
   end
-
+  
   # for allowing editing on fields
   def environment_params
     params.require(:environment).permit!
   end
-  
 end

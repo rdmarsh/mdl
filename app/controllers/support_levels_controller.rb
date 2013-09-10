@@ -1,5 +1,4 @@
 class SupportLevelsController < ApplicationController
-  
   respond_to :html, :xml, :json
   helper_method :sort_column, :sort_direction
   
@@ -7,7 +6,7 @@ class SupportLevelsController < ApplicationController
     @supportlevels = SupportLevel.order(sort_column + " " + sort_direction)
     respond_with(@supportlevels)
   end
-
+  
   def show
     @supportlevel = SupportLevel.find(params[:id])
     respond_with(@supportlevel)
@@ -19,7 +18,7 @@ class SupportLevelsController < ApplicationController
   end
   
   def create
-    @supportlevel = SupportLevel.new(supportlevel_params) 
+    @supportlevel = SupportLevel.new(supportlevel_params)
     
     if @supportlevel.save
       flash[:notice] = "New support level created!"
@@ -35,8 +34,10 @@ class SupportLevelsController < ApplicationController
   def update
     @supportlevel = SupportLevel.find(params[:id])
     
-    if @supportlevel.update_attributes(supportlevel_params) 
+    if @supportlevel.update_attributes(supportlevel_params)
       flash[:notice] = "Successfully updated support level"
+    else
+      render 'edit'
     end
     respond_with(@supportlevel)
   end
@@ -47,17 +48,16 @@ class SupportLevelsController < ApplicationController
     flash[:notice] = "Successfully deleted support level"
     respond_with(@supportlevel)
   end
-
+  
   private
   
   # for sorting columns
   def sort_column
     SupportLevel.column_names.include?(params[:sort]) ? params[:sort] : "id"
   end
-
+  
   # for allowing editing on fields
   def supportlevel_params
     params.require(:support_level).permit!
   end
-  
 end

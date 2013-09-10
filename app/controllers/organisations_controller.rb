@@ -4,56 +4,60 @@ class OrganisationsController < ApplicationController
   
   def index
     @organisations = Organisation.order(sort_column + " " + sort_direction)
+    respond_with(@organisations)
   end
-
+  
   def show
     @organisation = Organisation.find(params[:id])
+    respond_with(@organisations)
   end
-
+  
   def new
     @organisation = Organisation.new
+    respond_with(@organisations)
   end
-
+  
   def create
     @organisation = Organisation.new(organisation_params)
     
     if @organisation.save
-      redirect_to organisations_url, notice: "New organisation created"
-    else
-      render "new"
+      flash[:notice] = "New organisation created!"
     end
+    respond_with(@organisation)
   end
   
   def edit
-    
     @organisation = Organisation.find(params[:id])
+    respond_with(@organisation)
   end
   
   def update
     @organisation = Organisation.find(params[:id])
     
     if @organisation.update_attributes(organisation_params)
-      redirect_to organisations_url, notice: "Successfully updated organisation"
+      flash[:notice] = "Successfully updated organisation"
     else
       render 'edit'
     end
+    respond_with(@organisation)
   end
   
   def destroy
     @organisation = Organisation.find(params[:id])
     @organisation.destroy
-    redirect_to organisations_url, notice: "Successfully destroyed organisation"
+    flash[:notice] = "Successfully deleted organisation"
+    respond_with(@organisation)
   end
   
   private
-
-  def organisation_params
-    params.require(:organisation).permit!
-  end
   
+  # for sorting columns
   def sort_column
     Organisation.column_names.include?(params[:sort]) ? params[:sort] : "name"
   end
   
-  
+  # for allowing editing on fields
+  def organisation_params
+    params.require(:organisation).permit!
+  end
 end

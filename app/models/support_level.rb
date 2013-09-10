@@ -3,7 +3,7 @@ class SupportLevel < ActiveRecord::Base
   
   before_save { self.name = name.humanize }
   
-  validates_presence_of :name
-  validates_presence_of :hours
-  validates_presence_of :days
+  validates :name, presence: true
+  validates :hours, presence: true
+  validates :days, presence: true
 end
