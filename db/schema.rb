@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130909231213) do
+ActiveRecord::Schema.define(version: 20130910085040) do
+
+  create_table "device_types", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "device_types", ["name"], name: "index_device_types_on_name", unique: true
 
   create_table "environments", force: true do |t|
     t.string   "name"

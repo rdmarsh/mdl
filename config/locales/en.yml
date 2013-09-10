@@ -24,10 +24,14 @@ en:
   about: about
   active: active
   add: add
+  
   contact: contact
   csv: csv
+  
   description: description
   delete: delete
+  device_types: device types
+  
   edit: edit
   editrecord: edit record
   environment: environment

@@ -5,6 +5,7 @@ Onemdl::Application.routes.draw do
   end    
   resources :support_levels
   resources :environments
+  resources :device_types
 
   root 'staticpages#home'
 
