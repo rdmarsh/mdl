@@ -84,6 +84,8 @@ en:
   hours: hours
   level: level
   new_support_level: new support level
+  
+  website: website
 
 # timeformat for iso8601
   time:

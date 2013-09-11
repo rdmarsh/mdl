@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130911220500) do
+ActiveRecord::Schema.define(version: 20130911234646) do
 
   create_table "device_models", force: true do |t|
     t.string   "name"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20130911220500) do
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "website"
   end
 
   add_index "manufacturers", ["name"], name: "index_manufacturers_on_name", unique: true
