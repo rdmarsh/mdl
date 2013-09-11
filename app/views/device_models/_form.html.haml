@@ -2,6 +2,7 @@
   = f.error_notification
   = f.input :name, hint: "Device model"
   = f.association :device_type
+  = f.association :manufacturer
   = f.input :description, hint: "Description of the device model"
   = f.error :base
   = f.button :submit, :class => 'btn btn-primary'

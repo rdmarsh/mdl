@@ -11,10 +11,12 @@
         %th= sortable "id"
         %th= sortable "name"
         %th= sortable "type"
+        %th= sortable "manufacturer"
         %th= sortable "description"
       - @device_models.each do |r|
         %tr
           %td= r.id
           %td= link_to r.name, r
           %td= r.device_type.name
+          %td= r.manufacturer.name
           %td= r.description
