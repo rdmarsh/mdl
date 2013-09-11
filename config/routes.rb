@@ -1,16 +1,25 @@
 Onemdl::Application.routes.draw do
   
+  get "manufacturer/index"
+  get "manufacturer/show"
+  get "manufacturer/new"
+  get "manufacturer/edit"
   resources :organisations do
     resources :support_levels
   end
   
-  resources :device_types
+  resources :support_levels
+  
+  resources :manufacturer do
+    resources :device_models
+  end
     
   resources :device_models do
     resources :device_types
   end
   
-  resources :support_levels
+  resources :device_types
+  
   resources :environments
 
   root 'staticpages#home'

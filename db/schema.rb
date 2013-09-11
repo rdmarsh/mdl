@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130911135739) do
+ActiveRecord::Schema.define(version: 20130911220500) do
 
   create_table "device_models", force: true do |t|
     t.string   "name"
@@ -41,6 +41,15 @@ ActiveRecord::Schema.define(version: 20130911135739) do
   end
 
   add_index "environments", ["name"], name: "index_environments_on_name", unique: true
+
+  create_table "manufacturers", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "manufacturers", ["name"], name: "index_manufacturers_on_name", unique: true
 
   create_table "onemdl_settings", force: true do |t|
     t.string   "company_name"
