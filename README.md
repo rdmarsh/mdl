@@ -11,6 +11,10 @@ http://onemdl.com/
 
 There is a demo available at http://onemdl.herokuapp.com/
 
+## ohloh.net
+
+Onemdl is registered on ohloh.net at https://www.ohloh.net/p/onemdl
+
 ## Installation
 
 Set your timezone in /config/application.rb
