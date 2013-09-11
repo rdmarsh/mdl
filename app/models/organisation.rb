@@ -7,13 +7,13 @@ class Organisation < ActiveRecord::Base
   validates :full_name, presence: true
   validates :support_level_id, presence: true
   
-  before_save { self.name = name.downcase }
+  # before_save { self.name = name.downcase }
   
   before_destroy :protect_unknown
   
   private
   
   def protect_unknown
-    !name.eql?("Unknown")
+    !name.downcase.eql?("unknown")
   end
 end

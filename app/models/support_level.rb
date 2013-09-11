@@ -5,13 +5,13 @@ class SupportLevel < ActiveRecord::Base
   validates :hours, presence: true
   validates :days, presence: true
   
-  before_save { self.name = name.humanize }
+  # before_save { self.name = name.downcase }
   
   before_destroy :protect_unknown
   
   private
   
   def protect_unknown
-    !name.eql?("Unknown")
+    !name.downcase.eql?("unknown")
   end
 end

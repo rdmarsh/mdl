@@ -11,8 +11,8 @@
   = f.input :email, placeholder: 'user@domain.com'
   = f.input :address_1
   = f.input :address_2
-  = f.input :city
-  = f.input :postcode
+  = f.input :city, placeholder: 'city'
+  = f.input :postcode, placeholder: '9999'
   = f.input :state  
   = f.input :country, priority: [ "Australia", "India", "New Zealand", "United Kingdom", "United States"], include_blank: true
   = f.error :base
