@@ -21,9 +21,9 @@ class DeviceModelsController < ApplicationController
     @device_model = DeviceModel.new(device_model_params)
     
     if @device_model.save
-      flash[:notice] = "New device type '" + @device_model.name + "' created"
+      flash[:notice] = "New device model '" + @device_model.name + "' created"
     else
-      flash[:error] = "Could not create device type"
+      flash[:error] = "Could not create device model"
     end
     respond_with(@device_model)
   end
@@ -47,9 +47,9 @@ class DeviceModelsController < ApplicationController
   def destroy
     @device_model = DeviceModel.find(params[:id])
     if @device_model.destroy
-      flash[:notice] = "Successfully deleted device type '" + @device_model.name + "'"
+      flash[:notice] = "Successfully deleted device model '" + @device_model.name + "'"
     else
-      flash[:error] = "Could not delete device type '" + @device_model.name + "'"
+      flash[:error] = "Could not delete device model '" + @device_model.name + "'"
     end
     respond_with(@device_model)
   end

@@ -6,7 +6,7 @@ namespace :db do
     @servicelevels = ["Managed", "Colocation", "Mixed", "Unknown"]
     # @supportlevels = ["Business Hours", "After Hours", "Unknown", "None"]
     @supportlevels = ["1", "2", "3", "4"]
-    @relationships = ["Customer", "Partner", "Supplier", "Unknown"]
+    @relationships = ["Customer", "Partner", "Supplier", "Unknown", "Manufacturer", "Vendor"]
     
     5.times do |n|
       
