@@ -11,8 +11,8 @@ SupportLevel.create(name: "Business Hours", hours: "8am - 6pm", days: "Mon - Fri
 SupportLevel.create(name: "After Hours", hours: "24 hours", days: "7 days", exclusions: "None", description: "Supported 24hours, 7days. Public holidays included.")
 SupportLevel.create(name: "None", hours: "n/a", days: "n/a", exclusions: "n/a", description: "No support is provided. Any support will occur time and material fees, which needs written authorisation from a customers representative before being undertaken.")
 
-DeviceType.create(name: "Unknown", description: "The device is currently unknown.")
-DeviceType.create(name: "None", description: "The device is currently unknown.")
+DeviceType.create(name: "Unknown", description: "The device type is currently unknown.")
+DeviceType.create(name: "None", description: "There is no device type applicable.")
 DeviceType.create(name: "Blade chassis", description: "The device is currently unknown.")
 DeviceType.create(name: "Blade", description: "The device is currently unknown.")
 DeviceType.create(name: "Router", description: "The device is currently unknown.")
@@ -20,16 +20,17 @@ DeviceType.create(name: "Hub", description: "The device is currently unknown.")
 DeviceType.create(name: "Server", description: "The device is currently unknown.")
 
 DeviceModel.create(name: "Unknown", device_type_id: 1, manufacturer_id: 1, description: "The device is currently unknown.")
-DeviceModel.create(name: "None", device_type_id: 1, manufacturer_id: 1, description: "The device is currently unknown.")
+DeviceModel.create(name: "None", device_type_id: 1, manufacturer_id: 1, description: "There is no device model applicable.")
 
 Manufacturer.create(name: "Unknown", description: "The environment is currently unknown.")
 Manufacturer.create(name: "None", description: "There is no manufacturer applicable.")
 Manufacturer.create(name: "Dell", description: "Dell is a company that makes laptop and desktop computers and computer accessories. It is named after Michael Dell, the CEO and creator of the company. Dell makes computers for businesses and home users, and they also make computer monitors and Printers.")
 Manufacturer.create(name: "HP", description: "Hewlett Packard (HP) is a computer technology company founded in 1939 by Bill Hewlett and Dave Packard. They are best known for making computers and computer hardware such as inkjet printers, laser printers, all-in-one printers, scanners and digital cameras.")
-Manufacturer.create(name: "Apple", description: "Apple.")
-Manufacturer.create(name: "Microsoft", description: "Microsoft.")
-Manufacturer.create(name: "Lenovo", description: "Lenovo.")
-Manufacturer.create(name: "EMC", description: "EMC.")
+Manufacturer.create(name: "Apple", description: "Apple is a multinational company that makes computer hardware, computer software, and portable devices like mobile telephones and music players. Apple calls its computers Macintoshes or Macs, and it calls its laptops MacBooks. Their popular line of mobile music players is called iPod, their smartphone line is called iPhone and their Tablet line is called iPad.")
+Manufacturer.create(name: "Microsoft", description: "Microsoft Corporation is a multinational which makes computer software and video games all over the world. Bill Gates and Paul Allen started the company in 1975. Microsoft makes Windows, Microsoft Office (including Microsoft Word), Internet Explorer, MSN, and the Xbox 360. Microsoft is the world's biggest software maker.")
+Manufacturer.create(name: "Lenovo", description: "Lenovo is a Chinese computer company that makes computers, laptops, tablets, and other devices.")
+Manufacturer.create(name: "EMC", description: "EMC Corporation (stylized as EMC²) is an American multinational corporation that offers data storage, information security, virtualization, and cloud computing products and services which enable businesses to store, manage, protect, and analyze massive volumes of data. EMC's target markets include large FORTUNE 500 companies as well as small business across various vertical markets. It is headquartered in Hopkinton, Massachusetts.")
+Manufacturer.create(name: "IBM", description: "International Business Machines Corporation (IBM) is a company from the United States that makes and sells software, computer hardware, infrastructure services, and consulting services. IBM is one of the biggest Information Technology companies in the world. IBM has had the most patents of any technology company for many years, and has made many important inventions and discoveries that have improved computers.")
 
 Environment.create(name: "Unknown", description: "The environment is currently unknown.")
 Environment.create(name: "None", description: "There is no environment applicable.")
@@ -41,6 +42,7 @@ Environment.create(name: "Pre-production", description: "Lorem ipsum dolor sit a
 Environment.create(name: "Disaster recovery", description: "Lorem")
 
 Organisation.create(name: "Unknown", full_name: "Unknown", service_reference: "Unknown", support_level_id: 1, relationship: "Unknown", active: true)
+Organisation.create(name: "None", full_name: "None", service_reference: "None", support_level_id: 2, relationship: "None", active: true)
 Organisation.create(name: "Dave", full_name: "Dave", service_reference: "Unknown", support_level_id: 1, relationship: "Unknown", active: true)
 
 # OnemdlSettings.create(name: "omdl")
