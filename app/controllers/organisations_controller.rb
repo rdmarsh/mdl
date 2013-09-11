@@ -9,12 +9,12 @@ class OrganisationsController < ApplicationController
   
   def show
     @organisation = Organisation.find(params[:id])
-    respond_with(@organisations)
+    respond_with(@organisation)
   end
   
   def new
     @organisation = Organisation.new
-    respond_with(@organisations)
+    respond_with(@organisation)
   end
   
   def create
@@ -39,7 +39,7 @@ class OrganisationsController < ApplicationController
     if @organisation.update_attributes(organisation_params)
       flash[:notice] = "Successfully updated organisation '" + @organisation.name + "'"
     else
-      render action: 'edit';
+      render action: 'edit'
     end
     respond_with(@organisation)
   end
@@ -58,7 +58,7 @@ class OrganisationsController < ApplicationController
   
   # for sorting columns
   def sort_column
-    Organisation.column_names.include?(params[:sort]) ? params[:sort] : "name"
+    Organisation.column_names.include?(params[:sort]) ? params[:sort] : "id"
   end
   
   # for allowing editing on fields

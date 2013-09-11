@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20130911220500) do
     t.string   "name"
     t.integer  "device_type_id"
     t.integer  "integer"
+    t.integer  "manufacturer_id"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"

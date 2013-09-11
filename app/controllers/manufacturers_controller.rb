@@ -9,12 +9,12 @@ class ManufacturersController < ApplicationController
   
   def show
     @manufacturer = Manufacturer.find(params[:id])
-    respond_with(@manufacturers)
+    respond_with(@manufacturer)
   end
   
   def new
     @manufacturer = Manufacturer.new
-    respond_with(@manufacturers)
+    respond_with(@manufacturer)
   end
   
   def create
@@ -39,7 +39,7 @@ class ManufacturersController < ApplicationController
     if @manufacturer.update_attributes(manufacturer_params)
       flash[:notice] = "Successfully updated manufacturer '" + @manufacturer.name + "'"
     else
-      render action: 'edit';
+      render action: 'edit'
     end
     respond_with(@manufacturer)
   end
@@ -58,7 +58,7 @@ class ManufacturersController < ApplicationController
   
   # for sorting columns
   def sort_column
-    Manufacturer.column_names.include?(params[:sort]) ? params[:sort] : "name"
+    Manufacturer.column_names.include?(params[:sort]) ? params[:sort] : "id"
   end
   
   # for allowing editing on fields

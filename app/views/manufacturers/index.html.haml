@@ -2,7 +2,7 @@
 
 =render 'head'
 
-- if @manufacturer.empty?
+- if @manufacturers.empty?
   %p= yield(:empty_msg)  
 - else
   %table.table.table-hover.table-condensed
@@ -11,7 +11,7 @@
         %th= sortable "id"
         %th= sortable "name"
         %th= sortable "description"
-      - @manufacturer.each do |r|
+      - @manufacturers.each do |r|
         %tr
           %td= r.id
           %td= link_to r.name, r

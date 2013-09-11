@@ -3,6 +3,7 @@ class CreateDeviceModels < ActiveRecord::Migration
     create_table :device_models do |t|
       t.string :name
       t.integer :device_type_id, :integer
+      t.integer :manufacturer_id, :integer
       t.text :description
 
       t.timestamps
