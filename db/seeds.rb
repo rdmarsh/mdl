@@ -19,8 +19,8 @@ DeviceType.create(name: "Router", description: "The device is currently unknown.
 DeviceType.create(name: "Hub", description: "The device is currently unknown.")
 DeviceType.create(name: "Server", description: "The device is currently unknown.")
 
-DeviceModel.create(name: "Unknown", description: "The device is currently unknown.")
-DeviceModel.create(name: "None", description: "The device is currently unknown.")
+DeviceModel.create(name: "Unknown", device_type_id: 1, description: "The device is currently unknown.")
+DeviceModel.create(name: "None", device_type_id: 1, description: "The device is currently unknown.")
 
 Environment.create(name: "Unknown", description: "The environment is currently unknown.")
 Environment.create(name: "Production", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
