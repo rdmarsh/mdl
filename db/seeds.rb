@@ -20,7 +20,7 @@ DeviceType.create(name: "Hub", description: "The device is currently unknown.")
 DeviceType.create(name: "Server", description: "The device is currently unknown.")
 
 DeviceModel.create(name: "Unknown", device_type_id: 1, manufacturer_id: 1, description: "The device is currently unknown.")
-DeviceModel.create(name: "None", device_type_id: 1, manufacturer_id: 1, description: "There is no device model applicable.")
+DeviceModel.create(name: "None", device_type_id: 2, manufacturer_id: 2, description: "There is no device model applicable.")
 
 Manufacturer.create(name: "Unknown", description: "The environment is currently unknown.")
 Manufacturer.create(name: "None", description: "There is no manufacturer applicable.")
