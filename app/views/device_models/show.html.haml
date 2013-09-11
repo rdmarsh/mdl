@@ -4,8 +4,8 @@
 
 = show_for @device_model do |f|
   = f.attribute :name
-  = f.attribute :name, :in => :device_type
   = f.attribute :name, :in => :manufacturer
+  = f.attribute :name, :in => :device_type
   = f.attribute :description
   = f.attribute :created_at, :format => :iso8601
   = f.attribute :updated_at, :format => :iso8601
