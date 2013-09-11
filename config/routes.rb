@@ -2,14 +2,21 @@ Onemdl::Application.routes.draw do
   
   resources :organisations do
     resources :support_levels
-  end    
+  end
+  
+  resources :device_types
+    
+  resources :device_models do
+    resources :device_types
+  end
+  
   resources :support_levels
   resources :environments
-  resources :device_types
 
   root 'staticpages#home'
 
   resources :onemdl_settings, :only => [:index, :edit]
+  
   match '/onemdl_settings',      to: 'onemdl_settings#index',     via: 'get'
   match '/onemdl_settings/edit', to: 'onemdl_settings#edit',     via: 'get'
   

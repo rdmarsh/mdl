@@ -1,8 +1,8 @@
--content_for(:empty_msg, "Currently no #{t('support_levels').downcase}")
+-content_for(:empty_msg, "Currently no #{t('support_level').pluralize.downcase}")
 
 =render 'head'
 
-- if @supportlevels.empty?
+- if @support_levels.empty?
   %p= yield(:empty_msg)  
 - else
   %table.table.table-hover.table-condensed
@@ -14,7 +14,7 @@
         %th= sortable "days"
         %th= sortable "exclusions"
         %th= sortable "description"
-      - @supportlevels.each do |r|
+      - @support_levels.each do |r|
         %tr
           %td= r.id
           %td= link_to r.name, r

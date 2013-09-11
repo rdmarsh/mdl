@@ -3,55 +3,55 @@ class DeviceTypesController < ApplicationController
   helper_method :sort_column, :sort_direction
   
   def index
-    @devicetypes = DeviceType.order(sort_column + " " + sort_direction)
-    respond_with(@devicetypes)
+    @device_types = DeviceType.order(sort_column + " " + sort_direction)
+    respond_with(@device_types)
   end
   
   def show
-    @devicetype = DeviceType.find(params[:id])
-    respond_with(@devicetype)
+    @device_type = DeviceType.find(params[:id])
+    respond_with(@device_type)
   end
   
   def new
-    @devicetype = DeviceType.new
-    respond_with(@devicetype)
+    @device_type = DeviceType.new
+    respond_with(@device_type)
   end
   
   def create
-    @devicetype = DeviceType.new(device_type_params)
+    @device_type = DeviceType.new(device_type_params)
     
-    if @devicetype.save
-      flash[:notice] = "New device type '" + @devicetype.name + "' created"
+    if @device_type.save
+      flash[:notice] = "New device type '" + @device_type.name + "' created"
     else
       flash[:error] = "Could not create device type"
     end
-    respond_with(@devicetype)
+    respond_with(@device_type)
   end
   
   def edit
-    @devicetype = DeviceType.find(params[:id])
-    respond_with(@devicetype)
+    @device_type = DeviceType.find(params[:id])
+    respond_with(@device_type)
   end
   
   def update
-    @devicetype = DeviceType.find(params[:id])
+    @device_type = DeviceType.find(params[:id])
     
-    if @devicetype.update_attributes(device_type_params)
-      flash[:notice] = "Successfully updated device type '" + @devicetype.name + "'"
+    if @device_type.update_attributes(device_type_params)
+      flash[:notice] = "Successfully updated device type '" + @device_type.name + "'"
     else
-      render 'edit'
+      render action: 'edit'
     end
-    respond_with(@devicetype)
+    respond_with(@device_type)
   end
   
   def destroy
-    @devicetype = DeviceType.find(params[:id])
-    if @devicetype.destroy
-      flash[:notice] = "Successfully deleted device type '" + @devicetype.name + "'"
+    @device_type = DeviceType.find(params[:id])
+    if @device_type.destroy
+      flash[:notice] = "Successfully deleted device type '" + @device_type.name + "'"
     else
-      flash[:error] = "Could not delete device type '" + @devicetype.name + "'"
+      flash[:error] = "Could not delete device type '" + @device_type.name + "'"
     end
-    respond_with(@devicetype)
+    respond_with(@device_type)
   end
   
   private

@@ -30,13 +30,13 @@ en:
   
   description: description
   delete: delete
-  device_types: device types
+  device_type: device type
+  device_model: device model
   
   edit: edit
   editrecord: edit record
   environment: environment
   newenvironment: new environment
-  environments: environments
   
   faq: faq
 
@@ -54,7 +54,6 @@ en:
   new: new
   full_name: full name 
   
-  organisations: organisations
   organisation: organisation  
   neworganisation: new organisation
   
@@ -69,13 +68,13 @@ en:
   show: show
   showrecord: show record
   support: support
+  support_level: support level
   
   showall: show all
   type: type
   
   reference: reference
   settings: settings
-  supportlevels: support levels
 
   days: days
   description: description
@@ -83,9 +82,6 @@ en:
   hours: hours
   level: level
   new_support_level: new support level
-  levels: support levels
-  support_levels: support levels
-  support_level: support level
 
 # timeformat for iso8601
   time:

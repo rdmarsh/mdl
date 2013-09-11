@@ -3,55 +3,55 @@ class SupportLevelsController < ApplicationController
   helper_method :sort_column, :sort_direction
   
   def index
-    @supportlevels = SupportLevel.order(sort_column + " " + sort_direction)
-    respond_with(@supportlevels)
+    @support_levels = SupportLevel.order(sort_column + " " + sort_direction)
+    respond_with(@support_levels)
   end
   
   def show
-    @supportlevel = SupportLevel.find(params[:id])
-    respond_with(@supportlevel)
+    @support_level = SupportLevel.find(params[:id])
+    respond_with(@support_level)
   end
   
   def new
-    @supportlevel = SupportLevel.new
-    respond_with(@supportlevel)
+    @support_level = SupportLevel.new
+    respond_with(@support_level)
   end
   
   def create
-    @supportlevel = SupportLevel.new(supportlevel_params)
+    @support_level = SupportLevel.new(support_level_params)
     
-    if @supportlevel.save
-      flash[:notice] = "New support level '" + @supportlevel.name + "' created"
+    if @support_level.save
+      flash[:notice] = "New support level '" + @support_level.name + "' created"
     else
       flash[:error] = "Could not create support level"
     end
-    respond_with(@supportlevel)
+    respond_with(@support_level)
   end
   
   def edit
-    @supportlevel = SupportLevel.find(params[:id])
-    respond_with(@supportlevel)
+    @support_level = SupportLevel.find(params[:id])
+    respond_with(@support_level)
   end
   
   def update
-    @supportlevel = SupportLevel.find(params[:id])
+    @support_level = SupportLevel.find(params[:id])
     
-    if @supportlevel.update_attributes(supportlevel_params)
-      flash[:notice] = "Successfully updated support level '" + @supportlevel.name + "'"
+    if @support_level.update_attributes(support_level_params)
+      flash[:notice] = "Successfully updated support level '" + @support_level.name + "'"
     else
-      render 'edit'
+      render action: 'edit'
     end
-    respond_with(@supportlevel)
+    respond_with(@support_level)
   end
   
   def destroy
-    @supportlevel = SupportLevel.find(params[:id])
-    if @supportlevel.destroy
-      flash[:notice] = "Successfully deleted support level '" + @supportlevel.name + "'"
+    @support_level = SupportLevel.find(params[:id])
+    if @support_level.destroy
+      flash[:notice] = "Successfully deleted support level '" + @support_level.name + "'"
     else
-      flash[:error] = "Could not delete support level '" + @supportlevel.name + "'"
+      flash[:error] = "Could not delete support level '" + @support_level.name + "'"
     end
-    respond_with(@supportlevel)
+    respond_with(@support_level)
   end
   
   private
@@ -62,7 +62,7 @@ class SupportLevelsController < ApplicationController
   end
   
   # for allowing editing on fields
-  def supportlevel_params
+  def support_level_params
     params.require(:support_level).permit!
   end
 end

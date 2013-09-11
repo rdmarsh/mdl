@@ -39,7 +39,7 @@ class EnvironmentsController < ApplicationController
     if @environment.update_attributes(environment_params)
       flash[:notice] = "Successfully updated environment '" + @environment.name + "'"
     else
-      render 'edit'
+      render action: 'edit'
     end
     respond_with(@environment)
   end

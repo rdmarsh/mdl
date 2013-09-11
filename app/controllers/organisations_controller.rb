@@ -39,7 +39,7 @@ class OrganisationsController < ApplicationController
     if @organisation.update_attributes(organisation_params)
       flash[:notice] = "Successfully updated organisation '" + @organisation.name + "'"
     else
-      render 'edit'
+      render action: 'edit';
     end
     respond_with(@organisation)
   end
