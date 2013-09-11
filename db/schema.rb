@@ -15,6 +15,8 @@ ActiveRecord::Schema.define(version: 20130911135739) do
 
   create_table "device_models", force: true do |t|
     t.string   "name"
+    t.integer  "device_type_id"
+    t.integer  "integer"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -24,7 +26,7 @@ ActiveRecord::Schema.define(version: 20130911135739) do
 
   create_table "device_types", force: true do |t|
     t.string   "name"
-    t.string   "description"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
