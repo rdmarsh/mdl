@@ -10,6 +10,8 @@
     Supporting Data
   %li{ :class => ("active" if controller_name == "device_types") }
     = link_to t('device_type').pluralize.humanize, device_types_path
+  %li{ :class => ("active" if controller_name == "service_levels") }
+    = link_to t('service_level').pluralize.humanize, service_levels_path
   %li{ :class => ("active" if controller_name == "support_levels") }
     = link_to t('support_level').pluralize.humanize, support_levels_path
   %li{ :class => ("active" if controller_name == "environments") }

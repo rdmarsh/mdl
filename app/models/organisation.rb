@@ -1,5 +1,6 @@
 class Organisation < ActiveRecord::Base
   belongs_to :support_level
+  belongs_to :service_level
   
   validates_format_of :name, :with => /\A[a-zA-Z\d]+\z/, :message => "Can only contain letters and numbers."
   

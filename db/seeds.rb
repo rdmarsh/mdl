@@ -7,9 +7,12 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 SupportLevel.create(name: "Unknown", hours: "n/a", days: "n/a", exclusions: "n/a", description: "The support agreement is currently unknown. Support may occur time and material fees, which needs written authorisation from a customers representative before being undertaken.")
+SupportLevel.create(name: "None", hours: "n/a", days: "n/a", exclusions: "n/a", description: "No support is provided. Any support will occur time and material fees, which needs written authorisation from a customers representative before being undertaken.")
 SupportLevel.create(name: "Business Hours", hours: "8am - 6pm", days: "Mon - Fri", exclusions: "Public holidays", description: "Only supported between 8am and 6pm, Monday to Friday. Public holidays excluded. Any support outside of this time will occur time and material fees, which needs written authorisation from a customers representative before being undertaken.")
 SupportLevel.create(name: "After Hours", hours: "24 hours", days: "7 days", exclusions: "None", description: "Supported 24hours, 7days. Public holidays included.")
-SupportLevel.create(name: "None", hours: "n/a", days: "n/a", exclusions: "n/a", description: "No support is provided. Any support will occur time and material fees, which needs written authorisation from a customers representative before being undertaken.")
+
+ServiceLevel.create(name: "Unknown", description: "The service level is currently unknown.")
+ServiceLevel.create(name: "None", description: "There is no service level applicable.")
 
 DeviceType.create(name: "Unknown", description: "The device type is currently unknown.")
 DeviceType.create(name: "None", description: "There is no device type applicable.")
@@ -41,8 +44,8 @@ Environment.create(name: "Decommissioned", description: "Lorem")
 Environment.create(name: "Pre-production", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
 Environment.create(name: "Disaster recovery", description: "Lorem")
 
-Organisation.create(name: "Unknown", full_name: "Unknown", service_reference: "Unknown", support_level_id: 1, relationship: "Unknown", active: true)
-Organisation.create(name: "None", full_name: "None", service_reference: "None", support_level_id: 2, relationship: "None", active: true)
+Organisation.create(name: "Unknown", full_name: "Unknown", service_reference: "Unknown", support_level_id: 1, service_level_id: 1, relationship: "Unknown", active: true)
+Organisation.create(name: "None", full_name: "None", service_reference: "None", support_level_id: 2, service_level_id: 2, relationship: "None", active: true)
 Organisation.create(name: "Dave", full_name: "Dave", service_reference: "Unknown", support_level_id: 1, relationship: "Unknown", active: true)
 
 # OnemdlSettings.create(name: "omdl")
