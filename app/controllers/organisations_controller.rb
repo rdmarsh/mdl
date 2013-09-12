@@ -21,7 +21,7 @@ class OrganisationsController < ApplicationController
     @organisation = Organisation.new(organisation_params)
     
     if @organisation.save
-      flash[:notice] = "New organisation '" + @organisation.name + "' created"
+      flash[:success] = "New organisation '" + @organisation.name + "' created"
     else
       flash[:error] = "Could not create organisation"
     end
@@ -37,7 +37,7 @@ class OrganisationsController < ApplicationController
     @organisation = Organisation.find(params[:id])
     
     if @organisation.update_attributes(organisation_params)
-      flash[:notice] = "Successfully updated organisation '" + @organisation.name + "'"
+      flash[:success] = "Successfully updated organisation '" + @organisation.name + "'"
     else
       render action: 'edit'
     end
@@ -47,7 +47,7 @@ class OrganisationsController < ApplicationController
   def destroy
     @organisation = Organisation.find(params[:id])
     if @organisation.destroy
-      flash[:notice] = "Successfully deleted organisation '" + @organisation.name + "'"
+      flash[:success] = "Successfully deleted organisation '" + @organisation.name + "'"
     else
       flash[:error] = "Could not delete organisation '" + @organisation.name + "'"
     end

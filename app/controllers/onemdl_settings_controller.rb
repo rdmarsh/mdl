@@ -15,7 +15,7 @@ class OnemdlSettingsController < ApplicationController
     @onemdlsetting = OnemdlSetting.find(1)
     
     if @onemdlsetting.update_attributes(onemdlsetting_params) 
-      flash[:notice] = "Successfully updated OnMDL Settings"
+      flash[:success] = "Successfully updated OnMDL Settings"
     end
     respond_with(@onemdlsetting)
   end

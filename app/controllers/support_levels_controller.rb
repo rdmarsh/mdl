@@ -21,7 +21,7 @@ class SupportLevelsController < ApplicationController
     @support_level = SupportLevel.new(support_level_params)
     
     if @support_level.save
-      flash[:notice] = "New support level '" + @support_level.name + "' created"
+      flash[:success] = "New support level '" + @support_level.name + "' created"
     else
       flash[:error] = "Could not create support level"
     end
@@ -37,7 +37,7 @@ class SupportLevelsController < ApplicationController
     @support_level = SupportLevel.find(params[:id])
     
     if @support_level.update_attributes(support_level_params)
-      flash[:notice] = "Successfully updated support level '" + @support_level.name + "'"
+      flash[:success] = "Successfully updated support level '" + @support_level.name + "'"
     else
       render action: 'edit'
     end
@@ -47,7 +47,7 @@ class SupportLevelsController < ApplicationController
   def destroy
     @support_level = SupportLevel.find(params[:id])
     if @support_level.destroy
-      flash[:notice] = "Successfully deleted support level '" + @support_level.name + "'"
+      flash[:success] = "Successfully deleted support level '" + @support_level.name + "'"
     else
       flash[:error] = "Could not delete support level '" + @support_level.name + "'"
     end

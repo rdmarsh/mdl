@@ -21,7 +21,7 @@ class ManufacturersController < ApplicationController
     @manufacturer = Manufacturer.new(manufacturer_params)
     
     if @manufacturer.save
-      flash[:notice] = "New manufacturer '" + @manufacturer.name + "' created"
+      flash[:success] = "New manufacturer '" + @manufacturer.name + "' created"
     else
       flash[:error] = "Could not create manufacturer"
     end
@@ -37,7 +37,7 @@ class ManufacturersController < ApplicationController
     @manufacturer = Manufacturer.find(params[:id])
     
     if @manufacturer.update_attributes(manufacturer_params)
-      flash[:notice] = "Successfully updated manufacturer '" + @manufacturer.name + "'"
+      flash[:success] = "Successfully updated manufacturer '" + @manufacturer.name + "'"
     else
       render action: 'edit'
     end
@@ -47,7 +47,7 @@ class ManufacturersController < ApplicationController
   def destroy
     @manufacturer = Manufacturer.find(params[:id])
     if @manufacturer.destroy
-      flash[:notice] = "Successfully deleted manufacturer '" + @manufacturer.name + "'"
+      flash[:success] = "Successfully deleted manufacturer '" + @manufacturer.name + "'"
     else
       flash[:error] = "Could not delete manufacturer '" + @manufacturer.name + "'"
     end
