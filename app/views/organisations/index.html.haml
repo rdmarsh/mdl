@@ -21,7 +21,7 @@
           %td= r.id
           %td= link_to r.name, r
           %td= r.full_name
-          %td= r.service_reference
+          %td= link_to r.service_level.name, service_level_path(r.service_level_id)
           %td= link_to r.support_level.name, support_level_path(r.support_level_id)
           %td= r.relationship
           %td= r.phone

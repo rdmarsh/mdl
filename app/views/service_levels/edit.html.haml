@@ -1,2 +1,5 @@
-%h1 ServiceLevels#edit
-%p Find me in app/views/service_levels/edit.html.haml
+- content_for(:show_button_path, service_level_path(@service_level))
+
+= render 'head'
+
+= render 'form'

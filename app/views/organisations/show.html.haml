@@ -5,7 +5,7 @@
 = show_for @organisation do |f|
   = f.attribute :name
   = f.attribute :full_name
-  = f.attribute :service_reference
+  = f.attribute :name, :in => :service_level
   = f.attribute :name, :in => :support_level
   = f.attribute :relationship
   = f.attribute :active?

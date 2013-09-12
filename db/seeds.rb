@@ -13,6 +13,8 @@ SupportLevel.create(name: "After Hours", hours: "24 hours", days: "7 days", excl
 
 ServiceLevel.create(name: "Unknown", description: "The service level is currently unknown.")
 ServiceLevel.create(name: "None", description: "There is no service level applicable.")
+ServiceLevel.create(name: "Managed", description: "Managed.")
+ServiceLevel.create(name: "Colocation", description: "Colocation.")
 
 DeviceType.create(name: "Unknown", description: "The device type is currently unknown.")
 DeviceType.create(name: "None", description: "There is no device type applicable.")
@@ -44,8 +46,8 @@ Environment.create(name: "Decommissioned", description: "Lorem")
 Environment.create(name: "Pre-production", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
 Environment.create(name: "Disaster recovery", description: "Lorem")
 
-Organisation.create(name: "Unknown", full_name: "Unknown", service_reference: "Unknown", support_level_id: 1, service_level_id: 1, relationship: "Unknown", active: true)
-Organisation.create(name: "None", full_name: "None", service_reference: "None", support_level_id: 2, service_level_id: 2, relationship: "None", active: true)
-Organisation.create(name: "Dave", full_name: "Dave", service_reference: "Unknown", support_level_id: 1, relationship: "Unknown", active: true)
+Organisation.create(name: "Unknown", full_name: "Unknown", service_level_id: 1, support_level_id: 1, relationship: "Unknown", active: true)
+Organisation.create(name: "None", full_name: "None", service_level_id: 2, support_level_id: 2, relationship: "None", active: true)
+Organisation.create(name: "Dave", full_name: "Dave", service_level_id: 1, support_level_id: 1, relationship: "Unknown", active: true)
 
 # OnemdlSettings.create(name: "omdl")
