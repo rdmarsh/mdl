@@ -1,8 +1,8 @@
 = simple_form_for @device_model, :html => { :class => 'form-horizontal' } do |f|
   = f.error_notification
   = f.input :name, hint: "Device model"
-  = f.association :manufacturer
-  = f.association :device_type
+  = f.association :manufacturer, prompt: "Choose a manufacturer", collection: Manufacturer.order('name ASC')
+  = f.association :device_type, prompt: "Choose a device type", collection: DeviceType.order('name ASC')
   = f.input :description, hint: "Description of the device model"
   = f.error :base
   = f.button :submit, :class => 'btn btn-primary'
