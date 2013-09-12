@@ -64,6 +64,8 @@ en:
 
   reference: reference
   relationship: relationship
+  reference: reference
+  setting: setting
   
   search: seach  
   service_level: service level
@@ -76,9 +78,6 @@ en:
   showall: show all
   type: type
   
-  reference: reference
-  setting: setting
-
   days: days
   description: description
   exclusions: exclusions

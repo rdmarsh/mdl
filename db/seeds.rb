@@ -24,6 +24,14 @@ DeviceType.create(name: "Router", description: "The device is currently unknown.
 DeviceType.create(name: "Hub", description: "The device is currently unknown.")
 DeviceType.create(name: "Server", description: "The device is currently unknown.")
 
+Relationship.create(name: "Unknown", description: "The relationship is currently unknown.")
+Relationship.create(name: "None", description: "There is no relationship applicable.")
+Relationship.create(name: "Customer", description: "There is no relationship applicable.")
+Relationship.create(name: "Partner", description: "There is no relationship applicable.")
+Relationship.create(name: "Supplier", description: "There is no relationship applicable.")
+Relationship.create(name: "Manufacturer", description: "There is no relationship applicable.")
+Relationship.create(name: "Vendor", description: "There is no relationship applicable.")
+
 DeviceModel.create(name: "Unknown", device_type_id: 1, manufacturer_id: 1, description: "The device is currently unknown.")
 DeviceModel.create(name: "None", device_type_id: 2, manufacturer_id: 2, description: "There is no device model applicable.")
 
@@ -36,6 +44,7 @@ Manufacturer.create(name: "Microsoft", website: "http://microsoft.com/", descrip
 Manufacturer.create(name: "Lenovo", website: "n/a", description: "Lenovo is a Chinese computer company that makes computers, laptops, tablets, and other devices.")
 Manufacturer.create(name: "EMC", description: "EMC Corporation (stylized as EMC²) is an American multinational corporation that offers data storage, information security, virtualization, and cloud computing products and services which enable businesses to store, manage, protect, and analyze massive volumes of data. EMC's target markets include large FORTUNE 500 companies as well as small business across various vertical markets. It is headquartered in Hopkinton, Massachusetts.")
 Manufacturer.create(name: "IBM", website: "http://ibm.com/", description: "International Business Machines Corporation (IBM) is a company from the United States that makes and sells software, computer hardware, infrastructure services, and consulting services. IBM is one of the biggest Information Technology companies in the world. IBM has had the most patents of any technology company for many years, and has made many important inventions and discoveries that have improved computers.")
+Manufacturer.create(name: "VMWare", website: "http://vmware.com/", description: "VMWare")
 
 Environment.create(name: "Unknown", description: "The environment is currently unknown.")
 Environment.create(name: "None", description: "There is no environment applicable.")
@@ -46,8 +55,8 @@ Environment.create(name: "Decommissioned", description: "Lorem")
 Environment.create(name: "Pre-production", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
 Environment.create(name: "Disaster recovery", description: "Lorem")
 
-Organisation.create(name: "Unknown", full_name: "Unknown", service_level_id: 1, support_level_id: 1, relationship: "Unknown", active: true)
-Organisation.create(name: "None", full_name: "None", service_level_id: 2, support_level_id: 2, relationship: "None", active: true)
-Organisation.create(name: "Dave", full_name: "Dave", service_level_id: 1, support_level_id: 1, relationship: "Unknown", active: true)
+Organisation.create(name: "Unknown", full_name: "Unknown", service_level_id: 1, support_level_id: 1, relationship_id: 1, active: true)
+Organisation.create(name: "None", full_name: "None", service_level_id: 2, support_level_id: 2, relationship_id: 2, active: true)
+Organisation.create(name: "Dave", full_name: "Dave", service_level_id: 1, support_level_id: 1, relationship_id: 1, active: true)
 
 # OnemdlSettings.create(name: "omdl")

@@ -23,6 +23,6 @@
           %td= r.full_name
           %td= link_to r.service_level.name, service_level_path(r.service_level_id)
           %td= link_to r.support_level.name, support_level_path(r.support_level_id)
-          %td= r.relationship
+          %td= link_to r.relationship.name, relationship_path(r.relationship_id)
           %td= r.phone
           %td= r.active

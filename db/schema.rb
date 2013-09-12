@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130912095932) do
+ActiveRecord::Schema.define(version: 20130912233314) do
 
   create_table "device_models", force: true do |t|
     t.string   "name"
@@ -77,7 +77,6 @@ ActiveRecord::Schema.define(version: 20130912095932) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "support_level_id", limit: 255
-    t.string   "relationship"
     t.boolean  "active"
     t.string   "phone"
     t.string   "fax"
@@ -89,9 +88,19 @@ ActiveRecord::Schema.define(version: 20130912095932) do
     t.string   "country"
     t.string   "state"
     t.integer  "service_level_id"
+    t.integer  "relationship_id"
   end
 
   add_index "organisations", ["name"], name: "index_organisations_on_name", unique: true
+
+  create_table "relationships", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "relationships", ["name"], name: "index_relationships_on_name", unique: true
 
   create_table "service_levels", force: true do |t|
     t.string   "name"
