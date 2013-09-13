@@ -21,9 +21,9 @@ class DeviceModelsController < ApplicationController
     @device_model = DeviceModel.new(device_model_params)
     
     if @device_model.save
-      flash[:success] = "New device model '" + @device_model.name + "' created"
+      flash[:success] = "Successfully created device model '" + @device_model.name + "'"
     else
-      flash[:error] = "Could not create device model"
+      flash[:error] = "Could not create device model '" + @device_model.name + "'"
     end
     respond_with(@device_model)
   end
@@ -39,7 +39,7 @@ class DeviceModelsController < ApplicationController
     if @device_model.update_attributes(device_model_params)
       flash[:success] = "Successfully updated device model '" + @device_model.name + "'"
     else
-      render action: 'edit'
+      flash[:error] = "Could not update device model '" + @device_model.name + "'"
     end
     respond_with(@device_model)
   end

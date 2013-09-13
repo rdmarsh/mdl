@@ -21,9 +21,9 @@ class SupportLevelsController < ApplicationController
     @support_level = SupportLevel.new(support_level_params)
     
     if @support_level.save
-      flash[:success] = "New support level '" + @support_level.name + "' created"
+      flash[:success] = "Successfully created support level '" + @support_level.name + "'"
     else
-      flash[:error] = "Could not create support level"
+      flash[:error] = "Could not create support level '" + @support_level.name + "'"
     end
     respond_with(@support_level)
   end
@@ -39,7 +39,7 @@ class SupportLevelsController < ApplicationController
     if @support_level.update_attributes(support_level_params)
       flash[:success] = "Successfully updated support level '" + @support_level.name + "'"
     else
-      render action: 'edit'
+      flash[:error] = "Could not update support level '" + @support_level.name + "'"
     end
     respond_with(@support_level)
   end

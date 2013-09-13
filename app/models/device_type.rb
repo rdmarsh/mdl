@@ -1,17 +1,25 @@
 class DeviceType < ActiveRecord::Base
+  before_validation :strip_blanks
+  
   has_many :device_models
-  validates_associated :device_models
+  
   
   validates :name, presence: true, uniqueness: { case_sensitive: false }
   
-  # before_save { self.name = name.downcase }
-  # validates_uniqueness_of :name, 
   
-  before_destroy :protect_unknown
+  
+  before_destroy :protect_unknown_none
   
   private
   
-  def protect_unknown
-    !name.downcase.eql?("unknown")
+  def protect_unknown_none
+    !name.downcase.eql?("unknown") and !name.downcase.eql?("none")
   end
+  
+  protected
+  
+  def strip_blanks
+    self.name = self.name.strip
+  end
+  
 end

@@ -21,9 +21,9 @@ class RelationshipsController < ApplicationController
     @relationship = Relationship.new(relationship_params)
     
     if @relationship.save
-      flash[:success] = "New relationship '" + @relationship.name + "' created"
+      flash[:success] = "Successfully created relationship '" + @relationship.name + "'"
     else
-      flash[:error] = "Could not create relationship"
+      flash[:error] = "Could not create relationship '" + @relationship.name + "'" 
     end
     respond_with(@relationship)
   end
@@ -32,14 +32,14 @@ class RelationshipsController < ApplicationController
     @relationship = Relationship.find(params[:id])
     respond_with(@relationship)
   end
-  
+    
   def update
     @relationship = Relationship.find(params[:id])
     
     if @relationship.update_attributes(relationship_params)
       flash[:success] = "Successfully updated relationship '" + @relationship.name + "'"
     else
-      render action: 'edit'
+      flash[:error] = "Could not update relationship '" + @relationship.name + "'"
     end
     respond_with(@relationship)
   end

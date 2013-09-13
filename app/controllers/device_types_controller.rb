@@ -21,9 +21,9 @@ class DeviceTypesController < ApplicationController
     @device_type = DeviceType.new(device_type_params)
     
     if @device_type.save
-      flash[:success] = "New device type '" + @device_type.name + "' created"
+      flash[:success] = "Successfully created device type '" + @device_type.name + "'"
     else
-      flash[:error] = "Could not create device type"
+      flash[:error] = "Could not create device type '" + @device_type.name + "'"
     end
     respond_with(@device_type)
   end
@@ -39,7 +39,7 @@ class DeviceTypesController < ApplicationController
     if @device_type.update_attributes(device_type_params)
       flash[:success] = "Successfully updated device type '" + @device_type.name + "'"
     else
-      render action: 'edit'
+      flash[:error] = "Could not update device type '" + @device_type.name + "'"
     end
     respond_with(@device_type)
   end

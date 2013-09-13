@@ -21,9 +21,9 @@ class EnvironmentsController < ApplicationController
     @environment = Environment.new(environment_params)
     
     if @environment.save
-      flash[:success] = "New environment '" + @environment.name + "' created"
+      flash[:success] = "Successfully created environment '" + @environment.name + "'"
     else
-      flash[:error] = "Could not create environment"
+      flash[:error] = "Could not create environment '" + @environment.name + "'"
     end
     respond_with(@environment)
   end
@@ -39,7 +39,7 @@ class EnvironmentsController < ApplicationController
     if @environment.update_attributes(environment_params)
       flash[:success] = "Successfully updated environment '" + @environment.name + "'"
     else
-      render action: 'edit'
+      flash[:error] = "Could not update environment '" + @environment.name + "'"
     end
     respond_with(@environment)
   end

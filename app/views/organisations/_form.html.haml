@@ -2,9 +2,9 @@
   = f.error_notification
   = f.input :name, hint: "Organisation name"
   = f.input :full_name, hint: "Organisation full name"
-  = f.association :service_level, include_blank: false, hint: "Service level", prompt: "Choose a service level", collection: ServiceLevel.order('name ASC')
-  = f.association :support_level, include_blank: false, hint: "Support level", prompt: "Choose a support level", collection: SupportLevel.order('name ASC')
-  = f.association :relationship,  include_blank: false, hint: "Relationship",  prompt: "Choose a relationship",  collection: Relationship.order('name ASC')
+  = f.association :service_level, include_blank: false, prompt: "Choose a service level", collection: ServiceLevel.order('name ASC'), priority: ["Unknown"]
+  = f.association :support_level, include_blank: false, prompt: "Choose a support level", collection: SupportLevel.order('name ASC')
+  = f.association :relationship,  include_blank: false, prompt: "Choose a relationship",  collection: Relationship.order('name ASC')
   = f.input :active, hint: "Current organisation?", inline_label: 'Yes, remember me'
   = f.input :phone
   = f.input :fax
@@ -14,7 +14,7 @@
   = f.input :city, placeholder: 'city'
   = f.input :postcode, placeholder: '9999'
   = f.input :state
-  = f.input :country, priority: [ "Australia", "India", "New Zealand", "United Kingdom", "United States"], include_blank: true
+  = f.input :country, priority: [ "Australia", "India", "New Zealand", "United Kingdom", "United States"], include_blank: true, prompt: "Choose a country"
   = f.error :base
   = f.button :submit, :class => 'btn btn-primary'
   .btn-group.task_controller

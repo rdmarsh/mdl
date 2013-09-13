@@ -21,9 +21,9 @@ class ManufacturersController < ApplicationController
     @manufacturer = Manufacturer.new(manufacturer_params)
     
     if @manufacturer.save
-      flash[:success] = "New manufacturer '" + @manufacturer.name + "' created"
+      flash[:success] = "Successfully created manufacturer '" + @manufacturer.name + "'"
     else
-      flash[:error] = "Could not create manufacturer"
+      flash[:error] = "Could not create manufacturer '" + @manufacturer.name + "'"
     end
     respond_with(@manufacturer)
   end
@@ -39,7 +39,7 @@ class ManufacturersController < ApplicationController
     if @manufacturer.update_attributes(manufacturer_params)
       flash[:success] = "Successfully updated manufacturer '" + @manufacturer.name + "'"
     else
-      render action: 'edit'
+      flash[:error] = "Could not update manufacturer '" + @manufacturer.name + "'"
     end
     respond_with(@manufacturer)
   end

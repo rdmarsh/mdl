@@ -21,9 +21,9 @@ class OrganisationsController < ApplicationController
     @organisation = Organisation.new(organisation_params)
     
     if @organisation.save
-      flash[:success] = "New organisation '" + @organisation.name + "' created"
+      flash[:success] = "Successfully created organisation '" + @organisation.name + "'"
     else
-      flash[:error] = "Could not create organisation"
+      flash[:error] = "Could not create organisation '" + @organisation.name + "'"
     end
     respond_with(@organisation)
   end
@@ -39,7 +39,7 @@ class OrganisationsController < ApplicationController
     if @organisation.update_attributes(organisation_params)
       flash[:success] = "Successfully updated organisation '" + @organisation.name + "'"
     else
-      render action: 'edit'
+      flash[:error] = "Could not update organisation '" + @organisation.name + "'"
     end
     respond_with(@organisation)
   end

@@ -21,9 +21,9 @@ class ServiceLevelsController < ApplicationController
     @service_level = ServiceLevel.new(service_level_params)
     
     if @service_level.save
-      flash[:success] = "New service level '" + @service_level.name + "' created"
+      flash[:success] = "Successfully created service level '" + @service_level.name + "'"
     else
-      flash[:error] = "Could not create service level"
+      flash[:error] = "Could not create service level '" + @service_level.name + "'"
     end
     respond_with(@service_level)
   end
@@ -39,7 +39,7 @@ class ServiceLevelsController < ApplicationController
     if @service_level.update_attributes(service_level_params)
       flash[:success] = "Successfully updated service level '" + @service_level.name + "'"
     else
-      render action: 'edit'
+      flash[:error] = "Could not update service level '" + @service_level.name + "'"
     end
     respond_with(@service_level)
   end
