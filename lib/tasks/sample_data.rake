@@ -8,7 +8,7 @@ namespace :db do
     @support_levels = ["1", "2", "3", "4"]
     @relationships = ["1", "2", "3", "4", "5", "6", "7"]
     
-    5.times do |n|
+    25.times do |n|
       
       name  = Faker::Lorem.word + "#{n+1}"
       full_name  = Faker::Company.name
