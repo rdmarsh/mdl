@@ -21,7 +21,7 @@ class ServiceLevelsController < ApplicationController
     @service_level = ServiceLevel.new(service_level_params)
     
     if @service_level.save
-      flash[:success] = "Successfully created service level '" + @service_level.name + "'"
+      flash[:info] = "Successfully created service level '" + @service_level.name + "'"
     else
       flash[:error] = "Could not create service level '" + @service_level.name + "'"
     end
@@ -37,7 +37,7 @@ class ServiceLevelsController < ApplicationController
     @service_level = ServiceLevel.find(params[:id])
     
     if @service_level.update_attributes(service_level_params)
-      flash[:success] = "Successfully updated service level '" + @service_level.name + "'"
+      flash[:info] = "Successfully updated service level '" + @service_level.name + "'"
     else
       flash[:error] = "Could not update service level '" + @service_level.name + "'"
     end
@@ -47,7 +47,7 @@ class ServiceLevelsController < ApplicationController
   def destroy
     @service_level = ServiceLevel.find(params[:id])
     if @service_level.destroy
-      flash[:success] = "Successfully deleted service level '" + @service_level.name + "'"
+      flash[:info] = "Successfully deleted service level '" + @service_level.name + "'"
     else
       flash[:error] = "Could not delete service level '" + @service_level.name + "'"
     end

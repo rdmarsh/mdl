@@ -21,7 +21,7 @@ class EnvironmentsController < ApplicationController
     @environment = Environment.new(environment_params)
     
     if @environment.save
-      flash[:success] = "Successfully created environment '" + @environment.name + "'"
+      flash[:info] = "Successfully created environment '" + @environment.name + "'"
     else
       flash[:error] = "Could not create environment '" + @environment.name + "'"
     end
@@ -37,7 +37,7 @@ class EnvironmentsController < ApplicationController
     @environment = Environment.find(params[:id])
     
     if @environment.update_attributes(environment_params)
-      flash[:success] = "Successfully updated environment '" + @environment.name + "'"
+      flash[:info] = "Successfully updated environment '" + @environment.name + "'"
     else
       flash[:error] = "Could not update environment '" + @environment.name + "'"
     end
@@ -47,7 +47,7 @@ class EnvironmentsController < ApplicationController
   def destroy
     @environment = Environment.find(params[:id])
     if @environment.destroy
-      flash[:success] = "Successfully deleted environment '" + @environment.name + "'"
+      flash[:info] = "Successfully deleted environment '" + @environment.name + "'"
     else
       flash[:error] = "Could not delete environment '" + @environment.name + "'"
     end

@@ -21,7 +21,7 @@ class RelationshipsController < ApplicationController
     @relationship = Relationship.new(relationship_params)
     
     if @relationship.save
-      flash[:success] = "Successfully created relationship '" + @relationship.name + "'"
+      flash[:info] = "Successfully created relationship '" + @relationship.name + "'"
     else
       flash[:error] = "Could not create relationship '" + @relationship.name + "'" 
     end
@@ -37,7 +37,7 @@ class RelationshipsController < ApplicationController
     @relationship = Relationship.find(params[:id])
     
     if @relationship.update_attributes(relationship_params)
-      flash[:success] = "Successfully updated relationship '" + @relationship.name + "'"
+      flash[:info] = "Successfully updated relationship '" + @relationship.name + "'"
     else
       flash[:error] = "Could not update relationship '" + @relationship.name + "'"
     end
@@ -47,7 +47,7 @@ class RelationshipsController < ApplicationController
   def destroy
     @relationship = Relationship.find(params[:id])
     if @relationship.destroy
-      flash[:success] = "Successfully deleted relationship '" + @relationship.name + "'"
+      flash[:info] = "Successfully deleted relationship '" + @relationship.name + "'"
     else
       flash[:error] = "Could not delete relationship '" + @relationship.name + "'"
     end
