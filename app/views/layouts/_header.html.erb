@@ -7,7 +7,13 @@
         <span class="icon-bar"></span>
       </a>
       <a class="brand" href="<%= root_path %>"><%= Rails.application.class.parent_name.downcase %></a>
-      <a class="pull-right btn btn-primary">Sign in</a>
+      <div class="btn-group pull-right">
+        <a class="btn btn-primary"><i class="icon-user icon-white"></i> Login</a>
+        <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#"><i class="icon-plus"></i> New account</a></li>
+        </ul>
+      </div>
       <div class="nav-collapse collapse">
         <ul class="nav">
           <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to t('home').humanize, root_path %></li>
