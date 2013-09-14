@@ -32,9 +32,6 @@ Relationship.create(name: "Supplier", description: "There is no relationship app
 Relationship.create(name: "Manufacturer", description: "There is no relationship applicable.")
 Relationship.create(name: "Vendor", description: "There is no relationship applicable.")
 
-DeviceModel.create(name: "Unknown", device_type_id: 1, manufacturer_id: 1, description: "The device is currently unknown.")
-DeviceModel.create(name: "None", device_type_id: 2, manufacturer_id: 2, description: "There is no device model applicable.")
-
 Manufacturer.create(name: "Unknown", website: "n/a", description: "The environment is currently unknown.")
 Manufacturer.create(name: "None", website: "n/a", description: "There is no manufacturer applicable.")
 Manufacturer.create(name: "Dell", website: "http://dell.com/", description: "Dell is a company that makes laptop and desktop computers and computer accessories. It is named after Michael Dell, the CEO and creator of the company. Dell makes computers for businesses and home users, and they also make computer monitors and Printers.")
@@ -54,6 +51,9 @@ Environment.create(name: "Development", description: "Lorem ipsum dolor sit amet
 Environment.create(name: "Decommissioned", description: "Lorem")
 Environment.create(name: "Pre-production", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
 Environment.create(name: "Disaster recovery", description: "Lorem")
+
+DeviceModel.create(name: "Unknown", device_type_id: 1, manufacturer_id: 1, description: "The device is currently unknown.")
+DeviceModel.create(name: "None", device_type_id: 2, manufacturer_id: 2, description: "There is no device model applicable.")
 
 Organisation.create(name: "Unknown", full_name: "Unknown", service_level_id: 1, support_level_id: 1, relationship_id: 1, active: true)
 Organisation.create(name: "None", full_name: "None", service_level_id: 2, support_level_id: 2, relationship_id: 2, active: true)
