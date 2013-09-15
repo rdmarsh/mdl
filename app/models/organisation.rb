@@ -1,4 +1,7 @@
 class Organisation < ActiveRecord::Base
+  include PublicActivity::Model
+  tracked
+  
   before_validation :strip_blanks
   
   belongs_to :support_level

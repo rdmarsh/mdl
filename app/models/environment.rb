@@ -1,4 +1,7 @@
 class Environment < ActiveRecord::Base
+  include PublicActivity::Model
+  tracked
+  
   before_validation :strip_blanks
   
   

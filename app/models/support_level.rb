@@ -1,4 +1,7 @@
 class SupportLevel < ActiveRecord::Base
+  include PublicActivity::Model
+  tracked
+  
   before_validation :strip_blanks
   
   has_many :organisations

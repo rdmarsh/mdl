@@ -1,4 +1,7 @@
 class DeviceModel < ActiveRecord::Base
+  include PublicActivity::Model
+  tracked
+  
   before_validation :strip_blanks
   
   belongs_to :device_type
