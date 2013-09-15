@@ -1,5 +1,5 @@
 class DeviceModelsController < ApplicationController
-  respond_to :html, :xml, :json
+  respond_to :html, :xml, :json, :csv
   helper_method :sort_column, :sort_direction
   
   def index

@@ -4,4 +4,5 @@
   %h1
     = yield(:title)
   %p.text-right Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  %a.btn.btn-info.btn-large.pull-right Learn More »
+  = link_to "Learn More", about_path, class: "btn btn-info btn-large pull-right"
+  
