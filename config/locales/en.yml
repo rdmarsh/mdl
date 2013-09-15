@@ -92,3 +92,11 @@ en:
   time:
     formats:
       iso8601: "%Y-%m-%d %H:%M:%S"
+      
+# public activity nav link
+# activity:
+#   device_model:
+#     create: 'Article has been created'
+#     update: 'Someone has edited the article'
+#     destroy: 'Some user removed an article!'
+#       
