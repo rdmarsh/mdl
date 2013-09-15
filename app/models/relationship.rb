@@ -7,6 +7,8 @@ class Relationship < ActiveRecord::Base
   has_many :organisations
   
   
+  
+  # validations
   validates :name, presence: true, uniqueness: { case_sensitive: false }
   
   

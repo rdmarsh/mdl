@@ -46,8 +46,15 @@ class DeviceModelsController < ApplicationController
   
   def destroy
     @device_model = DeviceModel.find(params[:id])
+    
+    # @device_type = @device_model.device_types.to_a
     if @device_model.destroy
       flash[:info] = "Successfully deleted device model '" + @device_model.name + "'"
+      # expect(device_types).not_to be_empty
+      # device_types.each do |device_type|
+        # expect(DeviceType.where(id: device_type.id)).to be_empty
+      # end
+      
     else
       flash[:error] = "Could not delete device model '" + @device_model.name + "'"
     end

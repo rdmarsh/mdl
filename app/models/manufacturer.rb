@@ -7,6 +7,8 @@ class Manufacturer < ActiveRecord::Base
   has_many :device_models
   
   
+  
+  # validations
   validates :name, presence: true, uniqueness: { case_sensitive: false }
   
   

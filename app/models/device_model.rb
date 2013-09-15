@@ -6,7 +6,9 @@ class DeviceModel < ActiveRecord::Base
   
   belongs_to :device_type
   belongs_to :manufacturer
+
   
+  # validations
   validates :name, presence: true, uniqueness: { case_sensitive: false }
   validates :manufacturer, presence: true
   validates :device_type, presence: true
