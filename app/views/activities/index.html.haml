@@ -5,22 +5,13 @@
 - if @activities.empty?
   %p= yield(:empty_msg)  
 - else
-  %table.table.table-hover.table-condensed
-    %tbody
-      %thead
-        %th= "id"
-        %th= "trackable_id"
-        %th= "trackable_type"
-        %th= "render"
-        %th= "date"
-        %th= "when"
-      - @activities.each do |r|
-        %tr
-          %td= r.id
-          %td= r.trackable_id
-          %td= link_to r.trackable_type, r.trackable_type
-          %td= render_activity r
-          %td= r.created_at
-          %td
-            = time_ago_in_words r.created_at
-            ago
+  %ul
+    - @activities.each do |r|
+      %li
+        = time_ago_in_words r.created_at
+        = r.id
+        = r.trackable_id
+        = r.trackable_type
+        = render_activity r
+        = r.created_at
+        
