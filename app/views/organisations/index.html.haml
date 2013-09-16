@@ -5,6 +5,7 @@
 - if @organisations.empty?
   %p= yield(:empty_msg)  
 - else
+  = paginate @organisations
   %table.table.table-hover.table-condensed
     %tbody
       %thead

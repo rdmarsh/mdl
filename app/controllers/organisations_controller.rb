@@ -3,7 +3,7 @@ class OrganisationsController < ApplicationController
   helper_method :sort_column, :sort_direction
   
   def index
-    @organisations = Organisation.order(sort_column + " " + sort_direction)
+    @organisations = Organisation.order(sort_column + " " + sort_direction).page(params[:page])
     respond_with(@organisations)
   end
   
