@@ -5,8 +5,8 @@
 - if @activities.empty?
   %p= yield(:empty_msg)  
 - else
-  %ul
-    - @activities.each do |r|
+  - @activities.each do |r|
+    %ul
       %li
         = time_ago_in_words r.created_at
         = r.id
@@ -14,4 +14,5 @@
         = r.trackable_type
         = render_activity r
         = r.created_at
+  = paginate @activities
         

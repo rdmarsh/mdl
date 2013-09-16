@@ -3,7 +3,7 @@ class ActivitiesController < ApplicationController
   respond_to :html, :xml, :json
   
   def index
-    @activities = PublicActivity::Activity.order("created_at desc")
+    @activities = PublicActivity::Activity.order("created_at desc").page(params[:page])
     respond_with(@activities)
   end
   

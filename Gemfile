@@ -25,6 +25,7 @@ gem 'inherited_resources'
 # gem "rails-settings-cached", "0.3.1"
 gem 'country_select'
 gem 'public_activity'
+gem "kaminari"
 
 
 group :development, :test do
