@@ -5,7 +5,6 @@
 - if @organisations.empty?
   %p= yield(:empty_msg)  
 - else
-  = paginate @organisations
   %table.table.table-hover.table-condensed
     %tbody
       %thead
@@ -27,3 +26,4 @@
           %td= link_to r.relationship.name, relationship_path(r.relationship_id)
           %td= r.phone
           %td= r.active
+  = paginate @organisations
