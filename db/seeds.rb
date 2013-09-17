@@ -55,12 +55,12 @@ Environment.create(name: "Disaster recovery", description: "Lorem")
 DeviceModel.create(name: "Unknown", device_type_id: 1, manufacturer_id: 1, description: "The device model is currently unknown.")
 DeviceModel.create(name: "None", device_type_id: 2, manufacturer_id: 2, description: "There is no device model applicable.")
 
-Device.create(name: "Unknown", service_level_id: 1, environment_id: 1, support_level_id: 1, organisation_id: 1, description: "The device is currently unknown.")
-Device.create(name: "None", service_level_id: 2, environment_id: 1, support_level_id: 2, organisation_id: 2, description: "There is no device applicable.")
-Device.create(name: "Dave", service_level_id: 1, environment_id: 1, support_level_id: 1, organisation_id: 1, description: "The device is currently unknown.")
+Device.create(name: "Unknown", service_level_id: 1, environment_id: 1, support_level_id: 1, service_level_id: 1, organisation_id: 1, description: "The device is currently unknown.")
+Device.create(name: "None", service_level_id: 2, environment_id: 1, support_level_id: 2, service_level_id: 1, organisation_id: 2, description: "There is no device applicable.")
+Device.create(name: "Dave", service_level_id: 1, environment_id: 1, support_level_id: 1, service_level_id: 1, organisation_id: 1, description: "The device is currently unknown.")
 
-Organisation.create(name: "Unknown", full_name: "Unknown", service_level_id: 1, support_level_id: 1, relationship_id: 1, active: true)
-Organisation.create(name: "None", full_name: "None", service_level_id: 2, support_level_id: 2, relationship_id: 2, active: true)
-Organisation.create(name: "Dave", full_name: "Dave", service_level_id: 1, support_level_id: 1, relationship_id: 1, active: true)
+Organisation.create(name: "Unknown", full_name: "Unknown", relationship_id: 1, active: true)
+Organisation.create(name: "None", full_name: "None", relationship_id: 2, active: true)
+Organisation.create(name: "Dave", full_name: "Dave", relationship_id: 1, active: true)
 
 # OnemdlSettings.create(name: "omdl")
