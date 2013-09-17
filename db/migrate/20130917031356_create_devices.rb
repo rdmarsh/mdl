@@ -10,6 +10,7 @@ class CreateDevices < ActiveRecord::Migration
       t.references :device_model
       t.references :environment
       t.references :service_level
+      t.references :support_level
       t.references :organisation
     end
     add_index :devices, :name

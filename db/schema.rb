@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20130917031356) do
     t.integer  "device_model_id"
     t.integer  "environment_id"
     t.integer  "service_level_id"
+    t.integer  "support_level_id"
     t.integer  "organisation_id"
   end
 
