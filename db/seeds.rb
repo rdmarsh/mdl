@@ -13,16 +13,18 @@ SupportLevel.create(name: "After Hours", hours: "24 hours", days: "7 days", excl
 
 ServiceLevel.create(name: "Unknown", description: "The service level is currently unknown.")
 ServiceLevel.create(name: "None",    description: "There is no service level applicable.")
-ServiceLevel.create(name: "Managed", description: "Managed.")
-ServiceLevel.create(name: "Colocation", description: "Colocation.")
+ServiceLevel.create(name: "Managed", description: "Managed services is the practice of outsourcing day-to-day management work as a calculated way for improved operations inclusive of production support and lifecycle build/maintenance activities. The business owner of the company who has direct oversight of the organization or system being managed is referred to as the client, or customer. The person or organization that manages and provides the service is regarded as the service provider.")
+ServiceLevel.create(name: "Colocation", description: "Colocation is the act of placing multiple (sometimes related) entities within a single location. If these are managed devices, they fall under the 'Managed' Service Level.")
 
 DeviceType.create(name: "Unknown", description: "The device type is currently unknown.")
 DeviceType.create(name: "None",    description: "There is no device type applicable.")
-DeviceType.create(name: "Blade chassis", description: "The device is currently unknown.")
-DeviceType.create(name: "Blade", description: "The device is currently unknown.")
-DeviceType.create(name: "Router", description: "The device is currently unknown.")
-DeviceType.create(name: "Hub", description: "The device is currently unknown.")
-DeviceType.create(name: "Server", description: "The device is currently unknown.")
+DeviceType.create(name: "Blade chassis", description: "A blade chassis (or enclosure) can hold multiple blade servers. The blade chassis provides services such as power, cooling, networking, various interconnects and management for blade servers.")
+DeviceType.create(name: "Blade server", description: "A blade server is a stripped down server computer with a modular design optimized to minimize the use of physical space and energy. Whereas a standard rack-mount server can function with (at least) a power cord and network cable, blade servers have many components removed to save space, minimize power consumption and other considerations, while still having all the functional components to be considered a computer.")
+DeviceType.create(name: "Router", description: "A router is a device that forwards data packets between computer networks, creating an overlay internetwork. A router is connected to two or more data lines from different networks. When a data packet comes in one of the lines, the router reads the address information in the packet to determine its ultimate destination.")
+DeviceType.create(name: "Hub", description: "A network hub is a device for connecting multiple network devices together and making them act as a single network segment. It has multiple input/output (I/O) ports, in which a signal introduced at the input of any port appears at the output of every port except the original incoming. A hub works at the physical layer (layer 1) of the OSI model.")
+DeviceType.create(name: "Switch", description: "A network switch is a computer networking device that links network segments or network devices. The term commonly refers to a multi-port network bridge that processes and routes data at the data link layer (layer 2) of the OSI model. Switches that additionally process data at the network layer (layer 3) and above are often called layer-3 switches or multilayer switches.")
+DeviceType.create(name: "Rack-mount server", description: "Rack-mounted servers are designed to store many devices mounted in a server rack. Unlike ordinary computers, servers usually can be configured, powered up and down or rebooted remotely, using out-of-band management.")
+DeviceType.create(name: "Virtual server", description: "A virtual server (VM) is a software implementation of a physical server. virtualisation allows multiple instances of virtual servers to reside on one (or more) physical server. This leads to more efficient use of computing resources, both in terms of energy consumption and cost effectiveness.")
 
 Relationship.create(name: "Unknown", description: "The relationship is currently unknown.")
 Relationship.create(name: "None",    description: "There is no relationship applicable.")
@@ -31,6 +33,7 @@ Relationship.create(name: "Partner", description: "There is no relationship appl
 Relationship.create(name: "Supplier", description: "There is no relationship applicable.")
 Relationship.create(name: "Manufacturer", description: "There is no relationship applicable.")
 Relationship.create(name: "Vendor", description: "There is no relationship applicable.")
+Relationship.create(name: "Service provider", description: "There is no relationship applicable.")
 
 Manufacturer.create(name: "Unknown", website: "n/a", description: "The environment is currently unknown.")
 Manufacturer.create(name: "None",    website: "n/a", description: "There is no manufacturer applicable.")
