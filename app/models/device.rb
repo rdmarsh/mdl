@@ -4,21 +4,23 @@ class Device < ActiveRecord::Base
   
   before_validation :strip_blanks
   
+  # belongs to
   belongs_to :device_model
-  belongs_to :organisation
-  belongs_to :support_level
-  belongs_to :service_level
   belongs_to :environment
-
+  belongs_to :organisation
+  belongs_to :service_level
+  belongs_to :support_level
+  
+  # has many
+  
   
   # validations
   validates :name, presence: true
-  validates :support_level_id, presence: true
-  validates :service_level_id, presence: true
   validates :device_model_id, presence: true
-  validates :organisation_id, presence: true
   validates :environment_id, presence: true
-  
+  validates :organisation_id, presence: true
+  validates :service_level_id, presence: true
+  validates :support_level_id, presence: true
   
   before_destroy :protect_unknown_none
   

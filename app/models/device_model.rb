@@ -4,15 +4,23 @@ class DeviceModel < ActiveRecord::Base
   
   before_validation :strip_blanks
   
+  # belongs to
   belongs_to :device_type
   belongs_to :manufacturer
+  
+  
+  
+  
+  # has many
   has_many :devices
-
   
   # validations
   validates :name, presence: true, uniqueness: { case_sensitive: false }
-  validates :manufacturer, presence: true
-  validates :device_type, presence: true
+  validates :device_type_id, presence: true
+  validates :manufacturer_id, presence: true
+  
+  
+  
   
   before_destroy :protect_unknown_none
   

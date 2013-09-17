@@ -4,8 +4,14 @@ class Organisation < ActiveRecord::Base
   
   before_validation :strip_blanks
   
+  # belongs to
   belongs_to :relationship
   
+  
+  
+  
+  
+  # has many
   has_many :devices
   
   # validations
@@ -14,6 +20,7 @@ class Organisation < ActiveRecord::Base
   validates :name, presence: true, uniqueness: { case_sensitive: false }
   validates :full_name, presence: true
   validates :relationship_id, presence: true
+  
   
   before_destroy :protect_unknown_none
   

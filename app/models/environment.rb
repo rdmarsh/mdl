@@ -4,13 +4,21 @@ class Environment < ActiveRecord::Base
   
   before_validation :strip_blanks
   
+  # belongs to
   
+  
+  
+  
+  
+  
+  # has many
   has_many :devices
-  
-  
   
   # validations
   validates :name, presence: true, uniqueness: { case_sensitive: false }
+  
+  
+  
   
   
   

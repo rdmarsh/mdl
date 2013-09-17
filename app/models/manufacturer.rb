@@ -4,12 +4,21 @@ class Manufacturer < ActiveRecord::Base
   
   before_validation :strip_blanks
   
+  # belongs to
+  
+  
+  
+  
+  
+  
+  # has many
   has_many :device_models
-  
-  
   
   # validations
   validates :name, presence: true, uniqueness: { case_sensitive: false }
+  
+  
+  
   
   
   

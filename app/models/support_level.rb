@@ -4,14 +4,23 @@ class SupportLevel < ActiveRecord::Base
   
   before_validation :strip_blanks
   
+  # belongs to
+  
+  
+  
+  
+  
+  
+  # has many
   has_many :devices
-  
-  
   
   # validations
   validates :name, presence: true, uniqueness: { case_sensitive: false }
   validates :hours, presence: true
   validates :days, presence: true
+  
+  
+  
   
   before_destroy :protect_unknown_none
   
