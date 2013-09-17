@@ -4,11 +4,8 @@ class Device < ActiveRecord::Base
   
   before_validation :strip_blanks
   
-  
-  has_many :device_models
-  
+  belongs_to :device_model
   belongs_to :organisation
-  
   belongs_to :support_level
   belongs_to :service_level
   belongs_to :environment
