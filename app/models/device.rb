@@ -11,7 +11,7 @@ class Device < ActiveRecord::Base
   
   belongs_to :support_level
   belongs_to :service_level
-  belongs_to : :environment
+  belongs_to :environment
 
   
   # validations
