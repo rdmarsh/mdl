@@ -49,6 +49,7 @@ en:
   
   index: index
   id: id
+  ipaddress: IP address
   list: list
 
   name: name

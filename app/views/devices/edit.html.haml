@@ -1,2 +1,5 @@
-%h1 Devices#edit
-%p Find me in app/views/devices/edit.html.haml
+- content_for(:show_button_path, device_path(@device))
+
+= render 'head'
+
+= render 'form'
