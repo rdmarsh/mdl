@@ -52,8 +52,12 @@ Environment.create(name: "Decommissioned", description: "Lorem")
 Environment.create(name: "Pre-production", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
 Environment.create(name: "Disaster recovery", description: "Lorem")
 
-DeviceModel.create(name: "Unknown", device_type_id: 1, manufacturer_id: 1, description: "The device is currently unknown.")
+DeviceModel.create(name: "Unknown", device_type_id: 1, manufacturer_id: 1, description: "The device model is currently unknown.")
 DeviceModel.create(name: "None", device_type_id: 2, manufacturer_id: 2, description: "There is no device model applicable.")
+
+Device.create(name: "Unknown", service_level_id: 1, environment_id: 1, support_level_id: 1, organisation_id: 1, description: "The device is currently unknown.")
+Device.create(name: "None", service_level_id: 2, environment_id: 1, support_level_id: 2, organisation_id: 2, description: "There is no device applicable.")
+Device.create(name: "Dave", service_level_id: 1, environment_id: 1, support_level_id: 1, organisation_id: 1, description: "The device is currently unknown.")
 
 Organisation.create(name: "Unknown", full_name: "Unknown", service_level_id: 1, support_level_id: 1, relationship_id: 1, active: true)
 Organisation.create(name: "None", full_name: "None", service_level_id: 2, support_level_id: 2, relationship_id: 2, active: true)

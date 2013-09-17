@@ -4,8 +4,6 @@ class Organisation < ActiveRecord::Base
   
   before_validation :strip_blanks
   
-  belongs_to :support_level
-  belongs_to :service_level
   belongs_to :relationship
   
   has_many :devices

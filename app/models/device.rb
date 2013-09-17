@@ -1,15 +1,21 @@
-class ServiceLevel < ActiveRecord::Base
+class Device < ActiveRecord::Base
   include PublicActivity::Model
   tracked
   
   before_validation :strip_blanks
   
-  has_many :devices
+  
+  has_many :device_models
+  
+  belongs_to :organisation
+  
+  belongs_to :support_level
+  belongs_to :service_level
+  belongs_to : :environment
 
+  
   # validations
-  validates :name, presence: true, uniqueness: { case_sensitive: false }
-  
-  
+  validates :name, presence: true
   
   before_destroy :protect_unknown_none
   

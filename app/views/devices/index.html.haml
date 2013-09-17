@@ -1,0 +1,30 @@
+-content_for(:empty_msg, "Currently no #{t('device').pluralize.downcase}")
+
+=render 'head'
+
+- if @devices.empty?
+  %p= yield(:empty_msg)  
+- else
+  %table.table.table-hover.table-condensed
+    %tbody
+      %thead
+        %th= sortable "id"
+        %th= sortable "name"
+        %th= sortable "ipaddress"
+        %th= sortable "service_level"
+        %th= sortable "support_level"
+        %th= sortable "device_model"
+        %th= sortable "environment"
+        %th= sortable "organisation"
+        %th= sortable "description"
+      - @devices.each do |r|
+        %tr
+          %td= r.id
+          %td= link_to r.name, r
+          %td= r.ipaddress
+          %td= link_to r.service_level.name, service_level_path(r.service_level_id)
+          %td= link_to r.support_level.name, support_level_path(r.support_level_id)
+          %td= link_to r.device_model.name, device_model_path(r.device_model_id)
+          %td= link_to r.environment.name, environment_path(r.environment_id)
+          %td= link_to r.organisation.name, organisation_path(r.organisation_id)
+          %td= r.description

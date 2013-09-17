@@ -1,0 +1,7 @@
+- content_for(:title, t('device').pluralize.humanize)
+
+- content_for(:list_button_path, devices_path)
+- content_for(:new_button_path, new_device_path)
+
+= render 'layouts/heading'
+= render 'layouts/tabs'

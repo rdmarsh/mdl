@@ -4,7 +4,7 @@ class SupportLevel < ActiveRecord::Base
   
   before_validation :strip_blanks
   
-  has_many :organisations
+  has_many :devices
   
   
   

@@ -11,8 +11,6 @@
         %th= sortable "id"
         %th= sortable "name"
         %th= sortable "full_name"
-        %th= sortable "service_level"
-        %th= sortable "support_level"
         %th= sortable "relationship"
         %th= sortable "phone"
         %th= sortable "active"
@@ -21,8 +19,6 @@
           %td= r.id
           %td= link_to r.name, r
           %td= r.full_name
-          %td= link_to r.service_level.name, service_level_path(r.service_level_id)
-          %td= link_to r.support_level.name, support_level_path(r.support_level_id)
           %td= link_to r.relationship.name, relationship_path(r.relationship_id)
           %td= r.phone
           %td= r.active
