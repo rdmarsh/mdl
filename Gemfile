@@ -20,13 +20,13 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 #gem 'taps', '~>0.3.24'
 gem 'simple_form'
-gem "show_for", "~> 0.2.4"
+gem 'show_for', '~> 0.2.4'
 gem 'inherited_resources'
 # gem "rails-settings-cached", "0.3.1"
 gem 'country_select'
 gem 'public_activity'
 gem 'kaminari'
-gem 'ipaddress'
+gem 'activevalidators', '~> 2.0.2'
 
 group :development, :test do
   gem 'turn'
