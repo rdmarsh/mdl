@@ -33,6 +33,7 @@ en:
   delete: delete
   device_type: device type
   device_model: device model
+  device: device
   
   edit: edit
   editrecord: edit record

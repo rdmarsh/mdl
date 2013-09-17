@@ -1,11 +1,14 @@
 Onemdl::Application.routes.draw do
   
   resources :activities
+
+  resources :devices
   
   resources :organisations do
     resources :support_levels
     resources :service_levels
     resources :relationships
+    resources :devices
   end
   
   resources :support_levels

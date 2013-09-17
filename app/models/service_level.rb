@@ -7,6 +7,7 @@ class ServiceLevel < ActiveRecord::Base
   has_many :organisations
   
   
+  has_many :devices
 
   # validations
   validates :name, presence: true, uniqueness: { case_sensitive: false }

@@ -5,6 +5,7 @@ class Environment < ActiveRecord::Base
   before_validation :strip_blanks
   
   
+  has_many :devices
   
   
   
