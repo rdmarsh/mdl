@@ -3,7 +3,7 @@ class SupportLevelsController < ApplicationController
   helper_method :sort_column, :sort_direction
   
   def index
-    @support_levels = SupportLevel.order(sort_column + " " + sort_direction)
+    @support_levels = SupportLevel.order(sort_column + " " + sort_direction).page(params[:page])
     respond_with(@support_levels)
   end
   

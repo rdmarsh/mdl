@@ -13,8 +13,6 @@ class Organisation < ActiveRecord::Base
   
   validates :name, presence: true, uniqueness: { case_sensitive: false }
   validates :full_name, presence: true
-  validates :support_level_id, presence: true
-  validates :service_level_id, presence: true
   validates :relationship_id, presence: true
   
   before_destroy :protect_unknown_none

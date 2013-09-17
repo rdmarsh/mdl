@@ -3,7 +3,7 @@ class DeviceModelsController < ApplicationController
   helper_method :sort_column, :sort_direction
   
   def index
-    @device_models = DeviceModel.order(sort_column + " " + sort_direction)
+    @device_models = DeviceModel.order(sort_column + " " + sort_direction).page(params[:page])
     respond_with(@device_models)
   end
   

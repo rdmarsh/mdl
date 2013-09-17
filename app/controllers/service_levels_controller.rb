@@ -3,7 +3,7 @@ class ServiceLevelsController < ApplicationController
   helper_method :sort_column, :sort_direction
   
   def index
-    @service_levels = ServiceLevel.order(sort_column + " " + sort_direction)
+    @service_levels = ServiceLevel.order(sort_column + " " + sort_direction).page(params[:page])
     respond_with(@service_levels)
   end
   

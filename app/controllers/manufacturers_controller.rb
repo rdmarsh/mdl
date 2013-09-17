@@ -3,7 +3,7 @@ class ManufacturersController < ApplicationController
   helper_method :sort_column, :sort_direction
   
   def index
-    @manufacturers = Manufacturer.order(sort_column + " " + sort_direction)
+    @manufacturers = Manufacturer.order(sort_column + " " + sort_direction).page(params[:page])
     respond_with(@manufacturers)
   end
   

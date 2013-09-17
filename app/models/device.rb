@@ -13,6 +13,12 @@ class Device < ActiveRecord::Base
   
   # validations
   validates :name, presence: true
+  validates :support_level_id, presence: true
+  validates :service_level_id, presence: true
+  validates :device_model_id, presence: true
+  validates :organisation_id, presence: true
+  validates :environment_id, presence: true
+  
   
   before_destroy :protect_unknown_none
   

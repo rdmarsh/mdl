@@ -3,7 +3,7 @@ class DeviceTypesController < ApplicationController
   helper_method :sort_column, :sort_direction
   
   def index
-    @device_types = DeviceType.order(sort_column + " " + sort_direction)
+    @device_types = DeviceType.order(sort_column + " " + sort_direction).page(params[:page])
     respond_with(@device_types)
   end
   
