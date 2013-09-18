@@ -19,6 +19,10 @@ Onemdl is registered on ohloh.net at https://www.ohloh.net/p/onemdl
 
 ## Installation
 
+* `git clone https://github.com/rdmarsh/onemdl.git`
+* `bundle install'
+* `bundle exec rake db:migrate`
+
 Set your timezone in /config/application.rb
 
     config.time_zone = 'Central Time (US & Canada)'
@@ -33,7 +37,6 @@ Set your timezone in /config/application.rb
 
 ### Database initialization
 
-`bundle exec rake db:migrate`
 
 ### How to run the test suite
 
