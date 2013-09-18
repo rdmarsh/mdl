@@ -6,6 +6,7 @@
   = f.input :description, hint: "Description of the device model"
   = f.error :base
   = f.button :submit, :class => 'btn btn-primary'
+  = can_destroy?
   .btn-group.task_controller
     %a{:class => 'btn btn-danger dropdown-toggle', 'data-toggle' => 'dropdown', :href => '#'}
       Delete
