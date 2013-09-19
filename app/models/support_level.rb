@@ -1,6 +1,6 @@
 class SupportLevel < ActiveRecord::Base
-  include PublicActivity::Model
-  tracked
+  include PublicActivity::Common
+  # tracked
   
   before_validation :strip_blanks
   
@@ -12,7 +12,7 @@ class SupportLevel < ActiveRecord::Base
   
   
   # has many
-  has_many :devices, dependent: :restrict_with_error
+  has_many :devices, dependent: :restrict_with_error, :autosave => true
   
   # validations
   validates :name, presence: true, uniqueness: { case_sensitive: false }
