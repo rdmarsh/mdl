@@ -21,7 +21,6 @@
         %th= link_to t('device_model').singularize.humanize, device_models_path
         %th= link_to t('environment').singularize.humanize, environments_path
         %th= link_to t('organisation').singularize.humanize, organisations_path
-        %th= sortable "description"
       - @devices.each do |r|
         %tr{:class => tr_environment(r.environment.name)}
           %td= r.id
@@ -32,4 +31,3 @@
           %td= link_to r.device_model.name, device_model_path(r.device_model_id)
           %td= link_to r.environment.name, environment_path(r.environment_id)
           %td= link_to r.organisation.name, organisation_path(r.organisation_id)
-          %td= r.description

@@ -30,10 +30,10 @@ module ApplicationHelper
       when "Decommissioned" then "error"
       when "Production" then "success"
       when "Development" then "info"
-      when "UAT" then "warn"
-      when "Pre-production" then "warn"
+      when "UAT" then "warning"
+      when "Pre-production" then "warning"
       when "Disaster recovery" then "success"
-      when "Development" then "warn"
+      when "Development" then "warning"
         
     end
   end
