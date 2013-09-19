@@ -22,6 +22,7 @@
 database.yml
 doc/
 *.swp
+*.tmp
 *~
 .project
 .DS_Store
