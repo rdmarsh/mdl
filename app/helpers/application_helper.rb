@@ -25,6 +25,20 @@ module ApplicationHelper
     end
   end
   
+  def tr_environment(environment)
+    case environment
+      when "Decommissioned" then "error"
+      when "Production" then "success"
+      when "Development" then "info"
+      when "UAT" then "warn"
+      when "Pre-production" then "warn"
+      when "Disaster recovery" then "success"
+      when "Development" then "warn"
+        
+    end
+  end
+  
+  
   def sortable(column, title = nil)
     title ||= t(column).humanize
     css_class = column == sort_column ? "current #{sort_direction}" : nil
@@ -47,10 +61,10 @@ module ApplicationHelper
   # flash notice
   def flash_class(level)
     case level
-    when :info then "alert alert-info"
-    when :success then "alert alert-success"
-    when :error then "alert alert-error"
-    when :warn then "alert"
+     when :info then "alert alert-info"
+     when :success then "alert alert-success"
+     when :error then "alert alert-error"
+     when :warn then "alert"
     end
   end
   

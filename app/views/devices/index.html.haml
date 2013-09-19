@@ -23,7 +23,7 @@
         %th= link_to t('organisation').singularize.humanize, organisations_path
         %th= sortable "description"
       - @devices.each do |r|
-        %tr
+        %tr{:class => tr_environment(r.environment.name)}
           %td= r.id
           %td= link_to r.name, r
           %td= r.ipaddress
