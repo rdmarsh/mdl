@@ -16,6 +16,7 @@
           = sortable "name"
           %span{:class => 'caret'}
         %th= sortable "description"
+        %th= link_to t('organisation').pluralize.humanize, devices_path
       - @relationships.each do |r|
         %tr
           %td= r.id

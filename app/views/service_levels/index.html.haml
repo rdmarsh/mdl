@@ -15,11 +15,13 @@
         %th
           = sortable "name"
           %span{:class => 'caret'}
+        %th= sortable "description"
         %th= link_to t('device').pluralize.humanize, devices_path
       - @service_levels.each do |r|
         %tr
           %td= r.id
           %td= link_to r.name, r
+          %td= r.description
           %td              
             %ul.unstyled
               - r.devices.each do |device|

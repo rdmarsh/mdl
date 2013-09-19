@@ -1,6 +1,5 @@
 class ServiceLevel < ActiveRecord::Base
   include PublicActivity::Common
-  # tracked
   
   before_validation :strip_blanks
   

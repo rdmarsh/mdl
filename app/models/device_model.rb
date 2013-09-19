@@ -1,6 +1,5 @@
 class DeviceModel < ActiveRecord::Base
-  include PublicActivity::Model
-  tracked
+  include PublicActivity::Common
   
   before_validation :strip_blanks
   
