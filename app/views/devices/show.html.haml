@@ -5,11 +5,11 @@
 = show_for @device do |f|
   = f.attribute :name
   = f.attribute :ipaddress
-  = f.attribute :name, :in => :service_level
-  = f.attribute :name, :in => :support_level
-  = f.attribute :name, :in => :device_model
-  = f.attribute :name, :in => :environment
-  = f.attribute :name, :in => :organisation
+  = f.association :service_level
+  = f.association :support_level
+  = f.association :device_model
+  = f.association :environment
+  = f.association :organisation
   = f.attribute :description
   = f.attribute :created_at, :format => :iso8601
   = f.attribute :updated_at, :format => :iso8601

@@ -12,7 +12,7 @@ class DeviceType < ActiveRecord::Base
   
   
   # has many
-  has_many :device_models
+  has_many :device_models, dependent: :restrict_with_error
   
   # validations
   validates :name, presence: true, uniqueness: { case_sensitive: false }

@@ -5,7 +5,7 @@
 = show_for @organisation do |f|
   = f.attribute :name
   = f.attribute :full_name
-  = f.attribute :name, :in => :relationship
+  = f.association :relationship
   = f.attribute :active?
   = f.attribute :phone
   = f.attribute :fax

@@ -12,7 +12,7 @@ class Organisation < ActiveRecord::Base
   
   
   # has many
-  has_many :devices
+  has_many :devices, dependent: :restrict_with_error
   
   # validations
   validates_format_of :name, :with => /\A[a-zA-Z\d]+\z/, :message => "Can only contain letters and numbers."

@@ -12,7 +12,7 @@ class Relationship < ActiveRecord::Base
   
   
   # has many
-  has_many :organisations
+  has_many :organisations, dependent: :restrict_with_error
   
   # validations
   validates :name, presence: true, uniqueness: { case_sensitive: false }
