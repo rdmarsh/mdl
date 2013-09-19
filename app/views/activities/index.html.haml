@@ -13,10 +13,12 @@
           Someone
         - else
           = r.owner_id
+          
         / what did they do?
         = render_activity r
-        / in future, this will link to history page:
+        
         / where did they do it?
+        / in future, this will link to history page:
         = link_to r.trackable_type.tableize.pluralize.humanize, r.trackable_type.tableize
         / when did they do it?
         = time_ago_in_words r.created_at

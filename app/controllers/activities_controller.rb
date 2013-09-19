@@ -9,12 +9,4 @@ class ActivitiesController < ApplicationController
     end
     respond_with(@activities)
   end
-  
-  private
-  
-  # for sorting columns
-  def sort_column
-    PublicActivity.column_names.include?(params[:sort]) ? params[:sort] : "id"
-  end
-  
 end
