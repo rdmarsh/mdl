@@ -1,0 +1,164 @@
+*HP DL120 G5
+*HP DL140 G2 (retired)
+*HP DL140 G3 (retired)
+*HP DL145 G2 (retired)
+*HP DL145 G3 (retired)
+*HP DL160 G6
+*HP DL165 G5
+*HP DL180 G6
+*HP DL185 G5 (retired)
+*HP ML110 G6
+*HP ML115 G6
+*HP ML150 G6
+*HP NetServer LP2000R (retired)
+*HP NetServer LH3000 (retired)
+*Compaq ProLiant DL320 (1U, single processor server)
+**ProLiant DL320 G2 (retired)
+**ProLiant DL320 G3 (retired)
+**ProLiant DL320 G4 (retired)
+**ProLiant DL320 G5
+**ProLiant DL320 G6
+*Compaq ProLiant DL360 (1U, 2-processor server, 2hot swap Compaq universal hard disks)
+**Compaq ProLiant DL360 G2 (introduced Compaq Integrated Lights-Out)
+**ProLiant DL360 G3 (retired)
+**ProLiant DL360 G4 (retired)
+**ProLiant DL360 G4p (retired)
+**ProLiant DL360 G5 (up to 6 SFF SAS hard disks)
+**ProLiant DL360 G6 (up to 8 SFF SAS hard disks)
+**ProLiant DL360 G7 (up to 8 SFF SAS hard disks)
+*ProLiant DL365 (retired)
+*Compaq ProLiant DL380
+**Compaq ProLiant DL380 G2 (changed to 2U chassis, 6 hot swap Compaq universal hard disks; retired)
+**ProLiant DL380 G3 (retired)
+**ProLiant DL380 G4 (retired)
+**ProLiant DL380 G5
+**ProLiant DL380 G6 (up to 16 SFF or 6 LFF SAS hard disks)
+**ProLiant DL380 G7 (up to 16 SFF or 6 LFF SAS hard disks)
+*ProLiant DL385
+**ProLiant DL385 G2
+**ProLiant DL385 G5
+**ProLiant DL385 G5p
+**ProLiant DL385 G6
+**ProLiant DL385 G7
+*ProLiant DL560 G1 (retired)
+*ProLiant DL580
+**ProLiant DL580 G2 (retired)
+**ProLiant DL580 G3 (retired)
+**ProLiant DL580 G4
+**ProLiant DL580 G5
+**ProLiant DL580 G6
+**ProLiant DL580 G7
+*ProLiant DL585
+**ProLiant DL585 G2 (supports up to four dual or core AMD [[Opteron]])
+**ProLiant DL585 G5 (supports up to four dual or core AMD [[Opteron]])
+**ProLiant DL585 G6
+*ProLiant DL740 (retired)
+*Compaq ProLiant DL760 (retired)
+**ProLiant DL760 G2 (retired)
+*ProLiant DL785
+**ProLiant DL785 G6
+*ProLiant DL980 G7
+
+=====ProLiant ML Series=====
+*Compaq ProLiant ML310
+**ProLiant ML310 G2 (retired)
+**ProLiant ML310 G3 (retired)
+**ProLiant ML310 G4 (retired)
+**ProLiant ML310 G5 (retired in China and India)
+**ProLiant ML310 G5p
+*Compaq ProLiant ML330 (retired)
+**Compaq ProLiant ML330 G2 (retired)
+**HP ProLiant ML330 G6
+*Compaq ProLiant ML350
+**Compaq ProLiant ML350 G2
+**ProLiant ML350 G3
+**ProLiant ML350 G4
+**ProLiant ML350 G4p
+**ProLiant ML350 G5
+**HP ProLiant ML350 G6
+**HP ProLiant ML350p Gen8
+*Compaq ProLiant ML370
+**Compaq ProLiant ML370 G2 (retired)
+**Compaq ProLiant ML370 G3 (retired)
+**ProLiant ML370 G4
+**ProLiant ML370 G5
+**HP ProLiant ML370 G6
+*Compaq ProLiant ML570
+**ProLiant ML570 G2 (retired)
+
+=====ProLiant BLp blades=====
+*ProLiant BL20p
+** G1 - G2 - G3 - G4 - G5
+*ProLiant BL25p
+** G1 - G2
+*ProLiant BL30p
+*ProLiant BL35p
+*ProLiant BL40p
+*ProLiant BL45p
+** G1 - G2
+
+=====ProLiant BLc blades=====
+*ProLiant BL2x220c
+** G5 - G6 - G7
+*ProLiant BL260c   (G5 only)
+*ProLiant BL280c   (G6 only)
+*ProLiant BL460c
+** G1 - G5 - G6 - G7 - G8
+*ProLiant BL465c
+** G1 - G5
+*ProLiant BL480c
+*ProLiant BL490c  (G6 only)
+*Proliant BL495c   (G5 only)
+*ProLiant BL680c
+** G1 - G5
+*ProLiant BL685c
+** G1 - G5 - G6
+
+===[[IA-64|Itanium]] based===
+[[HP Integrity]]
+* rx1600 series - 1U
+** rx1600 - rx1620
+* rx2600 series - 2U
+** rx2600 - rx2620 - rx2660
+* rx3600        - 4U
+* rx4610        - 7U
+* rx4640        - 4U
+* rx5670        - 7U
+* rx6600        - 7U
+* rx7600 series - 10U
+** rx7610 - rx7620 - rx7640
+* rx8600 series - 17U
+** rx8620 - rx8640
+* [[HP Superdome]]
+** SX1000 based - SX2000 based
+
+Integrity BL blades
+* BL60p
+* BL860c
+* BL870c
+
+Compaq ProLiant
+*Compaq ProLiant DL590/64 (retired)
+
+===[[DEC Alpha|Alpha]] based===
+* [[AlphaServer]] GS1280
+* Alphaserver GS160
+* AlphaServer ES80
+* AlphaServer ES47
+* Alphaserver ES40
+* AlphaServer DS25
+* Alphaserver DS20
+* AlphaServer DS15
+* Alphaserver DS10
+
+===[[PA-RISC]] based===
+* rp3410
+* rp3440
+* rp4410
+* rp4440
+* rp7405
+* rp7410
+* rp7420
+* rp8400
+* rp8420
+

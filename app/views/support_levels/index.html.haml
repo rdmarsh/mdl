@@ -1,3 +1,4 @@
+/ SupportLevels
 -content_for(:empty_msg, "Currently no #{t('support_level').pluralize.downcase}")
 
 =render 'head'
@@ -8,12 +9,17 @@
   %table.table.table-hover.table-condensed
     %tbody
       %thead
-        %th= sortable "id"
-        %th= sortable "name"
+        %th
+          = sortable "id"
+          %span{:class => 'caret'}
+        %th
+          = sortable "name"
+          %span{:class => 'caret'}
         %th= sortable "hours"
         %th= sortable "days"
         %th= sortable "exclusions"
         %th= sortable "description"
+        %th= link_to t('device').pluralize.humanize, devices_path
       - @support_levels.each do |r|
         %tr
           %td= r.id
@@ -22,3 +28,7 @@
           %td= r.days
           %td= r.exclusions
           %td= r.description
+          %td              
+            %ul.unstyled
+              - r.devices.each do |device|
+                %li= link_to device.name, device_path(device.id)

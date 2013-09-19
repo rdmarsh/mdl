@@ -10,3 +10,7 @@
   = f.attribute :description
   = f.attribute :created_at, :format => :iso8601
   = f.attribute :updated_at, :format => :iso8601
+  = f.association :devices do
+    %ul
+      - @support_level.devices.each do |device|
+        %li= link_to device.name, device_path(device.id)

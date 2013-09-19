@@ -1,3 +1,4 @@
+/ Relationships
 -content_for(:empty_msg, "Currently no #{t('@relationship').pluralize.downcase}")
 
 =render 'head'
@@ -8,11 +9,19 @@
   %table.table.table-hover.table-condensed
     %tbody
       %thead
-        %th= sortable "id"
-        %th= sortable "name"
+        %th
+          = sortable "id"
+          %span{:class => 'caret'}
+        %th
+          = sortable "name"
+          %span{:class => 'caret'}
         %th= sortable "description"
       - @relationships.each do |r|
         %tr
           %td= r.id
           %td= link_to r.name, r
           %td= r.description
+          %td              
+            %ul.unstyled
+              - r.organisations.each do |organisation|
+                %li= link_to organisation.name, organisation_path(organisation.id)

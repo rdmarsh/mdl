@@ -1,3 +1,4 @@
+/ Organisations
 -content_for(:empty_msg, "Currently no #{t('organisation').pluralize.downcase}")
 
 =render 'head'
@@ -8,12 +9,17 @@
   %table.table.table-hover.table-condensed
     %tbody
       %thead
-        %th= sortable "id"
-        %th= sortable "name"
+        %th
+          = sortable "id"
+          %span{:class => 'caret'}
+        %th
+          = sortable "name"
+          %span{:class => 'caret'}
         %th= sortable "full_name"
-        %th= sortable "relationship"
+        %th= link_to t('relationship').singularize.humanize, relationships_path
         %th= sortable "phone"
         %th= sortable "active"
+        %th= link_to t('device').pluralize.humanize, devices_path
       - @organisations.each do |r|
         %tr{:class => tr_attributes(r.active)}
           %td= r.id
@@ -22,4 +28,8 @@
           %td= link_to r.relationship.name, relationship_path(r.relationship_id)
           %td= r.phone
           %td= r.active
+          %td              
+            %ul.unstyled
+              - r.devices.each do |device|
+                %li= link_to device.name, device_path(device.id)
   = paginate @organisations

@@ -22,9 +22,11 @@ DeviceType.create(name: "Blade chassis", description: "A blade chassis (or enclo
 DeviceType.create(name: "Router", description: "A router is a device that forwards data packets between computer networks, creating an overlay internetwork. A router is connected to two or more data lines from different networks. When a data packet comes in one of the lines, the router reads the address information in the packet to determine its ultimate destination.")
 DeviceType.create(name: "Hub", description: "A network hub is a device for connecting multiple network devices together and making them act as a single network segment. It has multiple input/output (I/O) ports, in which a signal introduced at the input of any port appears at the output of every port except the original incoming. A hub works at the physical layer (layer 1) of the OSI model.")
 DeviceType.create(name: "Switch", description: "A network switch is a computer networking device that links network segments or network devices. The term commonly refers to a multi-port network bridge that processes and routes data at the data link layer (layer 2) of the OSI model. Switches that additionally process data at the network layer (layer 3) and above are often called layer-3 switches or multilayer switches.")
-DeviceType.create(name: "Server - blade", description: "A blade server is a stripped down server computer with a modular design optimized to minimize the use of physical space and energy. Whereas a standard rack-mount server can function with (at least) a power cord and network cable, blade servers have many components removed to save space, minimize power consumption and other considerations, while still having all the functional components to be considered a computer.")
-DeviceType.create(name: "Server - rack-mounted", description: "Rack-mounted servers are designed to store many devices mounted in a server rack. Unlike ordinary computers, servers usually can be configured, powered up and down or rebooted remotely, using out-of-band management.")
-DeviceType.create(name: "Server - virtual", description: "A virtual server (VM) is a software implementation of a physical server. virtualisation allows multiple instances of virtual servers to reside on one (or more) physical server. This leads to more efficient use of computing resources, both in terms of energy consumption and cost effectiveness.")
+DeviceType.create(name: "Server: Blade", description: "A blade server is a stripped down server computer with a modular design optimized to minimize the use of physical space and energy. Whereas a standard rack-mount server can function with (at least) a power cord and network cable, blade servers have many components removed to save space, minimize power consumption and other considerations, while still having all the functional components to be considered a computer.")
+DeviceType.create(name: "Server: Rack-mounted", description: "Rack-mounted servers are designed to store many devices mounted in a server rack. Unlike ordinary computers, servers usually can be configured, powered up and down or rebooted remotely, using out-of-band management.")
+DeviceType.create(name: "Server: Virtual", description: "A virtual server (VM) is a software implementation of a physical server. virtualisation allows multiple instances of virtual servers to reside on one (or more) physical server. This leads to more efficient use of computing resources, both in terms of energy consumption and cost effectiveness.")
+DeviceType.create(name: "Printer: Laser", description: "A Printer.")
+DeviceType.create(name: "Printer: Inkjet", description: "A Printer.")
 
 Relationship.create(name: "Unknown", description: "The relationship is currently unknown.")
 Relationship.create(name: "None",    description: "There is no relationship applicable.")
@@ -57,6 +59,10 @@ Environment.create(name: "Disaster recovery", description: "Lorem")
 
 DeviceModel.create(name: "Unknown", device_type_id: 1, manufacturer_id: 1, description: "The device model is currently unknown.")
 DeviceModel.create(name: "None",    device_type_id: 2, manufacturer_id: 2, description: "There is no device model applicable.")
+DeviceModel.create(name: "BL60p",   device_type_id: 7, manufacturer_id: 3, description: "Integrity BL blade.")
+DeviceModel.create(name: "BL860c",   device_type_id: 7, manufacturer_id: 3, description: "Integrity BL blade.")
+DeviceModel.create(name: "BL870c",   device_type_id: 7, manufacturer_id: 3, description: "Integrity BL blade.")
+
 
 Organisation.create(name: "Unknown", full_name: "Unknown", relationship_id: 1, active: true)
 Organisation.create(name: "None",    full_name: "None",    relationship_id: 2, active: true)

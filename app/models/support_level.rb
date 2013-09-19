@@ -12,7 +12,7 @@ class SupportLevel < ActiveRecord::Base
   
   
   # has many
-  has_many :devices, dependent: :restrict_with_error, :autosave => true
+  has_many :devices, dependent: :restrict_with_error
   
   # validations
   validates :name, presence: true, uniqueness: { case_sensitive: false }

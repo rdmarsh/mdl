@@ -8,4 +8,7 @@
   = f.attribute :description
   = f.attribute :created_at, :format => :iso8601
   = f.attribute :updated_at, :format => :iso8601
-  
+  = f.association :device_models do
+    %ul
+      - @manufacturer.device_models.each do |device_model|
+        %li= link_to device_model.name, device_model_path(device_model.id)

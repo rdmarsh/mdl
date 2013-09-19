@@ -1,3 +1,4 @@
+/ Devices
 -content_for(:empty_msg, "Currently no #{t('device').pluralize.downcase}")
 
 =render 'head'
@@ -8,14 +9,18 @@
   %table.table.table-hover.table-condensed
     %tbody
       %thead
-        %th= sortable "id"
-        %th= sortable "name"
+        %th
+          = sortable "id"
+          %span{:class => 'caret'}
+        %th
+          = sortable "name"
+          %span{:class => 'caret'}
         %th= sortable "ipaddress"
-        %th= sortable "service_level"
-        %th= sortable "support_level"
-        %th= sortable "device_model"
-        %th= sortable "environment"
-        %th= sortable "organisation"
+        %th= link_to t('service_level').singularize.humanize, service_levels_path
+        %th= link_to t('support_level').singularize.humanize, support_levels_path
+        %th= link_to t('device_model').singularize.humanize, device_models_path
+        %th= link_to t('environment').singularize.humanize, environments_path
+        %th= link_to t('organisation').singularize.humanize, organisations_path
         %th= sortable "description"
       - @devices.each do |r|
         %tr

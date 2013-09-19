@@ -1,5 +1,6 @@
 <% flash.each do |key, value| %>
   <div class="<%= flash_class(key) %> fade in">
+    <!-- iOS devices require an href="#" for click events -->
     <a href="#" data-dismiss="alert" class="close">&times;</a>
     <%= value %>
   </div>

@@ -1,3 +1,4 @@
+/ Environments
 -content_for(:empty_msg, "Currently no #{t('environment').pluralize.downcase}")
 
 =render 'head'
@@ -8,11 +9,20 @@
   %table.table.table-hover.table-condensed
     %tbody
       %thead
-        %th= sortable "id"
-        %th= sortable "name"
+        %th
+          = sortable "id"
+          %span{:class => 'caret'}
+        %th
+          = sortable "name"
+          %span{:class => 'caret'}
         %th= sortable "description"
+        %th= link_to t('device').pluralize.humanize, devices_path
       - @environments.each do |r|
         %tr
           %td= r.id
           %td= link_to r.name, r
           %td= r.description
+          %td              
+            %ul.unstyled
+              - r.devices.each do |device|
+                %li= link_to device.name, device_path(device.id)

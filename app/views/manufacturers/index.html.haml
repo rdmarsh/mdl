@@ -1,3 +1,4 @@
+/ Manufacturers
 -content_for(:empty_msg, "Currently no #{t('manufacturer').pluralize.downcase}")
 
 =render 'head'
@@ -8,13 +9,20 @@
   %table.table.table-hover.table-condensed
     %tbody
       %thead
-        %th= sortable "id"
-        %th= sortable "name"
+        %th
+          = sortable "id"
+          %span{:class => 'caret'}
+        %th
+          = sortable "name"
+          %span{:class => 'caret'}
         %th= sortable "website"
-        %th= sortable "description"
+        %th= link_to t('device').pluralize.humanize, devices_path
       - @manufacturers.each do |r|
         %tr
           %td= r.id
           %td= link_to r.name, r
           %td= link_to r.website, r.website
-          %td= r.description
+          %td              
+            %ul.unstyled
+              - r.device_models.each do |device_model|
+                %li= link_to device_model.name, device_model_path(device_model.id)
