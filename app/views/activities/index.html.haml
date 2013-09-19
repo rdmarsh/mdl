@@ -8,10 +8,20 @@
   - @activities.each do |r|
     %ul
       %li
-        = time_ago_in_words r.created_at
-        = r.id
-        = r.trackable_id
-        = r.trackable_type
+        - if r.owner_id.nil?
+          Someone
+        - else
+          = r.owner_id
         = render_activity r
-        = r.created_at
+        / in future, this will link to history page:
+        = link_to r.trackable_type.tableize.pluralize.humanize, r.trackable_type.tableize
+        changed
+        = time_ago_in_words r.created_at
+        - if r.owner_id.nil?
+          ago
+        - else
+          ago by
+        = r.owner_id
+        \:
+        = r.inspect
   = paginate @activities
