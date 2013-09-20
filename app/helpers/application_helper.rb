@@ -38,14 +38,13 @@ module ApplicationHelper
     end
   end
   
-  
   def sortable(column, title = nil)
     title ||= t(column).humanize
     css_class = column == sort_column ? "current #{sort_direction}" : nil
     direction = column == sort_column && sort_direction == "asc" ? "desc" : "asc"
     link_to title, {:sort => column, :direction => direction}, {:class => css_class}
   end
-
+  
   def tab_link(link_text, link_path, link_icon, off_link_state)
     class_name = action_name == link_text ? 'active' : off_link_state
         
@@ -67,5 +66,4 @@ module ApplicationHelper
      when :warn then "alert"
     end
   end
-  
 end

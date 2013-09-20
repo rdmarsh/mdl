@@ -29,6 +29,7 @@ gem 'country_select'
 gem 'public_activity'
 gem 'kaminari'
 gem 'activevalidators', '~> 2.0.2'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 group :development, :test do
   gem 'turn'

@@ -10,7 +10,7 @@
       %li
         / who did it?
         - if r.owner_id.nil?
-          Someone
+          = t('anonymoususer').humanize
         - else
           = r.owner_id
           

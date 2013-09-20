@@ -13,7 +13,7 @@
         %a.btn.btn-primary.btn-small.dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
         %ul.dropdown-menu
           %li
-            %a href="#"><i class="icon-plus"></i> Create an account</a></li>
+            %a href="#"><i class="icon-plus"></i> <%= t('create_an_account').singularize.humanize %></a></li>
       .nav-collapse.collapse
         %ul.nav
           %li class="<%= 'active' if current_page?(root_path) %>"><%= link_to t('home').humanize, root_path %></li>

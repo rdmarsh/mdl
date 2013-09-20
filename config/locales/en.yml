@@ -25,9 +25,14 @@ en:
   active: active
   activity: activity
   add: add
+  anonymoususer: 'an anonymous coward'
   
   contact: contact
   csv: csv
+  created: created
+  create_an_account: create an account
+  updated: updated
+  deleted: deleted
   
   description: description
   delete: delete

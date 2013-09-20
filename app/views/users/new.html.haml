@@ -1,0 +1,12 @@
+- content_for(:title, t('create_an_account').singularize.humanize)
+
+= render 'layouts/heading'
+
+= simple_form_for @user, :html => { :class => 'form-horizontal' } do |f|
+  = f.error_notification
+  = f.input :email, placeholder: 'user@domain.com'
+  = f.input :password
+  = f.input :password_confirmation
+  = f.button :submit, :class => 'btn btn-primary'
+  or
+  = link_to "Cancel", :back

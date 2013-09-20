@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130917031356) do
+ActiveRecord::Schema.define(version: 20130920104725) do
 
   create_table "activities", force: true do |t|
     t.integer  "trackable_id"
@@ -154,5 +154,12 @@ ActiveRecord::Schema.define(version: 20130917031356) do
   end
 
   add_index "support_levels", ["name"], name: "index_support_levels_on_name", unique: true
+
+  create_table "users", force: true do |t|
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

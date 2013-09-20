@@ -1,7 +1,14 @@
 Onemdl::Application.routes.draw do
   
-  resources :activities
+  get "logout" => "sessions#destroy", :as => "logout"
+  get "login" => "sessions#new", :as => "login"
+  get "signup" => "users#new", :as => "signup"
 
+  resources :sessions
+  resources :users
+  
+  resources :activities
+  
   resources :devices do
     resources :support_levels
     resources :service_levels
@@ -39,7 +46,7 @@ Onemdl::Application.routes.draw do
   match '/about',   to: 'staticpages#about',    via: 'get'
   match '/contact', to: 'staticpages#contact',  via: 'get'
   match '/faq',     to: 'staticpages#faq',      via: 'get'
-
+  
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
