@@ -9,10 +9,10 @@
     %ul
       %li
         / who did it?
-        - if r.owner_id.nil?
+        - if r.owner.nil?
           = t('anonymoususer').humanize
         - else
-          = r.owner_id
+          = link_to r.owner.email, r.owner
           
         / what did they do?
         = render_activity r
@@ -23,4 +23,4 @@
         / when did they do it?
         = time_ago_in_words r.created_at
         ago
-  = paginate @activities
+  = paginate @activities  
