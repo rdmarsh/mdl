@@ -34,7 +34,6 @@ module ApplicationHelper
       when "Pre-production" then "warning"
       when "Disaster recovery" then "success"
       when "Development" then "warning"
-        
     end
   end
   
