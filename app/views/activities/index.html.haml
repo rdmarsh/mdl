@@ -6,22 +6,32 @@
   %p= yield(:empty_msg)  
 - else
   - @activities.each do |r|
-    %ul
+    %ul.unstyled
       %li
-        / who did it?
-        - if r.owner.nil?
-          = t('anonymoususer').humanize
-        - else
-          = link_to r.owner.email, r.owner
+        .well
+          .row-fluid
+            .span1
+              / put an icon next to their name
+              - if r.owner.nil?
+                = image_tag "onering.png"
+              - else
+                = image_tag avatar_url(r.owner)
+            .span9
+              / who did it?
+              - if r.owner.nil?
+                = t('anonymoususer').humanize
+              - else
+                = link_to r.owner.email, r.owner
           
-        / what did they do?
-        = render_activity r
-        
-        / where did they do it?
-        / in future, this will link to history page:
-        = link_to r.trackable_type.tableize.pluralize.humanize, r.trackable_type.tableize
-        
-        / when did they do it?
-        = time_ago_in_words r.created_at
-        ago
+              / what did they do?
+              = render_activity r
+          
+              / where did they do it?
+              / in future, this will link to history page:
+              = link_to r.trackable_type.tableize.pluralize.humanize, r.trackable_type.tableize
+              %br
+              .muted
+                / when did they do it?
+                = time_ago_in_words r.created_at
+                ago
   = paginate @activities  

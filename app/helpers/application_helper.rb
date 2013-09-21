@@ -65,4 +65,14 @@ module ApplicationHelper
      when :warn then "alert"
     end
   end
+  
+  # gravatar avatar helper, from railscasts ep 244
+  def avatar_url(user)
+    if user.avatar_url.present?
+      user.avatar_url
+    else
+      gravatar_id = Digest::MD5::hexdigest(user.email).downcase
+      "http://gravatar.com/avatar/#{gravatar_id}.png?s=48&d=wavatar"
+    end
+  end
 end

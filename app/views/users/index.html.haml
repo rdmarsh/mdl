@@ -15,7 +15,9 @@
         %th
           = sortable "email"
           %span{:class => 'caret'}
+        %th Avatar
       - @users.each do |r|
         %tr
           %td= r.id
           %td= link_to r.email, r
+          %td= image_tag avatar_url(r)

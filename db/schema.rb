@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130920104725) do
+ActiveRecord::Schema.define(version: 20130921105822) do
 
   create_table "activities", force: true do |t|
     t.integer  "trackable_id"
@@ -160,6 +160,8 @@ ActiveRecord::Schema.define(version: 20130920104725) do
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "user_name"
+    t.string   "avatar_url"
   end
 
 end
