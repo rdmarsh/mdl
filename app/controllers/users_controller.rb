@@ -1,4 +1,12 @@
 class UsersController < ApplicationController
+  respond_to :html, :xml, :json
+  helper_method :sort_column, :sort_direction
+  
+  def index
+    @users = User.order(sort_column + " " + sort_direction).page(params[:page])
+    respond_with(@users)
+  end
+  
   def new
     @user = User.new
   end
@@ -21,6 +29,11 @@ class UsersController < ApplicationController
   end
   
   private
+  
+  # for sorting columns
+  def sort_column
+    SupportLevel.column_names.include?(params[:sort]) ? params[:sort] : "id"
+  end
   
   # for allowing editing on fields
   def user_params

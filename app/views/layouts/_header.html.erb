@@ -26,6 +26,7 @@
         <ul class="nav">
           <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to t('home').humanize, root_path %></li>
           <li class="<%= 'active' if current_page?(activities_path) %>"><%= link_to t('activity').humanize, activities_path %></li>
+          <li class="<%= 'active' if current_page?(statistics_path) %>"><%= link_to t('statistics').humanize, statistics_path %></li>
         </ul>
         <ul class="nav pull-right">
           <li class="divider-vertical"></li>

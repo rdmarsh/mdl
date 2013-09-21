@@ -43,6 +43,7 @@ en:
   devices: devices
   
   edit: edit
+  email: email
   editrecord: edit record
   environment: environment
   newenvironment: new environment
@@ -84,9 +85,11 @@ en:
   support: support
   support_level: support level
   service_level: service level
+  statistics: statistics
   
   showall: show all
   type: type
+  user: user
   
   days: days
   description: description
