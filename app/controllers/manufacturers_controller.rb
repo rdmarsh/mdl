@@ -22,7 +22,7 @@ class ManufacturersController < ApplicationController
     
     if @manufacturer.save
       # write a create message to the activity log
-      @manufacturer.create_activity :create
+      @manufacturer.create_activity :create, owner: current_user
       flash[:info] = "Successfully created manufacturer '" + @manufacturer.name + "'"
     else
       flash[:error] = "Could not create manufacturer '" + @manufacturer.name + "'"
@@ -41,7 +41,7 @@ class ManufacturersController < ApplicationController
     
     if @manufacturer.update_attributes(manufacturer_params)
       # write an update message to the activity log
-      @manufacturer.create_activity :update
+      @manufacturer.create_activity :update, owner: current_user
       flash[:info] = "Successfully updated manufacturer '" + @manufacturer.name + "'"
     else
       flash[:error] = "Could not update manufacturer '" + @manufacturer.name + "'"
@@ -54,7 +54,7 @@ class ManufacturersController < ApplicationController
     @manufacturer = Manufacturer.find(params[:id])
     
     # write an update message to the activity log, it fails with a "cannot call create unless the parent is saved" inside the if statement, so I've put it here. It works out anyway, as we can show both successes and failures
-    @manufacturer.create_activity :destroy
+    @manufacturer.create_activity :destroy, owner: current_user
     if @manufacturer.destroy
       flash[:info] = "Successfully deleted manufacturer '" + @manufacturer.name + "'"
     else

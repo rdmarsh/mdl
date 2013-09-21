@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     
     if @user.save
       # write a create message to the activity log
-      @user.create_activity :create
+      @user.create_activity :create, owner: current_user
       
       session[:user_id] = @user.id
       flash[:info] = "Thank you for signing up!"

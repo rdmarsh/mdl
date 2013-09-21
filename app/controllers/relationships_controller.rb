@@ -22,7 +22,7 @@ class RelationshipsController < ApplicationController
     
     if @relationship.save
       # write a create message to the activity log
-      @relationship.create_activity :create
+      @relationship.create_activity :create, owner: current_user
       flash[:info] = "Successfully created relationship '" + @relationship.name + "'"
     else
       flash[:error] = "Could not create relationship '" + @relationship.name + "'" 
@@ -41,7 +41,7 @@ class RelationshipsController < ApplicationController
     
     if @relationship.update_attributes(relationship_params)
       # write an update message to the activity log
-      @relationship.create_activity :update
+      @relationship.create_activity :update, owner: current_user
       flash[:info] = "Successfully updated relationship '" + @relationship.name + "'"
     else
       flash[:error] = "Could not update relationship '" + @relationship.name + "'"
@@ -54,7 +54,7 @@ class RelationshipsController < ApplicationController
     @relationship = Relationship.find(params[:id])
     
     # write an update message to the activity log, it fails with a "cannot call create unless the parent is saved" inside the if statement, so I've put it here. It works out anyway, as we can show both successes and failures
-    @relationship.create_activity :destroy
+    @relationship.create_activity :destroy, owner: current_user
     if @relationship.destroy
       flash[:info] = "Successfully deleted relationship '" + @relationship.name + "'"
     else
