@@ -78,7 +78,7 @@ class UsersController < ApplicationController
   # for allowing editing on fields
   def user_params
     unless params[:user].blank?
-      params.require(:user).permit(:email, :password, :password_confirmation)
+      params.require(:user).permit(:email, :password, :password_confirmation, :avatar_url)
     end
   end
 end

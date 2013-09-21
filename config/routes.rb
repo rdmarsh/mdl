@@ -11,7 +11,7 @@ Onemdl::Application.routes.draw do
   resources :activities
   
   resources :articles
-  # match 'announcements/:id/hide', to: 'announcements#hide', as: 'hide_announcement'
+  match 'announcements/:id/hide', to: 'announcements#hide', as: 'hide_announcement', via: :get
   
   resources :devices do
     resources :support_levels

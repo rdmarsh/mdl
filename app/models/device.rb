@@ -15,7 +15,7 @@ class Device < ActiveRecord::Base
   
   # validations
   validates :name, presence: true
-  validates :ipaddress,          :ip => { :format => :v4 }
+  validates :ipaddress,          :ip => { :format => :v4 }, if: "ipaddress.nil?"
   validates :device_model_id, presence: true
   validates :environment_id, presence: true
   validates :organisation_id, presence: true
