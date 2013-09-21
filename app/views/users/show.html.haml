@@ -1,0 +1,11 @@
+- content_for(:edit_button_path, edit_user_path(@user))
+
+= render 'head'
+
+= show_for @user do |f|
+  = f.attribute :name
+  = f.attribute :email
+  = f.attribute :avatar_url
+  = f.attribute :created_at, :format => :iso8601
+  = f.attribute :updated_at, :format => :iso8601
+  

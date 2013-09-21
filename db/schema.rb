@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130921105822) do
+ActiveRecord::Schema.define(version: 20130921124803) do
 
   create_table "activities", force: true do |t|
     t.integer  "trackable_id"
@@ -29,6 +29,14 @@ ActiveRecord::Schema.define(version: 20130921105822) do
   add_index "activities", ["owner_id", "owner_id"], name: "index_activities_on_owner_id_and_owner_id"
   add_index "activities", ["recipient_id", "recipient_type"], name: "index_activities_on_recipient_id_and_recipient_type"
   add_index "activities", ["trackable_id", "trackable_type"], name: "index_activities_on_trackable_id_and_trackable_type"
+
+  create_table "announcements", force: true do |t|
+    t.text     "message"
+    t.datetime "starts_at"
+    t.datetime "ends_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "device_models", force: true do |t|
     t.string   "name"
@@ -160,7 +168,7 @@ ActiveRecord::Schema.define(version: 20130921105822) do
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "user_name"
+    t.string   "name"
     t.string   "avatar_url"
   end
 
