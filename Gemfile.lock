@@ -277,7 +277,6 @@ DEPENDENCIES
   rails (= 4.0.0)
   rails_12factor (= 0.0.2)
   rb-fsevent
-  rspec
   rspec-rails (= 2.13.1)
   ruby_gntp
   sass-rails (~> 4.0.0)

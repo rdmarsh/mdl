@@ -29,6 +29,10 @@ Set your timezone in /config/application.rb
 
     config.time_zone = 'Central Time (US & Canada)'
 
+or
+
+...    config.time_zone = 'Central Time (US & Canada)'
+
 ### Installing Ruby and Rails
 
 ### System dependencies
