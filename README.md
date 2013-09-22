@@ -13,6 +13,8 @@ http://onemdl.com/
 
 There is a demo available at http://onemdl.herokuapp.com/
 
+Currently broken, some issues with TDD, rake etc
+
 ## ohloh.net
 
 Onemdl is registered on ohloh.net at https://www.ohloh.net/p/onemdl
