@@ -1,6 +1,6 @@
 ## onemdl
 
-[![Build Status](https://travis-ci.org/rdmarsh/onemdl.png?branch=master)](https://travis-ci.org/rdmarsh/onemdl)
+Build status: [![Build Status](https://travis-ci.org/rdmarsh/onemdl.png?branch=master)](https://travis-ci.org/rdmarsh/onemdl)
 
 onemdl is a rails application for keeping track of IT assets.
 
