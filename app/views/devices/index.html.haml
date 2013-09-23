@@ -16,6 +16,7 @@
           = sortable "name"
           %span{:class => 'caret'}
         %th= sortable "ipaddress"
+        %th= sortable "asset_tag"
         %th= link_to t('service_level').singularize.humanize, service_levels_path
         %th= link_to t('support_level').singularize.humanize, support_levels_path
         %th= link_to t('device_model').singularize.humanize, device_models_path
@@ -26,6 +27,7 @@
           %td= r.id
           %td= link_to r.name, r
           %td= r.ipaddress
+          %td= r.asset_tag
           %td= link_to r.service_level.name, service_level_path(r.service_level_id)
           %td= link_to r.support_level.name, support_level_path(r.support_level_id)
           %td= link_to r.device_model.name, device_model_path(r.device_model_id)

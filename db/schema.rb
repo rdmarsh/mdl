@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130921133521) do
+ActiveRecord::Schema.define(version: 20130923121759) do
 
   create_table "activities", force: true do |t|
     t.integer  "trackable_id"
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 20130921133521) do
     t.integer  "service_level_id"
     t.integer  "support_level_id"
     t.integer  "organisation_id"
+    t.string   "asset_tag"
   end
 
   add_index "devices", ["name"], name: "index_devices_on_name"

@@ -27,6 +27,7 @@ en:
   add: add
   anonymoususer: 'an anonymous coward'
   avatar_url: avatar url
+  asset_tag: asset tag
   
   contact: contact
   csv: csv
