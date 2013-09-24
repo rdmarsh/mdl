@@ -9,6 +9,7 @@
   %table.table.table-hover.table-condensed
     %tbody
       %thead
+        %th Avatar
         %th
           = sortable "id"
           %span{:class => 'caret'}
@@ -22,12 +23,11 @@
           = sortable "avatar_url"
           %span{:class => 'caret'}
         %th Admin
-        %th Avatar
       - @users.each do |r|
         %tr
+          %td= image_tag avatar_url(r)
           %td= r.id
           %td= r.name
           %td= link_to r.email, r
           %td= r.avatar_url
           %td= r.admin
-          %td= image_tag avatar_url(r)

@@ -20,19 +20,17 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     
-    if @user.session
+    if @user.save
       # write a create message to the activity log
       @user.create_activity :create, owner: current_user
       
       session[:user_id] = @user.id
-      flash[:info] = "Thank you for signing up '" + @user.name + "'"
+      flash[:info] = "Thank you for signing up '" + @user.email + "'"
       redirect_to root_url
     else
-      flash[:error] = "Could not create user '" + @user.name + "'"
+      flash[:error] = "Could not create user '" + @user.email + "'"
       render "new"
     end
-    
-    respond_with(@user)
   end
   
   def edit
