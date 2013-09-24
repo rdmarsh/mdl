@@ -3,10 +3,11 @@
 = render 'head'
 
 = show_for @user do |f|
+  = f.attribute :photo do
+    = image_tag (avatar_url(@user))
   = f.attribute :name
   = f.attribute :email
   = f.attribute :avatar_url
   = f.attribute :admin
   = f.attribute :created_at, :format => :iso8601
   = f.attribute :updated_at, :format => :iso8601
-  

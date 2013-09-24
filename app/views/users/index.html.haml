@@ -25,7 +25,7 @@
         %th Admin
       - @users.each do |r|
         %tr
-          %td= image_tag avatar_url(r)
+          %td= link_to (image_tag avatar_url(r)), r
           %td= r.id
           %td= r.name
           %td= link_to r.email, r
