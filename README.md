@@ -33,6 +33,8 @@ or
 
 ...    config.time_zone = 'Central Time (US & Canada)'
 
+User avatars are from Gravatar.
+
 ### Installing Ruby and Rails
 
 ### System dependencies
