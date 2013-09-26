@@ -13,9 +13,11 @@ class Device < ActiveRecord::Base
   # has many
   has_many :network_interfaces, dependent: :restrict_with_error
   
+  # has many through
+  has_many :network_uses, through: :network_interfaces
+  
   # validations
   validates :name, presence: true
-  # validates :ipaddress,          :ip => { :format => :v4 }, if: "ipaddress.nil?"
   validates :device_model_id, presence: true
   validates :environment_id, presence: true
   validates :organisation_id, presence: true
