@@ -1,13 +1,5 @@
 Onemdl::Application.routes.draw do
   
-  get "network_interfaces/index"
-  get "network_interfaces/show"
-  get "network_interfaces/new"
-  get "network_interfaces/edit"
-  get "network_uses/index"
-  get "network_uses/show"
-  get "network_uses/new"
-  get "network_uses/edit"
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
@@ -25,7 +17,14 @@ Onemdl::Application.routes.draw do
     resources :support_levels
     resources :service_levels
     resources :environments
+    resources :network_interfaces
   end
+  
+  resources :network_interfaces do
+    resources :network_uses
+  end
+  
+  resources :network_uses
   
   resources :organisations do
     resources :relationships

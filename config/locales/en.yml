@@ -99,6 +99,8 @@ en:
   hours: hours
   level: level
   new_support_level: new support level
+  network_use: network use
+  network_interface: network interface
   
   website: website
 

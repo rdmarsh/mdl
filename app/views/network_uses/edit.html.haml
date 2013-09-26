@@ -1,2 +1,5 @@
-%h1 NetworkUses#edit
-%p Find me in app/views/network_uses/edit.html.haml
+- content_for(:show_button_path, network_use_path(@network_use))
+
+= render 'head'
+
+= render 'form'

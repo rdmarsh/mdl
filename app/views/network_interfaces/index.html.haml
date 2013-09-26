@@ -1,2 +1,25 @@
-%h1 NetworkInterfaces#index
-%p Find me in app/views/network_interfaces/index.html.haml
+/ NetworkInterface
+-content_for(:empty_msg, "Currently no #{t('network_interface').pluralize.downcase}")
+
+=render 'head'
+
+- if @network_interfaces.empty?
+  %p= yield(:empty_msg)  
+- else
+  %table.table.table-hover.table-condensed
+    %tbody
+      %thead
+        %th
+          = sortable "id"
+          %span{:class => 'caret'}
+        %th
+          = sortable "name"
+          %span{:class => 'caret'}
+        %th= sortable "description"
+        %th= link_to t('device').pluralize.humanize, devices_path
+      - @network_interfaces.each do |r|
+        %tr
+          %td= r.id
+          %td= link_to r.name, r
+          %td= r.description
+          %td= link_to r.device.name, device_path(r.device_id)

@@ -1,2 +1,5 @@
-%h1 NetworkInterfaces#edit
-%p Find me in app/views/network_interfaces/edit.html.haml
+- content_for(:show_button_path, network_interface_path(@network_interface))
+
+= render 'head'
+
+= render 'form'

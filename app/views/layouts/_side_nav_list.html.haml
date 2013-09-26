@@ -8,6 +8,9 @@
   %li{ :class => ("active" if controller_name == "devices") }
     = link_to t('device').pluralize.humanize, devices_path
     
+  %li{ :class => ("active" if controller_name == "network_interfaces") }
+    = link_to t('network_interface').pluralize.humanize, network_interfaces_path
+    
   %li{ :class => ("active" if controller_name == "device_models") }
     = link_to t('device_model').pluralize.humanize, device_models_path
     
@@ -28,6 +31,9 @@
     
   %li{ :class => ("active" if controller_name == "manufacturers") }
     = link_to t('manufacturer').pluralize.humanize, manufacturers_path
+    
+  %li{ :class => ("active" if controller_name == "network_uses") }
+    = link_to t('network_use').pluralize.humanize, network_uses_path
     
   %li{ :class => ("active" if controller_name == "relationships") }
     = link_to t('relationship').pluralize.humanize, relationships_path

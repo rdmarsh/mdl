@@ -8,19 +8,19 @@
 
 SupportLevel.create(name: "Unknown", hours: "n/a", days: "n/a", exclusions: "n/a", description: "The support agreement is currently unknown. Support may occur time and material fees, which needs written authorisation from a customers representative before being undertaken.")
 SupportLevel.create(name: "None", hours: "n/a", days: "n/a", exclusions: "n/a", description: "No support is provided. Any support will occur time and material fees, which needs written authorisation from a customers representative before being undertaken.")
-SupportLevel.create(name: "Mixed", hours: "n/a", days: "n/a", exclusions: "n/a", description: "There is more than one support level applicable. View item for more details.")
+SupportLevel.create(name: "Mixed", hours: "n/a", days: "n/a", exclusions: "n/a", description: "There is more than one support level applicable.")
 SupportLevel.create(name: "Business Hours", hours: "8am - 6pm", days: "Mon - Fri", exclusions: "Public holidays", description: "Only supported between 8am and 6pm, Monday to Friday. Public holidays excluded. Any support outside of this time will occur time and material fees, which needs written authorisation from a customers representative before being undertaken.")
 SupportLevel.create(name: "After Hours", hours: "24 hours", days: "7 days", exclusions: "None", description: "Supported 24hours, 7days. Public holidays included.")
 
 ServiceLevel.create(name: "Unknown", description: "The service level is currently unknown.")
 ServiceLevel.create(name: "None",    description: "There is no service level applicable.")
-ServiceLevel.create(name: "Mixed",    description: "There is more than one service level applicable. View item for more details.")
+ServiceLevel.create(name: "Mixed",    description: "There is more than one service level applicable.")
 ServiceLevel.create(name: "Managed", description: "Managed services is the practice of outsourcing day-to-day management work as a calculated way for improved operations inclusive of production support and lifecycle build/maintenance activities. The business owner of the company who has direct oversight of the organization or system being managed is referred to as the client, or customer. The person or organization that manages and provides the service is regarded as the service provider.")
 ServiceLevel.create(name: "Colocation", description: "Colocation is the act of placing multiple (sometimes related) entities within a single location. If these are managed devices, they fall under the 'Managed' Service Level.")
 
 Environment.create(name: "Unknown", description: "The environment is currently unknown.")
 Environment.create(name: "None",    description: "There is no environment applicable.")
-Environment.create(name: "Mixed",    description: "There is more than one environment applicable. View item for more details.")
+Environment.create(name: "Mixed",    description: "There is more than one environment applicable.")
 Environment.create(name: "Production", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
 Environment.create(name: "UAT", description: "Lorem")
 Environment.create(name: "Development", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
@@ -48,6 +48,13 @@ Relationship.create(name: "Supplier", description: "There is no relationship app
 Relationship.create(name: "Manufacturer", description: "There is no relationship applicable.")
 Relationship.create(name: "Vendor", description: "There is no relationship applicable.")
 Relationship.create(name: "Service provider", description: "There is no relationship applicable.")
+
+NetworkUse.create(name: "Unknown", description: "The network use is currently unknown.")
+NetworkUse.create(name: "None", description: "There is no network use applicable.")
+NetworkUse.create(name: "Mixed", description: "There is more than one network use applicable.")
+NetworkUse.create(name: "Production", description: "The network is used for production traffic.")
+NetworkUse.create(name: "Management", description: "The network is used for management traffic.")
+NetworkUse.create(name: "Backup", description: "The network is used for backup traffic.")
 
 Manufacturer.create(name: "Unknown", website: "n/a", description: "The environment is currently unknown.")
 Manufacturer.create(name: "None",    website: "n/a", description: "There is no manufacturer applicable.")

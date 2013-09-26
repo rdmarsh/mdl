@@ -4,7 +4,6 @@
 
 = show_for @device do |f|
   = f.attribute :name
-  = f.attribute :ipaddress
   = f.attribute :asset_tag
   = f.association :service_level
   = f.association :support_level
@@ -14,3 +13,7 @@
   = f.attribute :description
   = f.attribute :created_at, :format => :iso8601
   = f.attribute :updated_at, :format => :iso8601
+  = f.association :network_interfaces do
+    %ul
+      - @device.network_interfaces.each do |network_interface|
+        %li= link_to network_interface.name, network_interface_path(network_interface.id)

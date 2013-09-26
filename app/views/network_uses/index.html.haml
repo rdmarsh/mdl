@@ -1,2 +1,28 @@
-%h1 NetworkUses#index
-%p Find me in app/views/network_uses/index.html.haml
+/ NetworkUse
+-content_for(:empty_msg, "Currently no #{t('network_use').pluralize.downcase}")
+
+=render 'head'
+
+- if @network_uses.empty?
+  %p= yield(:empty_msg)  
+- else
+  %table.table.table-hover.table-condensed
+    %tbody
+      %thead
+        %th
+          = sortable "id"
+          %span{:class => 'caret'}
+        %th
+          = sortable "name"
+          %span{:class => 'caret'}
+        %th= sortable "description"
+        %th= link_to t('network_interface').pluralize.humanize, network_interfaces_path
+      - @network_uses.each do |r|
+        %tr
+          %td= r.id
+          %td= link_to r.name, r
+          %td= r.description
+          %td              
+            %ul.unstyled
+              - r.network_interfaces.each do |network_interface|
+                %li= link_to network_interface.name, network_interface_path(network_interface.id)

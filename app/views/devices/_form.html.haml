@@ -1,7 +1,6 @@
 = simple_form_for @device, :html => { :class => 'form-horizontal' } do |f|
   = f.error_notification
   = f.input :name, hint: "Device"
-  = f.input :ipaddress, placeholder: "0.0.0.0"
   = f.input :asset_tag
   = f.association :service_level, include_blank: false, prompt: "Choose a service level", collection: ServiceLevel.order('name ASC'), priority: ["Unknown"]
   = f.association :support_level, include_blank: false, prompt: "Choose a support level", collection: SupportLevel.order('name ASC')
