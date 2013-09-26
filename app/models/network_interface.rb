@@ -15,7 +15,7 @@ class NetworkInterface < ActiveRecord::Base
   
   # validations
   validates :name, presence: true
-  validates :ipaddress,          :ip => { :format => :v4 }, if: "ipaddress.nil?"
+  validates :ipaddress, presence: true, :ip => { :format => :v4 }
   validates :network_use, presence: true
   validates :device, presence: true
   

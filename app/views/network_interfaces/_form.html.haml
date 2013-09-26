@@ -1,10 +1,10 @@
 = simple_form_for @network_interface, :html => { :class => 'form-horizontal' } do |f|
   = f.error_notification
   = f.input :name
-  = f.input :description
   = f.input :ipaddress, placeholder: "0.0.0.0"
   = f.association :network_use, include_blank: false, prompt: "Choose a network use", collection: NetworkUse.order('name ASC')
   = f.association :device, include_blank: false, prompt: "Choose a device", collection: Device.order('name ASC')
+  = f.input :description
   = f.error :base
   = f.button :submit, :class => 'btn btn-primary'
   .btn-group.task_controller
