@@ -16,12 +16,12 @@
           = sortable "name"
           %span{:class => 'caret'}
         %th= sortable "asset_tag"
-        %th= link_to t('network_interface').singularize.humanize, network_interfaces_path
         %th= link_to t('service_level').singularize.humanize, service_levels_path
         %th= link_to t('support_level').singularize.humanize, support_levels_path
         %th= link_to t('device_model').singularize.humanize, device_models_path
         %th= link_to t('environment').singularize.humanize, environments_path
         %th= link_to t('organisation').singularize.humanize, organisations_path
+        %th= link_to t('network_interface').pluralize.humanize, network_interfaces_path
       - @devices.each do |r|
         %tr{:class => tr_environment(r.environment.name)}
           %td= r.id
@@ -35,5 +35,4 @@
           %td              
             %ul.unstyled
               - r.network_interfaces.each do |network_interface|
-                %li= link_to network_interface.name, network_interface_path(network_interface.id)
-          
+                %li= link_to network_interface.ipaddress, network_interface_path(network_interface.id)
