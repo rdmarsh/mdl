@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130923121759) do
+ActiveRecord::Schema.define(version: 20130926033505) do
 
   create_table "activities", force: true do |t|
     t.integer  "trackable_id"
@@ -93,6 +93,34 @@ ActiveRecord::Schema.define(version: 20130923121759) do
   end
 
   add_index "manufacturers", ["name"], name: "index_manufacturers_on_name", unique: true
+
+  create_table "network_interfaces", force: true do |t|
+    t.string   "name"
+    t.boolean  "active",         default: true
+    t.boolean  "dhcp",           default: false
+    t.string   "ipaddress"
+    t.string   "netmask"
+    t.string   "prefix"
+    t.string   "broadcast"
+    t.string   "gateway"
+    t.string   "vlan"
+    t.text     "description"
+    t.integer  "device_id"
+    t.integer  "network_use_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "network_interfaces", ["name"], name: "index_network_interfaces_on_name"
+
+  create_table "network_uses", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "network_uses", ["name"], name: "index_network_uses_on_name"
 
   create_table "onemdl_settings", force: true do |t|
     t.string   "company_name"

@@ -1,5 +1,13 @@
 Onemdl::Application.routes.draw do
   
+  get "network_interfaces/index"
+  get "network_interfaces/show"
+  get "network_interfaces/new"
+  get "network_interfaces/edit"
+  get "network_uses/index"
+  get "network_uses/show"
+  get "network_uses/new"
+  get "network_uses/edit"
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
