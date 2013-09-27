@@ -25,7 +25,8 @@ en:
   active: active
   activity: activity
   add: add
-  anonymoususer: 'an anonymous coward'
+  anonymoususer: an anonymous coward
+  announcement: announcement
   avatar_url: avatar url
   asset_tag: asset tag
   
@@ -60,8 +61,14 @@ en:
   index: index
   id: id
   ipaddress: IP address
+  
+  licensor: licensor
+  license: license
+  license_type: license type
   list: list
-
+  
+  message: message
+  
   name: name
   news: news
   new: new
@@ -88,6 +95,8 @@ en:
   support_level: support level
   service_level: service level
   statistics: statistics
+  starts_at: starts at
+  ends_at: ends at
   
   showall: show all
   type: type

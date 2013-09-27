@@ -1,0 +1,21 @@
+/ Licenses
+-content_for(:empty_msg, "Currently no #{t('license').pluralize.downcase}")
+
+=render 'head'
+
+- if @licenses.empty?
+  %p= yield(:empty_msg)  
+- else
+  %table.table.table-hover.table-condensed
+    %tbody
+      %thead
+        %th
+          = sortable "id"
+          %span{:class => 'caret'}
+        %th
+          = sortable "quantity"
+          %span{:class => 'caret'}
+      - @licenses.each do |r|
+        %tr
+          %td= r.id
+          %td= link_to r.quantity, r

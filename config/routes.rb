@@ -10,7 +10,7 @@ Onemdl::Application.routes.draw do
   resources :statistics
   resources :activities
   
-  resources :articles
+  resources :announcements
   match 'announcements/:id/hide', to: 'announcements#hide', as: 'hide_announcement', via: :get
   
   resources :devices do
@@ -18,7 +18,22 @@ Onemdl::Application.routes.draw do
     resources :service_levels
     resources :environments
     resources :network_interfaces
+    resources :licenses
   end
+  
+  resources :license_types do
+    resources :licensors
+  end
+  
+  resources :licensors do
+    resources :organisations
+  end
+  
+  resources :licenses do
+    resources :license_types
+  end
+  
+  resources :license_types
   
   resources :network_interfaces do
     resources :network_uses

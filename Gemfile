@@ -23,13 +23,15 @@ gem 'simple_form'
 gem 'show_for', '~> 0.2.4'
 gem 'inherited_resources'
 # gem "rails-settings-cached", "0.3.1"
-# must appear above country_select
+# the countries gem must appear above country_select gem
 gem 'countries'
 gem 'country_select'
 gem 'public_activity'
 gem 'kaminari'
 gem 'activevalidators', '~> 2.0.2'
 gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'jquery-ui-rails'
+gem "bootstrap-datepicker-rails", "~> 1.1.1.7"
 
 group :development, :test do
   gem 'turn'

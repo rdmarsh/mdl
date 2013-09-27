@@ -11,6 +11,6 @@
       Delete
       %span{:class => 'caret'}
     %ul.dropdown-menu
-      %li= link_to "Delete '#{@user.name}'?", @user, :confirm => 'Are you sure?', :method => :delete
+      %li= link_to "Delete '#{f.object.name}'?", @user, :confirm => 'Are you sure?', :method => :delete
   or
   = link_to "Cancel", :back

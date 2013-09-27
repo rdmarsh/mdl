@@ -14,11 +14,25 @@
   %li{ :class => ("active" if controller_name == "device_models") }
     = link_to t('device_model').pluralize.humanize, device_models_path
     
+  / divider
+  %li.divider-vertical
+  
+  / put the organisation views in their own section 
+  %li.nav-header
+    = t('organisation').pluralize.humanize
+    
   %li{ :class => ("active" if controller_name == "organisations") }
     = link_to t('organisation').pluralize.humanize, organisations_path
-    
+  
+  %li{ :class => ("active" if controller_name == "manufacturers") }
+    = link_to t('manufacturer').pluralize.humanize, manufacturers_path
+  
+  %li{ :class => ("active" if controller_name == "licensors") }
+    = link_to t('licensor').pluralize.humanize, licensors_path
+  
+  / divider
   %li.divider-vertical
-    
+  
   / put the supporting views in their own section 
   %li.nav-header
     Supporting Data
@@ -29,8 +43,8 @@
   %li{ :class => ("active" if controller_name == "environments") }
     = link_to t('environment').pluralize.humanize, environments_path
     
-  %li{ :class => ("active" if controller_name == "manufacturers") }
-    = link_to t('manufacturer').pluralize.humanize, manufacturers_path
+  %li{ :class => ("active" if controller_name == "license_types") }
+    = link_to t('license_type').pluralize.humanize, license_types_path
     
   %li{ :class => ("active" if controller_name == "network_uses") }
     = link_to t('network_use').pluralize.humanize, network_uses_path
@@ -52,6 +66,9 @@
     
   %li{ :class => ("active" if controller_name == "settings") }
     = link_to t('setting').pluralize.humanize, onemdl_settings_path
-
+    
   %li{ :class => ("active" if controller_name == "users") }
     = link_to t('user').pluralize.humanize, users_path
+    
+  %li{ :class => ("active" if controller_name == "announcements") }
+    = link_to t('announcement').pluralize.humanize, announcements_path

@@ -1,0 +1,27 @@
+/ Announcements
+-content_for(:empty_msg, "Currently no #{t('announcement').pluralize.downcase}")
+
+=render 'head'
+
+- if @announcements.empty?
+  %p= yield(:empty_msg)  
+- else
+  - @announcements.each do |announcement|
+    %ul.unstyled
+      %li
+        .well
+          .row-fluid
+            .span11
+              / what did they do?
+              = announcement.message
+              %br
+              .muted
+                from
+                = announcement.starts_at
+                to
+                = announcement.ends_at
+            .span1
+              %a{ :title => "xml", :href => edit_announcement_path(@announcement) }
+                %i.icon-pencil
+              %a{ :title => "xml", :href => edit_announcement_path(@announcement) }
+                %i.icon-pencil

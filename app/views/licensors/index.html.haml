@@ -1,0 +1,23 @@
+/ Licensors
+-content_for(:empty_msg, "Currently no #{t('licensor').pluralize.downcase}")
+
+=render 'head'
+
+- if @licensors.empty?
+  %p= yield(:empty_msg)  
+- else
+  %table.table.table-hover.table-condensed
+    %tbody
+      %thead
+        %th
+          = sortable "id"
+          %span{:class => 'caret'}
+        %th= link_to t('organisation').singularize.humanize, organisations_path
+        %th= sortable "website"
+        %th= sortable "description"
+      - @licensors.each do |r|
+        %tr
+          %td= r.id
+          %td= link_to r.organisation.name, organisation_path(r.organisation_id)
+          %td= r.website
+          %td= r.description

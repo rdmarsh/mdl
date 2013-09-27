@@ -1,0 +1,7 @@
+= t('created')
+= t('message')
+- if activity.trackable
+  = link_to activity.trackable.id.to_s, activity.trackable
+  in
+- else
+  an item that has since been deleted from

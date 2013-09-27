@@ -40,8 +40,8 @@ DeviceType.create(name: "NAS", description: "Network-attached storage (NAS) is f
 DeviceType.create(name: "Server: Blade", description: "A blade server is a stripped down server computer with a modular design optimized to minimize the use of physical space and energy. Whereas a standard rack-mount server can function with (at least) a power cord and network cable, blade servers have many components removed to save space, minimize power consumption and other considerations, while still having all the functional components to be considered a computer.")
 DeviceType.create(name: "Server: Rack-mounted", description: "Rack-mounted servers are designed to store many devices mounted in a server rack. Unlike ordinary computers, servers usually can be configured, powered up and down or rebooted remotely, using out-of-band management.")
 DeviceType.create(name: "Server: Virtual", description: "A virtual server (VM) is a software implementation of a physical server. virtualisation allows multiple instances of virtual servers to reside on one (or more) physical server. This leads to more efficient use of computing resources, both in terms of energy consumption and cost effectiveness.")
-DeviceType.create(name: "Printer: Laser", description: "A Printer.")
-DeviceType.create(name: "Printer: Inkjet", description: "A Printer.")
+DeviceType.create(name: "Printer: Laser", description: "A laser printer.")
+DeviceType.create(name: "Printer: Inkjet", description: "An inkjet printer.")
 
 Relationship.create(name: "Unknown", description: "The relationship is currently unknown.")
 Relationship.create(name: "None",    description: "There is no relationship applicable.")
@@ -51,6 +51,7 @@ Relationship.create(name: "Supplier", description: "There is no relationship app
 Relationship.create(name: "Manufacturer", description: "There is no relationship applicable.")
 Relationship.create(name: "Vendor", description: "There is no relationship applicable.")
 Relationship.create(name: "Service provider", description: "There is no relationship applicable.")
+Relationship.create(name: "Licensor", description: "A party that grants a license to another.")
 
 NetworkUse.create(name: "Unknown", description: "The network use is currently unknown.")
 NetworkUse.create(name: "None", description: "There is no network use applicable.")

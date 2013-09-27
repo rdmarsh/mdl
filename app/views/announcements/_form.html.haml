@@ -1,0 +1,15 @@
+= simple_form_for @announcement, :html => { :class => 'form-horizontal' } do |f|
+  = f.error_notification
+  = f.input :message
+  = f.input :starts_at, as: :text, :input_html => { :class => 'datepicker' }
+  = f.input :ends_at, as: :text, :input_html => { :class => 'datepicker' }
+  = f.error :base
+  = f.button :submit, :class => 'btn btn-primary'
+  .btn-group.task_controller
+    %a{:class => 'btn btn-danger dropdown-toggle', 'data-toggle' => 'dropdown', :href => '#'}
+      Delete
+      %span{:class => 'caret'}
+    %ul.dropdown-menu
+      %li= link_to "Delete '#{f.object.id}'?", @announcement, :confirm => 'Are you sure?', :method => :delete
+  or
+  = link_to "Cancel", :back

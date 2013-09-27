@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130926081533) do
+ActiveRecord::Schema.define(version: 20130927075135) do
 
   create_table "activities", force: true do |t|
     t.integer  "trackable_id"
@@ -85,6 +85,36 @@ ActiveRecord::Schema.define(version: 20130926081533) do
   end
 
   add_index "environments", ["name"], name: "index_environments_on_name", unique: true
+
+  create_table "license_types", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "organisation_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "license_types", ["name"], name: "index_license_types_on_name", unique: true
+  add_index "license_types", ["organisation_id"], name: "index_license_types_on_organisation_id"
+
+  create_table "licenses", force: true do |t|
+    t.string   "quantity"
+    t.integer  "license_type_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "licenses", ["license_type_id"], name: "index_licenses_on_license_type_id"
+
+  create_table "licensors", force: true do |t|
+    t.integer  "organisation_id"
+    t.string   "website"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "licensors", ["organisation_id"], name: "index_licensors_on_organisation_id", unique: true
 
   create_table "manufacturers", force: true do |t|
     t.string   "name"

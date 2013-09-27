@@ -1,0 +1,7 @@
+- content_for(:title, t('license').pluralize.humanize)
+
+- content_for(:list_button_path, licenses_path)
+- content_for(:new_button_path, new_license_path)
+
+= render 'layouts/heading'
+= render 'layouts/tabs'

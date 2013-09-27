@@ -1,0 +1,11 @@
+- content_for(:edit_button_path, edit_announcement_path(@announcement))
+
+= render 'head'
+
+= show_for @announcement do |f|
+  = f.attribute :id
+  = f.attribute :message
+  = f.attribute :starts_at
+  = f.attribute :ends_at
+  = f.attribute :created_at, :format => :iso8601
+  = f.attribute :updated_at, :format => :iso8601

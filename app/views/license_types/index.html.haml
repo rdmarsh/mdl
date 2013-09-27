@@ -1,0 +1,26 @@
+/ LicenseTypes
+-content_for(:empty_msg, "Currently no #{t('license_type').pluralize.downcase}")
+
+=render 'head'
+
+- if @license_types.empty?
+  %p= yield(:empty_msg)  
+- else
+  %table.table.table-hover.table-condensed
+    %tbody
+      %thead
+        %th
+          = sortable "id"
+          %span{:class => 'caret'}
+        %th
+          = sortable "name"
+          %span{:class => 'caret'}
+        %th
+          = sortable "description"
+          %span{:class => 'caret'}
+        %th= link_to t('license').pluralize.humanize, licenses_path
+      - @license_types.each do |r|
+        %tr
+          %td= r.id
+          %td= link_to r.name, r
+          %td= r.description

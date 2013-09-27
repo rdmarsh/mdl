@@ -1,0 +1,7 @@
+- content_for(:edit_button_path, edit_license_type_path(@license_type))
+
+= render 'head'
+
+= show_for @license_type do |f|
+  = f.attribute :name
+  = f.attribute :description
