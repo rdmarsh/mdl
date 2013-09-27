@@ -13,8 +13,11 @@ class Device < ActiveRecord::Base
   # has many
   has_many :network_interfaces, dependent: :restrict_with_error
   
-  # has many through
-  has_many :network_uses, through: :network_interfaces
+  # # has many through
+  # has_many :network_uses, through: :network_interfaces
+  
+  # accepts nested
+  # accepts_nested_attributes_for :network_interfaces, allow_destroy: true
   
   # validations
   validates :name, presence: true

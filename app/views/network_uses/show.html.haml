@@ -10,4 +10,4 @@
   = f.association :network_interfaces do
     %ul
       - @network_use.network_interfaces.each do |network_interfaces|
-        %li= link_to network_interfaces.name, network_interfaces_path(network_interfaces.id)
+        %li= link_to network_interfaces.name + " (" + network_interfaces.ipaddress + " on " + @device.name + ")", network_interfaces_path(network_interfaces.id)

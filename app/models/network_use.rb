@@ -13,6 +13,9 @@ class NetworkUse < ActiveRecord::Base
   # has many
   has_many :network_interfaces, dependent: :restrict_with_error
   
+  # has many through
+  has_many :devices, through: :network_interfaces
+  
   # validations
   validates :name, presence: true, uniqueness: { case_sensitive: false }
   

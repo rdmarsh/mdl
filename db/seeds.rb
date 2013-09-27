@@ -10,7 +10,7 @@ SupportLevel.create(name: "Unknown", hours: "n/a", days: "n/a", exclusions: "n/a
 SupportLevel.create(name: "None", hours: "n/a", days: "n/a", exclusions: "n/a", description: "No support is provided. Any support will occur time and material fees, which needs written authorisation from a customers representative before being undertaken.")
 SupportLevel.create(name: "Mixed", hours: "n/a", days: "n/a", exclusions: "n/a", description: "There is more than one support level applicable.")
 SupportLevel.create(name: "Business Hours", hours: "8am - 6pm", days: "Mon - Fri", exclusions: "Public holidays", description: "Only supported between 8am and 6pm, Monday to Friday. Public holidays excluded. Any support outside of this time will occur time and material fees, which needs written authorisation from a customers representative before being undertaken.")
-SupportLevel.create(name: "After Hours", hours: "24 hours", days: "7 days", exclusions: "None", description: "Supported 24hours, 7days. Public holidays included.")
+SupportLevel.create(name: "All Hours", hours: "24 hours", days: "7 days", exclusions: "None", description: "Supported 24hours, 7days. Public holidays included.")
 
 ServiceLevel.create(name: "Unknown", description: "The service level is currently unknown.")
 ServiceLevel.create(name: "None",    description: "There is no service level applicable.")
