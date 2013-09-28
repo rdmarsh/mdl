@@ -1,9 +1,11 @@
 Onemdl::Application.routes.draw do
   
+  # routes for signup, login and logout pages
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
   
+  # storing user sessions
   resources :sessions
   resources :users
   
@@ -22,10 +24,6 @@ Onemdl::Application.routes.draw do
   end
   
   resources :license_types do
-    resources :licensors
-  end
-  
-  resources :licensors do
     resources :organisations
   end
   

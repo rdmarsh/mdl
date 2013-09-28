@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130927075135) do
+ActiveRecord::Schema.define(version: 20130928103539) do
 
   create_table "activities", force: true do |t|
     t.integer  "trackable_id"
@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(version: 20130927075135) do
     t.datetime "updated_at"
   end
 
+  add_index "device_models", ["device_type_id"], name: "index_device_models_on_device_type_id"
+  add_index "device_models", ["manufacturer_id"], name: "index_device_models_on_manufacturer_id"
   add_index "device_models", ["name"], name: "index_device_models_on_name", unique: true
 
   create_table "device_types", force: true do |t|
@@ -75,7 +77,13 @@ ActiveRecord::Schema.define(version: 20130927075135) do
     t.string   "serial_number"
   end
 
+  add_index "devices", ["device_model_id"], name: "index_devices_on_device_model_id"
+  add_index "devices", ["environment_id"], name: "index_devices_on_environment_id"
   add_index "devices", ["name"], name: "index_devices_on_name"
+  add_index "devices", ["network_interface_id"], name: "index_devices_on_network_interface_id"
+  add_index "devices", ["organisation_id"], name: "index_devices_on_organisation_id"
+  add_index "devices", ["service_level_id"], name: "index_devices_on_service_level_id"
+  add_index "devices", ["support_level_id"], name: "index_devices_on_support_level_id"
 
   create_table "environments", force: true do |t|
     t.string   "name"
@@ -143,7 +151,9 @@ ActiveRecord::Schema.define(version: 20130927075135) do
     t.datetime "updated_at"
   end
 
+  add_index "network_interfaces", ["device_id"], name: "index_network_interfaces_on_device_id"
   add_index "network_interfaces", ["name"], name: "index_network_interfaces_on_name"
+  add_index "network_interfaces", ["network_use_id"], name: "index_network_interfaces_on_network_use_id"
 
   create_table "network_uses", force: true do |t|
     t.string   "name"
