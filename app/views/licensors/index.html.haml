@@ -18,6 +18,6 @@
       - @licensors.each do |r|
         %tr
           %td= r.id
-          %td= link_to r.organisation.name, organisation_path(r.organisation_id)
+          %td= link_to r.organisation.name, r
           %td= r.website
           %td= r.description
