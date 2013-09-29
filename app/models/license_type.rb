@@ -4,7 +4,7 @@ class LicenseType < ActiveRecord::Base
   before_validation :strip_blanks
   
   # belongs to
-  
+  belongs_to :organisation
   
   
   
@@ -15,7 +15,7 @@ class LicenseType < ActiveRecord::Base
   
   # validations
   validates :name, presence: true, uniqueness: { case_sensitive: false }
-  
+  validates :organisation, presence: true
   
   
   

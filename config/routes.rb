@@ -12,8 +12,10 @@ Onemdl::Application.routes.draw do
   resources :statistics
   resources :activities
   
+  # site wide announcements
   resources :announcements
   match 'announcements/:id/hide', to: 'announcements#hide', as: 'hide_announcement', via: :get
+  
   
   resources :devices do
     resources :support_levels
@@ -22,6 +24,7 @@ Onemdl::Application.routes.draw do
     resources :network_interfaces
     resources :licenses
   end
+  
   
   resources :license_types do
     resources :organisations

@@ -22,7 +22,7 @@
           %td= r.id
           %td= link_to r.name, r
           %td= r.description
-          %td              
+          %td
             %ul.unstyled
               - r.network_interfaces.each do |network_interface|
                 %li= link_to network_interface.name, network_interface_path(network_interface.id)

@@ -2,7 +2,7 @@
   = f.error_notification
   = f.input :name, hint: "license_type"
   = f.association :organisation, include_blank: false, collection: Organisation.order('name ASC')
-  = f.input :description, hint: "Description of license_type"
+  = f.input :description, hint: "Description of license type"
   = f.error :base
   = f.button :submit, :class => 'btn btn-primary'
   .btn-group.task_controller

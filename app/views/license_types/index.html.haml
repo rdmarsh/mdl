@@ -15,6 +15,7 @@
         %th
           = sortable "name"
           %span{:class => 'caret'}
+        %th= link_to t('licensor').singularize.humanize, network_uses_path
         %th
           = sortable "description"
           %span{:class => 'caret'}
@@ -23,4 +24,10 @@
         %tr
           %td= r.id
           %td= link_to r.name, r
+          %td= link_to r.organisation.name, organisation_path(r.organisation_id)
           %td= r.description
+          %td              
+            %ul.unstyled
+              - r.licenses.each do |license|
+                %li= link_to license.name, license_path(license.id)
+          
