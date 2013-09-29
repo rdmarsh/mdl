@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130928103539) do
+ActiveRecord::Schema.define(version: 20130929233954) do
 
   create_table "activities", force: true do |t|
     t.integer  "trackable_id"
@@ -110,9 +110,11 @@ ActiveRecord::Schema.define(version: 20130928103539) do
     t.integer  "license_type_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "organisation_id"
   end
 
   add_index "licenses", ["license_type_id"], name: "index_licenses_on_license_type_id"
+  add_index "licenses", ["organisation_id"], name: "index_licenses_on_organisation_id"
 
   create_table "licensors", force: true do |t|
     t.integer  "organisation_id"

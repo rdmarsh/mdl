@@ -5,7 +5,7 @@ class License < ActiveRecord::Base
   
   # belongs to
   belongs_to :license_type
-  
+  belongs_to :organisation
 
 
 
@@ -34,7 +34,7 @@ class License < ActiveRecord::Base
   protected
   
   def strip_blanks
-    self.name = self.name.strip
+    self.qty = self.qty.strip
   end
   
 end

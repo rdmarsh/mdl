@@ -43,6 +43,7 @@ Onemdl::Application.routes.draw do
   
   resources :licenses do
     resources :license_types
+    resources :organisations
   end
   
   resources :license_types do
