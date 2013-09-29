@@ -116,16 +116,6 @@ ActiveRecord::Schema.define(version: 20130929233954) do
   add_index "licenses", ["license_type_id"], name: "index_licenses_on_license_type_id"
   add_index "licenses", ["organisation_id"], name: "index_licenses_on_organisation_id"
 
-  create_table "licensors", force: true do |t|
-    t.integer  "organisation_id"
-    t.string   "website"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "licensors", ["organisation_id"], name: "index_licensors_on_organisation_id", unique: true
-
   create_table "manufacturers", force: true do |t|
     t.string   "name"
     t.text     "description", limit: 255

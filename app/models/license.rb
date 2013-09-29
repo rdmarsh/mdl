@@ -20,7 +20,7 @@ class License < ActiveRecord::Base
   # accepts_nested_attributes_for :network_interfaces, allow_destroy: true
   
   # validations
-  validates :name, presence: true
+  validates :quantity, presence: true
 
   
   before_destroy :protect_unknown_none
@@ -34,7 +34,7 @@ class License < ActiveRecord::Base
   protected
   
   def strip_blanks
-    self.qty = self.qty.strip
+    self.quantity = self.quantity.strip
   end
   
 end
