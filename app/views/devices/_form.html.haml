@@ -9,14 +9,6 @@
   = f.association :environment, include_blank: false, prompt: "Choose an environment", collection: Environment.order('name ASC')
   = f.association :organisation, include_blank: false, prompt: "Choose an organisation", collection: Organisation.order('name ASC')
   = f.input :description, hint: "Description of the device"
-  = f.simple_fields_for :network_interfaces do |network_interface|
-    %p= "#{network_interface.object.name}"
-    = network_interface.input :name
-    = network_interface.input :ipaddress, placeholder: "0.0.0.0"
-    = network_interface.association :network_use, include_blank: false, prompt: "Choose a network use", collection: NetworkUse.order('name ASC')
-    = network_interface.input :description
-    = network_interface.hidden_field :_destroy
-    %li= link_to "Remove '#{network_interface.object.name}' from '#{f.object.name}'", "#", class: "remove_fields"
   = f.error :base
   = f.button :submit, :class => 'btn btn-primary'
   .btn-group.task_controller
