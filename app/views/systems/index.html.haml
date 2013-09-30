@@ -1,8 +1,4 @@
 / Devices
--content_for(:empty_msg, "Currently no #{t('system').pluralize.downcase}")
-
-=render 'head'
-
 - if @systems.empty?
   %p= yield(:empty_msg)  
 - else
@@ -16,22 +12,22 @@
           = sortable "name"
           %span{:class => 'caret'}
         %th= sortable "asset_tag"
+        %th= link_to t('organisation').singularize.humanize, organisations_path
         %th= link_to t('service_level').singularize.humanize, service_levels_path
         %th= link_to t('support_level').singularize.humanize, support_levels_path
         %th= link_to t('device_model').singularize.humanize, device_models_path
         %th= link_to t('environment').singularize.humanize, environments_path
-        %th= link_to t('organisation').singularize.humanize, organisations_path
         %th= link_to t('network_interface').pluralize.humanize, network_interfaces_path
       - @systems.each do |r|
         %tr{:class => tr_environment(r.environment.name)}
           %td= r.id
           %td= link_to r.name, r
           %td= r.asset_tag
+          %td= link_to r.organisation.name, organisation_path(r.organisation_id)
           %td= link_to r.service_level.name, service_level_path(r.service_level_id)
           %td= link_to r.support_level.name, support_level_path(r.support_level_id)
           %td= link_to r.device_model.name, device_model_path(r.device_model_id)
           %td= link_to r.environment.name, environment_path(r.environment_id)
-          %td= link_to r.organisation.name, organisation_path(r.organisation_id)
           %td              
             %ul.unstyled
               - r.network_interfaces.each do |network_interface|

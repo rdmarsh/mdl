@@ -1,0 +1,37 @@
+/ OperatingSystems
+-content_for(:empty_msg, "Currently no #{t('operating_system').pluralize.downcase}")
+
+=render 'head'
+
+- if @operating_systems.empty?
+  %p= yield(:empty_msg)  
+- else
+  %table.table.table-hover.table-condensed
+    %tbody
+      %thead
+        %th
+          = sortable "id"
+          %span{:class => 'caret'}
+        %th
+          = sortable "name"
+          %span{:class => 'caret'}
+        %th
+          = sortable "release"
+          %span{:class => 'caret'}
+        %th
+          = sortable "family"
+          %span{:class => 'caret'}
+        %th= link_to t('organisation').singularize.humanize, organisations_path
+        %th= link_to t('system').pluralize.humanize, systems_path
+      - @operating_systems.each do |r|
+        %tr
+          %td= r.id
+          %td= link_to r.name, r
+          %td= r.release
+          %td= r.family
+          %td= link_to r.organisation.name, organisation_path(r.organisation_id)
+          %td              
+            %ul.unstyled
+              - r.systems.each do |system|
+                %li= link_to system.name, system_path(system.id)
+  = paginate @operating_systems

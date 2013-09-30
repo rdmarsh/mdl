@@ -3,11 +3,11 @@
   = f.input :name, hint: "System"
   = f.input :asset_tag
   = f.input :serial_number
+  = f.association :organisation, include_blank: false, prompt: "Choose an organisation", collection: Organisation.order('name ASC')
   = f.association :service_level, include_blank: false, prompt: "Choose a service level", collection: ServiceLevel.order('name ASC'), priority: ["Unknown"]
   = f.association :support_level, include_blank: false, prompt: "Choose a support level", collection: SupportLevel.order('name ASC')
   = f.association :device_model, include_blank: false, prompt: "Choose a device model", collection: DeviceModel.order('name ASC')
   = f.association :environment, include_blank: false, prompt: "Choose an environment", collection: Environment.order('name ASC')
-  = f.association :organisation, include_blank: false, prompt: "Choose an organisation", collection: Organisation.order('name ASC')
   = f.input :description, hint: "Description of the device"
   = f.error :base
   = f.button :submit, :class => 'btn btn-primary'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130930081849) do
+ActiveRecord::Schema.define(version: 20130930235102) do
 
   create_table "activities", force: true do |t|
     t.integer  "trackable_id"
@@ -153,6 +153,19 @@ ActiveRecord::Schema.define(version: 20130930081849) do
 
   add_index "onemdl_settings", ["company_name"], name: "index_onemdl_settings_on_company_name"
 
+  create_table "operating_systems", force: true do |t|
+    t.string   "name"
+    t.string   "release"
+    t.string   "family"
+    t.text     "description"
+    t.integer  "organisation_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "operating_systems", ["name"], name: "index_operating_systems_on_name", unique: true
+  add_index "operating_systems", ["organisation_id"], name: "index_operating_systems_on_organisation_id"
+
   create_table "organisations", force: true do |t|
     t.string   "name"
     t.string   "full_name"
@@ -219,12 +232,14 @@ ActiveRecord::Schema.define(version: 20130930081849) do
     t.string   "asset_tag"
     t.integer  "network_interface_id"
     t.string   "serial_number"
+    t.integer  "operating_system_id"
   end
 
   add_index "systems", ["device_model_id"], name: "index_systems_on_device_model_id"
   add_index "systems", ["environment_id"], name: "index_systems_on_environment_id"
   add_index "systems", ["name"], name: "index_systems_on_name"
   add_index "systems", ["network_interface_id"], name: "index_systems_on_network_interface_id"
+  add_index "systems", ["operating_system_id"], name: "index_systems_on_operating_system_id"
   add_index "systems", ["organisation_id"], name: "index_systems_on_organisation_id"
   add_index "systems", ["service_level_id"], name: "index_systems_on_service_level_id"
   add_index "systems", ["support_level_id"], name: "index_systems_on_support_level_id"

@@ -90,6 +90,11 @@ LicenseType.create(name: "Apache",  organisation_id: 2, description: "There is n
 License.create(organisation_id: 1, license_type_id: 1, key: "Unknown", quantity: "0")
 License.create(organisation_id: 2, license_type_id: 2, key: "None", quantity: "0")
 
+OperatingSystem.create(name: "Unknown", release: "0", family: "Unknown", organisation_id: 1)
+OperatingSystem.create(name: "None", release: "0", family: "None", organisation_id: 2)
+OperatingSystem.create(name: "CentOS", release: "6.4", family: "Linux", description: "codename", organisation_id: 1)
+OperatingSystem.create(name: "HPUX", release: "11.31", family: "Unix", organisation_id: 1)
+
 System.create(name: "Unknown", ipaddress: "0.0.0.0", asset_tag: "Unknown", device_model_id: 1, environment_id: 1, support_level_id: 1, service_level_id: 1, organisation_id: 1, description: "The system is currently unknown.")
 System.create(name: "None",    ipaddress: "0.0.0.0", asset_tag: "None",    device_model_id: 2, environment_id: 2, support_level_id: 2, service_level_id: 2, organisation_id: 2, description: "There is no system applicable.")
 

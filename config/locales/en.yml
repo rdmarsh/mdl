@@ -52,6 +52,7 @@ en:
   end_at: end at
   start_at: start at
   
+  family: family
   faq: faq
 
   help: help
@@ -79,6 +80,7 @@ en:
   
   organisation: organisation  
   neworganisation: new organisation
+  operating_system: operating system 
   
   manufacturer: manufacturer
   
@@ -91,6 +93,7 @@ en:
   relationship: relationship
   reference: reference
   setting: setting
+  release: release
   
   search: seach  
   service_level: service level

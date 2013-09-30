@@ -29,6 +29,7 @@ Onemdl::Application.routes.draw do
     resources :environments
     resources :network_interfaces
     resources :licenses
+    resources :operating_systems
   end
   
   resources :support_levels
@@ -43,6 +44,10 @@ Onemdl::Application.routes.draw do
   
   resources :licenses do
     resources :license_types
+    resources :organisations
+  end
+  
+  resources :operating_systems do
     resources :organisations
   end
   
