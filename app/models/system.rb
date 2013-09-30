@@ -1,7 +1,7 @@
 class System < ActiveRecord::Base
   include PublicActivity::Common
   
-  before_validation :strip_blanks
+  before_validation :strip_blanks, :downcase
   
   # belongs to
   belongs_to :device_model
@@ -39,6 +39,10 @@ class System < ActiveRecord::Base
   
   def strip_blanks
     self.name = self.name.strip
+  end
+  
+  def downcase
+    self.name = self.name.downcase
   end
   
 end

@@ -29,5 +29,5 @@
           %td              
             %ul.unstyled
               - r.licenses.each do |license|
-                %li= link_to license.name, license_path(license.id)
+                %li= link_to license.key, license_path(license.id)
           

@@ -1,7 +1,7 @@
 class NetworkInterface < ActiveRecord::Base
   include PublicActivity::Common
   
-  before_validation :strip_blanks
+  before_validation :strip_blanks, :downcase
   
   # belongs to
   belongs_to :network_use
@@ -34,6 +34,10 @@ class NetworkInterface < ActiveRecord::Base
   
   def strip_blanks
     self.name = self.name.strip
+  end
+  
+  def downcase
+    self.name = self.name.downcase
   end
   
 end
