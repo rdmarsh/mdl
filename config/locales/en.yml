@@ -63,6 +63,8 @@ en:
   id: id
   ipaddress: IP address
   
+  key: key
+  
   licensor: licensor
   license: license
   license_type: license type
