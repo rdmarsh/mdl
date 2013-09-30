@@ -17,7 +17,7 @@
           %span{:class => 'caret'}
         %th= link_to t('manufacturer').singularize.humanize, manufacturers_path
         %th= link_to t('device_type').singularize.humanize, device_types_path
-        %th= link_to t('device').pluralize.humanize, devices_path
+        %th= link_to t('system').pluralize.humanize, systems_path
       - @device_models.each do |r|
         %tr
           %td= r.id
@@ -26,5 +26,5 @@
           %td= link_to r.device_type.name, device_type_path(r.device_type_id)
           %td
             %ul.unstyled
-              - r.devices.each do |device|
-                %li= link_to device.name, device_path(device.id)
+              - r.systems.each do |system|
+                %li= link_to system.name, system_path(system.id)

@@ -1,8 +1,8 @@
-- content_for(:edit_button_path, edit_device_path(@device))
+- content_for(:edit_button_path, edit_system_path(@system))
 
 = render 'head'
 
-= show_for @device do |f|
+= show_for @system do |f|
   = f.attribute :name
   = f.attribute :asset_tag
   = f.attribute :serial_number
@@ -16,5 +16,5 @@
   = f.attribute :updated_at, :format => :iso8601
   = f.association :network_interfaces do
     %ul
-      - @device.network_interfaces.each do |network_interface|
+      - @system.network_interfaces.each do |network_interface|
         %li= link_to "#{network_interface.ipaddress} (#{network_interface.name})", network_interface_path(network_interface.id)

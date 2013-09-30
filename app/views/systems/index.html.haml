@@ -1,9 +1,9 @@
 / Devices
--content_for(:empty_msg, "Currently no #{t('device').pluralize.downcase}")
+-content_for(:empty_msg, "Currently no #{t('system').pluralize.downcase}")
 
 =render 'head'
 
-- if @devices.empty?
+- if @systems.empty?
   %p= yield(:empty_msg)  
 - else
   %table.table.table-hover.table-condensed
@@ -22,7 +22,7 @@
         %th= link_to t('environment').singularize.humanize, environments_path
         %th= link_to t('organisation').singularize.humanize, organisations_path
         %th= link_to t('network_interface').pluralize.humanize, network_interfaces_path
-      - @devices.each do |r|
+      - @systems.each do |r|
         %tr{:class => tr_environment(r.environment.name)}
           %td= r.id
           %td= link_to r.name, r

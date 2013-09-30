@@ -80,7 +80,7 @@ DeviceModel.create(name: "BL870c",   device_type_id: 7, manufacturer_id: 3, desc
 Organisation.create(name: "Unknown", full_name: "Unknown", relationship_id: 1, active: true)
 Organisation.create(name: "None",    full_name: "None",    relationship_id: 2, active: true)
 
-Device.create(name: "Unknown", ipaddress: "0.0.0.0", asset_tag: "Unknown", device_model_id: 1, environment_id: 1, support_level_id: 1, service_level_id: 1, organisation_id: 1, description: "The device is currently unknown.")
-Device.create(name: "None",    ipaddress: "0.0.0.0", asset_tag: "None",    device_model_id: 2, environment_id: 2, support_level_id: 2, service_level_id: 2, organisation_id: 2, description: "There is no device applicable.")
+System.create(name: "Unknown", ipaddress: "0.0.0.0", asset_tag: "Unknown", device_model_id: 1, environment_id: 1, support_level_id: 1, service_level_id: 1, organisation_id: 1, description: "The system is currently unknown.")
+System.create(name: "None",    ipaddress: "0.0.0.0", asset_tag: "None",    device_model_id: 2, environment_id: 2, support_level_id: 2, service_level_id: 2, organisation_id: 2, description: "There is no system applicable.")
 
 # OnemdlSettings.create(name: "omdl")

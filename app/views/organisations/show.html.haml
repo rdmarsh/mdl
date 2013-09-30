@@ -18,7 +18,7 @@
   = f.attribute :country
   = f.attribute :created_at, :format => :iso8601
   = f.attribute :updated_at, :format => :iso8601
-  = f.association :devices do
+  = f.association :systems do
     %ul
-      - @organisation.devices.each do |device|
-        %li= link_to device.name, device_path(device.id)
+      - @organisation.systems.each do |system|
+        %li= link_to system.name, system_path(system.id)

@@ -5,7 +5,7 @@ class NetworkInterface < ActiveRecord::Base
   
   # belongs to
   belongs_to :network_use
-  belongs_to :device
+  belongs_to :system
   
   
   
@@ -17,7 +17,7 @@ class NetworkInterface < ActiveRecord::Base
   validates :name, presence: true
   validates :ipaddress, presence: true, :ip => { :format => :v4 }
   validates :network_use, presence: true
-  validates :device, presence: true
+  validates :system, presence: true
   
   
   

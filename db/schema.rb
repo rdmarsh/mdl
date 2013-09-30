@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130929233954) do
+ActiveRecord::Schema.define(version: 20130930031033) do
 
   create_table "activities", force: true do |t|
     t.integer  "trackable_id"
@@ -60,30 +60,6 @@ ActiveRecord::Schema.define(version: 20130929233954) do
   end
 
   add_index "device_types", ["name"], name: "index_device_types_on_name", unique: true
-
-  create_table "devices", force: true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.string   "ipaddress"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "device_model_id"
-    t.integer  "environment_id"
-    t.integer  "service_level_id"
-    t.integer  "support_level_id"
-    t.integer  "organisation_id"
-    t.string   "asset_tag"
-    t.integer  "network_interface_id"
-    t.string   "serial_number"
-  end
-
-  add_index "devices", ["device_model_id"], name: "index_devices_on_device_model_id"
-  add_index "devices", ["environment_id"], name: "index_devices_on_environment_id"
-  add_index "devices", ["name"], name: "index_devices_on_name"
-  add_index "devices", ["network_interface_id"], name: "index_devices_on_network_interface_id"
-  add_index "devices", ["organisation_id"], name: "index_devices_on_organisation_id"
-  add_index "devices", ["service_level_id"], name: "index_devices_on_service_level_id"
-  add_index "devices", ["support_level_id"], name: "index_devices_on_support_level_id"
 
   create_table "environments", force: true do |t|
     t.string   "name"
@@ -137,15 +113,15 @@ ActiveRecord::Schema.define(version: 20130929233954) do
     t.string   "gateway"
     t.string   "vlan"
     t.text     "description"
-    t.integer  "device_id"
     t.integer  "network_use_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "system_id"
   end
 
-  add_index "network_interfaces", ["device_id"], name: "index_network_interfaces_on_device_id"
   add_index "network_interfaces", ["name"], name: "index_network_interfaces_on_name"
   add_index "network_interfaces", ["network_use_id"], name: "index_network_interfaces_on_network_use_id"
+  add_index "network_interfaces", ["system_id"], name: "index_network_interfaces_on_system_id"
 
   create_table "network_uses", force: true do |t|
     t.string   "name"
@@ -225,6 +201,30 @@ ActiveRecord::Schema.define(version: 20130929233954) do
   end
 
   add_index "support_levels", ["name"], name: "index_support_levels_on_name", unique: true
+
+  create_table "systems", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "ipaddress"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "device_model_id"
+    t.integer  "environment_id"
+    t.integer  "service_level_id"
+    t.integer  "support_level_id"
+    t.integer  "organisation_id"
+    t.string   "asset_tag"
+    t.integer  "network_interface_id"
+    t.string   "serial_number"
+  end
+
+  add_index "systems", ["device_model_id"], name: "index_systems_on_device_model_id"
+  add_index "systems", ["environment_id"], name: "index_systems_on_environment_id"
+  add_index "systems", ["name"], name: "index_systems_on_name"
+  add_index "systems", ["network_interface_id"], name: "index_systems_on_network_interface_id"
+  add_index "systems", ["organisation_id"], name: "index_systems_on_organisation_id"
+  add_index "systems", ["service_level_id"], name: "index_systems_on_service_level_id"
+  add_index "systems", ["support_level_id"], name: "index_systems_on_support_level_id"
 
   create_table "users", force: true do |t|
     t.string   "email"

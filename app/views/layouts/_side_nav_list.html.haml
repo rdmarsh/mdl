@@ -5,8 +5,8 @@
   %li.nav-header
     Navigation
     
-  %li{ :class => ("active" if controller_name == "devices") }
-    = link_to t('device').pluralize.humanize, devices_path
+  %li{ :class => ("active" if controller_name == "systems") }
+    = link_to t('system').pluralize.humanize, systems_path
     
   %li{ :class => ("active" if controller_name == "network_interfaces") }
     = link_to t('network_interface').pluralize.humanize, network_interfaces_path

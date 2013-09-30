@@ -18,12 +18,12 @@ Onemdl::Application.routes.draw do
   
   resources :organisations do
     resources :relationships
-    resources :devices
+    resources :systems
   end
   
   resources :relationships
   
-  resources :devices do
+  resources :systems do
     resources :support_levels
     resources :service_levels
     resources :environments

@@ -19,7 +19,7 @@
         %th= sortable "days"
         %th= sortable "exclusions"
         %th= sortable "description"
-        %th= link_to t('device').pluralize.humanize, devices_path
+        %th= link_to t('system').pluralize.humanize, systems_path
       - @support_levels.each do |r|
         %tr
           %td= r.id
@@ -30,5 +30,5 @@
           %td= r.description
           %td              
             %ul.unstyled
-              - r.devices.each do |device|
-                %li= link_to device.name, device_path(device.id)
+              - r.systems.each do |system|
+                %li= link_to system.name, system_path(system.id)

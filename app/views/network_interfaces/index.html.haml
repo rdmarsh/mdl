@@ -20,7 +20,7 @@
           %span{:class => 'caret'}
         %th= sortable "description"
         %th= link_to t('network_use').singularize.humanize, network_uses_path
-        %th= link_to t('device').singularize.humanize, devices_path
+        %th= link_to t('system').singularize.humanize, systems_path
       - @network_interfaces.each do |r|
         %tr
           %td= r.id
@@ -28,4 +28,4 @@
           %td= r.ipaddress
           %td= r.description
           %td= link_to r.network_use.name, network_use_path(r.network_use_id)
-          %td= link_to r.device.name, device_path(r.device_id)
+          %td= link_to r.system.name, system_path(r.system_id)
