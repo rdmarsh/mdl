@@ -12,12 +12,25 @@
         %th
           = sortable "id"
           %span{:class => 'caret'}
+        %th= link_to t('organisation').singularize.humanize, organisations_path
+        %th= link_to t('license_type').singularize.humanize, license_types_path
+        %th
+          = sortable "key"
+          %span{:class => 'caret'}
         %th
           = sortable "quantity"
           %span{:class => 'caret'}
+        %th
+          = sortable "start_at"
+          %span{:class => 'caret'}
+        %th
+          = sortable "end_at"
+          %span{:class => 'caret'}
       - @licenses.each do |r|
         %tr
-          %td= r.id
           %td= link_to r.organisation.name, organisation_path(r.organisation_id)
           %td= link_to r.license_type.name, license_type_path(r.license_type_id)
-          %td= link_to r.quantity, r
+          %td= link_to r.key, r
+          %td= r.quantity
+          %td= r.start_at
+          %td= r.end_at

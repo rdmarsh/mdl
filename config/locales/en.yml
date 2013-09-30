@@ -49,6 +49,8 @@ en:
   editrecord: edit record
   environment: environment
   newenvironment: new environment
+  end_at: end at
+  start_at: start at
   
   faq: faq
 

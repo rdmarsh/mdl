@@ -1,17 +1,17 @@
-class License < ActiveRecord::Base
+class System < ActiveRecord::Base
   include PublicActivity::Common
   
   before_validation :strip_blanks
   
   # belongs to
-  belongs_to :license_type
+  belongs_to :device_model
+  belongs_to :environment
   belongs_to :organisation
-
-
-
+  belongs_to :service_level
+  belongs_to :support_level
   
   # has many
-  has_many :devices, dependent: :restrict_with_error
+  has_many :network_interfaces, dependent: :restrict_with_error
   
   # # has many through
   # has_many :network_uses, through: :network_interfaces
@@ -20,11 +20,12 @@ class License < ActiveRecord::Base
   # accepts_nested_attributes_for :network_interfaces, allow_destroy: true
   
   # validations
-  validates :key, presence: true
-  validates :quantity, presence: true
-  validates_numericality_of :quantity, :only_integer => true, :greater_than_or_equal_to => 0
-  
-
+  validates :name, presence: true
+  validates :device_model_id, presence: true
+  validates :environment_id, presence: true
+  validates :organisation_id, presence: true
+  validates :service_level_id, presence: true
+  validates :support_level_id, presence: true
   
   before_destroy :protect_unknown_none
   
@@ -37,7 +38,7 @@ class License < ActiveRecord::Base
   protected
   
   def strip_blanks
-     self.quantity = self.quantity.strip
+    self.name = self.name.strip
   end
   
 end

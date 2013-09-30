@@ -2,7 +2,10 @@
   = f.error_notification
   = f.association :organisation, include_blank: false, collection: Organisation.order('name ASC')
   = f.association :license_type, include_blank: false, collection: LicenseType.order('name ASC')
-  = f.input :quantity, hint: "q"
+  = f.input :key
+  = f.input :quantity, hint: "A value of '0' denotes infinity"
+  = f.input :start_at
+  = f.input :end_at
   = f.error :base
   = f.button :submit, :class => 'btn btn-primary'
   .btn-group.task_controller
