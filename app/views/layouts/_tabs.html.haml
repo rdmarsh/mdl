@@ -13,6 +13,7 @@
           = tab_link 'show', nil, 'icon-info-sign', "disabled"
           = tab_link 'edit', nil, 'icon-pencil', "disabled"
         
+        = tab_link 'graphs', yield(:graph_button_path), 'icon-signal', nil
         = tab_link 'history', yield(:history_button_path), 'icon-book', nil
         %li.dropdown.pull-right
           %a.dropdown-toggle{:'data-toggle' => "dropdown", :title => "Export", :href => "#" }

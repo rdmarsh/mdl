@@ -9,6 +9,7 @@ class System < ActiveRecord::Base
   belongs_to :organisation
   belongs_to :service_level
   belongs_to :support_level
+  belongs_to :operating_system
   
   # has many
   has_many :network_interfaces, dependent: :restrict_with_error
@@ -26,6 +27,7 @@ class System < ActiveRecord::Base
   validates :organisation_id, presence: true
   validates :service_level_id, presence: true
   validates :support_level_id, presence: true
+  validates :operating_system_id, presence: true
   
   before_destroy :protect_unknown_none
   

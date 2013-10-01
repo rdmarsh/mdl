@@ -136,7 +136,7 @@ OperatingSystem.create(name: "Windows", release: "8", family: "Windows", organis
 OperatingSystem.create(name: "Windows", release: "Server 2012", family: "Windows", organisation_id: 1)
 OperatingSystem.create(name: "Windows", release: "Server 2012 R2", family: "Windows", organisation_id: 1)
 
-System.create(name: "Unknown", ipaddress: "0.0.0.0", asset_tag: "Unknown", device_model_id: 1, environment_id: 1, support_level_id: 1, service_level_id: 1, organisation_id: 1, description: "The system is currently unknown.")
-System.create(name: "None",    ipaddress: "0.0.0.0", asset_tag: "None",    device_model_id: 2, environment_id: 2, support_level_id: 2, service_level_id: 2, organisation_id: 2, description: "There is no system applicable.")
+System.create(name: "Unknown", ipaddress: "0.0.0.0", asset_tag: "Unknown", device_model_id: 1, environment_id: 1, support_level_id: 1, service_level_id: 1, organisation_id: 1, operating_system_id: 1, description: "The system is currently unknown.")
+System.create(name: "None",    ipaddress: "0.0.0.0", asset_tag: "None",    device_model_id: 2, environment_id: 2, support_level_id: 2, service_level_id: 2, organisation_id: 2, operating_system_id: 2, description: "There is no system applicable.")
 
 # OnemdlSettings.create(name: "omdl")

@@ -3,15 +3,6 @@ class OperatingSystemsController < ApplicationController
   helper_method :sort_column, :sort_direction
 
   def index
-    @operating_system_families = [
-      "Unix",
-      "Linux",
-      "Windows",
-      "Other",
-      "Unknown",
-      "None"
-    ]
-    
     @operating_systems = OperatingSystem.order(sort_column + " " + sort_direction).page(params[:page])
     respond_with(@operating_systems)
   end

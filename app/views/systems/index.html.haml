@@ -21,6 +21,7 @@
         %th= link_to t('support_level').singularize.humanize, support_levels_path
         %th= link_to t('device_model').singularize.humanize, device_models_path
         %th= link_to t('environment').singularize.humanize, environments_path
+        %th= link_to t('operating_system').singularize.humanize, operating_systems_path
         %th= link_to t('network_interface').pluralize.humanize, network_interfaces_path
       - @systems.each do |r|
         %tr{:class => tr_environment(r.environment.name)}
@@ -32,6 +33,7 @@
           %td= link_to r.support_level.name, support_level_path(r.support_level_id)
           %td= link_to r.device_model.name, device_model_path(r.device_model_id)
           %td= link_to r.environment.name, environment_path(r.environment_id)
+          %td= link_to r.operating_system.name, operating_system_path(r.operating_system_id)
           %td              
             %ul.unstyled
               - r.network_interfaces.each do |network_interface|
