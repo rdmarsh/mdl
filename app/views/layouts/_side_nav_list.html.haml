@@ -14,7 +14,7 @@
   %li{ :class => ("active" if controller_name == "device_models") }
     = link_to t('device_model').pluralize.humanize, device_models_path
     
-  %li{ :class => ("license" if controller_name == "licenses") }
+  %li{ :class => ("active" if controller_name == "licenses") }
     = link_to t('license').pluralize.humanize, licenses_path
     
   / divider
