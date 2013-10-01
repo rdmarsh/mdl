@@ -11,7 +11,7 @@ class License < ActiveRecord::Base
 
   
   # has many
-  has_many :devices, dependent: :restrict_with_error
+  has_many :systems, dependent: :restrict_with_error
   
   # # has many through
   # has_many :network_uses, through: :network_interfaces

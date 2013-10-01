@@ -16,52 +16,62 @@ Onemdl::Application.routes.draw do
   resources :announcements
   match 'announcements/:id/hide', to: 'announcements#hide', as: 'hide_announcement', via: :get
   
-  resources :organisations do
-    resources :relationships
+  resources :device_models do
     resources :systems
   end
   
-  resources :relationships
-  
-  resources :systems do
-    resources :support_levels
-    resources :service_levels
-    resources :environments
-    resources :network_interfaces
-    resources :licenses
-    resources :operating_systems
+  resources :device_types do
+    resources :device_models
   end
   
-  resources :support_levels
-  resources :service_levels
-  resources :environments
-  
-  resources :network_interfaces do
-    resources :network_uses
-  end
-  
-  resources :network_uses
-  
-  resources :licenses do
-    resources :license_types
-    resources :organisations
-  end
-  
-  resources :operating_systems do
-    resources :organisations
+  resources :environments do
+    resources :systems
   end
   
   resources :license_types do
+    resources :licenses
+  end
+  
+  resources :licenses do
+    resources :systems
+  end
+  
+  resources :manufacturers do
+    resources :device_models
+  end
+  
+  resources :network_interfaces
+  
+  resources :network_uses do
+    resources :network_interfaces
+  end
+  
+  resources :operating_systems do
+    resources :systems
+  end
+  
+  resources :organisations do
+    resources :license_types
+    resources :licenses
+    resources :operating_systems
+    resources :systems
+  end
+  
+  resources :relationships do
     resources :organisations
   end
   
-  resources :device_models do
-    resources :device_types
-    resources :manufacturers
+  resources :service_levels do
+    resources :systems
   end
   
-  resources :device_types
-  resources :manufacturers
+  resources :support_levels do
+    resources :systems
+  end
+  
+  resources :systems do
+    resources :network_interfaces
+  end
   
   root 'staticpages#home'
   
