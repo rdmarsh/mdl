@@ -163,7 +163,7 @@ ActiveRecord::Schema.define(version: 20130930235102) do
     t.datetime "updated_at"
   end
 
-  add_index "operating_systems", ["name"], name: "index_operating_systems_on_name", unique: true
+  add_index "operating_systems", ["name"], name: "index_operating_systems_on_name"
   add_index "operating_systems", ["organisation_id"], name: "index_operating_systems_on_organisation_id"
 
   create_table "organisations", force: true do |t|

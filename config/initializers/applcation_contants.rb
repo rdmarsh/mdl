@@ -1,0 +1,2 @@
+VALID_OPERATING_SYSTEM_FAMILIES = %w{ unknown none unix Linux Windows Other }
+SELECT_OPERATING_SYSTEM_FAMILIES = VALID_OPERATING_SYSTEM_FAMILIES.map { |s| [s.capitalize, s] }

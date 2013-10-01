@@ -3,6 +3,15 @@ class OperatingSystemsController < ApplicationController
   helper_method :sort_column, :sort_direction
 
   def index
+    @operating_system_families = [
+      "Unix",
+      "Linux",
+      "Windows",
+      "Other",
+      "Unknown",
+      "None"
+    ]
+    
     @operating_systems = OperatingSystem.order(sort_column + " " + sort_direction).page(params[:page])
     respond_with(@operating_systems)
   end
@@ -18,7 +27,7 @@ class OperatingSystemsController < ApplicationController
   end
 
   def create
-    @operating_system = OperatingSystem.new(operatingsystem_params)
+    @operating_system = OperatingSystem.new(operating_system_params)
   
     if @operating_system.save
       # write a create message to the activity log
@@ -39,7 +48,7 @@ class OperatingSystemsController < ApplicationController
   def update
     @operating_system = OperatingSystem.find(params[:id])
   
-    if @operating_system.update_attributes(operatingsystem_params)
+    if @operating_system.update_attributes(operating_system_params)
       # write an update message to the activity log
       @operating_system.create_activity :update, owner: current_user
       flash[:info] = "Successfully updated OperatingSystem '" + @operating_system.name + "'"
@@ -72,7 +81,7 @@ class OperatingSystemsController < ApplicationController
   end
 
   # for allowing editing on fields
-  def operatingsystem_params
-    params.require(:operatingsystem).permit!
+  def operating_system_params
+    params.require(:operating_system).permit!
   end
   end

@@ -1,7 +1,6 @@
 class OperatingSystem < ActiveRecord::Base
-end
-class OperatingSystem < ActiveRecord::Base
   include PublicActivity::Common
+  
   
   before_validation :strip_blanks
   
@@ -16,9 +15,10 @@ class OperatingSystem < ActiveRecord::Base
   has_many :systems, dependent: :restrict_with_error
   
   # validations
-  validates :name, presence: true, uniqueness: { case_sensitive: false }
-  
-  
+  validates :name, presence: true, uniqueness: { case_sensitive: false, :scope => :release,
+     message: "Name and Release combination already present" }
+  validates :family, inclusion: { in: VALID_OPERATING_SYSTEM_FAMILIES,
+    message: "%{value} is not a valid operating system family" }
   
   
   

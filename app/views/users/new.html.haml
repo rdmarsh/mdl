@@ -7,6 +7,7 @@
   = f.input :email, placeholder: 'user@domain.com'
   = f.input :password
   = f.input :password_confirmation
+  = f.input :terms_of_service, as: :boolean, label: 'Accept Terms of Service'
   = f.button :submit, :class => 'btn btn-primary'
   or
   = link_to "Cancel", :back
