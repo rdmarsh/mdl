@@ -113,7 +113,6 @@ OperatingSystem.create(name: "Red Hat Enterprise Linux", release: "6.1", family:
 OperatingSystem.create(name: "Red Hat Enterprise Linux", release: "6.2", family: "Linux", description: "Santiago", organisation_id: 1)
 OperatingSystem.create(name: "Red Hat Enterprise Linux", release: "6.3", family: "Linux", description: "Santiago", organisation_id: 1)
 OperatingSystem.create(name: "Red Hat Enterprise Linux", release: "6.4", family: "Linux", description: "Santiago", organisation_id: 1)
-
 OperatingSystem.create(name: "Red Hat Enterprise Linux", release: "7.0", family: "Linux", description: "Based on Fedora 19", organisation_id: 1)
 
 OperatingSystem.create(name: "CentOS", release: "6.0", family: "Linux", description: "codename", organisation_id: 1)
@@ -121,6 +120,8 @@ OperatingSystem.create(name: "CentOS", release: "6.1", family: "Linux", descript
 OperatingSystem.create(name: "CentOS", release: "6.2", family: "Linux", description: "codename", organisation_id: 1)
 OperatingSystem.create(name: "CentOS", release: "6.3", family: "Linux", description: "codename", organisation_id: 1)
 OperatingSystem.create(name: "CentOS", release: "6.4", family: "Linux", description: "codename", organisation_id: 1)
+
+OperatingSystem.create(name: "Fedora", release: "19", family: "Linux", description: "Schrödinger's Cat", organisation_id: 1)
 
 OperatingSystem.create(name: "HPUX", release: "11.11", family: "Unix", organisation_id: 1)
 OperatingSystem.create(name: "HPUX", release: "11.21", family: "Unix", organisation_id: 1)
