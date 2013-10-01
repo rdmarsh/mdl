@@ -51,6 +51,7 @@ en:
   newenvironment: new environment
   end_at: end at
   start_at: start at
+  end_of_support: end of support
   
   family: family
   faq: faq
@@ -96,6 +97,7 @@ en:
   reference: reference
   setting: setting
   release: release
+  release_date: release date
   
   search: seach  
   service_level: service level

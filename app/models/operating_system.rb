@@ -17,7 +17,8 @@ class OperatingSystem < ActiveRecord::Base
   # validations
   validates :name, presence: true, uniqueness: { case_sensitive: false, :scope => :release,
      message: "Name and Release combination already present" }
-  validates :family, inclusion: { in: VALID_OPERATING_SYSTEM_FAMILIES,
+  validates :release, presence: true
+  validates :family, presence: true, inclusion: { in: VALID_OPERATING_SYSTEM_FAMILIES,
     message: "%{value} is not a valid operating system family" }
   
   

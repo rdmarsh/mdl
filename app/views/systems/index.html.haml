@@ -33,7 +33,7 @@
           %td= link_to r.support_level.name, support_level_path(r.support_level_id)
           %td= link_to r.device_model.name, device_model_path(r.device_model_id)
           %td= link_to r.environment.name, environment_path(r.environment_id)
-          %td= link_to r.operating_system.name, operating_system_path(r.operating_system_id)
+          %td= link_to "#{r.operating_system.name} (#{r.operating_system.release})", operating_system_path(r.operating_system_id)
           %td              
             %ul.unstyled
               - r.network_interfaces.each do |network_interface|
