@@ -22,6 +22,12 @@
           = sortable "family"
           %span{:class => 'caret'}
         %th= link_to t('organisation').singularize.humanize, organisations_path
+        %th
+          = sortable "release_date"
+          %span{:class => 'caret'}
+        %th
+          = sortable "end_of_support"
+          %span{:class => 'caret'}        
         %th= link_to t('system').pluralize.humanize, systems_path
       - @operating_systems.each do |r|
         %tr
@@ -30,6 +36,8 @@
           %td= r.release
           %td= r.family
           %td= link_to r.organisation.name, organisation_path(r.organisation_id)
+          %td= r.release_date
+          %td= r.end_of_support
           %td              
             %ul.unstyled
               - r.systems.each do |system|

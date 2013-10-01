@@ -123,6 +123,15 @@ OperatingSystem.create(name: "CentOS", release: "6.4", family: "Linux", descript
 
 OperatingSystem.create(name: "Fedora", release: "19", family: "Linux", description: "Schrödinger's Cat", organisation_id: 1)
 
+OperatingSystem.create(name: "Ubuntu", release: "10.04 LTS", family: "Linux", description: "Lucid Lynx", organisation_id: 1)
+OperatingSystem.create(name: "Ubuntu", release: "10.10", family: "Linux", description: "Maverick Meerkat", organisation_id: 1)
+OperatingSystem.create(name: "Ubuntu", release: "11.04", family: "Linux", description: "Natty Narwhal", organisation_id: 1)
+OperatingSystem.create(name: "Ubuntu", release: "11.10", family: "Linux", description: "Oneiric Ocelot", organisation_id: 1)
+OperatingSystem.create(name: "Ubuntu", release: "12.04 LTS", family: "Linux", description: "Precise Pangolin", organisation_id: 1)
+OperatingSystem.create(name: "Ubuntu", release: "12.10", family: "Linux", description: "Quantal Quetzal", organisation_id: 1)
+OperatingSystem.create(name: "Ubuntu", release: "13.04", family: "Linux", description: "Raring Ringtail", organisation_id: 1)
+OperatingSystem.create(name: "Ubuntu", release: "13.10", family: "Linux", description: "Saucy Salamander", organisation_id: 1)
+
 OperatingSystem.create(name: "HPUX", release: "11.11", family: "Unix", organisation_id: 1)
 OperatingSystem.create(name: "HPUX", release: "11.21", family: "Unix", organisation_id: 1)
 OperatingSystem.create(name: "HPUX", release: "11.31", family: "Unix", organisation_id: 1)
