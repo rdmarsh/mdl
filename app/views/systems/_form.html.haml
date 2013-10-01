@@ -8,7 +8,7 @@
   = f.association :support_level, include_blank: false, prompt: "Choose a support level", collection: SupportLevel.order('name ASC')
   = f.association :device_model, include_blank: false, prompt: "Choose a device model", collection: DeviceModel.order('name ASC')
   = f.association :environment, include_blank: false, prompt: "Choose an environment", collection: Environment.order('name ASC')
-  = f.association :operating_system, include_blank: false, prompt: "Choose an operating system", collection: OperatingSystem.order('name ASC')
+  = f.association :operating_system, label_method: :os_and_release, include_blank: false, prompt: "Choose an operating system", collection: OperatingSystem.order('name ASC')
   = f.input :description, hint: "Description of the device"
   = f.error :base
   .form-actions

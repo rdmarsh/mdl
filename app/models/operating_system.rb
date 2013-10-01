@@ -25,7 +25,13 @@ class OperatingSystem < ActiveRecord::Base
   
   before_destroy :protect_unknown_none
   
+  
+  
   private
+  
+  def os_and_release
+    "#{name} (#{release})"
+  end
   
   def protect_unknown_none
     !name.downcase.eql?("unknown") and !name.downcase.eql?("none")
