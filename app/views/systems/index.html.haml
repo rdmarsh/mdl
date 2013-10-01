@@ -1,4 +1,8 @@
 / Devices
+-content_for(:empty_msg, "Currently no #{t('system').pluralize.downcase}")
+
+=render 'head'
+
 - if @systems.empty?
   %p= yield(:empty_msg)  
 - else
