@@ -1,5 +1,10 @@
 %h1 Statistics
 
+%ul
+  - Dir.foreach("app/models") do |model_path|
+    %li= model_path.humanize
+    
+
 %table.table.table-hover.table-condensed
   %tbody
     %thead.info
