@@ -29,8 +29,8 @@
         %tr
           %td= r.id
           %td= link_to r.name, r
-          %td= link_to r.manufacturer.name, manufacturer_path(r.manufacturer_id)
-          %td= link_to r.device_type.name, device_type_path(r.device_type_id)
+          %td= link_to r.manufacturer.name, manufacturer_path(r.manufacturer.id)
+          %td= link_to r.device_type.name, device_type_path(r.device_type.id)
           %td= r.end_of_sale
           %td= r.end_of_support
           %td

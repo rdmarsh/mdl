@@ -1,6 +1,10 @@
 class System < ActiveRecord::Base
   include PublicActivity::Common
   
+  # friendly IDs, better URLs
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+  
   before_validation :strip_blanks, :downcase
   
   # belongs to

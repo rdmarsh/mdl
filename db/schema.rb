@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131002084209) do
+ActiveRecord::Schema.define(version: 20131002220833) do
 
   create_table "activities", force: true do |t|
     t.integer  "trackable_id"
@@ -237,6 +237,7 @@ ActiveRecord::Schema.define(version: 20131002084209) do
     t.integer  "network_interface_id"
     t.string   "serial_number"
     t.integer  "operating_system_id"
+    t.string   "slug"
   end
 
   add_index "systems", ["device_model_id"], name: "index_systems_on_device_model_id"
@@ -246,6 +247,7 @@ ActiveRecord::Schema.define(version: 20131002084209) do
   add_index "systems", ["operating_system_id"], name: "index_systems_on_operating_system_id"
   add_index "systems", ["organisation_id"], name: "index_systems_on_organisation_id"
   add_index "systems", ["service_level_id"], name: "index_systems_on_service_level_id"
+  add_index "systems", ["slug"], name: "index_systems_on_slug"
   add_index "systems", ["support_level_id"], name: "index_systems_on_support_level_id"
 
   create_table "users", force: true do |t|

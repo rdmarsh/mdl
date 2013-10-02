@@ -29,8 +29,8 @@
       - @licenses.each do |r|
         %tr
           %td= r.id
-          %td= link_to r.organisation.name, organisation_path(r.organisation_id)
-          %td= link_to r.license_type.name, license_type_path(r.license_type_id)
+          %td= link_to r.organisation.name, organisation_path(r.organisation.id)
+          %td= link_to r.license_type.name, license_type_path(r.license_type.id)
           %td= link_to r.key, r
           %td= r.quantity
           %td= r.start_at

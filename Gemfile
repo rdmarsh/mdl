@@ -33,6 +33,14 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'jquery-ui-rails'
 gem "bootstrap-datepicker-rails", "~> 1.1.1.7"
 
+# Apparently, It was failing because of the friendlyId gem. If you use friendlyId, you may need to specify the rails4-branch.
+# edit: Make sure to get the actual branch from norman/friendly_id. According to the readme, it needs to be at least branch: 5.0-stable to work with rails4.
+# gem 'friendly_id', github: 'FriendlyId/friendly_id', branch: 'rails4'
+gem 'friendly_id', '5.0.0.rc2' # Note: You MUST use 5.0.0 or greater for Rails 4.0+
+
+
+
+
 group :development, :test do
   gem 'turn'
   gem 'guard-rspec', '2.5.0'

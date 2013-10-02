@@ -8,7 +8,7 @@ class SystemsController < ApplicationController
   end
   
   def show
-    @system = System.find(params[:id])
+    @system = System.friendly.find(params[:id])
     respond_with(@system)
   end
   
@@ -32,12 +32,12 @@ class SystemsController < ApplicationController
   end
   
   def edit
-    @system = System.find(params[:id])
+    @system = System.friendly.find(params[:id])
     respond_with(@system)
   end
   
   def update
-    @system = System.find(params[:id])
+    @system = System.friendly.find(params[:id])
     
     if @system.update_attributes(system_params)
       # write an update message to the activity log
@@ -51,7 +51,7 @@ class SystemsController < ApplicationController
   end
   
   def destroy
-    @system = System.find(params[:id])
+    @system = System.friendly.find(params[:id])
     
     # write an update message to the activity log, it fails with a "cannot call create unless the parent is saved" inside the if statement, so I've put it here. It works out anyway, as we can show both successes and failures
     @system.create_activity :destroy, owner: current_user
