@@ -25,4 +25,4 @@
           %td              
             %ul.unstyled
               - r.organisations.each do |organisation|
-                %li= link_to organisation.name, organisation_path(organisation.id)
+                %li= link_to organisation.name, organisation_path(organisation.slug)

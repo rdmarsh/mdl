@@ -19,7 +19,6 @@ class System < ActiveRecord::Base
     ]
   end
   
-  
   before_validation :strip_blanks, :downcase
   
   # belongs to

@@ -10,4 +10,4 @@
   = f.association :organisations do
     %ul
       - @relationship.organisations.each do |organisation|
-        %li= link_to organisation.name, organisation_path(organisation.id)
+        %li= link_to organisation.name, organisation_path(organisation.slug)

@@ -8,7 +8,7 @@ class OrganisationsController < ApplicationController
   end
   
   def show
-    @organisation = Organisation.find(params[:id])
+    @organisation = Organisation.friendly.find(params[:id])
     respond_with(@organisation)
   end
   
@@ -32,12 +32,12 @@ class OrganisationsController < ApplicationController
   end
   
   def edit
-    @organisation = Organisation.find(params[:id])
+    @organisation = Organisation.friendly.find(params[:id])
     respond_with(@organisation)
   end
   
   def update
-    @organisation = Organisation.find(params[:id])
+    @organisation = Organisation.friendly.find(params[:id])
     
     if @organisation.update_attributes(organisation_params)
       # write an update message to the activity log
@@ -51,7 +51,7 @@ class OrganisationsController < ApplicationController
   end
   
   def destroy
-    @organisation = Organisation.find(params[:id])
+    @organisation = Organisation.friendly.find(params[:id])
     
     # write an update message to the activity log, it fails with a "cannot call create unless the parent is saved" inside the if statement, so I've put it here. It works out anyway, as we can show both successes and failures
     @organisation.create_activity :destroy, owner: current_user

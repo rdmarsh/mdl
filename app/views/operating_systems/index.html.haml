@@ -35,7 +35,7 @@
           %td= link_to r.name, r
           %td= r.release
           %td= r.family
-          %td= link_to r.organisation.name, organisation_path(r.organisation.id)
+          %td= link_to r.organisation.name, organisation_path(r.organisation.slug)
           %td= r.release_date
           %td= r.end_of_support
           %td              

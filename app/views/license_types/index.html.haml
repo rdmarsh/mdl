@@ -24,7 +24,7 @@
         %tr
           %td= r.id
           %td= link_to r.name, r
-          %td= link_to r.organisation.name, organisation_path(r.organisation.id)
+          %td= link_to r.organisation.name, organisation_path(r.organisation.slug)
           %td= r.description
           %td              
             %ul.unstyled

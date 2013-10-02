@@ -28,7 +28,7 @@
           %td= r.id
           %td= link_to r.name, r
           %td= r.asset_tag
-          %td= link_to r.organisation.name, organisation_path(r.organisation.id)
+          %td= link_to r.organisation.name, organisation_path(r.organisation.slug)
           %td= link_to r.service_level.name, service_level_path(r.service_level.id)
           %td= link_to r.support_level.name, support_level_path(r.support_level.id)
           %td= link_to r.device_model.name, device_model_path(r.device_model.id)
