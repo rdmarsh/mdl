@@ -15,4 +15,4 @@
   = f.association :systems do
     %ul
       - @operating_system.systems.each do |system|
-        %li= link_to system.name, system_path(system.id)
+        %li= link_to system.name, system_path(system.slug)

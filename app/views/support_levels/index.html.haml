@@ -31,4 +31,4 @@
           %td              
             %ul.unstyled
               - r.systems.each do |system|
-                %li= link_to system.name, system_path(system.id)
+                %li= link_to system.name, system_path(system.slug)
