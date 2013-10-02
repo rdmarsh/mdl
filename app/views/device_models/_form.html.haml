@@ -3,6 +3,8 @@
   = f.input :name, hint: "Device model"
   = f.association :manufacturer, prompt: "Choose a manufacturer", collection: Manufacturer.order('name ASC')
   = f.association :device_type, prompt: "Choose a device type", collection: DeviceType.order('name ASC')
+  = f.input :end_of_sale, include_blank: true
+  = f.input :end_of_support, include_blank: true
   = f.input :description, hint: "Description of the device model"
   = f.error :base
   = f.button :submit, :class => 'btn btn-primary'
