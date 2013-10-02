@@ -54,6 +54,28 @@ User avatars are from Gravatar.
 
 How to deploy to production.
 
+## Gource
+
+Create a video of development with Gource:
+
+	gource \
+		-s 0.01 \
+		-1920x1080 \
+		--auto-skip-seconds 0.01 \
+		--multi-sampling \
+		--stop-at-end \
+		--highlight-users \
+		--hide mouse,progress \
+		--file-idle-time 13 \
+		--max-files 0 \
+		--background-colour 000000 \
+		--title "One MDL" \
+		--font-size 26 \
+		--logo "app/assets/images/onering.png" \
+		--output-ppm-stream - \
+		--output-framerate 30 \
+	| avconv -y -r 30 -f image2pipe -vcodec ppm -i - -b 32768k movie.mp4
+	
 ----
 
 Please feel free to use a different markup language if you do not plan to run

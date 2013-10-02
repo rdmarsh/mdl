@@ -136,6 +136,12 @@ OperatingSystem.create(name: "HPUX", release: "11.11", family: "Unix", organisat
 OperatingSystem.create(name: "HPUX", release: "11.21", family: "Unix", organisation_id: 1)
 OperatingSystem.create(name: "HPUX", release: "11.31", family: "Unix", organisation_id: 1)
 
+OperatingSystem.create(name: "Solaris", release: "11.1", family: "Unix", organisation_id: 1)
+
+OperatingSystem.create(name: "AIX", release: "7.1 TL2", family: "Unix", organisation_id: 1)
+
+OperatingSystem.create(name: "OEL", release: "6.4", family: "Linux", organisation_id: 1)
+
 OperatingSystem.create(name: "Windows", release: "XP", family: "Windows", organisation_id: 1)
 OperatingSystem.create(name: "Windows", release: "2000", family: "Windows", organisation_id: 1)
 OperatingSystem.create(name: "Windows", release: "Vista", family: "Windows", organisation_id: 1)
