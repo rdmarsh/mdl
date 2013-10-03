@@ -4,8 +4,8 @@ namespace :db do
     Faker::Config.locale = "en-au"
     require 'populator'
     
-    Organisation.populate(50) do |organisation|
-      organisation.name             = Faker::Lorem.word + Faker::Lorem.word
+    Organisation.populate(100) do |organisation|
+      organisation.name             = Faker::Company.name + Faker::Lorem.word
       organisation.full_name        = Faker::Company.name
       organisation.relationship_id  = 1..9
       organisation.active           = [true, false]
@@ -17,8 +17,8 @@ namespace :db do
       organisation.country          = Faker::Address.country
       organisation.state            = Faker::Address.state
       
-      System.populate(5..10) do |system|
-        system.name                 = Faker::Lorem.word
+      System.populate(0..30) do |system|
+        system.name                 = Faker::Internet.domain_word
         system.description          = Faker::Lorem.sentences
         system.device_model_id      = 1..5
         system.environment_id       = 1..9
