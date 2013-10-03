@@ -8,7 +8,7 @@ class RelationshipsController < ApplicationController
   end
   
   def show
-    @relationship = Relationship.find(params[:id])
+    @relationship = Relationship.friendly.find(params[:id])
     respond_with(@relationship)
   end
   
@@ -32,12 +32,12 @@ class RelationshipsController < ApplicationController
   end
   
   def edit
-    @relationship = Relationship.find(params[:id])
+    @relationship = Relationship.friendly.find(params[:id])
     respond_with(@relationship)
   end
     
   def update
-    @relationship = Relationship.find(params[:id])
+    @relationship = Relationship.friendly.find(params[:id])
     
     if @relationship.update_attributes(relationship_params)
       # write an update message to the activity log
@@ -51,7 +51,7 @@ class RelationshipsController < ApplicationController
   end
   
   def destroy
-    @relationship = Relationship.find(params[:id])
+    @relationship = Relationship.friendly.find(params[:id])
     
     # write an update message to the activity log, it fails with a "cannot call create unless the parent is saved" inside the if statement, so I've put it here. It works out anyway, as we can show both successes and failures
     @relationship.create_activity :destroy, owner: current_user

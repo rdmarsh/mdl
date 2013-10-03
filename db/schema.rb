@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131002232600) do
+ActiveRecord::Schema.define(version: 20131003224358) do
 
   create_table "activities", force: true do |t|
     t.integer  "trackable_id"
@@ -199,18 +199,22 @@ ActiveRecord::Schema.define(version: 20131002232600) do
     t.text     "description", limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
 
   add_index "relationships", ["name"], name: "index_relationships_on_name", unique: true
+  add_index "relationships", ["slug"], name: "index_relationships_on_slug"
 
   create_table "service_levels", force: true do |t|
     t.string   "name"
     t.text     "description", limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
 
   add_index "service_levels", ["name"], name: "index_service_levels_on_name", unique: true
+  add_index "service_levels", ["slug"], name: "index_service_levels_on_slug"
 
   create_table "support_levels", force: true do |t|
     t.string   "name"
@@ -220,9 +224,11 @@ ActiveRecord::Schema.define(version: 20131002232600) do
     t.string   "hours"
     t.string   "days"
     t.string   "exclusions"
+    t.string   "slug"
   end
 
   add_index "support_levels", ["name"], name: "index_support_levels_on_name", unique: true
+  add_index "support_levels", ["slug"], name: "index_support_levels_on_slug"
 
   create_table "systems", force: true do |t|
     t.string   "name"

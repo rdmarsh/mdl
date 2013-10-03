@@ -8,7 +8,7 @@ class SupportLevelsController < ApplicationController
   end
   
   def show
-    @support_level = SupportLevel.find(params[:id])
+    @support_level = SupportLevel.friendly.find(params[:id])
     respond_with(@support_level)
   end
   
@@ -32,12 +32,12 @@ class SupportLevelsController < ApplicationController
   end
   
   def edit
-    @support_level = SupportLevel.find(params[:id])
+    @support_level = SupportLevel.friendly.find(params[:id])
     respond_with(@support_level)
   end
   
   def update
-    @support_level = SupportLevel.find(params[:id])
+    @support_level = SupportLevel.friendly.find(params[:id])
     
     if @support_level.update_attributes(support_level_params)
       # write an update message to the activity log
@@ -51,7 +51,7 @@ class SupportLevelsController < ApplicationController
   end
   
   def destroy
-    @support_level = SupportLevel.find(params[:id])
+    @support_level = SupportLevel.friendly.find(params[:id])
     
     # write an update message to the activity log, it fails with a "cannot call create unless the parent is saved" inside the if statement, so I've put it here. It works out anyway, as we can show both successes and failures
     @support_level.create_activity :destroy, owner: current_user

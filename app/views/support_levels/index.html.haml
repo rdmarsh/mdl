@@ -10,9 +10,6 @@
     %tbody
       %thead
         %th
-          = sortable "id"
-          %span{:class => 'caret'}
-        %th
           = sortable "name"
           %span{:class => 'caret'}
         %th= sortable "hours"
@@ -22,13 +19,9 @@
         %th= link_to t('system').pluralize.humanize, systems_path
       - @support_levels.each do |r|
         %tr
-          %td= r.id
           %td= link_to r.name, r
           %td= r.hours
           %td= r.days
           %td= r.exclusions
           %td= r.description
-          %td              
-            %ul.unstyled
-              - r.systems.each do |system|
-                %li= link_to system.name, system_path(system.slug)
+          %td= link_to r.systems.count, support_level_systems_path(r.slug)

@@ -10,19 +10,12 @@
     %tbody
       %thead
         %th
-          = sortable "id"
-          %span{:class => 'caret'}
-        %th
           = sortable "name"
           %span{:class => 'caret'}
         %th= sortable "description"
         %th= link_to t('organisation').pluralize.humanize, organisations_path
       - @relationships.each do |r|
         %tr
-          %td= r.id
           %td= link_to r.name, r
           %td= r.description
-          %td              
-            %ul.unstyled
-              - r.organisations.each do |organisation|
-                %li= link_to organisation.name, organisation_path(organisation.slug)
+          %td= link_to r.organisations.count, relationship_organisations_path(r.slug)

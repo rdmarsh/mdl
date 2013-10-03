@@ -10,19 +10,12 @@
     %tbody
       %thead
         %th
-          = sortable "id"
-          %span{:class => 'caret'}
-        %th
           = sortable "name"
           %span{:class => 'caret'}
         %th= sortable "description"
         %th= link_to t('system').pluralize.humanize, systems_path
       - @service_levels.each do |r|
         %tr
-          %td= r.id
           %td= link_to r.name, r
           %td= r.description
-          %td              
-            %ul.unstyled
-              - r.systems.each do |system|
-                %li= link_to system.name, system_path(system.slug)
+          %td= link_to r.systems.count, service_level_systems_path(r.slug)
