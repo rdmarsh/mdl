@@ -19,6 +19,7 @@
         %th= link_to t('relationship').singularize.humanize, relationships_path
         %th= sortable "phone"
         %th= sortable "active"
+        / %th= sortable "system"
         %th= link_to t('system').pluralize.humanize, systems_path
       - @organisations.each do |r|
         %tr{:class => tr_attributes(r.active)}
@@ -28,8 +29,9 @@
           %td= link_to r.relationship.name, relationship_path(r.relationship.id)
           %td= r.phone
           %td= r.active
-          %td              
-            %ul.unstyled
-              - r.systems.each do |system|
-                %li= link_to system.name, system_path(system.slug)
+          %td= link_to r.systems.count, organisation_systems_path(r.slug)
+          / %td
+          /   %ul.unstyled
+          /     - r.systems.each do |system|
+          /       %li= link_to system.name, system_path(system.slug)
   = paginate @organisations

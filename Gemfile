@@ -22,13 +22,16 @@ gem 'jbuilder', '~> 1.2'
 #gem 'taps', '~>0.3.24'
 gem 'simple_form'
 gem 'show_for', '~> 0.2.4'
+# railscast 230
 gem 'inherited_resources'
+gem 'has_scope'
 # gem "rails-settings-cached", "0.3.1"
 # the countries gem must appear above country_select gem
 gem 'countries'
 gem 'country_select'
 gem 'public_activity'
 gem 'kaminari'
+# gem 'bootstrap-kaminari-views'
 gem 'activevalidators', '~> 2.0.2'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'jquery-ui-rails'

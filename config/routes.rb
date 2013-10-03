@@ -16,6 +16,10 @@ Onemdl::Application.routes.draw do
   resources :announcements
   match 'announcements/:id/hide', to: 'announcements#hide', as: 'hide_announcement', via: :get
   
+  resources :systems do
+    resources :network_interfaces
+  end
+  
   resources :device_models do
     resources :systems
   end
@@ -68,11 +72,7 @@ Onemdl::Application.routes.draw do
   resources :support_levels do
     resources :systems
   end
-  
-  resources :systems do
-    resources :network_interfaces
-  end
-  
+    
   root 'staticpages#home'
   
   resources :onemdl_settings, :only => [:index, :edit]

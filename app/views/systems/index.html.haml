@@ -9,13 +9,9 @@
   %table.table.table-hover.table-condensed
     %tbody
       %thead
-        %th
-          = sortable "id"
-          %span{:class => 'caret'}
-        %th
-          = sortable "name"
-          %span{:class => 'caret'}
-        %th= sortable "asset_tag"
+        %th id
+        %th name
+        %th asset_tag
         %th= link_to t('organisation').singularize.humanize, organisations_path
         %th= link_to t('service_level').singularize.humanize, service_levels_path
         %th= link_to t('support_level').singularize.humanize, support_levels_path
@@ -33,8 +29,9 @@
           %td= link_to r.support_level.name, support_level_path(r.support_level.id)
           %td= link_to r.device_model.name, device_model_path(r.device_model.id)
           %td= link_to r.environment.name, environment_path(r.environment.id)
-          %td= link_to "#{r.operating_system.name} (#{r.operating_system.release})", operating_system_path(r.operating_system.id)
+          %td= link_to "#{r.operating_system.name} #{r.operating_system.release}", operating_system_path(r.operating_system.id)
           %td              
             %ul.unstyled
               - r.network_interfaces.each do |network_interface|
                 %li= link_to network_interface.ipaddress, network_interface_path(network_interface.id)
+  = paginate @systems
