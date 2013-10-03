@@ -16,6 +16,7 @@
         %th= link_to t('relationship').singularize.humanize, relationships_path
         %th= sortable "phone"
         %th= sortable "active"
+        / todo this isn't working
         %th= sortable "system"
         / %th= link_to t('system').pluralize.humanize, systems_path
       - @organisations.each do |r|

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131003224358) do
+ActiveRecord::Schema.define(version: 20131003231438) do
 
   create_table "activities", force: true do |t|
     t.integer  "trackable_id"
@@ -165,10 +165,12 @@ ActiveRecord::Schema.define(version: 20131003224358) do
     t.datetime "updated_at"
     t.date     "release_date"
     t.date     "end_of_support"
+    t.string   "slug"
   end
 
   add_index "operating_systems", ["name"], name: "index_operating_systems_on_name"
   add_index "operating_systems", ["organisation_id"], name: "index_operating_systems_on_organisation_id"
+  add_index "operating_systems", ["slug"], name: "index_operating_systems_on_slug"
 
   create_table "organisations", force: true do |t|
     t.string   "name"

@@ -26,7 +26,7 @@
           %td= link_to r.service_level.name, service_level_path(r.service_level.slug)
           %td= link_to r.support_level.name, support_level_path(r.support_level.slug)
           %td= link_to r.device_model.name, device_model_path(r.device_model.id)
-          %td= link_to r.environment.name, environment_path(r.environment.id)
+          %td= link_to r.environment.name, environment_path(r.environment.slug)
           %td= link_to "#{r.operating_system.name} #{r.operating_system.release}", operating_system_path(r.operating_system.id)
           %td              
             %ul.unstyled

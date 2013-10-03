@@ -8,7 +8,7 @@ class OperatingSystemsController < ApplicationController
   end
 
   def show
-    @operating_system = OperatingSystem.find(params[:id])
+    @operating_system = OperatingSystem.friendly.find(params[:id])
     respond_with(@operating_system)
   end
 
@@ -32,12 +32,12 @@ class OperatingSystemsController < ApplicationController
   end
 
   def edit
-    @operating_system = OperatingSystem.find(params[:id])
+    @operating_system = OperatingSystem.friendly.find(params[:id])
     respond_with(@operating_system)
   end
 
   def update
-    @operating_system = OperatingSystem.find(params[:id])
+    @operating_system = OperatingSystem.friendly.find(params[:id])
   
     if @operating_system.update_attributes(operating_system_params)
       # write an update message to the activity log
@@ -51,7 +51,7 @@ class OperatingSystemsController < ApplicationController
   end
 
   def destroy
-    @operating_system = OperatingSystem.find(params[:id])
+    @operating_system = OperatingSystem.friendly.find(params[:id])
   
     # write an update message to the activity log, it fails with a "cannot call create unless the parent is saved" inside the if statement, so I've put it here. It works out anyway, as we can show both successes and failures
     @operating_system.create_activity :destroy, owner: current_user
