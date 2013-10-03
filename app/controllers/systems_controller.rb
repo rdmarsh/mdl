@@ -3,8 +3,8 @@ class SystemsController < ApplicationController
   helper_method :sort_column, :sort_direction
   
   def index
-    @systems = System.order(sort_column + " " + sort_direction).page(params[:page])
-    respond_with(@systems)
+    @organisation.present? ? @organisation = Organisation.friendly.find(params[:organisation_id]) : nil
+    @systems = @organisation.present? ? @organisation.systems.page(params[:page]) : System.page(params[:page])
   end
   
   def show
