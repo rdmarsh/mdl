@@ -147,6 +147,7 @@ GEM
     pg (0.15.1)
     phony (1.7.12)
     polyglot (0.3.3)
+    populator (1.0.0)
     pry (0.9.12.2)
       coderay (~> 1.0.5)
       method_source (~> 0.8)
@@ -284,6 +285,7 @@ DEPENDENCIES
   kaminari
   launchy
   pg (= 0.15.1)
+  populator
   public_activity
   rails (= 4.0.0)
   rails_12factor (= 0.0.2)
