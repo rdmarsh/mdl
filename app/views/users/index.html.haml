@@ -11,9 +11,6 @@
       %thead
         %th Avatar
         %th
-          = sortable "id"
-          %span{:class => 'caret'}
-        %th
           = sortable "name"
           %span{:class => 'caret'}
         %th
@@ -26,7 +23,6 @@
       - @users.each do |r|
         %tr
           %td= link_to (image_tag avatar_url(r)), r
-          %td= r.id
           %td= r.name
           %td= link_to r.email, r
           %td= r.avatar_url

@@ -10,15 +10,11 @@
     %tbody
       %thead
         %th
-          = sortable "id"
-          %span{:class => 'caret'}
-        %th
           = sortable "name"
           %span{:class => 'caret'}
         %th= link_to t('device_model').pluralize.humanize, device_models_path
       - @device_types.each do |r|
         %tr
-          %td= r.id
           %td= link_to r.name, r
           %td              
             %ul.unstyled

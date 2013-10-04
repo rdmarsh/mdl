@@ -8,7 +8,7 @@ class EnvironmentsController < ApplicationController
   end
   
   def show
-    @environment = Environment.find(params[:id])
+    @environment = Environment.friendly.find(params[:id])
     respond_with(@environment)
   end
   
@@ -32,12 +32,12 @@ class EnvironmentsController < ApplicationController
   end
   
   def edit
-    @environment = Environment.find(params[:id])
+    @environment = Environment.friendly.find(params[:id])
     respond_with(@environment)
   end
   
   def update
-    @environment = Environment.find(params[:id])
+    @environment = Environment.friendly.find(params[:id])
     
     if @environment.update_attributes(environment_params)
       # write an update message to the activity log
@@ -51,7 +51,7 @@ class EnvironmentsController < ApplicationController
   end
   
   def destroy
-    @environment = Environment.find(params[:id])
+    @environment = Environment.friendly.find(params[:id])
     
     # write an update message to the activity log, it fails with a "cannot call create unless the parent is saved" inside the if statement, so I've put it here. It works out anyway, as we can show both successes and failures
     @environment.create_activity :destroy, owner: current_user

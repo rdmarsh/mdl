@@ -10,9 +10,6 @@
     %tbody
       %thead
         %th
-          = sortable "id"
-          %span{:class => 'caret'}
-        %th
           = sortable "name"
           %span{:class => 'caret'}
         %th
@@ -23,7 +20,6 @@
         %th= link_to t('system').singularize.humanize, systems_path
       - @network_interfaces.each do |r|
         %tr
-          %td= r.id
           %td= link_to r.name, r
           %td= r.ipaddress
           %td= r.description
