@@ -8,7 +8,7 @@ class NetworkInterfacesController < ApplicationController
   end
   
   def show
-    @network_interface = NetworkInterface.find(params[:id])
+    @network_interface = NetworkInterface.friendly.find(params[:id])
     respond_with(@network_interface)
   end
   
@@ -32,12 +32,12 @@ class NetworkInterfacesController < ApplicationController
   end
   
   def edit
-    @network_interface = NetworkInterface.find(params[:id])
+    @network_interface = NetworkInterface.friendly.find(params[:id])
     respond_with(@network_interface)
   end
   
   def update
-    @network_interface = NetworkInterface.find(params[:id])
+    @network_interface = NetworkInterface.friendly.find(params[:id])
     
     if @network_interface.update_attributes(network_interface_params)
       # write an update message to the activity log
@@ -51,7 +51,7 @@ class NetworkInterfacesController < ApplicationController
   end
   
   def destroy
-    @network_interface = NetworkInterface.find(params[:id])
+    @network_interface = NetworkInterface.friendly.find(params[:id])
     
     # write an update message to the activity log, it fails with a "cannot call create unless the parent is saved" inside the if statement, so I've put it here. It works out anyway, as we can show both successes and failures
     @network_interface.create_activity :destroy, owner: current_user

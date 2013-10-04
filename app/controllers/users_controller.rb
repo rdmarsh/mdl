@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
   
   def show
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
     respond_with(@user)
   end
   
@@ -34,12 +34,12 @@ class UsersController < ApplicationController
   end
   
   def edit
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
     respond_with(@user)
   end
   
   def update
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
     
     if @user.update_attributes(user_params)
       # write an update message to the activity log
@@ -53,7 +53,7 @@ class UsersController < ApplicationController
   end
   
   def destroy
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
     
     # write an update message to the activity log, it fails with a "cannot call create unless the parent is saved" inside the if statement, so I've put it here. It works out anyway, as we can show both successes and failures
     @user.create_activity :destroy, owner: current_user

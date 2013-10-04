@@ -8,7 +8,7 @@ class ManufacturersController < ApplicationController
   end
   
   def show
-    @manufacturer = Manufacturer.find(params[:id])
+    @manufacturer = Manufacturer.friendly.find(params[:id])
     respond_with(@manufacturer)
   end
   
@@ -32,12 +32,12 @@ class ManufacturersController < ApplicationController
   end
   
   def edit
-    @manufacturer = Manufacturer.find(params[:id])
+    @manufacturer = Manufacturer.friendly.find(params[:id])
     respond_with(@manufacturer)
   end
   
   def update
-    @manufacturer = Manufacturer.find(params[:id])
+    @manufacturer = Manufacturer.friendly.find(params[:id])
     
     if @manufacturer.update_attributes(manufacturer_params)
       # write an update message to the activity log
@@ -51,7 +51,7 @@ class ManufacturersController < ApplicationController
   end
   
   def destroy
-    @manufacturer = Manufacturer.find(params[:id])
+    @manufacturer = Manufacturer.friendly.find(params[:id])
     
     # write an update message to the activity log, it fails with a "cannot call create unless the parent is saved" inside the if statement, so I've put it here. It works out anyway, as we can show both successes and failures
     @manufacturer.create_activity :destroy, owner: current_user

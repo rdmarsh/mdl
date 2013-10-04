@@ -12,9 +12,13 @@
         %th
           = sortable "name"
           %span{:class => 'caret'}
+        %th
+          = sortable "description"
+          %span{:class => 'caret'}
         %th= link_to t('device_model').pluralize.humanize, device_models_path
       - @device_types.each do |r|
         %tr
           %td= link_to r.name, r
+          %td= r.description
           %td= link_to r.device_models.count, device_type_device_models_path(r.slug)
   = paginate @device_types

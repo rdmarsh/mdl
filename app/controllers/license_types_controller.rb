@@ -8,7 +8,7 @@ class LicenseTypesController < ApplicationController
   end
   
   def show
-    @license_type = LicenseType.find(params[:id])
+    @license_type = LicenseType.friendly.find(params[:id])
     respond_with(@license_type)
   end
   
@@ -32,12 +32,12 @@ class LicenseTypesController < ApplicationController
   end
   
   def edit
-    @license_type = LicenseType.find(params[:id])
+    @license_type = LicenseType.friendly.find(params[:id])
     respond_with(@license_type)
   end
   
   def update
-    @license_type = LicenseType.find(params[:id])
+    @license_type = LicenseType.friendly.find(params[:id])
     
     if @license_type.update_attributes(license_type_params)
       # write an update message to the activity log
@@ -51,7 +51,7 @@ class LicenseTypesController < ApplicationController
   end
   
   def destroy
-    @license_type = LicenseType.find(params[:id])
+    @license_type = LicenseType.friendly.find(params[:id])
     
     # write an update message to the activity log, it fails with a "cannot call create unless the parent is saved" inside the if statement, so I've put it here. It works out anyway, as we can show both successes and failures
     @license_type.create_activity :destroy, owner: current_user
