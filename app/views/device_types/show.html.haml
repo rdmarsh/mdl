@@ -10,4 +10,4 @@
   = f.association :device_models do
     %ul
       - @device_type.device_models.each do |device_model|
-        %li= link_to device_model.name, device_model_path(device_model.id)
+        %li= link_to device_model.name, device_model_path(device_model.slug)

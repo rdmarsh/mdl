@@ -8,7 +8,7 @@ class DeviceModelsController < ApplicationController
   end
   
   def show
-    @device_model = DeviceModel.find(params[:id])
+    @device_model = DeviceModel.friendly.find(params[:id])
     respond_with(@device_model)
   end
   
@@ -32,12 +32,12 @@ class DeviceModelsController < ApplicationController
   end
   
   def edit
-    @device_model = DeviceModel.find(params[:id])
+    @device_model = DeviceModel.friendly.find(params[:id])
     respond_with(@device_model)
   end
   
   def update
-    @device_model = DeviceModel.find(params[:id])
+    @device_model = DeviceModel.friendly.find(params[:id])
     
     if @device_model.update_attributes(device_model_params)
       # write an update message to the activity log
@@ -51,7 +51,7 @@ class DeviceModelsController < ApplicationController
   end
   
   def destroy
-    @device_model = DeviceModel.find(params[:id])
+    @device_model = DeviceModel.friendly.find(params[:id])
     
     # write an update message to the activity log, it fails with a "cannot call create unless the parent is saved" inside the if statement, so I've put it here. It works out anyway, as we can show both successes and failures
     @device_model.create_activity :destroy, owner: current_user
