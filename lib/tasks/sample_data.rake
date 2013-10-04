@@ -5,7 +5,7 @@ namespace :db do
     require 'populator'
     
     Organisation.populate(10) do |organisation|
-      organisation.name             = Faker::Company.name + Faker::Lorem.word
+      organisation.name             = (Faker::Company.name + Faker::Lorem.word).parameterize
       organisation.full_name        = Faker::Company.name
       organisation.relationship_id  = 1..9
       organisation.active           = [true, false]
