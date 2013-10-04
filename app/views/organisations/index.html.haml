@@ -27,8 +27,4 @@
           %td= r.phone
           %td= r.active
           %td= link_to r.systems.count, organisation_systems_path(r.slug)
-          / %td
-          /   %ul.unstyled
-          /     - r.systems.each do |system|
-          /       %li= link_to system.name, system_path(system.slug)
   = paginate @organisations

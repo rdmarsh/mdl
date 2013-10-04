@@ -25,3 +25,4 @@
           %td= r.exclusions
           %td= r.description
           %td= link_to r.systems.count, support_level_systems_path(r.slug)
+  = paginate @support_levels

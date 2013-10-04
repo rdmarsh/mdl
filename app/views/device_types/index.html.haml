@@ -16,7 +16,5 @@
       - @device_types.each do |r|
         %tr
           %td= link_to r.name, r
-          %td              
-            %ul.unstyled
-              - r.device_models.each do |device_model|
-                %li= link_to device_model.name, device_model_path(device_model.slug)
+          %td= link_to r.device_models.count, device_type_device_models_path(r.slug)
+  = paginate @device_types

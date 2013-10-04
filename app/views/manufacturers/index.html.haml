@@ -18,7 +18,8 @@
         %tr
           %td= link_to r.name, r
           %td= link_to r.website, r.website
-          %td              
+          %td
             %ul.unstyled
               - r.device_models.each do |device_model|
                 %li= link_to device_model.name, device_model_path(device_model.slug)
+  = paginate @manufacturers

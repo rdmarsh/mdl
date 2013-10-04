@@ -19,3 +19,4 @@
           %td= link_to r.name, r
           %td= r.description
           %td= link_to r.organisations.count, relationship_organisations_path(r.slug)
+  = paginate @relationships

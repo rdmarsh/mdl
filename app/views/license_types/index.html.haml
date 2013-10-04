@@ -26,4 +26,4 @@
             %ul.unstyled
               - r.licenses.each do |license|
                 %li= link_to license.key, license_path(license.id)
-          
+  = paginate @license_types

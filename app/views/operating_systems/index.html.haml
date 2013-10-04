@@ -35,8 +35,4 @@
           %td= r.release_date
           %td= r.end_of_support
           %td= link_to r.systems.count, operating_system_systems_path(r.slug)
-          / %td              
-          /   %ul.unstyled
-          /     - r.systems.each do |system|
-          /       %li= link_to system.name, system_path(system.slug)
   = paginate @operating_systems
