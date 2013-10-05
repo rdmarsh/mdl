@@ -4,18 +4,14 @@
 .page-header
   %h1= yield(:title)
   %p.lead= yield(:subtitle)
-  
-.row
-  .span11
-    .offset1
-      .well
-        %i
-          .text-center One List to rule them all, One List to find them, One List to bring them all and in the aether bind them.
 
 .media
   = link_to "#", :class => "pull-left" do
     = image_tag "onering.png", :class => "media-object"
   .media-body
+    %h4 About
+    %p OneMDL is a ruby on rails based application designed to collate information about IT assets. It is designed to be most useful to System Administrators and Service Desk personal.
+    %p.well.text-center One List to rule them all, One List to find them, One List to bring them all and in the aether bind them.
     %h4.media-heading Licence
     %p Copyright (C) 2013  David Marsh
     %p This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
