@@ -22,8 +22,5 @@
           %td= link_to r.name, r
           %td= link_to r.organisation.name, organisation_path(r.organisation.slug)
           %td= r.description
-          %td              
-            %ul.unstyled
-              - r.licenses.each do |license|
-                %li= link_to license.key, license_path(license.id)
+          %td= link_to r.licenses.count, license_type_licenses_path(r.slug)
   = paginate @license_types

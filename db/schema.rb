@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131004125351) do
+ActiveRecord::Schema.define(version: 20131005010916) do
 
   create_table "activities", force: true do |t|
     t.integer  "trackable_id"
@@ -84,10 +84,12 @@ ActiveRecord::Schema.define(version: 20131004125351) do
     t.integer  "organisation_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
 
   add_index "license_types", ["name"], name: "index_license_types_on_name", unique: true
   add_index "license_types", ["organisation_id"], name: "index_license_types_on_organisation_id"
+  add_index "license_types", ["slug"], name: "index_license_types_on_slug"
 
   create_table "licenses", force: true do |t|
     t.string   "quantity"
@@ -109,9 +111,11 @@ ActiveRecord::Schema.define(version: 20131004125351) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "website"
+    t.string   "slug"
   end
 
   add_index "manufacturers", ["name"], name: "index_manufacturers_on_name", unique: true
+  add_index "manufacturers", ["slug"], name: "index_manufacturers_on_slug"
 
   create_table "network_interfaces", force: true do |t|
     t.string   "name"
@@ -139,9 +143,11 @@ ActiveRecord::Schema.define(version: 20131004125351) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
 
   add_index "network_uses", ["name"], name: "index_network_uses_on_name"
+  add_index "network_uses", ["slug"], name: "index_network_uses_on_slug"
 
   create_table "onemdl_settings", force: true do |t|
     t.string   "company_name"
