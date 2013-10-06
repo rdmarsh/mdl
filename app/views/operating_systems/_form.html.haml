@@ -2,7 +2,7 @@
   = f.error_notification
   = f.input :name, hint: "Operating system name"
   = f.input :release
-  = f.input :family, include_blank: false, prompt: "Choose an operating system family", collection: SELECT_OPERATING_SYSTEM_FAMILIES
+  = f.input :family, include_blank: false, prompt: "Choose an operating system family", collection: ApplicationConstants::SELECT_OPERATING_SYSTEM_FAMILIES
   = f.association :organisation,  include_blank: false, prompt: "Choose an organisation",  collection: Organisation.order('name ASC')
   = f.input :release_date, include_blank: true
   = f.input :end_of_support, include_blank: true

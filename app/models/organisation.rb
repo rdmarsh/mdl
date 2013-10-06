@@ -43,6 +43,10 @@ class Organisation < ActiveRecord::Base
   
   private
   
+  def vendor_only
+    "#{name} ----"
+  end
+  
   def protect_unknown_none
     !name.downcase.eql?("unknown") and !name.downcase.eql?("none")
   end

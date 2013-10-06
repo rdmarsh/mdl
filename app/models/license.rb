@@ -7,7 +7,7 @@ class License < ActiveRecord::Base
   
   # regenerate new slugs?
   def should_generate_new_friendly_id?
-    name_changed?
+    organisation_id_changed?
   end
   
   # Try building a slug based on the following fields in
