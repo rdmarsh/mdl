@@ -23,6 +23,6 @@
           %td= link_to r.name, r
           %td= r.ipaddress
           %td= r.description
-          %td= link_to r.network_use.name, network_use_path(r.network_use.id)
+          %td= link_to r.network_use.name, network_use_path(r.network_use.slug)
           %td= link_to r.system.name, system_path(r.system.slug)
   = paginate @network_interfaces

@@ -18,8 +18,5 @@
         %tr
           %td= link_to r.name, r
           %td= r.description
-          %td
-            %ul.unstyled
-              - r.network_interfaces.each do |network_interface|
-                %li= link_to network_interface.name, network_interface_path(network_interface.id)
+          %td= link_to r.network_interface.count, network_use_network_interfaces_path(r.slug)
   = paginate @network_uses

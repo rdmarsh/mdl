@@ -1,5 +1,6 @@
 / Environment
 - content_for(:edit_button_path, edit_environment_path)
+-content_for(:empty_msg, "Currently no #{t('system').pluralize.downcase} associated with this #{t('environment').singularize.downcase}")
 
 = render 'head'
 
@@ -12,6 +13,8 @@
       %ul
         - @environment.systems.each do |system|
           %li= link_to system.name, system_path(system.slug)
+    - if @environment.systems.empty?
+      %p= yield(:empty_msg)
   .well.muted
     = f.attribute :created_at, :format => :iso8601
     = f.attribute :updated_at, :format => :iso8601

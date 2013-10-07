@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131007103717) do
+ActiveRecord::Schema.define(version: 20131007223113) do
 
   create_table "activities", force: true do |t|
     t.integer  "trackable_id"
@@ -136,10 +136,12 @@ ActiveRecord::Schema.define(version: 20131007103717) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "system_id"
+    t.string   "slug"
   end
 
   add_index "network_interfaces", ["name"], name: "index_network_interfaces_on_name"
   add_index "network_interfaces", ["network_use_id"], name: "index_network_interfaces_on_network_use_id"
+  add_index "network_interfaces", ["slug"], name: "index_network_interfaces_on_slug"
   add_index "network_interfaces", ["system_id"], name: "index_network_interfaces_on_system_id"
 
   create_table "network_uses", force: true do |t|

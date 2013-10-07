@@ -4,11 +4,13 @@
 = render 'head'
 
 = show_for @license do |f|
-  = f.association :organisation
-  = f.association :license_type
-  = f.attribute :key
-  = f.attribute :quantity
-  = f.attribute :start_at
-  = f.attribute :end_at
-  = f.attribute :created_at, :format => :iso8601
-  = f.attribute :updated_at, :format => :iso8601
+  .well
+    = f.association :organisation
+    = f.association :license_type
+    = f.attribute :key
+    = f.attribute :quantity
+    = f.attribute :start_at
+    = f.attribute :end_at
+  .well.muted
+    = f.attribute :created_at, :format => :iso8601
+    = f.attribute :updated_at, :format => :iso8601

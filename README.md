@@ -81,3 +81,10 @@ Create a video of development with Gource:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+# Bugs
+
+* licence show is inconsistant, needs name and slug
+* make sure everything has a slug and ids are gone
+* network use index page not working
+* 

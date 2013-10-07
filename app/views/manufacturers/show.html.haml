@@ -1,5 +1,6 @@
 / Manufacturer
 - content_for(:edit_button_path, edit_manufacturer_path(@manufacturer))
+-content_for(:empty_msg, "Currently no #{t('device_model').pluralize.downcase} associated with this #{t('manufacturer').singularize.downcase}")
 
 = render 'head'
 
@@ -13,6 +14,8 @@
       %ul
         - @manufacturer.device_models.each do |device_model|
           %li= link_to device_model.name, device_model_path(device_model.slug)
+    - if @manufacturer.device_models.empty?
+      %p= yield(:empty_msg)
   .well.muted
     = f.attribute :created_at, :format => :iso8601
     = f.attribute :updated_at, :format => :iso8601
