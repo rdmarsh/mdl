@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131006012235) do
+ActiveRecord::Schema.define(version: 20131006073527) do
 
   create_table "activities", force: true do |t|
     t.integer  "trackable_id"
@@ -150,24 +150,6 @@ ActiveRecord::Schema.define(version: 20131006012235) do
 
   add_index "network_uses", ["name"], name: "index_network_uses_on_name"
   add_index "network_uses", ["slug"], name: "index_network_uses_on_slug"
-
-  create_table "onemdl_settings", force: true do |t|
-    t.string   "company_name"
-    t.string   "company_tagline"
-    t.string   "company_phone"
-    t.string   "company_fax"
-    t.string   "company_email"
-    t.string   "company_address_1"
-    t.string   "company_address_2"
-    t.string   "company_city"
-    t.string   "company_postcode"
-    t.string   "company_country"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "time_zone"
-  end
-
-  add_index "onemdl_settings", ["company_name"], name: "index_onemdl_settings_on_company_name"
 
   create_table "operating_systems", force: true do |t|
     t.string   "name"

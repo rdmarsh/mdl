@@ -1,5 +1,5 @@
 # onemdl constants
-# COMPANY_NAME = "onemdl"
+COMPANY_NAME = "onemdl"
 # COMPANY_TAGLINE = ""
 # COMPANY_PHONE = ""
 # COMPANY_FAX = ""
