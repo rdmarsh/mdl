@@ -21,4 +21,15 @@ en:
     # hints:
     #   username: 'User name to sign in.'
     #   password: 'No special characters, please.'
-
+    hints:
+      defaults:
+        description: 'How would you describe it?'
+        device_type: 'What type of device is it?'
+        end_of_sale: 'When will it stop being sold?'
+        end_of_support: 'When will it stop being supported?'
+        name: 'What do you want to call it?'
+        manufacturer: 'Who manufactured it?'
+    placeholders:
+      defaults:
+        description: 'Enter a description'
+        name: 'Enter a name'

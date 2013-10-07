@@ -14,6 +14,7 @@
   = f.input :postcode, placeholder: '9999'
   = f.input :state
   = f.input :country, priority: [ "Australia", "India", "New Zealand", "United Kingdom", "United States"], include_blank: true, prompt: "Choose a country"
+  = f.input       :description,     hint: "#{t('hint_description')} organisation"
   
   = f.error :base
   = f.button :submit, :class => 'btn btn-primary'

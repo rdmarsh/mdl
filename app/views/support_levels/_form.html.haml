@@ -5,7 +5,7 @@
   = f.input :hours, hint: "Supported hours of the day"
   = f.input :days, hint: "Supported days of the week"
   = f.input :exclusions, hint: "Any support exclusions"
-  = f.input :description, hint: "Description of the support"
+  = f.input       :description,     hint: "#{t('hint_description')} support level"
   
   = f.error :base
   = f.button :submit, :class => 'btn btn-primary'

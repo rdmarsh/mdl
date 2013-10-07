@@ -77,4 +77,24 @@ module ApplicationHelper
       "http://gravatar.com/avatar/#{gravatar_id}.png?s=#{size}&d=wavatar"
     end
   end
+  
+  # from railscasts 207
+  def markdown(text)
+    renderer = Redcarpet::Render::HTML.new(hard_wrap: true, filter_html: true)
+    options = {
+      autolink: true,
+      filter_html: true,
+      no_images: true,
+      no_styles: true,
+      safe_links_only: true,
+      no_intra_emphasis: true,
+      fenced_code_blocks: true,
+      lax_spacing: true,
+      strikethrough: true,
+      superscript: true,
+      highlight: true,
+      underline: true,
+    }
+    preserve(Redcarpet::Markdown.new(renderer, options).render(text).html_safe)
+  end
 end

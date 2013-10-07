@@ -2,7 +2,7 @@
   = f.error_notification
   
   = f.input :name
-  = f.input :description
+  = f.input       :description,     hint: "#{t('hint_description')} network use"
   
   = f.error :base
   = f.button :submit, :class => 'btn btn-primary'

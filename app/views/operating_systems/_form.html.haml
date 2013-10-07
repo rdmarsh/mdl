@@ -7,7 +7,7 @@
   = f.association :organisation,  include_blank: false, prompt: "Choose an organisation",  collection: Organisation.order('name ASC')
   = f.input :release_date, include_blank: true
   = f.input :end_of_support, include_blank: true
-  = f.input :description
+  = f.input       :description,     hint: "#{t('hint_description')} operating system"
   
   = f.error :base
   = f.button :submit, :class => 'btn btn-primary'

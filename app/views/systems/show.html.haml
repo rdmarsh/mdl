@@ -12,7 +12,8 @@
   = f.association :environment
   = f.association :organisation
   = f.association :operating_system
-  = f.attribute :description
+  = f.label :description
+  = markdown f.value :description
   = f.attribute :created_at, :format => :iso8601
   = f.attribute :updated_at, :format => :iso8601
   = f.association :network_interfaces do

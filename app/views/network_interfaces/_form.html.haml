@@ -5,7 +5,7 @@
   = f.input :ipaddress, placeholder: "0.0.0.0"
   = f.association :network_use, include_blank: false, prompt: "Choose a network use", collection: NetworkUse.order('name ASC')
   = f.association :system, include_blank: false, prompt: "Choose a system", collection: System.order('name ASC')
-  = f.input :description
+  = f.input       :description,     hint: "#{t('hint_description')} network interface"
   
   = f.error :base
   = f.button :submit, :class => 'btn btn-primary'

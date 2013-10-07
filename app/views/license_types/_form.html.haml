@@ -3,7 +3,7 @@
   
   = f.input         :name,          hint: "Name for the license type"
   = f.association   :organisation,  hint: "Which organisation provides the license", label: t('licensor').singularize.humanize, prompt: "#{t('choose_a').humanize} #{t('licensor').singularize.humanize}", include_blank: false, collection: Organisation.order('name ASC')
-  = f.input         :description,   hint: "Description of license type"
+  = f.input       :description,     hint: "#{t('hint_description')} license type"
   
   = f.error :base
   = f.button :submit, :class => 'btn btn-primary'

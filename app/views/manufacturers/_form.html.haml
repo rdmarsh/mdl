@@ -3,7 +3,7 @@
   
   = f.input :name, hint: "Manufacturer"
   = f.input :website, hint: "Website"
-  = f.input :description, hint: "Description of manufacturer"
+  = f.input       :description,     hint: "#{t('hint_description')} manufacturer"
   
   = f.error :base
   = f.button :submit, :class => 'btn btn-primary'

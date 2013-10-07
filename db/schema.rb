@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131006073527) do
+ActiveRecord::Schema.define(version: 20131007024236) do
 
   create_table "activities", force: true do |t|
     t.integer  "trackable_id"
@@ -101,6 +101,7 @@ ActiveRecord::Schema.define(version: 20131006073527) do
     t.date     "start_at"
     t.date     "end_at"
     t.string   "slug"
+    t.text     "description"
   end
 
   add_index "licenses", ["license_type_id"], name: "index_licenses_on_license_type_id"
@@ -187,6 +188,7 @@ ActiveRecord::Schema.define(version: 20131006073527) do
     t.integer  "service_level_id"
     t.integer  "relationship_id"
     t.string   "slug"
+    t.text     "description"
   end
 
   add_index "organisations", ["name"], name: "index_organisations_on_name", unique: true

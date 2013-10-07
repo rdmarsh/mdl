@@ -2,7 +2,7 @@
   = f.error_notification
   
   = f.input :name,        hint: "Enviroment"
-  = f.input :description, hint: "Description of the support"
+  = f.input       :description,     hint: "#{t('hint_description')} environment"
   
   = f.error :base
   = f.button :submit, :class => 'btn btn-primary'
