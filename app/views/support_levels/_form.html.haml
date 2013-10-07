@@ -1,17 +1,19 @@
 = simple_form_for @support_level, :html => { :class => 'form-horizontal' } do |f|
   = f.error_notification
+  
   = f.input :name, hint: "Support type this will be refered to as"
   = f.input :hours, hint: "Supported hours of the day"
   = f.input :days, hint: "Supported days of the week"
   = f.input :exclusions, hint: "Any support exclusions"
   = f.input :description, hint: "Description of the support"
+  
   = f.error :base
   = f.button :submit, :class => 'btn btn-primary'
   .btn-group.task_controller
     %a{:class => 'btn btn-danger dropdown-toggle', 'data-toggle' => 'dropdown', :href => '#'}
-      Delete
+      #{t('delete')}.humanize
       %span{:class => 'caret'}
     %ul.dropdown-menu
       %li= link_to "Delete '#{f.object.name}'?", @support_level, :confirm => 'Are you sure?', :method => :delete
   or
-  = link_to "Cancel", :back
+  = link_to "#{t('cancel')}".humanize, :back

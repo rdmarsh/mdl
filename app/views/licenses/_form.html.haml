@@ -1,18 +1,20 @@
 = simple_form_for @license, :html => { :class => 'form-horizontal' } do |f|
   = f.error_notification
+  
   = f.association :organisation, label_method: :vendor_only, include_blank: false, collection: Organisation.order('name ASC')
   = f.association :license_type, include_blank: false, collection: LicenseType.order('name ASC')
   = f.input :key
   = f.input :quantity, hint: "A value of '0' denotes infinity"
   = f.input :start_at, include_blank: true
   = f.input :end_at, include_blank: true
+  
   = f.error :base
   = f.button :submit, :class => 'btn btn-primary'
   .btn-group.task_controller
     %a{:class => 'btn btn-danger dropdown-toggle', 'data-toggle' => 'dropdown', :href => '#'}
-      Delete
+      #{t('delete')}.humanize
       %span{:class => 'caret'}
     %ul.dropdown-menu
       %li= link_to "Delete '#{f.object.id}'?", @license, :confirm => 'Are you sure?', :method => :delete
   or
-  = link_to "Cancel", :back
+  = link_to "#{t('cancel')}".humanize, :back
