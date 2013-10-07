@@ -17,8 +17,8 @@
   %li{ :class => ("active" if controller_name == "licenses") }
     = link_to t('license').pluralize.humanize, licenses_path
     
-  / divider
-  %li.divider-vertical
+  / dividing line
+  %li.divider
   
   / put the organisation views in their own section 
   %li.nav-header
@@ -30,8 +30,8 @@
   %li{ :class => ("active" if controller_name == "manufacturers") }
     = link_to t('manufacturer').pluralize.humanize, manufacturers_path
   
-  / divider
-  %li.divider-vertical
+  / dividing line
+  %li.divider
   
   / put the supporting views in their own section 
   %li.nav-header
@@ -60,8 +60,9 @@
     
   %li{ :class => ("active" if controller_name == "support_levels") }
     = link_to t('support_level').pluralize.humanize, support_levels_path
-    
-  %li.divider-vertical
+  
+  / dividing line
+  %li.divider
   
   / put any application configuration in this section
   %li.nav-header

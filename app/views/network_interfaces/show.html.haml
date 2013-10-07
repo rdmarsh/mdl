@@ -1,12 +1,15 @@
+/ NetworkInterface
 - content_for(:edit_button_path, edit_network_interface_path)
 
 = render 'head'
 
 = show_for @network_interface do |f|
-  = f.attribute :name
-  = f.attribute :ipaddress
-  = f.attribute :description
-  = f.attribute :created_at, :format => :iso8601
-  = f.attribute :updated_at, :format => :iso8601
-  = f.association :network_use
-  = f.association :system
+  .well
+    %b= f.attribute :name
+    = f.attribute :ipaddress
+    = f.association :network_use
+    = f.association :system
+    = simple_format f.attribute :description
+  .well.muted
+    = f.attribute :created_at, :format => :iso8601
+    = f.attribute :updated_at, :format => :iso8601

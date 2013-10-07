@@ -1,13 +1,17 @@
+/ Relationship
 - content_for(:edit_button_path, edit_relationship_path)
 
 = render 'head'
 
 = show_for @relationship do |f|
-  = f.attribute :name
-  = f.attribute :description
-  = f.attribute :created_at, :format => :iso8601
-  = f.attribute :updated_at, :format => :iso8601
-  = f.association :organisations do
-    %ul
-      - @relationship.organisations.each do |organisation|
-        %li= link_to organisation.name, organisation_path(organisation.slug)
+  .well
+    %b= f.attribute :name
+    = simple_format f.attribute :description
+  .well
+    = f.association :organisations do
+      %ul
+        - @relationship.organisations.each do |organisation|
+          %li= link_to organisation.name, organisation_path(organisation.slug)
+  .well.muted
+    = f.attribute :created_at, :format => :iso8601
+    = f.attribute :updated_at, :format => :iso8601

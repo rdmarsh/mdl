@@ -1,13 +1,16 @@
+/ User
 - content_for(:edit_button_path, edit_user_path(@user))
 
 = render 'head'
 
 = show_for @user do |f|
-  = f.attribute :photo do
-    = image_tag (avatar_url(@user))
-  = f.attribute :name
-  = f.attribute :email
-  = f.attribute :avatar_url
-  = f.attribute :admin
-  = f.attribute :created_at, :format => :iso8601
-  = f.attribute :updated_at, :format => :iso8601
+  .well
+    %b= f.attribute :name
+    = f.attribute :photo do
+      = image_tag (avatar_url(@user))
+    = f.attribute :email
+    = f.attribute :avatar_url
+    = f.attribute :admin
+  .well.muted
+    = f.attribute :created_at, :format => :iso8601
+    = f.attribute :updated_at, :format => :iso8601

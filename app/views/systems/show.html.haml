@@ -1,22 +1,25 @@
+/ System
 - content_for(:edit_button_path, edit_system_path(@system))
 
 = render 'head'
 
 = show_for @system do |f|
-  = f.attribute :name
-  = f.attribute :asset_tag
-  = f.attribute :serial_number
-  = f.association :service_level
-  = f.association :support_level
-  = f.association :device_model
-  = f.association :environment
-  = f.association :organisation
-  = f.association :operating_system
-  = f.label :description
-  = markdown f.value :description
-  = f.attribute :created_at, :format => :iso8601
-  = f.attribute :updated_at, :format => :iso8601
-  = f.association :network_interfaces do
-    %ul
-      - @system.network_interfaces.each do |network_interface|
-        %li= link_to "#{network_interface.ipaddress} (#{network_interface.name})", network_interface_path(network_interface.id)
+  .well
+    %b= f.attribute :name
+    = f.attribute :asset_tag
+    = f.attribute :serial_number
+    = f.association :service_level
+    = f.association :support_level
+    = f.association :device_model
+    = f.association :environment
+    = f.association :organisation
+    = f.association :operating_system
+    = simple_format f.attribute :description
+  .well
+    = f.association :network_interfaces do
+      %ul
+        - @system.network_interfaces.each do |network_interface|
+          %li= link_to "#{network_interface.ipaddress} (#{network_interface.name})", network_interface_path(network_interface.id)
+  .well.muted
+    = f.attribute :created_at, :format => :iso8601
+    = f.attribute :updated_at, :format => :iso8601

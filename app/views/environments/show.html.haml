@@ -1,13 +1,17 @@
+/ Environment
 - content_for(:edit_button_path, edit_environment_path)
 
 = render 'head'
 
 = show_for @environment do |f|
-  = f.attribute :name
-  = f.attribute :description
-  = f.attribute :created_at, :format => :iso8601
-  = f.attribute :updated_at, :format => :iso8601
-  = f.association :system do
-    %ul
-      - @environment.systems.each do |system|
-        %li= link_to system.name, system_path(system.slug)
+  .well
+    %b= f.attribute :name
+    = simple_format f.attribute :description
+  .well
+    = f.association :system do
+      %ul
+        - @environment.systems.each do |system|
+          %li= link_to system.name, system_path(system.slug)
+  .well.muted
+    = f.attribute :created_at, :format => :iso8601
+    = f.attribute :updated_at, :format => :iso8601

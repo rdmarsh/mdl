@@ -1,24 +1,29 @@
+/ Organisation
 - content_for(:edit_button_path, edit_organisation_path)
 
 = render 'head'
 
 = show_for @organisation do |f|
-  = f.attribute :name
-  = f.attribute :full_name
-  = f.association :relationship
-  = f.attribute :active?
-  = f.attribute :phone
-  = f.attribute :fax
-  = f.attribute :email
-  = f.attribute :address_1
-  = f.attribute :address_2
-  = f.attribute :city
-  = f.attribute :postcode
-  = f.attribute :state
-  = f.attribute :country
-  = f.attribute :created_at, :format => :iso8601
-  = f.attribute :updated_at, :format => :iso8601
-  = f.association :systems do
-    %ul
-      - @organisation.systems.each do |system|
-        %li= link_to system.name, system_path(system.slug)
+  .well
+    %b= f.attribute :name
+    = f.attribute :full_name
+    = f.association :relationship
+    = f.attribute :active?
+    = f.attribute :phone
+    = f.attribute :fax
+    = f.attribute :email
+    = f.attribute :address_1
+    = f.attribute :address_2
+    = f.attribute :city
+    = f.attribute :postcode
+    = f.attribute :state
+    = f.attribute :country
+    = simple_format f.attribute :description
+  .well
+    = f.association :systems do
+      %ul
+        - @organisation.systems.each do |system|
+          %li= link_to system.name, system_path(system.slug)
+  .well.muted
+    = f.attribute :created_at, :format => :iso8601
+    = f.attribute :updated_at, :format => :iso8601
