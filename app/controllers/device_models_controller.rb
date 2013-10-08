@@ -64,6 +64,9 @@ class DeviceModelsController < ApplicationController
     respond_with(@device_model)
   end
   
+  def graph
+  end
+  
   private
   
   # for sorting columns

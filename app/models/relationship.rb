@@ -1,4 +1,5 @@
 class Relationship < ActiveRecord::Base
+  has_paper_trail
   include PublicActivity::Common
   
   # friendly IDs, better URLs
