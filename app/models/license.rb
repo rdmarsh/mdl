@@ -3,7 +3,7 @@ class License < ActiveRecord::Base
   
   # friendly IDs, better URLs
   extend FriendlyId
-  friendly_id :name, use: :slugged
+  friendly_id :slug_candidates, use: :slugged
   
   # regenerate new slugs?
   def should_generate_new_friendly_id?
@@ -12,12 +12,12 @@ class License < ActiveRecord::Base
   
   # Try building a slug based on the following fields in
   # increasing order of specificity.
-  # def slug_candidates
-  #   [
-  #     :name,
-  #     [:name, :organisation_id]
-  #   ]
-  # end
+  def slug_candidates
+    [
+      [:organisation_id, :license_type_id],
+      [:organisation_id, :license_type_id, :id]
+    ]
+   end
   
   before_validation :strip_blanks
   
@@ -38,6 +38,8 @@ class License < ActiveRecord::Base
   # accepts_nested_attributes_for :network_interfaces, allow_destroy: true
   
   # validations
+  validates :organisation_id, presence: true
+  validates :license_type_id, presence: true
   validates :key, presence: true
   validates :quantity, presence: true
   validates_numericality_of :quantity, :only_integer => true, :greater_than_or_equal_to => 0
