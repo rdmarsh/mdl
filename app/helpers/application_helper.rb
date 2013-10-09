@@ -19,16 +19,16 @@ module ApplicationHelper
     end
   end
   
+  # Returns empty messages for shows and index views
   def empty_msg(plural, singular)
-    # todo fix this bit
-    # if :plural.empty?
-    #   
-    # end
-    # if singular.empty?
-    # "Currently no #{t(plural).pluralize.downcase}"
-    #   
-    # end
-    "Currently no #{t(plural).pluralize.downcase} associated with this #{t(singular).singularize.downcase}"
+    # start form the last and work in
+    if singular.present?
+      "Currently no #{t(plural).pluralize.downcase} associated with this #{t(singular).singularize.downcase}"
+    elsif plural.present?
+      "Currently no #{t(plural).pluralize.downcase}"
+    else
+      "Currently nothing associated"
+    end
   end
   
   def tr_attributes(tr_status)
