@@ -22,13 +22,29 @@
     = simple_format f.attribute :description
 
   .well
+    = f.association :license_types do
+      %ul
+        - @organisation.license_types.each do |license_type|
+          %li= link_to license_type.name, license_type_path(license_type.slug)
+    - if @organisation.license_types.empty?
+      %p= yield(:empty_msg)
+      
+  .well
+    = f.association :licenses do
+      %ul
+        - @organisation.licenses.each do |license|
+          %li= link_to license.slug, license_path(license.slug)
+    - if @organisation.licenses.empty?
+      %p= yield(:empty_msg)  
+      
+  .well
     = f.association :operating_systems do
       %ul
         - @organisation.operating_systems.each do |operating_system|
-          %li= link_to operating_system.name, operating_system_path(operating_systems.slug)
+          %li= link_to operating_system.slug, operating_system_path(operating_system.slug)
     - if @organisation.operating_systems.empty?
       %p= yield(:empty_msg)  
-
+      
   .well
     = f.association :systems do
       %ul

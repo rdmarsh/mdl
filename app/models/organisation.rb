@@ -29,7 +29,10 @@ class Organisation < ActiveRecord::Base
   
   
   # has many
-  has_many :systems, dependent: :restrict_with_error
+  has_many :license_types,      dependent: :restrict_with_error
+  has_many :licenses,           dependent: :restrict_with_error
+  has_many :operating_systems,  dependent: :restrict_with_error
+  has_many :systems,            dependent: :restrict_with_error
   
   # validations
   validates_format_of :name, :with => /\A[a-zA-Z\d]+\z/, :message => "Can only contain letters and numbers."

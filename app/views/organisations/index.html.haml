@@ -17,6 +17,9 @@
         %th= sortable "phone"
         %th= sortable "active"
         / todo this isn't working
+        %th= sortable "license_type"
+        %th= sortable "license"
+        %th= sortable "operating_system"
         %th= sortable "system"
         / %th= link_to t('system').pluralize.humanize, systems_path
       - @organisations.each do |r|
@@ -26,5 +29,8 @@
           %td= link_to r.relationship.name, relationship_path(r.relationship.slug)
           %td= r.phone
           %td= r.active
+          %td= link_to r.license_types.count, organisation_license_types_path(r.slug)
+          %td= link_to r.licenses.count, organisation_licenses_path(r.slug)
+          %td= link_to r.operating_systems.count, organisation_operating_systems_path(r.slug)
           %td= link_to r.systems.count, organisation_systems_path(r.slug)
   = paginate @organisations
