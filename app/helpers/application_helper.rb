@@ -19,6 +19,18 @@ module ApplicationHelper
     end
   end
   
+  def empty_msg(plural, singular)
+    # todo fix this bit
+    # if :plural.empty?
+    #   
+    # end
+    # if singular.empty?
+    # "Currently no #{t(plural).pluralize.downcase}"
+    #   
+    # end
+    "Currently no #{t(plural).pluralize.downcase} associated with this #{t(singular).singularize.downcase}"
+  end
+  
   def tr_attributes(tr_status)
     if tr_status == false
       "error"

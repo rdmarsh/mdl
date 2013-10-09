@@ -1,6 +1,5 @@
 / Organisation
 - content_for(:edit_button_path, edit_organisation_path)
-- content_for(:empty_msg, "Currently no #{t('system').pluralize.downcase} associated with this #{t('organisation').singularize.downcase}")
 
 = render 'head'
 
@@ -20,14 +19,14 @@
     = f.attribute :state
     = f.attribute :country
     = simple_format f.attribute :description
-
+    
   .well
     = f.association :license_types do
       %ul
         - @organisation.license_types.each do |license_type|
           %li= link_to license_type.name, license_type_path(license_type.slug)
     - if @organisation.license_types.empty?
-      %p= yield(:empty_msg)
+      %p= empty_msg('license_type', 'organisation')
       
   .well
     = f.association :licenses do
@@ -35,7 +34,7 @@
         - @organisation.licenses.each do |license|
           %li= link_to license.slug, license_path(license.slug)
     - if @organisation.licenses.empty?
-      %p= yield(:empty_msg)  
+      %p= empty_msg('license', 'organisation')
       
   .well
     = f.association :operating_systems do
@@ -43,17 +42,16 @@
         - @organisation.operating_systems.each do |operating_system|
           %li= link_to operating_system.slug, operating_system_path(operating_system.slug)
     - if @organisation.operating_systems.empty?
-      %p= yield(:empty_msg)  
+      %p= empty_msg('operating_system', 'organisation')
       
   .well
     = f.association :systems do
-      %p something
       %ul
         - @organisation.systems.each do |system|
           %li= link_to system.name, system_path(system.slug)
     - if @organisation.systems.empty?
-      %p= yield(:empty_msg)
-
+      %p= empty_msg('system', 'organisation')
+      
   .well.muted
     = f.attribute :created_at, :format => :iso8601
     = f.attribute :updated_at, :format => :iso8601
