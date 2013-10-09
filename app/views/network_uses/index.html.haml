@@ -1,10 +1,9 @@
 / NetworkUse
--content_for(:empty_msg, "Currently no #{t('network_use').pluralize.downcase}")
 
 =render 'head'
 
 - if @network_uses.empty?
-  %p= yield(:empty_msg)  
+  %p= empty_msg('network_use', '')
 - else
   %table.table.table-hover.table-condensed
     %tbody

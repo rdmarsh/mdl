@@ -1,10 +1,8 @@
 / Activities
--content_for(:empty_msg, "Currently no #{t('activity').pluralize.downcase}")
-
 =render 'head'
 
 - if @activities.empty?
-  %p= yield(:empty_msg)  
+  %p= empty_msg('activity', '')
 - else
   - @activities.each do |r|
     %ul.unstyled

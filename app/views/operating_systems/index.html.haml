@@ -1,10 +1,9 @@
 / OperatingSystems
--content_for(:empty_msg, "Currently no #{t('operating_system').pluralize.downcase}")
 
 =render 'head'
 
 - if @operating_systems.empty?
-  %p= yield(:empty_msg)  
+  %p= empty_msg('operating_system', '')
 - else
   %table.table.table-hover.table-condensed
     %tbody

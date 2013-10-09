@@ -1,6 +1,5 @@
 / ServiceLevel
 - content_for(:edit_button_path, edit_service_level_path)
-- content_for(:empty_msg, "Currently no #{t('system').pluralize.downcase} associated with this #{t('service_level').singularize.downcase}")
 
 = render 'head'
 
@@ -14,7 +13,7 @@
         - @service_level.systems.each do |system|
           %li= link_to system.name, system_path(system.slug)
     - if @service_level.systems.empty?
-      %p= yield(:empty_msg)
+      %p= empty_msg('system', 'service_level')
   .well.muted
     = f.attribute :created_at, :format => :iso8601
     = f.attribute :updated_at, :format => :iso8601

@@ -1,10 +1,9 @@
 / Systems
--content_for(:empty_msg, "Currently no #{t('system').pluralize.downcase}")
 
 =render 'head'
 
 - if @systems.empty?
-  %p= yield(:empty_msg)  
+  %p= empty_msg('system', '')
 - else
   %table.table.table-hover.table-condensed
     %tbody

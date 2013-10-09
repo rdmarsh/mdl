@@ -1,10 +1,9 @@
 / ServiceLevels
--content_for(:empty_msg, "Currently no #{t('service_level').pluralize.downcase}")
 
 =render 'head'
 
 - if @service_levels.empty?
-  %p= yield(:empty_msg)  
+  %p= empty_msg('service_level', '')
 - else
   %table.table.table-hover.table-condensed
     %tbody

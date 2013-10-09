@@ -1,10 +1,9 @@
 / DeviceModels
--content_for(:empty_msg, "Currently no #{t('device_model').pluralize.downcase}")
 
 =render 'head'
 
 - if @device_models.empty?
-  %p= yield(:empty_msg)  
+  %p= empty_msg('device_model', '')
 - else
   %table.table.table-hover.table-condensed
     %tbody

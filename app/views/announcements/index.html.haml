@@ -1,10 +1,9 @@
 / Announcements
--content_for(:empty_msg, "Currently no #{t('announcement').pluralize.downcase}")
 
 =render 'head'
 
 - if @announcements.empty?
-  %p= yield(:empty_msg)  
+  %p= empty_msg('announcement', '')
 - else
   - @announcements.each do |announcement|
     %ul.unstyled

@@ -1,10 +1,9 @@
 / Organisations
--content_for(:empty_msg, "Currently no #{t('organisation').pluralize.downcase}")
 
 =render 'head'
 
 - if @organisations.empty?
-  %p= yield(:empty_msg)  
+  %p= empty_msg('organisation', '')
 - else
   %table.table.table-hover.table-condensed
     %tbody

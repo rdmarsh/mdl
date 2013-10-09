@@ -1,6 +1,5 @@
 / NetworkUse
 - content_for(:edit_button_path, edit_network_use_path)
-- content_for(:empty_msg, "Currently no #{t('network_interface').pluralize.downcase} associated with this #{t('network_use').singularize.downcase}")
 
 = render 'head'
 
@@ -15,7 +14,7 @@
         / todo:
           %li= link_to network_interfaces.name + " (" + network_interfaces.ipaddress + " on " + @system.name + ")", network_interfaces_path(network_interfaces.id)
     - if @network_use.network_interfaces.empty?
-      %p= yield(:empty_msg)
+      %p= empty_msg('network_interface', 'network_use')
   .well.muted
     = f.attribute :created_at, :format => :iso8601
     = f.attribute :updated_at, :format => :iso8601

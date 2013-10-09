@@ -1,10 +1,9 @@
 / Environments
--content_for(:empty_msg, "Currently no #{t('environment').pluralize.downcase}")
 
 =render 'head'
 
 - if @environments.empty?
-  %p= yield(:empty_msg)  
+  %p= empty_msg('environment', '')
 - else
   %table.table.table-hover.table-condensed
     %tbody

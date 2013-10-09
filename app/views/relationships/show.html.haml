@@ -1,6 +1,5 @@
 / Relationship
 - content_for(:edit_button_path, edit_relationship_path)
-- content_for(:empty_msg, "Currently no #{t('organisation').pluralize.downcase} associated with this #{t('relationship').singularize.downcase}")
 
 = render 'head'
 
@@ -14,7 +13,7 @@
         - @relationship.organisations.each do |organisation|
           %li= link_to organisation.name, organisation_path(organisation.slug)
     - if @relationship.organisations.empty?
-      %p= yield(:empty_msg)
+      %p= empty_msg('organisation', 'relationship')
   .well.muted
     = f.attribute :created_at, :format => :iso8601
     = f.attribute :updated_at, :format => :iso8601

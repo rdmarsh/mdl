@@ -1,10 +1,9 @@
 / SupportLevels
--content_for(:empty_msg, "Currently no #{t('support_level').pluralize.downcase}")
 
 =render 'head'
 
 - if @support_levels.empty?
-  %p= yield(:empty_msg)  
+  %p= empty_msg('support_level', '')
 - else
   %table.table.table-hover.table-condensed
     %tbody

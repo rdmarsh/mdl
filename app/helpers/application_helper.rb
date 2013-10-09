@@ -2,7 +2,7 @@ module ApplicationHelper
 
   # Returns the full title on a per-page basis.
   def full_title(page_title)
-    base_title = "omdl"
+    base_title = COMPANY_NAME
     if page_title.empty?
       base_title
     else
@@ -11,7 +11,7 @@ module ApplicationHelper
   end
   
   def full_heading(heading)
-    base_title = "omdl"
+    base_title = COMPANY_NAME
     if :heading.empty?
       base_title
     else

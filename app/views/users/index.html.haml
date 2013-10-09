@@ -1,10 +1,9 @@
 / Users
--content_for(:empty_msg, "Currently no #{t('user').pluralize.downcase}")
 
 =render 'head'
 
 - if @users.empty?
-  %p= yield(:empty_msg)  
+  %p= empty_msg('user', '')
 - else
   %table.table.table-hover.table-condensed
     %tbody

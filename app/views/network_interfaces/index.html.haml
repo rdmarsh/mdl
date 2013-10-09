@@ -1,10 +1,9 @@
 / NetworkInterface
--content_for(:empty_msg, "Currently no #{t('network_interface').pluralize.downcase}")
 
 =render 'head'
 
 - if @network_interfaces.empty?
-  %p= yield(:empty_msg)  
+  %p= empty_msg('network_interface', '')
 - else
   %table.table.table-hover.table-condensed
     %tbody

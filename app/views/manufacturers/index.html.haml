@@ -1,10 +1,9 @@
 / Manufacturers
--content_for(:empty_msg, "Currently no #{t('manufacturer').pluralize.downcase}")
 
 =render 'head'
 
 - if @manufacturers.empty?
-  %p= yield(:empty_msg)  
+  %p= empty_msg('manufacturer', '')
 - else
   %table.table.table-hover.table-condensed
     %tbody

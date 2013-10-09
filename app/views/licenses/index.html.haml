@@ -1,10 +1,9 @@
 / Licenses
--content_for(:empty_msg, "Currently no #{t('license').pluralize.downcase}")
 
 =render 'head'
 
 - if @licenses.empty?
-  %p= yield(:empty_msg)  
+  %p= empty_msg('license', '')
 - else
   %table.table.table-hover.table-condensed
     %tbody

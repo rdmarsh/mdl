@@ -1,10 +1,9 @@
 / Relationships
--content_for(:empty_msg, "Currently no #{t('@relationship').pluralize.downcase}")
 
 =render 'head'
 
 - if @relationships.empty?
-  %p= yield(:empty_msg)  
+  %p= empty_msg('relationship', '')
 - else
   %table.table.table-hover.table-condensed
     %tbody

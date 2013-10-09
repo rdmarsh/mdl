@@ -1,6 +1,5 @@
 / OperatingSystem
 - content_for(:edit_button_path, edit_operating_system_path)
-- content_for(:empty_msg, "Currently no #{t('system').pluralize.downcase} associated with this #{t('operating_system').singularize.downcase}")
 
 = render 'head'
 
@@ -19,7 +18,7 @@
         - @operating_system.systems.each do |system|
           %li= link_to system.name, system_path(system.slug)
     - if @operating_system.systems.empty?
-      %p= yield(:empty_msg)
+      %p= empty_msg('system', 'operating_system')
   .well.muted
     = f.attribute :created_at, :format => :iso8601
     = f.attribute :updated_at, :format => :iso8601
