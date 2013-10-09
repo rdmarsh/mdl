@@ -47,6 +47,7 @@
       
   .well
     = f.association :systems do
+      %p something
       %ul
         - @organisation.systems.each do |system|
           %li= link_to system.name, system_path(system.slug)
