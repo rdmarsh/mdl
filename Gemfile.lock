@@ -285,6 +285,7 @@ DEPENDENCIES
   jquery-ui-rails
   kaminari
   launchy
+  nokogiri
   paper_trail (>= 3.0.0.beta1)
   pg (= 0.15.1)
   populator

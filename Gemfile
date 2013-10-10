@@ -53,6 +53,7 @@ gem 'paper_trail', '>= 3.0.0.beta1'
 
 
 group :development, :test do
+  gem 'nokogiri'
   gem 'turn'
   gem 'guard-rspec', '2.5.0'
   gem 'ruby_gntp'
