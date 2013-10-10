@@ -26,6 +26,12 @@ Onemdl::Application.routes.draw do
   resources :statistics
   
   ##############################################################################
+  # :addresses  
+  resources :addresses do
+    get 'page/:page', :action => :index, :on => :collection
+  end
+    
+  ##############################################################################
   # :activities
   resources :activities do
     get 'page/:page', :action => :index, :on => :collection
