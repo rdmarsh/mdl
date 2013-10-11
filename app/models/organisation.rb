@@ -34,6 +34,8 @@ class Organisation < ActiveRecord::Base
   has_many :operating_systems,  dependent: :restrict_with_error
   has_many :systems,            dependent: :restrict_with_error
   
+  has_many :comments, as: :commentable
+  
   # validations
   validates_format_of :name, :with => /\A[a-zA-Z\d]+\z/, :message => "Can only contain letters and numbers."
   

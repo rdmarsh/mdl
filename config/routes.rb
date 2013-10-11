@@ -133,6 +133,10 @@ Onemdl::Application.routes.draw do
     resources :systems do
       get 'page/:page', :action => :index, :on => :collection
     end
+    
+    resources :comments do
+      get 'page/:page', :action => :index, :on => :collection
+    end
   end
 
   ##############################################################################

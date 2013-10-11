@@ -10,6 +10,11 @@ class OrganisationsController < ApplicationController
   def show
     @organisation = Organisation.friendly.find(params[:id])
     respond_with(@organisation)
+
+    @commentable = @organisation
+    @comments = @commentable.comments
+    @comment = Comment.new
+    
   end
   
   def new

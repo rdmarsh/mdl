@@ -1,0 +1,9 @@
+= simple_form_for [@commentable, @comment], :html => { :class => 'form-horizontal' } do |f|
+  = f.error_notification
+  
+  = f.input       :content
+  
+  = f.error :base
+  = f.button :submit, :class => 'btn btn-primary'
+  
+  = link_to "#{t('cancel')}".humanize, :back
