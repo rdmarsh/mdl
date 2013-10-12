@@ -9,12 +9,16 @@ class OrganisationsController < ApplicationController
   
   def show
     @organisation = Organisation.friendly.find(params[:id])
+    respond_with(@organisation)
+  end
+  
+  def notes
+    @organisation = Organisation.friendly.find(params[:id])
 
     @commentable = @organisation
     @comments = @commentable.comments
     @comment = Comment.new
-    respond_with(@organisation)
-    
+    respond_with(@commentable)
   end
   
   def new

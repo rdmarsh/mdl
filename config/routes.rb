@@ -134,11 +134,13 @@ Onemdl::Application.routes.draw do
       get 'page/:page', :action => :index, :on => :collection
     end
     
-    resources :comments do
-      get 'page/:page', :action => :index, :on => :collection
+    member do
+      resources :notes, :defaults => { :commentable => 'picture' } do
+        get 'page/:page', :action => :index, :on => :collection
+      end
     end
   end
-
+  
   ##############################################################################
   # :license_types and nested resources
   resources :license_types do

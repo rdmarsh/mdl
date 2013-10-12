@@ -1,5 +1,7 @@
 / Organisation
 - content_for(:edit_button_path, edit_organisation_path)
+- content_for(:show_button_path, organisation_path(@organisation))
+- content_for(:notes_button_path, notes_path(@organisation))
 
 = render 'head'
 
@@ -55,9 +57,3 @@
   .well.muted
     = f.attribute :created_at, :format => :iso8601
     = f.attribute :updated_at, :format => :iso8601
-    
-  .well
-    %strong.label Notes
-    = render "comments/form"
-    = render "comments/comments"
-    

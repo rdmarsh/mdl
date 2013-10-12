@@ -59,14 +59,6 @@ ActiveRecord::Schema.define(version: 20131011073826) do
     t.text     "description"
   end
 
-  create_table "comments", force: true do |t|
-    t.text     "content"
-    t.integer  "commentable_id"
-    t.string   "commentable_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "device_models", force: true do |t|
     t.string   "name"
     t.integer  "device_type_id"
@@ -182,6 +174,14 @@ ActiveRecord::Schema.define(version: 20131011073826) do
 
   add_index "network_uses", ["name"], name: "index_network_uses_on_name"
   add_index "network_uses", ["slug"], name: "index_network_uses_on_slug"
+
+  create_table "notes", force: true do |t|
+    t.text     "content"
+    t.integer  "noteable_id"
+    t.string   "noteable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "operating_systems", force: true do |t|
     t.string   "name"

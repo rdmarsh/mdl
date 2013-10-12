@@ -35,7 +35,6 @@ en:
   
   cancel: cancel
   contact: contact
-  comment: comment
   csv: csv
   created: created
   create_an_account: create an account
@@ -90,6 +89,7 @@ en:
   name: name
   news: news
   new: new
+  note: note
   notes: notes
   full_name: full name 
   
