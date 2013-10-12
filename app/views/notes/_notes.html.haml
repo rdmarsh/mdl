@@ -1,0 +1,17 @@
+- if @notes.empty?
+  %p= empty_msg('note', '')
+- else
+  - @notes.each do |r|
+    %ul.unstyled
+      %li
+        .well
+          .row-fluid
+            .span12
+              = simple_format r.content
+            .row-fluid
+              .muted.pull-right
+                / who and when did they do it?
+                Added by
+                = t('anonymoususer')
+                on
+                = r.created_at
