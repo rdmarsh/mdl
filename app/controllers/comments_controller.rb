@@ -17,7 +17,8 @@ class CommentsController < ApplicationController
       # write a create message to the activity log
       @comment.create_activity :create, owner: current_user
       flash[:info] = "Successfully added comment"
-      redirect_to [@commentable, :comments]
+      redirect_to @commentable
+      # redirect_to [@commentable, :comments]
     else
       flash[:error] = "Could not create comment"  
       render :new

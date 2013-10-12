@@ -4,15 +4,15 @@
   - @comments.each do |r|
     %ul.unstyled
       %li
-        .well
+        %hr
           .row-fluid
-            .span1
-              = image_tag "onering.png"
-            .span11
-              = simple_format r.content
-              %br
-              .muted
-                / who and when did they do it?
-                = t('anonymoususer').humanize
-                on
-                = r.created_at
+            .muted
+              = t('anonymoususer').humanize
+              added:
+          .row-fluid
+            = simple_format r.content
+          .row-fluid
+            .muted
+              / who and when did they do it?
+              on
+              = r.created_at
