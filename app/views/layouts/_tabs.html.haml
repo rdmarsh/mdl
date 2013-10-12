@@ -9,9 +9,11 @@
         - if params.has_value?("show") or params.has_value?("edit")
           = tab_link 'show', yield(:show_button_path), 'icon-info-sign', nil
           = tab_link 'edit', yield(:edit_button_path), 'icon-pencil', nil
+          = tab_link 'notes', yield(:notes_button_path), 'icon-tag', nil
         - else
           = tab_link 'show', nil, 'icon-info-sign', "disabled"
           = tab_link 'edit', nil, 'icon-pencil', "disabled"
+          = tab_link 'notes', nil, 'icon-tag', "disabled"
         
         = tab_link 'graphs', yield(:graph_button_path), 'icon-signal', nil
         = tab_link 'history', yield(:history_button_path), 'icon-book', nil
