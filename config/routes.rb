@@ -135,7 +135,7 @@ Onemdl::Application.routes.draw do
     end
     
     member do
-      resources :notes, :defaults => { :commentable => 'picture' } do
+      resources :notes, :defaults => { :noteable => 'organisation' } do
         get 'page/:page', :action => :index, :on => :collection
       end
     end
