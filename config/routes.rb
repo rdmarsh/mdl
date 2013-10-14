@@ -134,10 +134,8 @@ Onemdl::Application.routes.draw do
       get 'page/:page', :action => :index, :on => :collection
     end
     
-    member do
-      resources :notes, :defaults => { :noteable => 'organisation' } do
-        get 'page/:page', :action => :index, :on => :collection
-      end
+    resources :notes do
+      get 'page/:page', :action => :index, :on => :collection
     end
   end
   
