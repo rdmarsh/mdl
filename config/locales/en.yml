@@ -21,11 +21,13 @@
 
 en:
   helloworld: hello world
+  
   about: about
   active: active
   activity: activity
   add: add
   added: added
+  address: address
   anonymoususer: an anonymous coward
   announcement: announcement
   avatar_url: avatar url

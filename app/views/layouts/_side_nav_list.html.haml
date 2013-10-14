@@ -30,6 +30,9 @@
   %li{ :class => ("active" if controller_name == "manufacturers") }
     = link_to t('manufacturer').pluralize.humanize, manufacturers_path
   
+  %li{ :class => ("active" if controller_name == "addresses") }
+    = link_to t('address').pluralize.humanize, addresses_path
+  
   / dividing line
   %li.divider
   

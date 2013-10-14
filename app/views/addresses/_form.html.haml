@@ -1,0 +1,31 @@
+= simple_form_for @address, :html => { :class => 'form-horizontal' } do |f|
+  = f.error_notification
+  
+  
+  = f.input :building_number, label: "Bld No"
+  = f.input :city
+  = f.input :city_prefix
+  = f.input :city_suffix
+  = f.input :country
+  = f.input :latitude
+  = f.input :longitude
+  = f.input :secondary_address
+  = f.input :state
+  = f.input :state_abbr
+  = f.input :street_address
+  = f.input :street_name
+  = f.input :street_suffix
+  = f.input :time_zone
+  = f.input :postcode
+  
+  = f.error :base
+  = f.button :submit, :class => 'btn btn-primary'
+  
+  .btn-group.task_controller
+    %a{:class => 'btn btn-danger dropdown-toggle', 'data-toggle' => 'dropdown', :href => '#'}
+      #{t('delete').humanize}
+      %span{:class => 'caret'}
+    %ul.dropdown-menu
+      %li= link_to "#{t('delete')} '#{f.object.id}'?", @address, :confirm => 'Are you sure?', :method => :delete
+  #{t('or').downcase}
+  = link_to "#{t('cancel')}".humanize, :back

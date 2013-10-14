@@ -1,2 +1,43 @@
-%h1 Addresses#index
-%p Find me in app/views/addresses/index.html.haml
+/ Addresses
+
+=render 'head'
+
+- if @addresses.empty?
+  %p= empty_msg('address', '')
+- else
+  %table.table.table-hover.table-condensed
+    %tbody
+      %thead
+        %th "building_number"
+        %th "city"
+        %th "city_prefix"
+        %th "city_suffix"
+        %th "country"
+        %th "latitude"
+        %th "longitude"
+        %th "secondary_address"
+        %th "state"
+        %th "state_abbr"
+        %th "street_address"
+        %th "street_name"
+        %th "street_suffix"
+        %th "time_zone"
+        %th "postcode"
+      - @addresses.each do |r|
+        %tr
+          %td= r.building_number
+          %td= r.city
+          %td= r.city_prefix
+          %td= r.city_suffix
+          %td= r.country
+          %td= r.latitude
+          %td= r.longitude
+          %td= r.secondary_address
+          %td= r.state
+          %td= r.state_abbr
+          %td= r.street_address
+          %td= r.street_name
+          %td= r.street_suffix
+          %td= r.time_zone
+          %td= r.postcode
+  = paginate @addresses

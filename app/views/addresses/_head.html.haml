@@ -1,0 +1,8 @@
+- content_for(:title, t('address').pluralize.humanize)
+- content_for(:description, t('address_description').humanize)
+
+- content_for(:list_button_path, addresses_path)
+- content_for(:new_button_path, new_address_path)
+
+= render 'layouts/heading'
+= render 'layouts/tabs'

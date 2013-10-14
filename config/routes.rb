@@ -134,6 +134,10 @@ Onemdl::Application.routes.draw do
       get 'page/:page', :action => :index, :on => :collection
     end
     
+    resources :addresses do
+      get 'page/:page', :action => :index, :on => :collection
+    end
+    
     resources :notes do
       get 'page/:page', :action => :index, :on => :collection
     end
@@ -178,6 +182,13 @@ Onemdl::Application.routes.draw do
       get 'page/:page', :action => :index, :on => :collection
     end
   end
+  
+  ##############################################################################
+  # :addresses and nested resources
+  resources :addresses do
+    get 'page/:page', :action => :index, :on => :collection
+  end
+  
   
   ##############################################################################
   # :network_uses and nested resources
