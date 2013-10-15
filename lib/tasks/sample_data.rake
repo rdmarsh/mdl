@@ -57,6 +57,25 @@ namespace :db do
         system.operating_system_id  = 1..60
       end
     end
-
+    
+    Address.populate(0..50) do |address|
+      address.name              = Faker::Company.name
+      address.building_number   = Faker::Address.building_number
+      address.city              = Faker::Address.city
+      address.city_prefix       = Faker::Address.city_prefix
+      address.city_suffix       = Faker::Address.city_suffix
+      address.country           = Faker::Address.country
+      address.latitude          = Faker::Address.latitude
+      address.longitude         = Faker::Address.longitude
+      address.secondary_address = Faker::Address.secondary_address
+      address.state             = Faker::Address.state
+      address.state_abbr        = Faker::Address.state_abbr
+      address.street_address    = Faker::Address.street_address
+      address.street_name       = Faker::Address.street_name
+      address.street_suffix     = Faker::Address.street_suffix
+      # address.time_zone         = Faker::Address.time_zone
+      address.postcode          = Faker::Address.postcode
+      address.description       = Faker::Lorem.sentences
+    end
   end
 end
