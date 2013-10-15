@@ -8,7 +8,7 @@ class AddressesController < ApplicationController
   end
   
   def show
-    @address = Address.find(params[:id])
+    @address = Address.friendly.find(params[:id])
     respond_with(@address)
   end
   
@@ -23,42 +23,42 @@ class AddressesController < ApplicationController
     if @address.save
       # write a create message to the activity log
       @address.create_activity :create, owner: current_user
-      flash[:info] = "Successfully created address '" + @address.id.to_s + "'"
+      flash[:info] = "Successfully created address '" + @address.name + "'"
     else
-      flash[:error] = "Could not create address '" + @address.id.to_s + "'"
+      flash[:error] = "Could not create address '" + @address.name + "'"
     end
     
     respond_with(@address)
   end
   
   def edit
-    @address = Address.find(params[:id])
+    @address = Address.friendly.find(params[:id])
     respond_with(@address)
   end
   
   def update
-    @address = Address.find(params[:id])
+    @address = Address.friendly.find(params[:id])
     
     if @address.update_attributes(address_params)
       # write an update message to the activity log
       @address.create_activity :update, owner: current_user
-      flash[:info] = "Successfully updated address '" + @address.id.to_s + "'"
+      flash[:info] = "Successfully updated address '" + @address.name + "'"
     else
-      flash[:error] = "Could not update address '" + @address.id.to_s + "'"
+      flash[:error] = "Could not update address '" + @address.name + "'"
     end
     
     respond_with(@address)
   end
   
   def destroy
-    @address = Address.find(params[:id])
+    @address = Address.friendly.find(params[:id])
     
     # write an update message to the activity log, it fails with a "cannot call create unless the parent is saved" inside the if statement, so I've put it here. It works out anyway, as we can show both successes and failures
     @address.create_activity :destroy, owner: current_user
     if @address.destroy
-      flash[:info] = "Successfully deleted address '" + @address.id.to_s + "'"
+      flash[:info] = "Successfully deleted address '" + @address.name + "'"
     else
-      flash[:error] = "Could not delete address '" + @address.id.to_s + "'"
+      flash[:error] = "Could not delete address '" + @address.name + "'"
     end
     
     respond_with(@address)

@@ -5,6 +5,7 @@
 
 = show_for @address do |f|
   .well
+    = f.attribute :name
     = f.attribute :building_number
     = f.attribute :city
     = f.attribute :city_prefix
@@ -20,8 +21,8 @@
     = f.attribute :street_suffix
     = f.attribute :time_zone
     = f.attribute :postcode
+    = f.attribute :description
     
-      
   .well.muted
     = f.attribute :created_at, :format => :iso8601
     = f.attribute :updated_at, :format => :iso8601
