@@ -12,8 +12,8 @@ class Address < ActiveRecord::Base
   
   
   
-  
-  
+  geocoded_by :street_address
+  after_validation :geocode, :if => :address_changed?
   
   
   
@@ -38,6 +38,7 @@ class Address < ActiveRecord::Base
   
   
   
+  after_validation :geocode
   
   before_destroy :protect_unknown_none
   

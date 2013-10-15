@@ -88,6 +88,7 @@ GEM
     formatador (0.2.4)
     friendly_id (5.0.0.rc2)
       activerecord (~> 4.0.0)
+    geocoder (1.1.8)
     guard (2.0.3)
       formatador (>= 0.2.4)
       listen (~> 2.0)
@@ -274,6 +275,7 @@ DEPENDENCIES
   factory_girl_rails (= 4.2.1)
   faker (= 1.1.2)
   friendly_id (= 5.0.0.rc2)
+  geocoder
   guard-rspec (= 2.5.0)
   guard-spork (= 1.5.0)
   haml

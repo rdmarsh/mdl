@@ -50,6 +50,8 @@ gem 'paper_trail', '>= 3.0.0.beta1'
 
 # gem "cancan"
 
+# Perform geographic queries using objects
+gem 'geocoder'
 
 
 group :development, :test do
