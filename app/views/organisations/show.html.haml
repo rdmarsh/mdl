@@ -17,6 +17,14 @@
     = simple_format f.attribute :description
     
   .well
+    = f.association :addresses do
+      %ul
+        - @organisation.addresses.each do |address|
+          %li= link_to address.name, address_path(address.slug)
+    - if @organisation.addresses.empty?
+      %p= empty_msg('address', 'organisation')
+      
+  .well
     = f.association :license_types do
       %ul
         - @organisation.license_types.each do |license_type|

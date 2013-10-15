@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131015074155) do
+ActiveRecord::Schema.define(version: 20131015222152) do
 
   create_table "activities", force: true do |t|
     t.integer  "trackable_id"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20131015074155) do
     t.text     "description"
     t.string   "name"
     t.string   "slug"
+    t.integer  "organisation_id"
   end
 
   add_index "addresses", ["slug"], name: "index_addresses_on_slug"

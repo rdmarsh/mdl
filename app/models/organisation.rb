@@ -33,6 +33,7 @@ class Organisation < ActiveRecord::Base
   has_many :licenses,           dependent: :restrict_with_error
   has_many :operating_systems,  dependent: :restrict_with_error
   has_many :systems,            dependent: :restrict_with_error
+  has_many :addresses,          dependent: :restrict_with_error
   
   has_many :notes, as: :noteable
   

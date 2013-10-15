@@ -3,13 +3,12 @@
   
   
   = f.input :name
+  = f.association :organisation,      include_blank: false, prompt: "Choose an organisation",          collection: Organisation.order('name ASC'), label: t('organisation').humanize
   = f.input :building_number, label: "Bld No"
   = f.input :city
   = f.input :city_prefix
   = f.input :city_suffix
   = f.input :country, priority: [ "Australia", "India", "New Zealand", "United Kingdom", "United States"], include_blank: true, prompt: "Choose a country"
-  = f.input :latitude
-  = f.input :longitude
   = f.input :secondary_address
   = f.input :state
   = f.input :state_abbr

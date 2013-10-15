@@ -6,13 +6,12 @@
 = show_for @address do |f|
   .well
     = f.attribute :name
+    = f.association :organisation
     = f.attribute :building_number
     = f.attribute :city
     = f.attribute :city_prefix
     = f.attribute :city_suffix
     = f.attribute :country
-    = f.attribute :latitude
-    = f.attribute :longitude
     = f.attribute :secondary_address
     = f.attribute :state
     = f.attribute :state_abbr
@@ -24,6 +23,8 @@
     = f.attribute :description
     
   .well
+    = f.attribute :latitude
+    = f.attribute :longitude
     = image_tag "https://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@address.latitude}%2C#{@address.longitude}"
     
   .well.muted

@@ -16,6 +16,7 @@
         %th= sortable "phone"
         %th= sortable "active"
         / todo this isn't working
+        %th= sortable "address"
         %th= sortable "license_type"
         %th= sortable "license"
         %th= sortable "operating_system"
@@ -28,6 +29,7 @@
           %td= link_to r.relationship.name, relationship_path(r.relationship.slug)
           %td= r.phone
           %td= r.active
+          %td= link_to r.addresses.count, organisation_addresses_path(r.slug)
           %td= link_to r.license_types.count, organisation_license_types_path(r.slug)
           %td= link_to r.licenses.count, organisation_licenses_path(r.slug)
           %td= link_to r.operating_systems.count, organisation_operating_systems_path(r.slug)
