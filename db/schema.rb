@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131015014745) do
+ActiveRecord::Schema.define(version: 20131015074155) do
 
   create_table "activities", force: true do |t|
     t.integer  "trackable_id"
@@ -215,12 +215,6 @@ ActiveRecord::Schema.define(version: 20131015014745) do
     t.string   "phone"
     t.string   "fax"
     t.string   "email"
-    t.string   "address_1"
-    t.string   "address_2"
-    t.string   "city"
-    t.string   "postcode"
-    t.string   "country"
-    t.string   "state"
     t.integer  "service_level_id"
     t.integer  "relationship_id"
     t.string   "slug"

@@ -8,12 +8,6 @@
   = f.input :phone
   = f.input :fax
   = f.input :email, placeholder: 'user@domain.com'
-  = f.input :address_1
-  = f.input :address_2
-  = f.input :city, placeholder: 'city'
-  = f.input :postcode, placeholder: '9999'
-  = f.input :state
-  = f.input :country, priority: [ "Australia", "India", "New Zealand", "United Kingdom", "United States"], include_blank: true, prompt: "Choose a country"
   = f.input       :description,     hint: "#{t('hint_description')} organisation"
   
   = f.error :base
