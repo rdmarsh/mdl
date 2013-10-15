@@ -139,6 +139,25 @@ en:
   network_interface: network interface
   
   website: website
+  
+  name:  name
+  building_number:  building_number
+  city:  city
+  city_prefix:  city_prefix
+  city_suffix:  city_suffix
+  country:  country
+  latitude:  latitude
+  longitude:  longitude
+  secondary_address:  secondary_address
+  state:  state
+  state_abbr:  state_abbr
+  street_address:  street_address
+  street_name:  street_name
+  street_suffix:  street_suffix
+  time_zone:  time_zone
+  postcode:  postcode
+  description:  description
+  
 
 # timeformat for iso8601
   time:

@@ -1,2 +1,5 @@
-%h1 Addresses#edit
-%p Find me in app/views/addresses/edit.html.haml
+- content_for(:show_button_path, address_path(@address))
+
+= render 'head'
+
+= render 'form'
