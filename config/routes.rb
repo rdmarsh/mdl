@@ -1,4 +1,6 @@
 Onemdl::Application.routes.draw do
+  get "persons/index"
+  get "persons/new"
   # pagination MUST be above nested resources or URLs will break
   
   # routes home to root
@@ -138,6 +140,10 @@ Onemdl::Application.routes.draw do
       get 'page/:page', :action => :index, :on => :collection
     end
     
+    resources :people do
+      get 'page/:page', :action => :index, :on => :collection
+    end
+    
     resources :notes do
       get 'page/:page', :action => :index, :on => :collection
     end
@@ -184,11 +190,16 @@ Onemdl::Application.routes.draw do
   end
   
   ##############################################################################
+  # :persons and nested resources
+  resources :people do
+    get 'page/:page', :action => :index, :on => :collection
+  end
+  
+  ##############################################################################
   # :addresses and nested resources
   resources :addresses do
     get 'page/:page', :action => :index, :on => :collection
   end
-  
   
   ##############################################################################
   # :network_uses and nested resources
