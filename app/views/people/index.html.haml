@@ -1,2 +1,19 @@
-%h1 People#index
-%p Find me in app/views/people/index.html.haml
+/ Addresses
+
+=render 'head'
+
+- if @people.empty?
+  %p= empty_msg('person', '')
+- else
+  %table.table.table-hover.table-condensed
+    %tbody
+      %thead
+        %th
+          = sortable "name"
+          %span{:class => 'caret'}
+        %th= link_to t('organisation').singularize.humanize, organisations_path
+      - @people.each do |r|
+        %tr
+          %td= link_to r.name, r
+          %td= link_to r.organisation.name, organisation_path(r.organisation.slug)
+  = paginate @people

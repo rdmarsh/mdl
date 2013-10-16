@@ -1,0 +1,8 @@
+- content_for(:title, t('person').pluralize.humanize)
+- content_for(:description, t('person_description').humanize)
+
+- content_for(:list_button_path, people_path)
+- content_for(:new_button_path, new_person_path)
+
+= render 'layouts/heading'
+= render 'layouts/tabs'

@@ -1,0 +1,13 @@
+/ Person
+- content_for(:edit_button_path, edit_person_path(@person))
+
+= render 'head'
+
+= show_for @person do |f|
+  .well
+    = f.attribute :name
+    = f.association :organisation
+    
+  .well.muted
+    = f.attribute :created_at, :format => :iso8601
+    = f.attribute :updated_at, :format => :iso8601
