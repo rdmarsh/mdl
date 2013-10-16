@@ -91,7 +91,6 @@ DeviceModel.create(name: "Proliant DL380 G5",   device_type_id: 11, manufacturer
 DeviceModel.create(name: "Proliant DL385 G1",   device_type_id: 11, manufacturer_id: 4, description: "HP Proliant DL385 G1.")
 DeviceModel.create(name: "Microserver N40L",   device_type_id: 11, manufacturer_id: 4, description: "Microserver N40L.")
 
-
 Organisation.create(name: "Unknown", full_name: "Unknown", relationship_id: 1, active: true)
 Organisation.create(name: "None",    full_name: "None",    relationship_id: 2, active: true)
 
