@@ -11,7 +11,6 @@
     = f.association :network_interfaces do
       %ul
         - @network_use.network_interfaces.each do |network_interfaces|
-        / todo:
           %li= link_to network_interfaces.name + " (" + network_interfaces.ipaddress + " on " + @system.name + ")", network_interfaces_path(network_interfaces.id)
     - if @network_use.network_interfaces.empty?
       %p= empty_msg('network_interface', 'network_use')

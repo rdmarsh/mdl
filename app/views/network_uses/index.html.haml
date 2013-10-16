@@ -17,5 +17,6 @@
         %tr
           %td= link_to r.name, r
           %td= r.description
-          %td= link_to r.network_interface.count, network_use_network_interfaces_path(r.slug)
+          %td= link_to r.network_interfaces.count, network_use_network_interfaces_path(r.slug)
+
   = paginate @network_uses
