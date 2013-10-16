@@ -43,8 +43,12 @@ DeviceType.create(name: "NAS", description: "Network-attached storage (NAS) is f
 DeviceType.create(name: "Server: Blade", description: "A blade server is a stripped down server computer with a modular design optimized to minimize the use of physical space and energy. Whereas a standard rack-mount server can function with (at least) a power cord and network cable, blade servers have many components removed to save space, minimize power consumption and other considerations, while still having all the functional components to be considered a computer.")
 DeviceType.create(name: "Server: Rack-mounted", description: "Rack-mounted servers are designed to store many devices mounted in a server rack. Unlike ordinary computers, servers usually can be configured, powered up and down or rebooted remotely, using out-of-band management.")
 DeviceType.create(name: "Server: Virtual", description: "A virtual server (VM) is a software implementation of a physical server. virtualisation allows multiple instances of virtual servers to reside on one (or more) physical server. This leads to more efficient use of computing resources, both in terms of energy consumption and cost effectiveness.")
+DeviceType.create(name: "Server: Tower", description: "A Tower server")
 DeviceType.create(name: "Printer: Laser", description: "A laser printer.")
 DeviceType.create(name: "Printer: Inkjet", description: "An inkjet printer.")
+DeviceType.create(name: "Workstation", description: "A workstation computer.")
+DeviceType.create(name: "Desktop", description: "A desktop computer.")
+DeviceType.create(name: "Laptop", description: "A laptop computer.")
 
 Relationship.create(name: "Unknown", description: "The relationship is currently unknown.")
 Relationship.create(name: "None",    description: "There is no relationship applicable.")
@@ -79,6 +83,14 @@ DeviceModel.create(name: "None",    device_type_id: 2, manufacturer_id: 2, descr
 DeviceModel.create(name: "BL60p",   device_type_id: 7, manufacturer_id: 3, description: "Integrity BL blade.")
 DeviceModel.create(name: "BL860c",   device_type_id: 7, manufacturer_id: 3, description: "Integrity BL blade.")
 DeviceModel.create(name: "BL870c",   device_type_id: 7, manufacturer_id: 3, description: "Integrity BL blade.")
+DeviceModel.create(name: "PowerEdge R200",   device_type_id: 11, manufacturer_id: 3, description: "Dell PowerEdge R200.")
+DeviceModel.create(name: "PowerEdge R300",   device_type_id: 11, manufacturer_id: 3, description: "Dell PowerEdge R300.")
+DeviceModel.create(name: "PowerEdge 2950 ",   device_type_id: 11, manufacturer_id: 3, description: "Dell PowerEdge 2950.")
+DeviceModel.create(name: "DL360 G5",   device_type_id: 11, manufacturer_id: 4, description: "HP DL360 G5.")
+DeviceModel.create(name: "Proliant DL380 G5",   device_type_id: 11, manufacturer_id: 4, description: "HP Proliant DL380 G5.")
+DeviceModel.create(name: "Proliant DL385 G1",   device_type_id: 11, manufacturer_id: 4, description: "HP Proliant DL385 G1.")
+DeviceModel.create(name: "Microserver N40L",   device_type_id: 11, manufacturer_id: 4, description: "Microserver N40L.")
+
 
 Organisation.create(name: "Unknown", full_name: "Unknown", relationship_id: 1, active: true)
 Organisation.create(name: "None",    full_name: "None",    relationship_id: 2, active: true)
