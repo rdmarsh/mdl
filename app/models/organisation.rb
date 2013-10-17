@@ -33,7 +33,8 @@ class Organisation < ActiveRecord::Base
   has_many :licenses,           dependent: :restrict_with_error
   has_many :operating_systems,  dependent: :restrict_with_error
   has_many :systems,            dependent: :restrict_with_error
-  has_many :addresses,          dependent: :restrict_with_error
+  # has_many :addresses, as: :addressable,         dependent: :restrict_with_error
+  has_many :addresses,             dependent: :restrict_with_error
   has_many :people,             dependent: :restrict_with_error
   
   has_many :notes, as: :noteable
@@ -51,7 +52,7 @@ class Organisation < ActiveRecord::Base
   private
   
   def vendor_only
-    "#{name} ----"
+    "#{name} --"
   end
   
   def protect_unknown_none

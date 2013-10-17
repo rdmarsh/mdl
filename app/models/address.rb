@@ -12,6 +12,7 @@ class Address < ActiveRecord::Base
   
   
   
+  
   geocoded_by :street_address
   after_validation :geocode, :if => :address_changed?
   
@@ -22,7 +23,8 @@ class Address < ActiveRecord::Base
   before_validation :strip_blanks
   
   # belongs to
-  belongs_to :organisation
+  # belongs_to :addressable, polymorphic: true
+  belongs_to :organisation, polymorphic: true
   
   
   

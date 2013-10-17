@@ -1,8 +1,10 @@
 class AddressesController < ApplicationController
   respond_to :html, :xml, :json, :csv
   helper_method :sort_column, :sort_direction
+  # before_filter :get_addressable
   
   def index
+    # @addresses = @addressable.addresses
     @addresses = Address.order(sort_column + " " + sort_direction).page(params[:page])
     respond_with(@addresses)
   end
@@ -13,11 +15,20 @@ class AddressesController < ApplicationController
   end
   
   def new
+    # @address = @addressable.addresses.new
     @address = Address.new
     respond_with(@address)
   end
   
   def create
+    # @address = @addressable.addresses.new(params[:address])
+    # # @comment.user = current_user
+    # if @address.save
+    #   redirect_to @addressable, notice: "Address created."
+    # else
+    #   render :new
+    # end
+    
     @address = Address.new(address_params)
     
     if @address.save
@@ -32,11 +43,21 @@ class AddressesController < ApplicationController
   end
   
   def edit
+    # @address = @addressable.addresses.friendly.find(params[:id])
+
     @address = Address.friendly.find(params[:id])
     respond_with(@address)
   end
   
   def update
+    # @address = @commentable.addresses.friendly.find(params[:id])
+    # if @address.update_attributes(params[:addresses])
+    #   flash[:notice] = "Successfully updated address."
+    #   # redirect_to current_user
+    # else
+    #   render :action => 'edit'
+    # end
+
     @address = Address.friendly.find(params[:id])
     
     if @address.update_attributes(address_params)
@@ -69,6 +90,10 @@ class AddressesController < ApplicationController
   
   private
   
+  def full_address
+    "#{secondary_address}, #{street_address}, #{city}, #{state}, #{postcode}, #{country}"
+  end
+  
   # for sorting columns
   def sort_column
     Address.column_names.include?(params[:sort]) ? params[:sort] : "id"
@@ -78,4 +103,14 @@ class AddressesController < ApplicationController
   def address_params
     params.require(:address).permit!
   end
+  
+  # def get_addressable
+  #     @addressable = params[:addressable].classify.constantize.find(addressable_id)
+  # end
+  # 
+  # def addressable_id
+  #   params[(params[:addressable].singularize + "_id").to_sym]
+  # end
+  
+  
 end

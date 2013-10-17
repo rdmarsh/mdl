@@ -117,7 +117,7 @@ Onemdl::Application.routes.draw do
   
   ##############################################################################
   # :organisations and nested resources
-  resources :organisations do
+  resources :organisations, shallow: true do
     get 'page/:page', :action => :index, :on => :collection
     
     resources :license_types do
@@ -144,14 +144,14 @@ Onemdl::Application.routes.draw do
       get 'page/:page', :action => :index, :on => :collection
     end
     
-    resources :notes do
-      get 'page/:page', :action => :index, :on => :collection
-    end
+    # resources :note do
+  #     get 'page/:page', :action => :index, :on => :collection
+  #   end
   end
   
   ##############################################################################
   # :license_types and nested resources
-  resources :license_types do
+  resources :license_types, shallow: true do
     get 'page/:page', :action => :index, :on => :collection
     
     resources :licenses do

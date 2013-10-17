@@ -41,6 +41,7 @@ class LicenseType < ActiveRecord::Base
   
   before_destroy :protect_unknown_none
   
+  
   private
   
   def protect_unknown_none
