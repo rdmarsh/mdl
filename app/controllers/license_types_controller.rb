@@ -3,9 +3,18 @@ class LicenseTypesController < ApplicationController
   helper_method :sort_column, :sort_direction
   
   def index
+    if :organisation_id.nil?
+       @organisation = Organisation.all
+    else
+      @organisation = Organisation.friendly.find(params[:organisation_id])
+    end
+    
+     @license_types = @organisation.license_types.page(params[:page])
+    
+
     # @license_types = LicenseType.order(sort_column + " " + sort_direction).page(params[:page])
-    @organisation = Organisation.friendly.find(params[:organisation_id])
-    @license_types = @organisation.license_types.page(params[:page])
+    # @organisation = Organisation.friendly.find(params[:organisation_id])
+    # @license_types = @organisation.license_types.page(params[:page])
   end
   
   def show
