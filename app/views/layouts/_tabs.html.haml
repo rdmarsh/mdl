@@ -2,9 +2,9 @@
   .span12
     .tabbable
       %ul.nav.nav-tabs
-        = tab_link 'index', yield(:list_button_path), 'icon-th-list', nil
+        = tab_link 'index', yield(:index_tab), 'icon-th-list', nil
         
-        = tab_link 'new', yield(:new_button_path), 'icon-plus', nil
+        = tab_link 'new', yield(:new_tab), 'icon-plus', nil
         
         - if params.has_value?("show") or params.has_value?("edit")
           = tab_link 'show', yield(:show_button_path), 'icon-info-sign', nil

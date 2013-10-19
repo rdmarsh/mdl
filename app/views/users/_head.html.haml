@@ -1,7 +1,7 @@
 - content_for(:title, t('user').pluralize.humanize)
 
-- content_for(:list_button_path, users_path)
-- content_for(:new_button_path, new_user_path)
+- content_for(:index_tab, users_path)
+- content_for(:new_tab, new_user_path)
 - content_for(:history_button_path, users_path)
 
 = render 'layouts/heading'

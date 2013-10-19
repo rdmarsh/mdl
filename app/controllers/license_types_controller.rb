@@ -9,8 +9,6 @@ class LicenseTypesController < ApplicationController
     else
       @license_types = LicenseType.order(sort_column + " " + sort_direction).page(params[:page])
     end
-    # @organisation = Organisation.friendly.find(params[:organisation_id])
-    # @license_types = @organisation.license_types.page(params[:page])
   end
   
   def show
