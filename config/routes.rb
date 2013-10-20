@@ -1,7 +1,13 @@
 Onemdl::Application.routes.draw do
-  get "persons/index"
-  get "persons/new"
-  # pagination MUST be above nested resources or URLs will break
+  
+  #put our concerns first
+  concern :systemable
+    resources :systems do
+      get 'page/:page', :action => :index, :on => :collection
+    end
+  end
+  
+  # don't forget pagination MUST be above nested resources or URLs will break
   
   # routes home to root
   root 'staticpages#home'
@@ -67,42 +73,26 @@ Onemdl::Application.routes.draw do
   
   ##############################################################################
   # :device_models and nested resources
-  resources :device_models do
+  resources :device_models, concerns: :systemable do
     get 'page/:page', :action => :index, :on => :collection
-    
-    resources :systems do
-      get 'page/:page', :action => :index, :on => :collection
-    end
   end
   
   ##############################################################################
   # :environments and nested resources
-  resources :environments do
+  resources :environments, concerns: :systemable do
     get 'page/:page', :action => :index, :on => :collection
-    
-    resources :systems do
-      get 'page/:page', :action => :index, :on => :collection
-    end
   end
   
   ##############################################################################
   # :service_levels and nested resources
-  resources :service_levels do
+  resources :service_levels, concerns: :systemable do
     get 'page/:page', :action => :index, :on => :collection
-    
-    resources :systems do
-      get 'page/:page', :action => :index, :on => :collection
-    end
   end
   
   ##############################################################################
   # :support_levels and nested resources
-  resources :support_levels do
+  resources :support_levels, concerns: :systemable do
     get 'page/:page', :action => :index, :on => :collection
-    
-    resources :systems do
-      get 'page/:page', :action => :index, :on => :collection
-    end
   end
   
   ##############################################################################
@@ -117,7 +107,7 @@ Onemdl::Application.routes.draw do
   
   ##############################################################################
   # :organisations and nested resources
-  resources :organisations, shallow: true do
+  resources :organisations, concerns: :systemable, shallow: true do
     get 'page/:page', :action => :index, :on => :collection
     
     resources :license_types do
@@ -129,10 +119,6 @@ Onemdl::Application.routes.draw do
     end
     
     resources :operating_systems do
-      get 'page/:page', :action => :index, :on => :collection
-    end
-    
-    resources :systems do
       get 'page/:page', :action => :index, :on => :collection
     end
     
@@ -161,22 +147,14 @@ Onemdl::Application.routes.draw do
   
   ##############################################################################
   # :licenses and nested resources
-  resources :licenses do
+  resources :licenses, concerns: :systemable do
     get 'page/:page', :action => :index, :on => :collection
-    
-    resources :systems do
-      get 'page/:page', :action => :index, :on => :collection
-    end
   end
   
   ##############################################################################
   # :operating_systems and nested resources
-  resources :operating_systems do
+  resources :operating_systems, concerns: :systemable do
     get 'page/:page', :action => :index, :on => :collection
-    
-    resources :systems do
-      get 'page/:page', :action => :index, :on => :collection
-    end
   end
   
   ##############################################################################
