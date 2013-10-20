@@ -1,7 +1,7 @@
 Onemdl::Application.routes.draw do
   
   #put our concerns first
-  concern :systemable
+  concern :systemable do
     resources :systems do
       get 'page/:page', :action => :index, :on => :collection
     end
@@ -107,7 +107,7 @@ Onemdl::Application.routes.draw do
   
   ##############################################################################
   # :organisations and nested resources
-  resources :organisations, concerns: :systemable, shallow: true do
+  resources :organisations, concerns: :systemable do
     get 'page/:page', :action => :index, :on => :collection
     
     resources :license_types do
