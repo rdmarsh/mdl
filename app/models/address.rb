@@ -13,7 +13,7 @@ class Address < ActiveRecord::Base
   
   
   
-  geocoded_by :street_address
+  geocoded_by :address
   after_validation :geocode, :if => :address_changed?
   
   
@@ -55,5 +55,8 @@ class Address < ActiveRecord::Base
   def strip_blanks
     self.name = self.name.strip
   end
-
+  
+  def address
+    [secondary_address, street_address, city, state, postcode, country].compact.join(', ')
+  end
 end

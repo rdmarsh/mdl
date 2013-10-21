@@ -90,10 +90,6 @@ class AddressesController < ApplicationController
   
   private
   
-  def full_address
-    "#{secondary_address}, #{street_address}, #{city}, #{state}, #{postcode}, #{country}"
-  end
-  
   # for sorting columns
   def sort_column
     Address.column_names.include?(params[:sort]) ? params[:sort] : "id"
