@@ -1,7 +1,7 @@
 / Address
 - content_for(:edit_button_path, edit_address_path(@address))
 
-= render 'head'
+= render partial: 'head'
 
 = show_for @address do |f|
   .well
