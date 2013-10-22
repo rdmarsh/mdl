@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131016222205) do
+ActiveRecord::Schema.define(version: 20131022221336) do
 
   create_table "activities", force: true do |t|
     t.integer  "trackable_id"
@@ -31,19 +31,11 @@ ActiveRecord::Schema.define(version: 20131016222205) do
   add_index "activities", ["trackable_id", "trackable_type"], name: "index_activities_on_trackable_id_and_trackable_type"
 
   create_table "addresses", force: true do |t|
-    t.string   "building_number"
     t.string   "city"
-    t.string   "city_prefix"
-    t.string   "city_suffix"
     t.string   "country"
     t.string   "latitude"
     t.string   "longitude"
-    t.string   "secondary_address"
     t.string   "state"
-    t.string   "state_abbr"
-    t.string   "street_address"
-    t.string   "street_name"
-    t.string   "street_suffix"
     t.string   "time_zone"
     t.string   "postcode"
     t.datetime "created_at"
@@ -54,6 +46,8 @@ ActiveRecord::Schema.define(version: 20131016222205) do
     t.integer  "organisation_id"
     t.integer  "addressable_id"
     t.string   "addressable_type"
+    t.string   "street_address_1"
+    t.string   "street_address_2"
   end
 
   add_index "addresses", ["addressable_id", "addressable_type"], name: "index_addresses_on_addressable_id_and_addressable_type"

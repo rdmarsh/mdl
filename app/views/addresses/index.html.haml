@@ -15,35 +15,31 @@
           = sortable "street_address"
           %span{:class => 'caret'}
         %th
-          = sortable "street_name"
+          = sortable "street_address"
           %span{:class => 'caret'}
         %th
           = sortable "city"
           %span{:class => 'caret'}
         %th
-          = sortable "country"
-          %span{:class => 'caret'}
-        %th
           = sortable "state"
-          %span{:class => 'caret'}
-        %th
-          = sortable "state_abbr"
-          %span{:class => 'caret'}
-        %th
-          = sortable "time_zone"
           %span{:class => 'caret'}
         %th
           = sortable "postcode"
           %span{:class => 'caret'}
+        %th
+          = sortable "country"
+          %span{:class => 'caret'}
+        %th
+          = sortable "time_zone"
+          %span{:class => 'caret'}
       - @addresses.each do |r|
         %tr
           %td= link_to r.name, r
-          %td= r.street_address
-          %td= r.street_name
+          %td= r.street_address_1
+          %td= r.street_address_2
           %td= r.city
-          %td= r.country
           %td= r.state
-          %td= r.state_abbr
-          %td= r.time_zone
           %td= r.postcode
+          %td= r.country
+          %td= r.time_zone
   = paginate @addresses

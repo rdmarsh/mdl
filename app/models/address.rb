@@ -57,6 +57,6 @@ class Address < ActiveRecord::Base
   end
   
   def address
-    [secondary_address, street_address, city, state, postcode, country].compact.join(', ')
+    [street_address_1, street_address_2, city, state, postcode, country].compact.join(', ')
   end
 end
