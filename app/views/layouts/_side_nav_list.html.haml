@@ -2,6 +2,48 @@
 
 %ul.nav.nav-list.fill
   / put the most used views in the top list
+  
+  %li.nav-header
+    device types
+    
+    %li{ :class => ("active" if controller_name == "device_types") }
+      = link_to t('device_type').pluralize.humanize, device_types_path
+    
+    %ul
+    
+      %li{ :class => ("active" if controller_name == "device_models") }
+        = link_to t('device_model').pluralize.humanize, device_models_path
+    
+  
+  %li{ :class => ("active" if controller_name == "organisations") }
+    = link_to t('organisation').pluralize.humanize, organisations_path
+  
+  
+  %li{ :class => ("active" if controller_name == "organisations") }
+    = link_to t('organisation').pluralize.humanize, organisations_path
+  
+  %ul
+  
+    %li{ :class => ("active" if controller_name == "license_types") }
+      = link_to t('license_type').pluralize.humanize, license_types_path
+      
+    %li{ :class => ("active" if controller_name == "licenses") }
+      = link_to t('license').pluralize.humanize, licenses_path
+      
+    %li{ :class => ("active" if controller_name == "operating_systems") }
+      = link_to t('operating_system').pluralize.humanize, operating_systems_path
+      
+    %li{ :class => ("active" if controller_name == "addresses") }
+      = link_to t('address').pluralize.humanize, addresses_path
+      
+    %li{ :class => ("active" if controller_name == "people") }
+      = link_to t('person').pluralize.humanize, people_path
+  
+  
+  %li{ :class => ("active" if controller_name == "relationships") }
+    = link_to t('relationship').pluralize.humanize, relationships_path
+  
+  
   %li.nav-header
     Navigation
     
@@ -14,8 +56,6 @@
   %li{ :class => ("active" if controller_name == "device_models") }
     = link_to t('device_model').pluralize.humanize, device_models_path
     
-  %li{ :class => ("active" if controller_name == "licenses") }
-    = link_to t('license').pluralize.humanize, licenses_path
     
   / dividing line
   %li.divider
@@ -24,17 +64,10 @@
   %li.nav-header
     = t('organisation').pluralize.humanize
     
-  %li{ :class => ("active" if controller_name == "organisations") }
-    = link_to t('organisation').pluralize.humanize, organisations_path
   
   %li{ :class => ("active" if controller_name == "manufacturers") }
     = link_to t('manufacturer').pluralize.humanize, manufacturers_path
   
-  %li{ :class => ("active" if controller_name == "addresses") }
-    = link_to t('address').pluralize.humanize, addresses_path
-  
-  %li{ :class => ("active" if controller_name == "people") }
-    = link_to t('person').pluralize.humanize, people_path
   
   / dividing line
   %li.divider
@@ -49,17 +82,11 @@
   %li{ :class => ("active" if controller_name == "environments") }
     = link_to t('environment').pluralize.humanize, environments_path
     
-  %li{ :class => ("active" if controller_name == "license_types") }
-    = link_to t('license_type').pluralize.humanize, license_types_path
     
   %li{ :class => ("active" if controller_name == "network_uses") }
     = link_to t('network_use').pluralize.humanize, network_uses_path
     
-  %li{ :class => ("active" if controller_name == "operating_systems") }
-    = link_to t('operating_system').pluralize.humanize, operating_systems_path
     
-  %li{ :class => ("active" if controller_name == "relationships") }
-    = link_to t('relationship').pluralize.humanize, relationships_path
     
   %li{ :class => ("active" if controller_name == "service_levels") }
     = link_to t('service_level').pluralize.humanize, service_levels_path

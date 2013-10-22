@@ -53,6 +53,4 @@ class Person < ActiveRecord::Base
     self.name = self.name.strip
   end
   
-  def organisation_name
-    o
 end
