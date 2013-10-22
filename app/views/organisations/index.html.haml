@@ -9,6 +9,9 @@
     %tbody
       %thead
         %th
+          = sortable "ref"
+          %span{:class => 'caret'}
+        %th
           = sortable "name"
           %span{:class => 'caret'}
         %th= sortable "full_name"
@@ -25,7 +28,8 @@
         / %th= link_to t('system').pluralize.humanize, systems_path
       - @organisations.each do |r|
         %tr{:class => tr_attributes(r.active)}
-          %td= link_to r.name, r
+          %td= link_to r.slug, r
+          %td= r.name
           %td= r.full_name
           %td= link_to r.relationship.name, relationship_path(r.relationship.slug)
           %td= r.phone

@@ -10,16 +10,16 @@ class Person < ActiveRecord::Base
     name_changed?
   end
   
+  # Try building a slug based on the following fields in
+  # increasing order of specificity.
+  def slug_candidates
+    [
+      :name,
+      [:name, :organisation_id]
+    ]
+  end
   
-  
-  
-  
-  
-  
-  
-  
-  
-  before_validation :strip_blanks
+  before_validation :strip_blanks, :organisation_name
   
   # belongs to
   belongs_to :organisation
@@ -52,4 +52,7 @@ class Person < ActiveRecord::Base
   def strip_blanks
     self.name = self.name.strip
   end
+  
+  def organisation_name
+    o
 end

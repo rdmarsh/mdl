@@ -6,6 +6,7 @@ namespace :db do
     
     Organisation.populate(10) do |organisation|
       organisation.name             = (Faker::Company.name + Faker::Lorem.word).parameterize
+      organisation.slug             = organisation.name.parameterize
       organisation.full_name        = Faker::Company.name
       organisation.relationship_id  = 1..9
       organisation.active           = [true, false]
@@ -15,6 +16,7 @@ namespace :db do
       
       System.populate(0..50) do |system|
         system.name                 = Faker::Internet.domain_word
+        system.slug                 = system.name.parameterize
         system.description          = Faker::Lorem.sentences
         system.device_model_id      = 1..5
         system.environment_id       = 1..9
@@ -28,6 +30,7 @@ namespace :db do
       
       Address.populate(0..2) do |address|
         address.name              = Faker::Company.name
+        address.slug              = address.name.parameterize
         address.organisation_id   = organisation.id
         address.building_number   = Faker::Address.building_number
         address.city              = Faker::Address.city
