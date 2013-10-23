@@ -29,9 +29,6 @@
         %th
           = sortable "country"
           %span{:class => 'caret'}
-        %th
-          = sortable "time_zone"
-          %span{:class => 'caret'}
       - @addresses.each do |r|
         %tr
           %td= link_to r.name, r
@@ -41,5 +38,4 @@
           %td= r.state
           %td= r.postcode
           %td= r.country
-          %td= r.time_zone
   = paginate @addresses

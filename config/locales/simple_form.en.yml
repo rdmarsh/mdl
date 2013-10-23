@@ -21,6 +21,11 @@ en:
     # hints:
     #   username: 'User name to sign in.'
     #   password: 'No special characters, please.'
+    labels:
+      defaults:
+        # Address
+        street_address_1: 'Address 1'
+        street_address_2: 'Address 2'
     hints:
       defaults:
         description: 'How would you describe it?'
@@ -29,7 +34,13 @@ en:
         end_of_support: 'When will it stop being supported?'
         name: 'What do you want to call it?'
         manufacturer: 'Who manufactured it?'
+        # Address
+        street_address_1: 'eg Office or Building number'
+        street_address_2: 'eg Street address'
     placeholders:
       defaults:
         description: 'Enter a description'
         name: 'Enter a name'
+        # Address
+        street_address_1: 'Line 1'
+        street_address_2: 'Line 2'

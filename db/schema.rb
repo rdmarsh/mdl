@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131022221336) do
+ActiveRecord::Schema.define(version: 20131023212607) do
 
   create_table "activities", force: true do |t|
     t.integer  "trackable_id"
@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(version: 20131022221336) do
     t.string   "latitude"
     t.string   "longitude"
     t.string   "state"
-    t.string   "time_zone"
     t.string   "postcode"
     t.datetime "created_at"
     t.datetime "updated_at"

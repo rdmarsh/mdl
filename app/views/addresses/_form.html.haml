@@ -3,13 +3,12 @@
   
   = f.input :name
   = f.association :organisation,      include_blank: false, prompt: "Choose an organisation",          collection: Organisation.order('name ASC'), label: t('organisation').humanize
-  = f.input :street_address_1, hint: "eg bld or apt no"
-  = f.input :street_address_2, hint: "address on street"
+  = f.input :street_address_1
+  = f.input :street_address_2
   = f.input :city
   = f.input :postcode
   = f.input :state
   = f.input :country, priority: [ "Australia", "India", "New Zealand", "United Kingdom", "United States"], include_blank: true, prompt: "Choose a country"
-  = f.input :time_zone
   = f.input :description
   
   = f.error :base
