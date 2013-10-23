@@ -1,0 +1,12 @@
+/ OperatingSystemFamily
+- content_for(:edit_button_path, edit_operating_system_family_path)
+
+= render 'head'
+
+= show_for @operating_sytem_family do |f|
+  .well
+    %b= f.attribute :name
+    = simple_format f.attribute :description
+  .well.muted
+    = f.attribute :created_at, :format => :iso8601
+    = f.attribute :updated_at, :format => :iso8601

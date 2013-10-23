@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131023212607) do
+ActiveRecord::Schema.define(version: 20131023223803) do
 
   create_table "activities", force: true do |t|
     t.integer  "trackable_id"
@@ -184,6 +184,15 @@ ActiveRecord::Schema.define(version: 20131023212607) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "operating_system_families", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "operating_system_families", ["name"], name: "index_operating_system_families_on_name"
 
   create_table "operating_systems", force: true do |t|
     t.string   "name"
