@@ -1,7 +1,7 @@
 - content_for(:title, t('license_type').pluralize.humanize)
 
-- content_for(:index_tab, url_for([@organisation, @license_type]))
-- content_for(:new_tab, url_for([@organisation, @license_type]))
+- content_for(:index_tab, license_types_path)
+- content_for(:new_tab, new_license_type_path)
 
 = render 'layouts/heading'
 = render 'layouts/tabs'

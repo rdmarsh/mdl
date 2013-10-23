@@ -24,7 +24,8 @@ class LicenseTypesController < ApplicationController
       @organisation = Organisation.friendly.find(params[:organisation_id])
       @license_type = @organisation.license_types.new
     else
-      @license_types = LicenseType.order(sort_column + " " + sort_direction).page(params[:page])  
+      @license_types = LicenseType.order(sort_column + " " + sort_direction).page(params[:page])
+    end
   end
   
   def create
