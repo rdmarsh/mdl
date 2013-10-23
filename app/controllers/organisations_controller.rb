@@ -25,6 +25,7 @@ class OrganisationsController < ApplicationController
     else
       flash[:error] = "Could not create organisation '" + @organisation.name + "'"
     end
+    respond_with(@organisation)
   end
   
   def edit
@@ -41,6 +42,7 @@ class OrganisationsController < ApplicationController
     else
       flash[:error] = "Could not update organisation '" + @organisation.name + "'"
     end
+    respond_with(@organisation)
   end
   
   def destroy
@@ -53,6 +55,7 @@ class OrganisationsController < ApplicationController
     else
       flash[:error] = "Could not delete organisation '" + @organisation.name + "'"
     end
+    respond_with(@organisation)
   end
   
   private
