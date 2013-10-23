@@ -1,7 +1,7 @@
 class AddressesController < ApplicationController
   respond_to :html, :xml, :json, :csv
   helper_method :sort_column, :sort_direction
-  # before_filter :get_addressable
+  #before_filter :get_addressable
   
   def index
     # @addresses = @addressable.addresses

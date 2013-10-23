@@ -1,29 +1,18 @@
 class OrganisationsController < ApplicationController
   respond_to :html, :xml, :json
   helper_method :sort_column, :sort_direction
+  # before_action :load_address
   
   def index
     @organisations = Organisation.order(sort_column + " " + sort_direction).page(params[:page])
-    respond_with(@organisations)
   end
   
   def show
     @organisation = Organisation.friendly.find(params[:id])
-    respond_with(@organisation)
-  end
-  
-  def notes
-    @organisation = Organisation.friendly.find(params[:id])
-
-    @commentable = @organisation
-    @comments = @commentable.comments
-    @comment = Comment.new
-    respond_with(@commentable)
   end
   
   def new
     @organisation = Organisation.new
-    respond_with(@organisation)
   end
   
   def create
@@ -36,13 +25,10 @@ class OrganisationsController < ApplicationController
     else
       flash[:error] = "Could not create organisation '" + @organisation.name + "'"
     end
-    
-    respond_with(@organisation)
   end
   
   def edit
     @organisation = Organisation.friendly.find(params[:id])
-    respond_with(@organisation)
   end
   
   def update
@@ -55,8 +41,6 @@ class OrganisationsController < ApplicationController
     else
       flash[:error] = "Could not update organisation '" + @organisation.name + "'"
     end
-    
-    respond_with(@organisation)
   end
   
   def destroy
@@ -69,13 +53,10 @@ class OrganisationsController < ApplicationController
     else
       flash[:error] = "Could not delete organisation '" + @organisation.name + "'"
     end
-    
-    respond_with(@organisation)
   end
   
   private
-  
-  # for sorting columns
+
   def sort_column
     Organisation.column_names.include?(params[:sort]) ? params[:sort] : "id"
   end
