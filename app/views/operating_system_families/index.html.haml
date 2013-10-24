@@ -2,8 +2,8 @@
 
 =render 'head'
 
-- if @operating_sytem_families.empty?
-  %p= empty_msg('operating_sytem_family', '')
+- if @operating_system_families.empty?
+  %p= empty_msg('operating_system_family', '')
 - else
   %table.table.table-hover.table-condensed
     %tbody
@@ -12,9 +12,9 @@
           = sortable "name"
           %span{:class => 'caret'}
         %th= sortable "description"
-      - @operating_sytem_families.each do |r|
+      - @operating_system_families.each do |r|
         %tr
           %td= link_to r.name, r
           %td= r.description
 
-  = paginate @operating_sytem_families
+  = paginate @operating_system_families

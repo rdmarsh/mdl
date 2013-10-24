@@ -1,4 +1,4 @@
-= simple_form_for @operating_sytem_family, :html => { :class => 'form-horizontal' } do |f|
+= simple_form_for @operating_system_family, :html => { :class => 'form-horizontal' } do |f|
   = f.error_notification
   
   = f.input       :name
@@ -11,6 +11,6 @@
       #{t('delete')}.humanize
       %span{:class => 'caret'}
     %ul.dropdown-menu
-      %li= link_to "Delete '#{f.object.name}'?", @operating_sytem_family, :confirm => 'Are you sure?', :method => :delete
+      %li= link_to "Delete '#{f.object.name}'?", @operating_system_family, :confirm => 'Are you sure?', :method => :delete
   or
   = link_to "#{t('cancel')}".humanize, :back
