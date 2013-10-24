@@ -113,7 +113,7 @@ OperatingSystemFamily.create(name: "Windows", description: "Windows")
 OperatingSystemFamily.create(name: "MacOSX", description: "MacOSX")
 
 OperatingSystem.create(name: "Unknown", release: "0", operating_system_family_id: 1, organisation_id: 1)
-OperatingSystem.create(name: "None", release: "0", operating_system_family_id: 1, organisation_id: 2)
+OperatingSystem.create(name: "None", release: "0", operating_system_family_id: 2, organisation_id: 2)
 
 OperatingSystem.create(name: "Debian", release: "1.1", operating_system_family_id: 3, description: "Buzz", organisation_id: 1)
 OperatingSystem.create(name: "Debian", release: "1.2", operating_system_family_id: 3, description: "Rex", organisation_id: 1)

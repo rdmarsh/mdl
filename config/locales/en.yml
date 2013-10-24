@@ -98,7 +98,8 @@ en:
   or: or
   organisation: organisation  
   neworganisation: new organisation
-  operating_system: operating system 
+  operating_system: operating system
+  operating_system_family: operating system family
   
   person: person
   
@@ -126,6 +127,7 @@ en:
   statistics: statistics
   starts_at: starts at
   ends_at: ends at
+  slug: slug
   
   showall: show all
   type: type

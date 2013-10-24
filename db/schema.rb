@@ -186,6 +186,7 @@ ActiveRecord::Schema.define(version: 20131023225116) do
   end
 
   create_table "operating_system_families", force: true do |t|
+    t.string   "slug"
     t.string   "name"
     t.text     "description"
     t.datetime "created_at"
@@ -193,6 +194,7 @@ ActiveRecord::Schema.define(version: 20131023225116) do
   end
 
   add_index "operating_system_families", ["name"], name: "index_operating_system_families_on_name"
+  add_index "operating_system_families", ["slug"], name: "index_operating_system_families_on_slug"
 
   create_table "operating_systems", force: true do |t|
     t.string   "name"
