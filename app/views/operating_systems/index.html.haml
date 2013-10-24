@@ -14,9 +14,7 @@
         %th
           = sortable "release"
           %span{:class => 'caret'}
-        %th
-          = sortable "family"
-          %span{:class => 'caret'}
+        %th= link_to t('operating_system_family').singularize.humanize, operating_system_families_path
         %th= link_to t('organisation').singularize.humanize, organisations_path
         %th
           = sortable "release_date"
@@ -29,7 +27,7 @@
         %tr
           %td= link_to r.name, r
           %td= r.release
-          %td= r.family
+          %td= link_to r.operating_system_family.name, operating_system_family_path(r.operating_system_family.slug)
           %td= link_to r.organisation.name, organisation_path(r.organisation.slug)
           %td= r.release_date
           %td= r.end_of_support

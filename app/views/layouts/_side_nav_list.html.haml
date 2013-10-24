@@ -55,6 +55,9 @@
   %li{ :class => ("active" if controller_name == "network_uses") }
     = link_to t('network_use').pluralize.humanize, network_uses_path
     
+  %li{ :class => ("active" if controller_name == "operating_system_families") }
+    = link_to t('operating_system_family').pluralize, operating_system_families_path
+    
   %li{ :class => ("active" if controller_name == "relationships") }
     = link_to t('relationship').pluralize.humanize, relationships_path
     

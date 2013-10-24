@@ -23,7 +23,7 @@ class OperatingSystem < ActiveRecord::Base
   
   # belongs to
   belongs_to :organisation
-  
+  belongs_to :operating_system_family
   
   
   
@@ -35,7 +35,7 @@ class OperatingSystem < ActiveRecord::Base
   validates :name, presence: true, uniqueness: { case_sensitive: false, :scope => :release,
      message: "Name and Release combination already present" }
   validates :release, presence: true
-  validates :operating_system_family_id, presence: true, message: "%{value} is not a valid operating system family" }
+  validates :operating_system_family_id, presence: true
   
   
   

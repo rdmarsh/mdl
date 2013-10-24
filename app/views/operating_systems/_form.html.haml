@@ -3,7 +3,7 @@
   
   = f.input       :name, hint: "Operating system name"
   = f.input       :release
-  = f.input       :family,          include_blank: false, prompt: "Choose an OS family", collection: SELECT_OPERATING_SYSTEM_FAMILIES
+  = f.association :operating_system_family, include_blank: false, prompt: "Choose an OS family", collection: OperatingSystemFamily.order('name ASC')
   = f.association :organisation,    include_blank: false, prompt: "Choose an organisation",  collection: Organisation.order('name ASC')
   = f.input       :release_date,    include_blank: true
   = f.input       :end_of_support,  include_blank: true

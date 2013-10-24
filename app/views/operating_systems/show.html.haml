@@ -7,7 +7,7 @@
   .well
     %b= f.attribute :name
     = f.attribute :release
-    = f.attribute :family
+    = f.association :operating_system_family
     = f.association :organisation
     = f.attribute :release_date
     = f.attribute :end_of_support

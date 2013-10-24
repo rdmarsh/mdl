@@ -12,9 +12,11 @@
           = sortable "name"
           %span{:class => 'caret'}
         %th= sortable "description"
+        %th= link_to t('operating_system').pluralize.humanize, operating_systems_path
       - @operating_system_families.each do |r|
         %tr
           %td= link_to r.name, r
           %td= r.description
+          %td= link_to r.operating_systems.count, operating_system_family_operating_systems_path(r.slug)
 
   = paginate @operating_system_families

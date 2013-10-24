@@ -152,16 +152,16 @@ Onemdl::Application.routes.draw do
   end
   
   ##############################################################################
-  # :operating_systems and nested resources
-  resources :operating_systems, concerns: :systemable do
+  # operating_system_families and nested resources
+  resources :operating_system_families, concerns: :systemable do
     get 'page/:page', :action => :index, :on => :collection
     
-    resources :operating_system_families do
+    resources :operating_systems do
       get 'page/:page', :action => :index, :on => :collection
     end
   end
   
-  resources :operating_system_families do
+  resources :operating_systems do
     get 'page/:page', :action => :index, :on => :collection
   end
   
