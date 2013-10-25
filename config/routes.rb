@@ -91,18 +91,14 @@ Onemdl::Application.routes.draw do
   
   ##############################################################################
   # :organisations and nested resources
-  resources :organisations, concerns: :systemable do
+  resources :organisations, shallow: true, concerns: :systemable do
     get 'page/:page', :action => :index, :on => :collection
     
-    resources :license_types, concerns: :pageable
-    
-    resources :licenses, concerns: :pageable
-    
+    resources :license_types,     concerns: :pageable
+    resources :licenses,          concerns: :pageable
     resources :operating_systems, concerns: :pageable
-    
-    resources :addresses, concerns: :pageable
-    
-    resources :people, concerns: :pageable
+    resources :addresses,         concerns: :pageable
+    resources :people,            concerns: :pageable
     
     # resources :note do
   #     get 'page/:page', :action => :index, :on => :collection
