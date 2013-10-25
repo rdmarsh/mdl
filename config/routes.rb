@@ -2,9 +2,11 @@ Onemdl::Application.routes.draw do
   
   #put our concerns first
   concern :systemable do
-    resources :systems do
-      get 'page/:page', :action => :index, :on => :collection
-    end
+    resources :systems, concerns: :pageable
+  end
+  
+  concern :pageable do
+    get 'page/:page', action: :index, on: :collection
   end
   
   # don't forget pagination MUST be above nested resources or URLs will break
@@ -35,40 +37,26 @@ Onemdl::Application.routes.draw do
   
   ##############################################################################
   # :addresses  
-  resources :addresses do
-    get 'page/:page', :action => :index, :on => :collection
-  end
+  resources :addresses, concerns: :pageable
     
   ##############################################################################
   # :activities
-  resources :activities do
-    get 'page/:page', :action => :index, :on => :collection
-  end
+  resources :activities, concerns: :pageable
   
   ##############################################################################
   # :users and nested resources
-  resources :users do
-    get 'page/:page', :action => :index, :on => :collection
-  end
+  resources :users, concerns: :pageable
   
   ##############################################################################
   # :manufacturers and nested resources
-  resources :manufacturers do
-    get 'page/:page', :action => :index, :on => :collection
-    
-    resources :device_models do
-      get 'page/:page', :action => :index, :on => :collection
-    end
+  resources :manufacturers, concerns: :pageable do
+    resources :device_models, concerns: :pageable
   end
   
   ##############################################################################
   # :device_types and nested resources
-  resources :device_types do
-    get 'page/:page', :action => :index, :on => :collection
-    
-    resources :device_models do
-      get 'page/:page', :action => :index, :on => :collection
-    end
+  resources :device_types, concerns: :pageable do
+    resources :device_models, concerns: :pageable
   end
   
   ##############################################################################
@@ -97,12 +85,8 @@ Onemdl::Application.routes.draw do
   
   ##############################################################################
   # :relationships and nested resources
-  resources :relationships do
-    get 'page/:page', :action => :index, :on => :collection
-    
-    resources :organisations do
-      get 'page/:page', :action => :index, :on => :collection
-    end
+  resources :relationships, concerns: :pageable do
+    resources :organisations, concerns: :pageable
   end
   
   ##############################################################################
@@ -110,25 +94,15 @@ Onemdl::Application.routes.draw do
   resources :organisations, concerns: :systemable do
     get 'page/:page', :action => :index, :on => :collection
     
-    resources :license_types do
-      get 'page/:page', :action => :index, :on => :collection
-    end
+    resources :license_types, concerns: :pageable
     
-    resources :licenses do
-      get 'page/:page', :action => :index, :on => :collection
-    end
+    resources :licenses, concerns: :pageable
     
-    resources :operating_systems do
-      get 'page/:page', :action => :index, :on => :collection
-    end
+    resources :operating_systems, concerns: :pageable
     
-    resources :addresses do
-      get 'page/:page', :action => :index, :on => :collection
-    end
+    resources :addresses, concerns: :pageable
     
-    resources :people do
-      get 'page/:page', :action => :index, :on => :collection
-    end
+    resources :people, concerns: :pageable
     
     # resources :note do
   #     get 'page/:page', :action => :index, :on => :collection
@@ -137,71 +111,49 @@ Onemdl::Application.routes.draw do
   
   ##############################################################################
   # :license_types and nested resources
-  resources :license_types, shallow: true do
-    get 'page/:page', :action => :index, :on => :collection
-    
-    resources :licenses do
-      get 'page/:page', :action => :index, :on => :collection
-    end
+  resources :license_types, shallow: true, concerns: :pageable do
+    resources :licenses, concerns: :pageable
   end
   
   ##############################################################################
   # :licenses and nested resources
-  resources :licenses, concerns: :systemable do
-    get 'page/:page', :action => :index, :on => :collection
-  end
+  resources :licenses, concerns: :systemable, concerns: :pageable
   
   ##############################################################################
   # operating_system_families and nested resources
   resources :operating_system_families, concerns: :systemable do
     get 'page/:page', :action => :index, :on => :collection
     
-    resources :operating_systems do
-      get 'page/:page', :action => :index, :on => :collection
-    end
+    resources :operating_systems, concerns: :pageable
   end
   
-  resources :operating_systems do
+  resources :operating_systems, concerns: :systemable do
     get 'page/:page', :action => :index, :on => :collection
   end
   
   ##############################################################################
   # :systems and nested resources
-  resources :systems do
-    get 'page/:page', :action => :index, :on => :collection
-    
-    resources :network_interfaces do
-      get 'page/:page', :action => :index, :on => :collection
-    end
+  resources :systems, concerns: :pageable do
+    resources :network_interfaces, concerns: :pageable
   end
   
   ##############################################################################
   # :persons and nested resources
-  resources :people do
-    get 'page/:page', :action => :index, :on => :collection
-  end
+  resources :people, concerns: :pageable
   
   ##############################################################################
   # :addresses and nested resources
-  resources :addresses do
-    get 'page/:page', :action => :index, :on => :collection
-  end
+  resources :addresses, concerns: :pageable
   
   ##############################################################################
   # :network_uses and nested resources
-  resources :network_uses do
-    get 'page/:page', :action => :index, :on => :collection
-
-    resources :network_interfaces do
-      get 'page/:page', :action => :index, :on => :collection
-    end
+  resources :network_uses, concerns: :pageable do
+    resources :network_interfaces, concerns: :pageable
   end
   
   ##############################################################################
   # :network_interfaces
-  resources :network_interfaces do
-    get 'page/:page', :action => :index, :on => :collection
-  end
+  resources :network_interfaces, concerns: :pageable
   
   resources :onemdl_settings, :only => [:index, :edit]
   
