@@ -7,6 +7,14 @@
   .well
     %b= f.attribute :name
     = f.attribute :ipaddress
+    = f.attribute :vlan
+    = f.attribute :active?
+    = f.attribute :dhcp?
+    = f.attribute :ipaddress
+    = f.attribute :netmask
+    = f.attribute :prefix
+    = f.attribute :broadcast
+    = f.attribute :gateway
     = f.association :network_use
     = f.association :system
     = simple_format f.attribute :description

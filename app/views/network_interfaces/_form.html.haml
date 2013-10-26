@@ -2,7 +2,14 @@
   = f.error_notification
   
   = f.input :name
+  = f.input :vlan
+  = f.input :active?
+  = f.input :dhcp?
   = f.input :ipaddress, placeholder: "0.0.0.0"
+  = f.input :netmask, placeholder: "0.0.0.0"
+  = f.input :prefix, placeholder: "0.0.0.0"
+  = f.input :broadcast, placeholder: "0.0.0.0"
+  = f.input :gateway, placeholder: "0.0.0.0"
   = f.association :network_use, include_blank: false, prompt: "Choose a network use", collection: NetworkUse.order('name ASC')
   = f.association :system, include_blank: false, prompt: "Choose a system", collection: System.order('name ASC')
   = f.input       :description,     hint: "#{t('hint_description')} network interface"

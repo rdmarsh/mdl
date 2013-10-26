@@ -33,7 +33,12 @@ class NetworkInterface < ActiveRecord::Base
   
   # validations
   validates :name, presence: true
+  validates :vlan, presence: true
   validates :ipaddress, presence: true, :ip => { :format => :v4 }
+  validates :netmask, presence: true, :ip => { :format => :v4 }
+  validates :prefix, presence: true, :ip => { :format => :v4 }
+  validates :broadcast, presence: true, :ip => { :format => :v4 }
+  validates :gateway, presence: true, :ip => { :format => :v4 }
   validates :network_use, presence: true
   validates :system, presence: true
   
