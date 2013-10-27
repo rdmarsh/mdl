@@ -1,4 +1,6 @@
-# OneMDL is a ruby on rails based application designed to collate information about IT assets. It is designed to be most useful to System Administrators and Service Desk personal.
+# OneMDL is a ruby on rails based application designed to collate information
+# about IT assets. It is designed to be most useful to System Administrators
+# and Service Desk personal.
 # 
 # Copyright (C) 2013 David Marsh
 # 
