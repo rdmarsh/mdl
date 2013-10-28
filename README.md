@@ -1,7 +1,6 @@
 ## onemdl
 
-
-[![Build Status](https://travis-ci.org/rdmarsh/onemdl.png?branch=master)](https://travis-ci.org/rdmarsh/onemdl)
+* [Travis CI ![Build Status](https://travis-ci.org/rdmarsh/onemdl.png?branch=master)](https://travis-ci.org/rdmarsh/onemdl)
 
 OneMDL is a ruby on rails based application designed to collate information about IT assets. It is designed to be most useful to System Administrators and Service Desk personal.
 
