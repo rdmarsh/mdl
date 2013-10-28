@@ -1,8 +1,0 @@
-en-AU:
-  date:
-    datepicker:
-      default: "dd/mm/yyyy"
-      long: "dd MM, yyyy"
-    formats:
-      default: ! '%d/%m/%Y'
-      long: ! '%d %B, %Y'
