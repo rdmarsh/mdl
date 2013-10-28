@@ -265,7 +265,7 @@ PLATFORMS
 DEPENDENCIES
   activevalidators (~> 2.0.2)
   bcrypt-ruby (~> 3.0.0)
-  bootstrap-datepicker-rails (~> 1.1.1.7)
+  bootstrap-datepicker-rails
   bootstrap-sass (~> 2.3.2)
   capybara (= 2.1.0)
   childprocess (= 0.3.9)
