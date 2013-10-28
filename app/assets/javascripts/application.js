@@ -17,4 +17,4 @@
 
 // Loads all Bootstrap javascripts
 //= require bootstrap
-//= require bootstrap-datepicker
+//= require bootstrap-datetimepicker
