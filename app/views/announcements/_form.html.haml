@@ -1,9 +1,9 @@
-= simple_form_for @announcement, :html => { :class => 'form-horizontal' } do |f|
+= simple_form_for @announcement do |f|
   = f.error_notification
 
   = f.input :message
-  = f.input :starts_at, as: :datetime_picker
-  = f.input :ends_at
+  = f.input :starts_at
+  = f.input :ends_at, as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%d-%m-%Y') }
 
   = f.error :base
   = f.button :submit, :class => 'btn btn-primary'
