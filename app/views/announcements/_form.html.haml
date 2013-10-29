@@ -2,8 +2,8 @@
   = f.error_notification
 
   = f.input :message
-  = f.input :starts_at, :as => :string, :input_html => { data: {behaviour: "datepicker"}}
-  = f.input :ends_at, as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%d-%m-%Y') }
+  = f.input :starts_at, as: :string, input_html: { id: "datetimepicker1", class: "input-append date", value: Time.now.strftime('%Y-%m-%d %H:%M') }
+  = f.input :ends_at, as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%Y-%m-%d %H:%M') }
 
   = f.error :base
   = f.button :submit, :class => 'btn btn-primary'
