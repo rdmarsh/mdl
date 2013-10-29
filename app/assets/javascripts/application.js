@@ -12,17 +12,8 @@
 
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.datepicker
 //= require turbolinks
 //= require_tree .
-
-// Loads all Bootstrap javascripts
 //= require bootstrap
 //= require bootstrap-datetimepicker
-<script type="text/javascript">
-  $(function() {
-    $('#datetimepicker1').datetimepicker({
-      language: 'pt-BR'
-    });
-  });
-</script>
-

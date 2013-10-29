@@ -74,9 +74,6 @@ gem 'paper_trail', '>= 3.0.0.beta1'
 # Perform geographic queries using objects
 gem 'geocoder'
 
-
-
-
 group :development, :test do
   gem 'nokogiri'
   gem 'turn'
