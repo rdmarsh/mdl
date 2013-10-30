@@ -53,7 +53,8 @@ gem 'kaminari'
 # gem 'bootstrap-kaminari-views'
 gem 'activevalidators', '~> 2.0.2'
 gem 'bcrypt-ruby', '~> 3.0.0'
-# gem 'jquery-ui-rails'
+# http://railscasts.com/episodes/213-calendars-revised?view=asciicast
+gem 'jquery-ui-rails'
 
 # https://github.com/lubieniebieski/bootstrap-datetimepicker-rails
 # gem "bootstrap-datetimepicker-rails", "~> 0.0.11"
