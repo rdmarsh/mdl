@@ -56,7 +56,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 # gem 'jquery-ui-rails'
 
 # https://github.com/lubieniebieski/bootstrap-datetimepicker-rails
-gem "bootstrap-datetimepicker-rails", "~> 0.0.11"
+# gem "bootstrap-datetimepicker-rails", "~> 0.0.11"
 
 
 # Apparently, It was failing because of the friendlyId gem. If you use friendlyId, you may need to specify the rails4-branch.
