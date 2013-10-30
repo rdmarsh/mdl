@@ -2,7 +2,8 @@
   = f.error_notification
 
   = f.input :message
-  = f.input :starts_at, as: :string, input_html: { id: "datetimepicker1", class: "input-append date", value: Time.now.strftime('%Y-%m-%d %H:%M') }
+  .input-append.date{:id => "datetimepicker1"}= f.input :ends_at, as: :string, :class => 'datetimepicker1'  
+  = f.input :starts_at, as: :string, :class => 'datetimepicker1'  
   = f.input :ends_at, as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%Y-%m-%d %H:%M') }
 
   = f.error :base
