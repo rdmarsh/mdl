@@ -113,7 +113,9 @@ Onemdl::Application.routes.draw do
   
   ##############################################################################
   # :licenses and nested resources
-  resources :licenses, concerns: :systemable, concerns: :pageable
+  resources :licenses, shallow: true, concerns: :systemable do
+    get 'page/:page', :action => :index, :on => :collection
+  end
   
   ##############################################################################
   # operating_system_families and nested resources
