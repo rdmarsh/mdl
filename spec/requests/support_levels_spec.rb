@@ -1,9 +1,10 @@
 require 'spec_helper'
 
-describe "Supportlevels" do
+describe "SupportLevels" do
+  
   subject { page }
   
-  describe "Supportlevels pages" do
+  describe "SupportLevels pages" do
     before { visit supportlevels_path }
     
     it { should have_content('Support levels') }
@@ -21,21 +22,6 @@ describe "Supportlevels" do
           ['Contact', href: contact_path],
           ['FAQ', href: faq_path],
         ].each { |a| page.should have_link(a[0], a[1]) }
-      end
-      
-      describe "edit" do
-        let(:supportlevels) { FactoryGirl.create(:supportlevels) }
-        before { visit edit_supportlevels_path(supportlevel) }
-
-        describe "page" do
-          it { should have_content("Edit Support level") }
-          it { should have_title("Edit Support level") }
-        end
-
-        describe "with invalid information" do
-          before { click_button "Save changes" }
-
-          it { should have_content('error') }
-
     end
+  end
 end

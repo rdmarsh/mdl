@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe SupportlevelsController do
+describe SupportLevelsController do
 
   describe "GET 'index'" do
     it "returns http success" do

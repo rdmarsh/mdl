@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe DevicesController do
+describe SystemsController do
 
   describe "GET 'index'" do
     it "returns http success" do
