@@ -1,3 +1,5 @@
+# todo: what is this for?
+
 class VersionsController < ApplicationController
   def index
     @versions = Version.page(params[:page])

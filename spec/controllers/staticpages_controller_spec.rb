@@ -31,4 +31,12 @@ describe StaticpagesController do
     end
   end
 
+  describe "GET 'faq'" do
+    it "returns http success" do
+      get 'contact'
+      response.should be_success
+    end
+  end
+
+
 end
