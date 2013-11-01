@@ -9,7 +9,7 @@ describe "Static pages" do
     
     it { should have_content('Home') }
     it { should have_title(full_title('')) }
-    it { should have_title('| Home') }
+    it { should have_title(full_title('onemdl')) }
 
     it "should have following links from this array" do
         [
@@ -81,7 +81,7 @@ describe "Static pages" do
   end
   
   describe "FAQ page" do
-    before { visit contact_path }
+    before { visit faq_path }
 
     it { should have_content('FAQ') }
     it { should have_title(full_title('')) }

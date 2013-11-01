@@ -1,4 +1,3 @@
-
 require 'spec_helper'
 
 describe StaticpagesController do
@@ -33,10 +32,8 @@ describe StaticpagesController do
 
   describe "GET 'faq'" do
     it "returns http success" do
-      get 'contact'
+      get 'faq'
       response.should be_success
     end
   end
-
-
 end
