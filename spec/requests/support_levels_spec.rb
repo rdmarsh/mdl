@@ -5,13 +5,13 @@ describe "SupportLevels" do
   subject { page }
   
   describe "SupportLevels pages" do
-    before { visit supportlevels_path }
+    before { visit support_levels_path }
     
     it { should have_content('Support levels') }
     it { should have_title(full_title('')) }
     it { should have_title(full_title('Support levels')) }
     
-    it { should have_link(edit_supportlevel_path) }
+    it { should have_link(edit_support_level_path) }
 
     it "should have following links from this array" do
         [

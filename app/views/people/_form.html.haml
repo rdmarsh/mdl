@@ -12,6 +12,6 @@
       #{t('delete').humanize}
       %span{:class => 'caret'}
     %ul.dropdown-menu
-      %li= link_to "#{t('delete')} '#{f.object.name}'?", @person, :confirm => 'Are you sure?', :method => :delete
+      %li= link_to "#{t('delete')} '#{f.object.name}'?", @person, data: { confirm: 'Are you sure?' }, :method => :delete
   #{t('or').downcase}
   = link_to "#{t('cancel')}".humanize, :back
