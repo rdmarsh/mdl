@@ -11,5 +11,13 @@ require 'spec_helper'
 #   end
 # end
 describe ApplicationHelper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "test page title test" do
+    it "has an empty page title" do
+      helper.full_title('').should == "onemdl"
+    end
+    
+    it "hase a page title" do
+      helper.full_title('pagetitle') == "onemdl | papgetitle"
+    end
+  end
 end
