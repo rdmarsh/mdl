@@ -21,8 +21,8 @@ describe "Organisations" do
           ['FAQ', href: faq_path],
             
           #item links - restful
-          ['Show', href: edit_organisation_path],
-          ['Edit', href: edit_organisation_path],
+          ['Index', href: organisations_path],
+          ['New',   href: new_organisation_path],
           
         ].each { |a| page.should have_link(a[0], a[1]) }
     end

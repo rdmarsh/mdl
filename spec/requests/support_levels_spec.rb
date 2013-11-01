@@ -11,8 +11,6 @@ describe "SupportLevels" do
     it { should have_title(full_title('')) }
     it { should have_title(full_title('Support levels')) }
     
-    it { should have_link(new_support_level_path) }
-
     it "should have following links from this array" do
         [
           #nav stuff
@@ -21,6 +19,11 @@ describe "SupportLevels" do
           ['About', href: about_path],
           ['Contact', href: contact_path],
           ['FAQ', href: faq_path],
+            
+          #item links - restful
+          ['Index', href: support_levels_path],
+          ['New',   href: new_support_level_path],
+          
         ].each { |a| page.should have_link(a[0], a[1]) }
     end
   end
