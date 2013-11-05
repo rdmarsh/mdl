@@ -27,6 +27,9 @@
   %li{ :class => ("active" if controller_name == "addresses") }
     = link_to t('address').pluralize.humanize, addresses_path
     
+  %li{ :class => ("active" if controller_name == "consoles") }
+    = link_to t('console').pluralize.humanize, consoles_path
+    
   %li{ :class => ("active" if controller_name == "device_models") }
     = link_to t('device_model').pluralize.humanize, device_models_path
     
