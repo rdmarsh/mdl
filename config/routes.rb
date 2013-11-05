@@ -1,5 +1,9 @@
 Onemdl::Application.routes.draw do
   
+  get "consoles/index"
+  get "consoles/show"
+  get "consoles/edit"
+  get "consoles/new"
   #put our concerns first
   concern :systemable do
     resources :systems, concerns: :pageable

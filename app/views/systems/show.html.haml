@@ -22,6 +22,13 @@
           %li= link_to "#{network_interface.ipaddress} (#{network_interface.name})", network_interface_path(network_interface.id)
     - if @system.network_interfaces.empty?
       %p= empty_msg('network_interface', 'system')
+  .well
+    = f.association :consoles do
+      %ul
+        - @system.consoles.each do |console|
+          %li= link_to console.name, network_interface_path(network_interface.id)
+    - if @system.consoles.empty?
+      %p= empty_msg('console', 'system')
   .well.muted
     = f.attribute :created_at, :format => :iso8601
     = f.attribute :updated_at, :format => :iso8601
