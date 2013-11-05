@@ -1,9 +1,5 @@
 Onemdl::Application.routes.draw do
   
-  get "consoles/index"
-  get "consoles/show"
-  get "consoles/edit"
-  get "consoles/new"
   #put our concerns first
   concern :systemable do
     resources :systems, concerns: :pageable
@@ -156,6 +152,10 @@ Onemdl::Application.routes.draw do
   ##############################################################################
   # :network_interfaces
   resources :network_interfaces, concerns: :pageable
+
+  ##############################################################################
+  # :consoles
+  resources :consoles, concerns: :pageable
   
   resources :onemdl_settings, :only => [:index, :edit]
   
