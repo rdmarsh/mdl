@@ -1,2 +1,5 @@
-%h1 Consoles#edit
-%p Find me in app/views/consoles/edit.html.haml
+- content_for(:show_button_path, console_path(@console))
+
+= render 'head'
+
+= render 'form'

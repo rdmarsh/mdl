@@ -1,2 +1,17 @@
-%h1 Consoles#index
-%p Find me in app/views/consoles/index.html.haml
+/ Consoles
+
+=render 'head'
+
+- if @consoles.empty?
+  %p= empty_msg('console', '')
+- else
+  %table.table.table-hover.table-condensed
+    %tbody
+      %thead
+        %th
+          = sortable "name"
+          %span{:class => 'caret'}
+      - @consoles.each do |r|
+        %tr
+          %td= link_to r.name, r
+  = paginate @consoles

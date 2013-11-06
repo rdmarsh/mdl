@@ -1,2 +1,12 @@
-%h1 Consoles#show
-%p Find me in app/views/consoles/show.html.haml
+/ Console
+- content_for(:edit_button_path, edit_console_path(@console))
+
+= render 'head'
+
+= show_for @console do |f|
+  .well
+    %b= f.association :name
+    = simple_format f.attribute :description
+  .well.muted
+    = f.attribute :created_at, :format => :iso8601
+    = f.attribute :updated_at, :format => :iso8601
