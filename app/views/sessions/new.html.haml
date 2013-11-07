@@ -3,8 +3,11 @@
 = render 'layouts/heading'
 
 = simple_form_for sessions_path do |f|
+  = f.error_notification
+  
   = f.input :email
   = f.input :password
+  
   = f.button :submit, :class => 'btn btn-primary'
 
 /   
