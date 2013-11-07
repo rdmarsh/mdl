@@ -1,0 +1,19 @@
+- content_for(:title, t('login').singularize.humanize)
+
+= render 'layouts/heading'
+
+= simple_form_for sessions_path do |f|
+  = f.input :email
+  = f.input :password
+  = f.button :submit, :class => 'btn btn-primary'
+
+/   
+/ = form_tag sessions_path do
+/   .field
+/     = label_tag :email
+/     = text_field_tag :email, params[:email]
+/   .field
+/     = label_tag :password
+/     = password_field_tag :password
+/   .actions.btn.btn-primary
+/     = submit_tag t('login').singularize.humanize

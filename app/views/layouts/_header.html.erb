@@ -9,12 +9,12 @@
       <a class="brand" href="<%= root_path %>"><%= COMPANY_NAME %></a>
       <div class="btn-group pull-right">
         <% if current_user %>
-          <a class="btn btn-danger btn-small" href="<%= logout_path %>"><i class="icon-user icon-white"></i> Logout</a>
+          <a class="btn btn-danger btn-small" href="<%= logout_path %>"><i class="icon-user icon-white"></i> <%= t('logout').singularize.humanize %></a>
           <a class="btn btn-primary btn-small dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="<%= signup_path %>"><i class="icon-plus"></i> Edit profile of '<%= current_user.email %>'</a></li>
         <% else %>
-          <a class="btn btn-primary btn-small" href="<%= login_path %>"><i class="icon-user icon-white"></i> Login</a>
+          <a class="btn btn-primary btn-small" href="<%= login_path %>"><i class="icon-user icon-white"></i> <%= t('login').singularize.humanize %></a>
           <a class="btn btn-primary btn-small dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="<%= signup_path %>"><i class="icon-plus"></i> Create an account</a></li>

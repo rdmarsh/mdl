@@ -105,6 +105,8 @@ en:
   license: license
   license_type: license type
   list: list
+  login: login
+  logout: logout
   
   message: message
   
