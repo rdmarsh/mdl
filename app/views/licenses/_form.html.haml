@@ -1,4 +1,4 @@
-= simple_form_for @license, :html => { :class => 'form-horizontal' } do |f|
+= simple_form_for @license do |f|
   = f.error_notification
   
   = f.association   :organisation, hint: "Which customer is this license for", label: t('customer').singularize.humanize, prompt: "#{t('choose_a').humanize} #{t('customer').singularize.humanize}", include_blank: false, collection: Organisation.order('name ASC'), label_method: :vendor_only
