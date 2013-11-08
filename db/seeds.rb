@@ -64,7 +64,9 @@ NetworkUse.create(name: "Unknown", description: "The network use is currently un
 NetworkUse.create(name: "None", description: "There is no network use applicable.")
 NetworkUse.create(name: "Mixed", description: "There is more than one network use applicable.")
 NetworkUse.create(name: "Production", description: "The network is used for production traffic.")
+NetworkUse.create(name: "Monitoring", description: "The network is used for monitoring traffic.")
 NetworkUse.create(name: "Management", description: "The network is used for management traffic.")
+NetworkUse.create(name: "Out of band", description: "The network is used for Out of band traffic.")
 NetworkUse.create(name: "Backup", description: "The network is used for backup traffic.")
 
 Manufacturer.create(name: "Unknown", website: "n/a", description: "The environment is currently unknown.")
