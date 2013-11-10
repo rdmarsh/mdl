@@ -19,7 +19,7 @@
       - @license_types.each do |r|
         %tr
           %td= link_to r.name, r
-          %td= link_to r.organisation.name, organisation_path(r.organisation.slug)
+          %td= link_to r.organisation.name, organisation_path(r.organisation.id)
           %td= r.description
           %td= link_to r.licenses.count, license_type_licenses_path(r.slug)
   = paginate @license_types

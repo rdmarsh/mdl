@@ -41,7 +41,7 @@ class LicenseType < ActiveRecord::Base
   before_validation :strip_blanks
   
   # belongs to
-  ; :organisation
+  belongs_to :organisation
   
   
   
