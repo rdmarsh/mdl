@@ -56,6 +56,7 @@
       %p= empty_msg('operating_system', 'organisation')
       
   .well
+    = link_to #, #
     = f.association :systems do
       %ul
         - @organisation.systems.each do |system|
