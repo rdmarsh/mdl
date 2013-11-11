@@ -11,7 +11,11 @@
         %th
           = sortable "name"
           %span{:class => 'caret'}
+        %th
+          = sortable "type"
+          %span{:class => 'caret'}
       - @consoles.each do |r|
         %tr
           %td= link_to r.name, r
+          %td= r.type
   = paginate @consoles
