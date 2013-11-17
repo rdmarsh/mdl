@@ -6,7 +6,7 @@
 = show_for @console do |f|
   .well
     %b= f.association :name
-    = f.association :type
+    = f.association :console_type
     = simple_format f.attribute :description
   .well.muted
     = f.attribute :created_at, :format => :iso8601
