@@ -41,7 +41,7 @@ class Console < ActiveRecord::Base
   before_validation :strip_blanks
   
   # belongs to
-
+  belongs_to :systems
 
   
   

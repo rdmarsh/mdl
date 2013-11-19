@@ -50,6 +50,7 @@ class System < ActiveRecord::Base
   
   # has many
   has_many :network_interfaces, dependent: :restrict_with_error
+  has_many :consoles, dependent: :restrict_with_error
   
   # # has many through
   # has_many :network_uses, through: :network_interfaces

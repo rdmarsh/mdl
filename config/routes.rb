@@ -133,6 +133,7 @@ Onemdl::Application.routes.draw do
   # :systems and nested resources
   resources :systems, concerns: :pageable do
     resources :network_interfaces, concerns: :pageable
+    resources :consoles, concerns: :pageable
   end
   
   ##############################################################################
