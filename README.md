@@ -26,15 +26,13 @@ Onemdl is registered on ohloh.net at https://www.ohloh.net/p/onemdl
 * `bundle install'
 * `bundle exec rake db:migrate`
 
-Set your timezone in /config/application.rb
+* Set your timezone in /config/application.rb, eg:
 
+    config.time_zone = 'Australia/Sydney'
+    config.time_zone = 'Europe/London'
     config.time_zone = 'Central Time (US & Canada)'
 
-or
-
-...    config.time_zone = 'Central Time (US & Canada)'
-
-User avatars are from Gravatar.
+* User avatars are from Gravatar.
 
 ### Installing Ruby and Rails
 
