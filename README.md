@@ -22,6 +22,7 @@ Onemdl is registered on ohloh.net at https://www.ohloh.net/p/onemdl
 ## Installation
 
 * `git clone https://github.com/rdmarsh/onemdl.git`
+* `gem install bundler`
 * `bundle install'
 * `bundle exec rake db:migrate`
 
