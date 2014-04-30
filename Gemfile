@@ -18,9 +18,9 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '2.1.1'
 
-gem 'rails', '4.0.0'
+gem 'rails', '4.1.0'
 
 # better watching of mac filesystem
 gem 'rb-fsevent'
@@ -29,18 +29,18 @@ gem 'rb-fsevent'
 gem 'haml'
 gem 'haml-rails'
 
-gem 'bootstrap-sass', '~> 2.3.2'
-gem 'faker', '1.1.2'
+gem 'bootstrap-sass', '>= 2.3.2'
+gem 'faker', '>= 1.1.2'
 gem 'populator'
-gem 'sass-rails', '~> 4.0.0'
+gem 'sass-rails', '>= 4.0.0'
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails', '>= 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
-gem 'jbuilder', '~> 1.2'
-#gem 'taps', '~>0.3.24'
+gem 'jbuilder', '>= 1.2'
+#gem 'taps', '>= 0.3.24'
 gem 'simple_form'
-gem 'show_for', '~> 0.2.4'
+gem 'show_for', '>= 0.2.4'
 # railscast 230
 gem 'inherited_resources'
 gem 'has_scope'
@@ -51,8 +51,8 @@ gem 'country_select'
 gem 'public_activity'
 gem 'kaminari'
 # gem 'bootstrap-kaminari-views'
-gem 'activevalidators', '~> 2.0.2'
-gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'activevalidators', '>= 2.0.2'
+gem 'bcrypt-ruby', '>= 3.0.0'
 # http://railscasts.com/episodes/213-calendars-revised?view=asciicast
 gem 'jquery-ui-rails'
 
@@ -63,7 +63,7 @@ gem 'jquery-ui-rails'
 # Apparently, It was failing because of the friendlyId gem. If you use friendlyId, you may need to specify the rails4-branch.
 # edit: Make sure to get the actual branch from norman/friendly_id. According to the readme, it needs to be at least branch: 5.0-stable to work with rails4.
 # gem 'friendly_id', github: 'FriendlyId/friendly_id', branch: 'rails4'
-gem 'friendly_id', '5.0.0.rc2' # Note: You MUST use 5.0.0 or greater for Rails 4.0+
+gem 'friendly_id', '>= 5.0.0.rc2' # Note: You MUST use 5.0.0 or greater for Rails 4.0+
 
 # # add markdown support to description fields
 # gem 'redcarpet'
@@ -79,12 +79,13 @@ gem 'geocoder'
 gem 'rake'
 
 group :development, :test do
+  gem 'minitest', '~> 4'
   gem 'nokogiri'
   gem 'turn'
   gem 'guard-rspec', '2.5.0'
   gem 'ruby_gntp'
   gem 'launchy'
-  gem 'sqlite3', '1.3.7'
+  gem 'sqlite3', '>= 1.3.7'
   gem 'rspec-rails', '2.13.1'
   gem 'spork-rails', github: 'sporkrb/spork-rails'
   gem 'guard-spork', '1.5.0'
@@ -102,7 +103,8 @@ group :doc do
 end
 
 group :production do
-  gem 'pg', '0.15.1'
+  #doing this to just get this going gem 'pg', '>= 0.15.1'
+  gem 'sqlite3', '>= 1.3.7'
   gem 'rails_12factor', '0.0.2' #for heroku
   gem 'unicorn'
 end

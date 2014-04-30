@@ -22,8 +22,9 @@ Onemdl is registered on ohloh.net at https://www.ohloh.net/p/onemdl
 ## Installation
 
 * `git clone https://github.com/rdmarsh/onemdl.git`
+** If you've been granted read/write accesss: `git remote set-url origin git@github.com:rdmarsh/onemdl.git`
 * `gem install bundler`
-* `bundle install'
+* `bundle install`
 * `bundle exec rake db:migrate`
 
 * Set your timezone in /config/application.rb, eg:
