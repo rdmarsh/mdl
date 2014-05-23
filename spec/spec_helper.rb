@@ -56,6 +56,7 @@ require 'spork'
 Spork.prefork do
   
   require 'test/unit'
+  require 'minitest'
   require 'rubygems'
   
   # Loading more in this block will cause your tests to run faster. However,
@@ -65,6 +66,7 @@ Spork.prefork do
   
   ENV["RAILS_ENV"] ||= 'test'
   require File.expand_path("../../config/environment", __FILE__)
+  require 'minitest/autorun' 
   require 'rspec/rails'
   require 'rspec/autorun'
 
