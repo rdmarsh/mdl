@@ -20,7 +20,7 @@
 source 'https://rubygems.org'
 ruby '2.1.1'
 
-gem 'rails', '~> 4.1.0'
+gem 'rails', '4.1.0'
 
 # better watching of mac filesystem
 gem 'rb-fsevent'
@@ -30,8 +30,8 @@ gem 'haml'
 gem 'haml-rails'
 
 # bootstrap-sass
-gem 'sass-rails', '~> 3.2'
-gem 'bootstrap-sass', '~> 3.1.1'
+gem 'sass-rails', '>= 3.2'
+gem 'bootstrap-sass', '>= 3.1.1'
 
 
 gem 'faker', '>= 1.1.2'
