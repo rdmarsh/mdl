@@ -28,13 +28,13 @@
       %li
         .well
           .row
-            .span1
+            .col-md-1
               / put an icon next to their name
               - if r.owner.nil?
                 = image_tag "onering.png"
               - else
                 = link_to (image_tag avatar_url(r.owner)), r.owner
-            .span10
+            .col-md-10
               / who did it?
               - if r.owner.nil?
                 = t('anonymoususer').humanize

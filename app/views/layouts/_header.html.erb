@@ -1,43 +1,57 @@
-<header class="navbar navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="container">
-      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
-      <a class="brand" href="<%= root_path %>"><%= COMPANY_NAME %></a>
-      <div class="btn-group pull-right">
-        <% if current_user %>
-          <a class="btn btn-danger btn-small" href="<%= logout_path %>"><i class="icon-user icon-white"></i> <%= t('logout').singularize.humanize %></a>
-          <a class="btn btn-primary btn-small dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="<%= signup_path %>"><i class="icon-plus"></i> Edit profile of '<%= current_user.email %>'</a></li>
-        <% else %>
-          <a class="btn btn-primary btn-small" href="<%= login_path %>"><i class="icon-user icon-white"></i> <%= t('login').singularize.humanize %></a>
-          <a class="btn btn-primary btn-small dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="<%= signup_path %>"><i class="icon-plus"></i> Create an account</a></li>
-            <li><a href="<%= signup_path %>"><i class="icon-fire"></i> Reset password</a></li>
-          </ul>
-        <% end %>
-      </div>
-      <div class="nav-collapse collapse">
-        <ul class="nav navbar-nav">
+<nav class="navbar navbar-fixed-top">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="<%= root_path %>"><%= COMPANY_NAME %></a>
+    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+      <span class="glyphicon glyphicon-bar-"></span>
+      <span class="glyphicon glyphicon-bar"></span>
+      <span class="glyphicon glyphicon-bar"></span>
+    </a>
+  </div>
+  <?= right ?>
+  <div class="navbar-header navbar-right"> 
+    <p class="navbar-text">
+    <% if current_user %>
+      <a href="#" class="">Username</a>
+      <a class="btn btn-danger btn-small" href="<%= logout_path %>"><i class="icon-user icon-white"></i> <%= t('logout').singularize.humanize %></a>
+      <a class="btn btn-primary btn-small dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><a href="<%= signup_path %>"><i class="icon-plus"></i> Edit profile of '<%= current_user.email %>'</a></li>
+    <% else %>
+      <a class="btn btn-primary btn-small" href="<%= login_path %>"><i class="icon-user icon-white"></i> <%= t('login').singularize.humanize %></a>
+      <a class="btn btn-primary btn-small dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><a href="<%= signup_path %>"><i class="icon-plus"></i> Create an account</a></li>
+        <li><a href="<%= signup_path %>"><i class="icon-fire"></i> Reset password</a></li>
+      </ul>
+    <% end %>
+
+  	</p>
+  </div>
+  <?= collapsable ?>
+  <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
           <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to t('home').humanize, root_path %></li>
           <li class="<%= 'active' if current_page?(activities_path) %>"><%= link_to t('activity').humanize, activities_path %></li>
           <li class="<%= 'active' if current_page?(statistics_path) %>"><%= link_to t('statistics').humanize, statistics_path %></li>
-        </ul>
+    </ul>
+  </div>
+</nav>
+
+<?= old code ?>
+
+
+
+
         <ul class="nav pull-right">
           <li class="divider-vertical"></li>
           <li class="dropdown">
+            <li><%= link_to t('help').humanize, help_path %></li>
+            <li><%= link_to t('faq').upcase, faq_path %></li>          
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                 Help
                 <b class="caret"></b>
               </a>
             <ul class="dropdown-menu">
-              <li><%= link_to t('help').humanize, help_path %></li>
-              <li><%= link_to t('faq').upcase, faq_path %></li>
             </ul>
           </li>
         </ul>
@@ -45,6 +59,6 @@
           <input type="text" class="search-query" placeholder="Search">
         </form>
       </div><!--/.nav-collapse -->
-    </div>
+
   </div>
 </header>
