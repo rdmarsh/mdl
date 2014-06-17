@@ -27,7 +27,7 @@
     %ul.unstyled
       %li
         .well
-          .row-fluid
+          .row
             .span1
               / put an icon next to their name
               - if r.owner.nil?
@@ -47,7 +47,7 @@
               / where did they do it?
               / in future, this will link to history page:
               = link_to r.trackable_type.tableize.pluralize.humanize, r.trackable_type.tableize
-            .row-fluid
+            .row
               .muted.pull-right
                 / when did they do it?
                 = time_ago_in_words r.created_at

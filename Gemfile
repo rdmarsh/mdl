@@ -30,7 +30,8 @@ gem 'haml'
 gem 'haml-rails'
 
 # bootstrap-sass
-gem 'sass-rails', '>= 3.2'
+#gem 'sass-rails', '>= 3.2'
+gem "sass-rails", "4.0.2"
 gem 'bootstrap-sass', '>= 3.1.1'
 
 
@@ -80,6 +81,8 @@ gem 'paper_trail', '>= 3.0.0.beta1'
 gem 'geocoder'
 
 gem 'rake'
+
+gem 'sprockets', '~> 2.11'
 
 group :development, :test do
   gem 'minitest', '~> 5.3.3'
