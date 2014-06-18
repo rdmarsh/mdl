@@ -1,13 +1,15 @@
-%header.navbar.navbar-fixed-top
-  .navbar-inner
-    .container
-      %a.btn.btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+.navbar.navbar-default{ :role => "navigation" }
+  .container-fluid
+    .navbar-header
+      %button.navbar-toggle{ :type => "button", :data-toggle => "collapse", :data-target => "#bs-example-navbar-collapse-1"}
+        %span.sr-only
+          Toggle navigation
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %a.brand 
-        %= root_path
-        %= Rails.application.class.parent_name.downcase
+      %a.navbar-brand 
+        = root_path
+        = Rails.application.class.parent_name.downcase
       .btn-group.pull-right
         %a.btn.btn-primary.btn-small"><i class="icon-user icon-white"></i> Login</a>
         %a.btn.btn-primary.btn-small.dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
@@ -21,10 +23,9 @@
         %ul.nav.pull-right
           %li.divider-vertical
           %li.dropdown
-            %a.dropdown-toggle" data-toggle="dropdown" href="#">
-                Help
-                <b class="caret"></b>
-              </a>
+            %a.dropdown-toggle{ :data-toggle => "dropdown" }
+              Help
+              <b class="caret"></b>
             %ul.dropdown-menu
               %li ><%= link_to t('help').humanize, help_path %></li>
               %li ><%= link_to t('faq').upcase, faq_path %></li>

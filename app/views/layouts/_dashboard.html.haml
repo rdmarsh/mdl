@@ -1,0 +1,22 @@
+.container
+  .row
+    .col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
+      .row
+        .content
+          = render 'layouts/flash_messages'
+            = yield
+
+
+
+
+-#    %= Announcement.current(cookies.signed[:hidden_announcement_ids]).each do |announcement| %>
+-#      .row
+-#        .alert.text-center
+-#          <%= div_for announcement do %>
+-#            <%= announcement.message %>        
+-#            <%= link_to "x", hide_announcement_path(announcement), class: "close", remote: true %>
+-#          <% end %>
+-#        </div>
+-#      </div>
+-#    <% end %> 
+            
