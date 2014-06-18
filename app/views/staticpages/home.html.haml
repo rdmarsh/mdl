@@ -1,8 +1,11 @@
 - content_for(:title, Rails.application.class.parent_name.downcase)
 
-.hero-unit
+.jumbotron
   %h1
     = yield(:title)
-  %p OneMDL is a ruby on rails based application designed to collate information about IT assets. It is designed to be most useful to System Administrators and Service Desk personal.
+  %p OneMDL is a ruby on rails based application designed to collate information
+  about IT assets. It is designed to be most useful to System Administrators and
+  Service Desk personal.
   
-  = link_to "Learn More", about_path, class: "btn btn-info btn-large"
+  = link_to "Learn More", about_path, class: "btn btn-primary btn-lg", role: "button"
+  
