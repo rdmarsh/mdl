@@ -1,27 +1,31 @@
-%footer
-  =link_to "powered by #{Rails.application.class.parent_name.downcase}", "http://onemdl.com", :class => "muted"
-  %ul
-    %li
-      = link_to help_path do
-        %i.icon-question-sign
-        = t('help').humanize
-    %li
-      = link_to faq_path do
-        %i.icon-question-sign
-        = t('faq').upcase
-    %li
-      = link_to "https://github.com/rdmarsh/onemdl/issues" do
-        %i.icon-bookmark
-        = t('support').humanize
-    %li
-      = link_to contact_path do
-        %i.icon-envelope
-        = t('contact').humanize
-    %li
-      = link_to about_path do
-        %i.icon-info-sign
-        = t('about').humanize
-    %li
-      = link_to "#" do
-        %i.icon-bullhorn
-        = t('news').humanize
+.footer
+  .container
+    =link_to "powered by #{Rails.application.class.parent_name.downcase}", "http://onemdl.com", :class => "muted"
+    %ul.nav.nav-pills
+      %li
+        = link_to help_path do
+          %i.icon-question-sign
+          = t('help').humanize
+      %li
+        = link_to faq_path do
+          %i.icon-question-sign
+          = t('faq').upcase
+      %li
+        = link_to "https://github.com/rdmarsh/onemdl/issues" do
+          %i.icon-bookmark
+          = t('support').humanize
+      %li
+        = link_to contact_path do
+          %i.icon-envelope
+          = t('contact').humanize
+      %li
+        = link_to about_path do
+          %i.icon-info-sign
+          = t('about').humanize
+      %li
+        = link_to "#" do
+          %i.icon-bullhorn
+          = t('news').humanize
+  .container
+    %p.muted.render.pull-right
+      rendered in #{sprintf('%.3f',(Time.now.usec-@start_time).abs/1000000.0)}s

@@ -1,62 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title><%= full_title(yield(:title)) %></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link href="css/sass-bootstrap.css" rel="stylesheet">
-    
-    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-    
-    <%= render 'layouts/shim' %>
-    
-    <!-- rss feeds -->
-    <%= auto_discovery_link_tag :atom, "/feed" %>
-    <%= auto_discovery_link_tag :rss, "/feed.rss" %>
-    <%= csrf_meta_tags %>
-    <%= favicon_link_tag %>
-  </head>
-  <body>
-    <!-- render header including topbar -->
-    <%= render 'layouts/header' %>
-    
-    <!-- as per railscasts 103 -->
-    <% Announcement.current(cookies.signed[:hidden_announcement_ids]).each do |announcement| %>
-      <div class="row">
-        <div class="alert text-center">
-          <%= div_for announcement do %>
-            <%= announcement.message %>        
-            <%= link_to "x", hide_announcement_path(announcement), class: "close", remote: true %>
-          <% end %>
-        </div>
-      </div>
-    <% end %>
-    
+!!! 5
+%html{html_attrs}
+  %head
+    %title=full_title(yield(:title))
+    %meta{ :content => "width=device-width, initial-scale=1.0", :name => "viewport" }
+    %link{ :href => "css/sass-bootstrap.css", :media => "screen", :rel => "stylesheet" }
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = render 'layouts/shim'
+    = auto_discovery_link_tag(:atom, "/feed")
+    = auto_discovery_link_tag(:rss, "/feed.rss")
+    = csrf_meta_tags
+    = favicon_link_tag
+  %body
+    = render 'layouts/header'
+    <!-- announchement as per railscasts 103 -->
     <!-- render main content -->
-    <div class='container'>
-      <div class='row'>
-        <div class='span3'>
-          <div class="well sidebar-nav">
-            <%= render 'layouts/side_nav_list' %>
-          </div>
-        </div>
-        <div class='span9'>
-          <div class='row'>
-            <div class='content'>
-              <%= render 'layouts/flash_messages' %>
-              <%= yield %>
-            </div>
-            <div class='row'>
-              <%= render 'layouts/footer' %>
-            </div>
-          </div>
-          <!-- render speed of page -->
-          <div class="row">
-            <%= render 'layouts/render_speed' %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
-</html>      
+    .container
+      .row
+        .col-sm-3.col-md-2.sidebar
+          = render 'layouts/side_nav_list'
+        .col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
+          .row
+            .content
+              = render 'layouts/flash_messages'
+              = yield
+    %footer
+      = render 'layouts/footer'
+-#    %= Announcement.current(cookies.signed[:hidden_announcement_ids]).each do |announcement| %>
+-#      .row
+-#        .alert.text-center
+-#          <%= div_for announcement do %>
+-#            <%= announcement.message %>        
+-#            <%= link_to "x", hide_announcement_path(announcement), class: "close", remote: true %>
+-#          <% end %>
+-#        </div>
+-#      </div>
+-#    <% end %> 
+            
