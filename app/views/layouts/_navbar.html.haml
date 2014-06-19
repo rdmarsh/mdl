@@ -21,6 +21,10 @@
         %li
           = link_to 'example link', '#'
       %ul.nav.navbar-nav.navbar-right
+        = form_tag '#', method: "get", class: 'navbar-form navbar-left', role: 'search' do
+          %div.form-group
+            = text_field_tag :find, '', placeholder: 'Search...', class: 'form-control'
+          = submit_tag 'Search', class: 'btn btn-default'
         %li.dropdown
           %a.dropdown-toggle{href: '#', 'data-toggle' => 'dropdown'}
             Dropdown
