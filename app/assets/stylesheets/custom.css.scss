@@ -1,6 +1,16 @@
 @import "bootstrap";
-//padding for fixed navbar
-body { padding-top: 70px; }
+
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+body {
+  //padding for fixed navbar
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
 
 $grayMediumLight: #eaeaea;
 $grayLight: #eeeeee;
@@ -8,30 +18,64 @@ $grayDarker: #aaaaaa;
 $gray: #cccccc;
 
 //always show the scroll bar
-html {overflow-y: scroll;}
+html {
+  overflow-y: scroll;
+}
 
-/* footer */
+/* make sidebar nav vertical */ 
+@media (min-width: 768px) {
+  .sidebar-nav .navbar .navbar-collapse {
+    padding: 0;
+    max-height: none;
+  }
+  .sidebar-nav .navbar ul {
+    float: none;
+  }
+  .sidebar-nav .navbar ul:not {
+    display: block;
+  }
+  .sidebar-nav .navbar li {
+    float: none;
+    display: block;
+  }
+  .sidebar-nav .navbar li a {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
 
-footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid $grayMediumLight;
-  color: $grayLight;
-  a {
-    color: $gray;
-    &:hover {
-      color: $grayDarker;
-    }
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by it's height */
+  margin: 0 auto -30px;
+}
+
+/* Set the fixed height of the footer here */
+#push,
+#footer {
+  height: 30px;
+}
+#footer {
+  border-top: 1px solid #eee;
+}
+
+/* Lastly, apply responsive CSS fixes as necessary */
+@media (max-width: 767px) {
+  #footer {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
-  // move footer items to the right
-  ul {
-    float: right;
-    list-style: none;
-    li {
-      float: left;
-      margin-left: 15px;
-    }
-  }
+
 }
 
 /* This is for the small render speed number in the bottom right corner */

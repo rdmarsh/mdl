@@ -1,15 +1,15 @@
-%nav.navbar.navbar-default{role: 'navigation'}
+%nav.navbar.navbar-fixed-top.navbar-inverse{role: 'navigation'}
   .container-fluid
     // Brand and toggle get grouped for better mobile display
     %div.navbar-header
-      %button.navbar-toggle{"data-target" => ".navbar-ex1-collapse", "data-toggle" => "collapse", type: "button"}
+      %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", type: "button"}
         %span.sr-only Toggle navigation
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
       = link_to Rails.application.class.parent_name.downcase, root_path, class: 'navbar-brand'
     // Collect the nav links, forms, and other content for toggling
-    %div.collapse.navbar-collapse.navbar-ex1-collapse
+    %div.collapse.navbar-collapse.navbar-collapse
       %ul.nav.navbar-nav
         %li
           = link_to t('home').humanize, root_path, class: ("active" if current_page?(root_path))
@@ -17,10 +17,16 @@
           = link_to t('activity').humanize, activities_path, class: ("active" if current_page?(activities_path))
         %li
           = link_to t('statistics').humanize, statistics_path, class: ("active" if current_page?(statistics_path))
-        %li.divider
-        %li
-          = link_to 'example link', '#'
       %ul.nav.navbar-nav.navbar-right
+        %li.dropdown.hidden-xs.hidden-sm
+          %a.dropdown-toggle{href: '#', 'data-toggle' => 'dropdown'}
+            Help
+            %b.caret
+          %ul.dropdown-menu
+            %li
+              = link_to t('help').humanize, help_path
+            %li
+              = link_to t('faq').upcase, faq_path
         = form_tag '#', method: "get", class: 'navbar-form navbar-left', role: 'search' do
           %div.form-group
             = text_field_tag :find, '', placeholder: 'Search...', class: 'form-control'

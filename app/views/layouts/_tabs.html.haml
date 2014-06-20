@@ -2,51 +2,53 @@
   .span12
     .tabbable
       %ul.nav.nav-tabs
-        = tab_link 'index', yield(:index_tab), 'icon-th-list', nil
+        = tab_link 'index', yield(:index_tab), 'glyphicon glyphicon-th-list', nil
         
-        = tab_link 'new', yield(:new_tab), 'icon-plus', nil
+        = tab_link 'new', yield(:new_tab), 'glyphicon glyphicon-plus', nil
         
         - if params.has_value?("show") or params.has_value?("edit")
-          = tab_link 'show', yield(:show_button_path), 'icon-info-sign', nil
-          = tab_link 'edit', yield(:edit_button_path), 'icon-pencil', nil
-          = tab_link 'notes', yield(:notes_button_path), 'icon-tag', nil
+          = tab_link 'show', yield(:show_button_path), 'glyphicon glyphicon-info-sign', nil
+          = tab_link 'edit', yield(:edit_button_path), 'glyphicon glyphicon-pencil', nil
+          = tab_link 'audit', yield(:audit_button_path), 'glyphicon glyphicon-flag', nil
+          = tab_link 'notes', yield(:notes_button_path), 'glyphicon glyphicon-paperclip', nil
         - else
-          = tab_link 'show', nil, 'icon-info-sign', "disabled"
-          = tab_link 'edit', nil, 'icon-pencil', "disabled"
-          = tab_link 'notes', nil, 'icon-tag', "disabled"
-        
-        = tab_link 'graphs', yield(:graph_button_path), 'icon-signal', nil
-        = tab_link 'history', yield(:history_button_path), 'icon-book', nil
+          = tab_link 'show', nil, 'glyphicon glyphicon-info-sign', "disabled"
+          = tab_link 'edit', nil, 'glyphicon glyphicon-pencil', "disabled"
+          = tab_link 'audit', nil, 'glyphicon glyphicon-flag', "disabled"
+          = tab_link 'notes', nil, 'glyphicon glyphicon-paperclip', "disabled"
+          
+        = tab_link 'history', yield(:history_button_path), 'glyphicon glyphicon-book', "hidden-xs hidden-sm"
+        = tab_link 'graphs', yield(:graph_button_path), 'glyphicon glyphicon-stats', "visible-lg"
         %li.dropdown.pull-right
           %a.dropdown-toggle{:'data-toggle' => "dropdown", :title => "Export", :href => "#" }
-            %i.icon-share-alt
+            .glyphicon.glyphicon-share-alt
             Export
             %b.caret
           %ul.dropdown-menu
             %li
               %a{ :title => "xml", :href => request.original_url + ".xml" }
-                %i.icon-file
+                .glyphicon.glyphicon-file
                 xml
             %li
               %a{ :title => "json", :href => request.original_url + ".json" }
-                %i.icon-file
+                .glyphicon.glyphicon-file
                 json
             %li
               %a{ :title => "csv", :href => request.original_url + ".csv" }
-                %i.icon-file
+                .glyphicon.glyphicon-file
                 csv
             %li
               %a{ :title => "pdf", :href => request.original_url + ".pdf" }
-                %i.icon-file
+                .glyphicon.glyphicon-file
                 pdf
             
             %li.divider
             
             %li
               %a{ :title => "Print", :href => "#" }
-                %i.icon-print
+                .glyphicon.glyphicon-print
                 print
             %li
               %a{ :title => "Email", :href => "#" }
-                %i.icon-print
+                .glyphicon.glyphicon-print
                 email

@@ -77,10 +77,10 @@ module ApplicationHelper
   
   def tab_link(link_text, link_path, link_icon, off_link_state)
     class_name = action_name == link_text ? 'active' : off_link_state
-        
+    
     content_tag(:li, :class => class_name, :border => 0) do
       link_to link_path do
-        content_tag(:i, "", class: link_icon).html_safe +
+        content_tag(:span, "", class: link_icon).html_safe +
         ' ' +
         t(link_text).humanize
       end

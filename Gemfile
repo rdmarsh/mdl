@@ -2,7 +2,7 @@
 # about IT assets. It is designed to be most useful to System Administrators
 # and Service Desk personal.
 # 
-# Copyright (C) 2013 David Marsh
+# Copyright (C) 2013-2014 David Marsh
 # 
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -26,20 +26,18 @@ gem 'rails', '4.1.0'
 gem 'rb-fsevent'
 
 # HTML Abstraction Markup Language
-gem 'haml'
-gem 'haml-rails'
+gem 'haml', '~> 4.0.5'
 
 # bootstrap-sass
 #gem 'sass-rails', '>= 3.2'
-gem "sass-rails", "4.0.2"
-gem 'bootstrap-sass', '>= 3.1.1'
-
+gem "sass-rails", "~> 4.0.3"
+gem 'bootstrap-sass', '~> 3.1.1.1'
 
 gem 'faker', '>= 1.1.2'
 gem 'populator'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '>= 4.0.0'
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 3.1.0'
 gem 'turbolinks'
 gem 'jbuilder', '>= 1.2'
 #gem 'taps', '>= 0.3.24'

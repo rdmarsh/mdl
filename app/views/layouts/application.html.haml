@@ -12,7 +12,12 @@
     = csrf_meta_tags
     = favicon_link_tag
   %body
-    = render 'layouts/navbar'
-    = render 'layouts/sidebar'
-    = render 'layouts/dashboard'
-    = render 'layouts/footer'
+    .row
+      = render 'layouts/navbar'
+    .row
+      .col-sm-3
+        = render 'layouts/sidebar'
+      .col-sm-9
+        = render 'layouts/dashboard'
+    .row
+      = render 'layouts/footer'
