@@ -93,7 +93,7 @@ OneMDL is a ruby on rails based application designed to collate information
 about IT assets. It is designed to be most useful to System Administrators
 and Service Desk personal.
 
-Copyright (C) 2013 David Marsh
+Copyright (C) 2013-2014 David Marsh
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

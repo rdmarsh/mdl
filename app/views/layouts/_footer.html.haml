@@ -1,32 +1,32 @@
 #footer.text-center.small.text-muted
   .row
-    .col-sm-2.text-left
+    .col-sm-2.text-right
       =link_to "powered by #{Rails.application.class.parent_name.downcase}", "http://onemdl.com", :class => "muted credit"
     .col-sm-8.text-center
-    %ul.list-inline
-      %li
-        = link_to help_path do
-          .glyphicon.glyphicon-question-sign
-          = t('help').humanize
-      %li
-        = link_to faq_path do
-          .glyphicon.glyphicon-question-sign
-          = t('faq').upcase
-      %li
-        = link_to "https://github.com/rdmarsh/onemdl/issues" do
-          .glyphicon.glyphicon-bookmark
-          = t('support').humanize
-      %li
-        = link_to contact_path do
-          .glyphicon.glyphicon-envelope
-          = t('contact').humanize
-      %li
-        = link_to about_path do
-          .glyphicon.glyphicon-info-sign
-          = t('about').humanize
-      %li
-        = link_to "#" do
-          .glyphicon.glyphicon-bullhorn
-          = t('news').humanize
-    .col-sm-2.text-right
+      %ul.list-inline
+        %li
+          = link_to help_path do
+            .glyphicon.glyphicon-question-sign
+            = t('help').humanize
+        %li
+          = link_to faq_path do
+            .glyphicon.glyphicon-question-sign
+            = t('faq').upcase
+        %li
+          = link_to "https://github.com/rdmarsh/onemdl/issues" do
+            .glyphicon.glyphicon-bookmark
+            = t('support').humanize
+        %li
+          = link_to contact_path do
+            .glyphicon.glyphicon-envelope
+            = t('contact').humanize
+        %li
+          = link_to about_path do
+            .glyphicon.glyphicon-info-sign
+            = t('about').humanize
+        %li
+          = link_to "#" do
+            .glyphicon.glyphicon-bullhorn
+            = t('news').humanize
+    .col-sm-2.text-left
       %p rendered in #{sprintf('%.3f',(Time.now.usec-@start_time).abs/1000000.0)}s
