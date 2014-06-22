@@ -1,5 +1,8 @@
 .page-header
-  %small.muted.pull-right ?
+  -#holder for help popover
+  %small.muted.pull-right
+    = link_to '#' do
+      .glyphicon.glyphicon-question-sign
   %h1
     = yield(:title)
   / %small.muted= yield(:description)
