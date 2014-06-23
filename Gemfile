@@ -29,8 +29,7 @@ gem 'rb-fsevent'
 gem 'haml', '~> 4.0.5'
 
 # bootstrap-sass
-#gem 'sass-rails', '>= 3.2'
-gem "sass-rails", "~> 4.0.3"
+gem 'sass-rails', '~> 4.0.3'
 gem 'bootstrap-sass', '~> 3.1.1.1'
 
 gem 'faker', '>= 1.1.2'

@@ -9,7 +9,7 @@
         %span.icon-bar
       = link_to Rails.application.class.parent_name.downcase, root_path, class: 'navbar-brand'
     // Collect the nav links, forms, and other content for toggling
-    %div.collapse.navbar-collapse.navbar-collapse
+    %div.collapse.navbar-collapse
       %ul.nav.navbar-nav
         %li
           = link_to t('home').humanize, root_path, class: ("active" if current_page?(root_path))
@@ -18,33 +18,41 @@
         %li
           = link_to t('statistics').humanize, statistics_path, class: ("active" if current_page?(statistics_path))
       %ul.nav.navbar-nav.navbar-right
-        = form_tag '#', method: "get", class: 'navbar-form navbar-left', role: 'search' do
-          %div.form-group
-            = text_field_tag :find, '', placeholder: 'Search...', class: 'form-control'
-          = submit_tag 'Search', class: 'btn btn-default'
         %li.dropdown.hidden-xs.hidden-sm
           %a.dropdown-toggle{href: '#', 'data-toggle' => 'dropdown'}
-            Help
-            %b.caret
+            = t('help').humanize
+            .caret
           %ul.dropdown-menu
             %li
               = link_to t('help').humanize, help_path
             %li
               = link_to t('faq').upcase, faq_path
-        %li.dropdown
+        %li
+          = form_tag '#', method: "get", class: 'navbar-form navbar-left', role: 'search' do
+            %div.form-group
+              = text_field_tag :find, '', placeholder: 'Search...', class: 'form-control'
+            = submit_tag 'Search', class: 'btn btn-default'
+        %li.btn-group
           - if current_user
-            %a.dropdown-toggle{href: '#', 'data-toggle' => 'dropdown'}
+            %button.btn.btn-default.navbar-btn{ :type => 'button' }
               = t('logout').singularize.humanize
-              %b.caret
-            %ul.dropdown-menu
+            %button.btn.dropdown-toggle.btn-default.navbar-btn{:type => 'button', 'data-toggle' => 'dropdown'}
+              .caret
+              .sr-only Toggle Dropdown
+            %ul.dropdown-menu{:role => 'menu'}
               %li
                 = link_to "Edit profile", signup_path
           - else
-            %a.dropdown-toggle{href: '#', 'data-toggle' => 'dropdown'}
+            %button.btn.btn-default.navbar-btn{ :type => 'button' }
               = t('login').singularize.humanize
-              %b.caret
-            %ul.dropdown-menu
+            %button.btn.dropdown-toggle.btn-default.navbar-btn{:type => 'button', 'data-toggle' => 'dropdown'}
+              .caret
+              .sr-only Toggle Dropdown
+            %ul.dropdown-menu{:role => 'menu'}
               %li
                 = link_to "Create an account", signup_path
               %li
                 = link_to "Reset password", signup_path
+        %li
+          &nbsp;
+          -# bump off the side border, todo fix

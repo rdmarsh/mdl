@@ -16,13 +16,17 @@
         %li{ :class => ("active" if controller_name == "organisations") }
           = link_to t('organisation').pluralize.humanize, organisations_path
         %ul.nav.navbar-nav
-          %li Customers
-          %li Datacenters
+          %li{ :class => ("active" if controller_name == "customers") }
+            = link_to t('customer').pluralize.humanize, manufacturers_path
+          %li{ :class => ("active" if controller_name == "datacenters") }
+            = link_to t('datacenter').pluralize.humanize, manufacturers_path
           %li{ :class => ("active" if controller_name == "manufacturers") }
             = link_to t('manufacturer').pluralize.humanize, manufacturers_path
             %span.badge 1,118
         %li{ :class => ("active" if controller_name == "systems") }
           = link_to t('system').pluralize.humanize, systems_path
+          
+        %li.divider
           
         / put the supporting views in this section
         %li Supporting Data

@@ -69,6 +69,7 @@ en:
   
   customer: customer
   
+  datacenter: datacenter
   description: description
   delete: delete
   device_type: device type
