@@ -18,6 +18,10 @@
         %li
           = link_to t('statistics').humanize, statistics_path, class: ("active" if current_page?(statistics_path))
       %ul.nav.navbar-nav.navbar-right
+        = form_tag '#', method: "get", class: 'navbar-form navbar-left', role: 'search' do
+          %div.form-group
+            = text_field_tag :find, '', placeholder: 'Search...', class: 'form-control'
+          = submit_tag 'Search', class: 'btn btn-default'
         %li.dropdown.hidden-xs.hidden-sm
           %a.dropdown-toggle{href: '#', 'data-toggle' => 'dropdown'}
             Help
@@ -27,11 +31,6 @@
               = link_to t('help').humanize, help_path
             %li
               = link_to t('faq').upcase, faq_path
-        %li
-          = form_tag '#', method: "get", class: 'navbar-form navbar-left', role: 'search' do
-            %div.form-group
-              = text_field_tag :find, '', placeholder: 'Search...', class: 'form-control'
-            = submit_tag 'Search', class: 'btn btn-default'
         %li.dropdown
           - if current_user
             %a.dropdown-toggle{href: '#', 'data-toggle' => 'dropdown'}
