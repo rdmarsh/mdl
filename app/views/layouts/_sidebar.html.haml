@@ -12,7 +12,7 @@
       %ul.nav.navbar-nav
       
         / put the most used views in the top list
-        %li Navigation
+        %li.h3 Navigation
         %li{ :class => ("active" if controller_name == "organisations") }
           = link_to t('organisation').pluralize.humanize, organisations_path
         %ul.nav.navbar-nav

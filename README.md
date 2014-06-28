@@ -45,10 +45,17 @@ config.time_zone = 'Central Time (US & Canada)'
 
 ### Database creation
 
+* `bundle exec rake db:migrate`
+
 ### Database initialization
 
+* `bundle exec rake db:seed`
 
 ### How to run the test suite
+
+### How to populate with test data
+
+* `bundle exec rake db:populate`
 
 ### Services (job queues, cache servers, search engines, etc.)
 

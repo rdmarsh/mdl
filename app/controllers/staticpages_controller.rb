@@ -32,4 +32,7 @@ class StaticpagesController < ApplicationController
   
   def faq
   end
+
+  def support
+  end
 end
