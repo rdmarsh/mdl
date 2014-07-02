@@ -1,0 +1,9 @@
+- content_for(:title, t('support').humanize)
+- content_for(:subtitle, 'Here\'s how to get some help')
+
+.page-header
+  %h1= yield(:title)
+  %p.lead= yield(:subtitle)
+
+%p
+  = link_to "https://github.com/rdmarsh/onemdl/issues"
