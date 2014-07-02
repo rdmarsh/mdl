@@ -1,44 +1,6 @@
-@import "bootstrap";
-
-html,
-body {
-  height: 100%;
-  /* The html and body elements cannot have any padding or margin. */
-}
-
-body {
-  //padding for fixed navbar
-  padding-top: 70px;
-}
+/* @import "bootstrap"; */
 
 
-
-//always show the scroll bar
-html {
-  overflow-y: scroll;
-}
-
-/* make sidebar nav vertical */ 
-@media (min-width: 768px) {
-  .sidebar-nav .navbar .navbar-collapse {
-    padding: 0;
-    max-height: none;
-  }
-  .sidebar-nav .navbar ul {
-    float: none;
-  }
-  .sidebar-nav .navbar ul:not {
-    display: block;
-  }
-  .sidebar-nav .navbar li {
-    float: none;
-    display: block;
-  }
-  .sidebar-nav .navbar li a {
-    padding-top: 12px;
-    padding-bottom: 12px;
-  }
-}
 
 /* This is for the small render speed number in the bottom right corner */
 p.render {
