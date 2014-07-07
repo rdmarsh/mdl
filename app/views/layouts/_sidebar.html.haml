@@ -7,15 +7,17 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %span.visible-xs.navbar-brand Sidebar menu
+      %span.visible-xs.navbar-brand
+        =t('sidebar_menu').downcase
     .navbar-collapse.collapse.sidebar-navbar-collapse
-      %ul.nav.navbar-nav
+      %ul.nav
       
         / put the most used views in the top list
-        %li.h3 Navigation
+        %li.h4 Navigation
+        
         %li{ :class => ("active" if controller_name == "organisations") }
           = link_to t('organisation').pluralize.humanize, organisations_path
-        %ul.nav.navbar-nav
+        %ul.nav
           %li{ :class => ("active" if controller_name == "customers") }
             = link_to t('customer').pluralize.humanize, manufacturers_path
           %li{ :class => ("active" if controller_name == "datacenters") }
@@ -26,10 +28,12 @@
         %li{ :class => ("active" if controller_name == "systems") }
           = link_to t('system').pluralize.humanize, systems_path
           
+        / dividing line
         %li.divider
-          
+        
         / put the supporting views in this section
-        %li Supporting Data
+        %li.h4 Supporting Data
+        
         %li{ :class => ("active" if controller_name == "addresses") }
           = link_to t('address').pluralize.humanize, addresses_path
         %li{ :class => ("active" if controller_name == "consoles") }
@@ -43,8 +47,12 @@
         %li{ :class => ("active" if controller_name == "operating_systems") }
           = link_to t('operating_system').pluralize.humanize, operating_systems_path
           
+        / dividing line
+        %li.divider
+        
         / put any meta data in this section
-        %li Meta Data
+        %li.h4 Meta Data
+        
         %li{ :class => ("active" if controller_name == "device_types") }
           = link_to t('device_type').pluralize.humanize, device_types_path
         %li{ :class => ("active" if controller_name == "environments") }
@@ -61,12 +69,13 @@
           = link_to t('service_level').pluralize.humanize, service_levels_path
         %li{ :class => ("active" if controller_name == "support_levels") }
           = link_to t('support_level').pluralize.humanize, support_levels_path
-        
+          
         / dividing line
         %li.divider
         
         / put any application configuration in this section
-        %li Configuration
+        %li.h4 Configuration
+        
         %li{ :class => ("active" if controller_name == "users") }
           = link_to t('user').pluralize.humanize, users_path
         %li{ :class => ("active" if controller_name == "announcements") }
