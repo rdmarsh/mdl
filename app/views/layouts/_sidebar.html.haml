@@ -24,13 +24,9 @@
             = link_to t('datacenter').pluralize.humanize, manufacturers_path
           %li{ :class => ("active" if controller_name == "manufacturers") }
             = link_to t('manufacturer').pluralize.humanize, manufacturers_path
-            %span.badge 1,118
         %li{ :class => ("active" if controller_name == "systems") }
           = link_to t('system').pluralize.humanize, systems_path
           
-        / dividing line
-        %li.divider
-        
         / put the supporting views in this section
         %li.h4 Supporting Data
         
@@ -47,9 +43,6 @@
         %li{ :class => ("active" if controller_name == "operating_systems") }
           = link_to t('operating_system').pluralize.humanize, operating_systems_path
           
-        / dividing line
-        %li.divider
-        
         / put any meta data in this section
         %li.h4 Meta Data
         
@@ -70,9 +63,6 @@
         %li{ :class => ("active" if controller_name == "support_levels") }
           = link_to t('support_level').pluralize.humanize, support_levels_path
           
-        / dividing line
-        %li.divider
-        
         / put any application configuration in this section
         %li.h4 Configuration
         

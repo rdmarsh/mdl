@@ -1,7 +1,7 @@
 #footer.text-center.small.text-muted
   .row
     .col-sm-2.text-right
-      =link_to "powered by #{Rails.application.class.parent_name.downcase}", "http://onemdl.com", :class => "muted credit"
+      =link_to "powered by #{Rails.application.class.parent_name.downcase}", "http://onemdl.com", :class => "muted credit hidden-xs hidden-sm"
     .col-sm-8.text-center
       %ul.list-inline
         %li
@@ -29,4 +29,4 @@
             .glyphicon.glyphicon-bullhorn
             = t('news').humanize
     .col-sm-2.text-left
-      %p rendered in #{sprintf('%.3f',(Time.now.usec-@start_time).abs/1000000.0)}s
+      %p.hidden-xs.hidden-sm rendered in #{sprintf('%.3f',(Time.now.usec-@start_time).abs/1000000.0)}s
