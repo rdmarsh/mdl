@@ -52,14 +52,14 @@ module ApplicationHelper
   
   def tr_attributes(tr_status)
     if tr_status == false
-      "error"
+      "danger"
     end
   end
   
   def tr_environment(environment)
     case environment
-      when "Decommissioned" then "error"
-      when "Production" then "success"
+      when "Decommissioned" then "danger"
+      when "Production" then "active"
       when "Development" then "info"
       when "UAT" then "warning"
       when "Pre-production" then "warning"
