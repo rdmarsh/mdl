@@ -5,23 +5,46 @@
   %h1= yield(:title)
   %p.lead= yield(:subtitle)
 
-.media
-  = link_to "#", :class => "pull-left" do
-    = image_tag "onering.png", :class => "media-object"
-  .media-body
-    %h4 About
-    %p OneMDL is a ruby on rails based application designed to collate information about IT assets. It is designed to be most useful to System Administrators and Service Desk personal.
-    %p.well.text-center One List to rule them all, One List to find them, One List to bring them all and in the aether bind them.
-    %h4.media-heading Licence
-    %p Copyright (C) 2013  David Marsh
-    %p This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
-    %p This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
-    %p You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
-    %h4.media-heading Web front-end
-    %p Web front-end by Twitter Bootstrap
-    %h4.media-heading Images
+.panel.panel-default
+  .panel-heading
+    %h3.panel-title
+      About
+  .panel-body
     %p
-      The "One Ring" image created by Xander (own work, (not derivative from the movies)) [Public domain], via
+      OneMDL is a ruby on rails based application designed to collate information
+      about IT assets. It is designed to be most useful to System Administrators and
+      Service Desk personal.
+.panel.panel-default
+  .panel-heading
+    %h3.panel-title
+      Licence
+  .panel-body
+    %p
+      Copyright (C) 2013-2014  David Marsh
+    %p
+      This program is free software: you can redistribute it and/or modify it
+      under the terms of the GNU General Public License as published by the Free
+      Software Foundation, either version 3 of the License, or (at your option)
+      any later version.
+    %p
+      This program is distributed in the hope that it will be useful, but WITHOUT
+      ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+      FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+      more details.
+    %p
+    You should have received a copy of the GNU General Public License along with
+    this program.  If not, see
+    = link_to "www.gnu.org/licenses", "http://www.gnu.org/licenses"
+.panel.panel-default
+  .panel-heading
+    %h3.panel-title
+      Web components
+  .panel-body
+    %p
+      Web front-end by Twitter Bootstrap
+    %p
+      The "One Ring" image created by Xander (own work, (not derivative from the
+      movies)) [Public domain], via
       = link_to "Wikimedia Commons", "http://commons.wikimedia.org/wiki/File:Unico_Anello.png"
     %p
       Icons by
@@ -29,3 +52,11 @@
     %p
       User avatars are from
       = link_to "Gravatar", "http://gravatar.com/"
+.col-sm-offset-1
+  .col-sm-11
+    .well
+      %p.text-center
+        %em
+          One List to rule them all, One List to find them,
+          %br
+          One List to bring them all and in the aether bind them.

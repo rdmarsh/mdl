@@ -10,14 +10,11 @@
       = link_to Rails.application.class.parent_name.downcase, root_path, class: 'navbar-brand'
     // Collect the nav links, forms, and other content for toggling
     %div.collapse.navbar-collapse
-      %ul.nav.navbar-nav
-        %li
-          = link_to t('home').humanize, root_path, class: ("active" if current_page?(root_path))
+      %ul.nav.navbar-nav.navbar-right
         %li
           = link_to t('activity').humanize, activities_path, class: ("active" if current_page?(activities_path))
         %li
           = link_to t('statistics').humanize, statistics_path, class: ("active" if current_page?(statistics_path))
-      %ul.nav.navbar-nav.navbar-right
         %li.dropdown.hidden-xs.hidden-sm
           %a.dropdown-toggle{href: '#', 'data-toggle' => 'dropdown'}
             = t('help').humanize
@@ -27,6 +24,8 @@
               = link_to t('help').humanize, help_path
             %li
               = link_to t('faq').upcase, faq_path
+            %li
+              = link_to t('about').humanize, about_path
         %li
           = form_tag '#', method: "get", class: 'navbar-form navbar-left', role: 'search' do
             %div.form-group

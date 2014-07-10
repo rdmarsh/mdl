@@ -1,4 +1,4 @@
-.row
+.row.hidden-print
   .span12
     .tabbable
       %ul.nav.nav-tabs
@@ -17,8 +17,8 @@
           = tab_link 'audit', nil, 'glyphicon glyphicon-flag', "disabled"
           = tab_link 'notes', nil, 'glyphicon glyphicon-paperclip', "disabled"
           
-        = tab_link 'history', yield(:history_button_path), 'glyphicon glyphicon-book', "hidden-xs hidden-sm"
-        = tab_link 'graphs', yield(:graph_button_path), 'glyphicon glyphicon-stats', "visible-lg"
+        = tab_link 'history', yield(:history_button_path), 'glyphicon glyphicon-tower', "hidden-xs hidden-sm"
+        = tab_link 'graphs', yield(:graph_button_path), 'glyphicon glyphicon-stats', "visible-lg-block"
         %li.dropdown.pull-right
           %a.dropdown-toggle{:'data-toggle' => "dropdown", :title => "Export", :href => "#" }
             .glyphicon.glyphicon-share-alt
@@ -45,10 +45,10 @@
             %li.divider
             
             %li
-              %a{ :title => "Print", :href => "#" }
+              %a{ :title => "Print", :href => "javascript:print()"}
                 .glyphicon.glyphicon-print
                 print
             %li
-              %a{ :title => "Email", :href => "#" }
-                .glyphicon.glyphicon-print
+              %a{ :title => "Email", :href => "javascript:email()" }
+                .glyphicon.glyphicon-envelope
                 email
