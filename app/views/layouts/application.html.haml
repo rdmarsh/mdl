@@ -13,12 +13,12 @@
     = favicon_link_tag
   %body
     .container-fluid
-      .row
+      .row.hidden-print
         = render 'layouts/navbar'
       .row
-        .col-sm-3
+        .col-sm-3.hidden-print
           = render 'layouts/sidebar'
         .col-sm-9
           = render 'layouts/dashboard'
-      .row
+      .row.hidden-print
         = render 'layouts/footer'
