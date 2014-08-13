@@ -63,6 +63,10 @@ config.time_zone = 'Central Time (US & Canada)'
 
 How to deploy to production.
 
+### update
+
+* `bundle update`
+
 ## Gource
 
 Create a video of development with Gource:
