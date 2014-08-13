@@ -29,8 +29,8 @@ gem 'rb-fsevent'
 gem 'haml', '~> 4.0.5'
 
 # bootstrap-sass
-gem 'sass-rails', '~> 4.0.3'
-gem 'bootstrap-sass', '~> 3.1.1.1'
+#gem 'sass-rails', '~> 4.0.3'
+#gem 'bootstrap-sass', '~> 3.1.1.1'
 
 gem 'faker', '>= 1.1.2'
 gem 'populator'
@@ -42,7 +42,7 @@ gem 'turbolinks'
 gem 'jbuilder', '>= 1.2'
 #gem 'taps', '>= 0.3.24'
 gem 'simple_form'
-gem 'show_for', '>= 0.2.4'
+gem 'show_for', '~> 0.3.0'
 # railscast 230
 gem 'inherited_resources'
 gem 'has_scope'
