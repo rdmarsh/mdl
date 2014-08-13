@@ -20,6 +20,7 @@ Onemdl::Application.routes.draw do
   match '/contact', to: 'staticpages#contact',  via: 'get'
   match '/faq',     to: 'staticpages#faq',      via: 'get'
   match '/support', to: 'staticpages#support',  via: 'get'
+  match '/tos',     to: 'staticpages#tos',      via: 'get'
   
   # routes for signup, login and logout pages
   get 'signup', to: 'users#new', as: 'signup'

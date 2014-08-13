@@ -35,4 +35,7 @@ class StaticpagesController < ApplicationController
 
   def support
   end
+  
+  def tos
+  end
 end

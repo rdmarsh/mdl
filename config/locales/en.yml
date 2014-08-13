@@ -156,6 +156,9 @@ en:
   slug: slug
   
   showall: show all
+  
+  terms_of_service: terms of service
+  tos: tos
   type: type
   user: user
   

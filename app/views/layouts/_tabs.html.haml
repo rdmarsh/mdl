@@ -16,9 +16,10 @@
           = tab_link 'edit', nil, 'glyphicon glyphicon-pencil', "disabled"
           = tab_link 'audit', nil, 'glyphicon glyphicon-flag', "disabled"
           = tab_link 'notes', nil, 'glyphicon glyphicon-paperclip', "disabled"
-          
+        
         = tab_link 'history', yield(:history_button_path), 'glyphicon glyphicon-tower', "hidden-xs hidden-sm"
         = tab_link 'graphs', yield(:graph_button_path), 'glyphicon glyphicon-stats', "visible-lg-block"
+        
         %li.dropdown.pull-right
           %a.dropdown-toggle{:'data-toggle' => "dropdown", :title => "Export", :href => "#" }
             .glyphicon.glyphicon-share-alt
