@@ -37,6 +37,7 @@ gem 'populator'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '>= 4.0.0'
 gem 'jquery-rails', '~> 3.1.0'
+gem 'jquery-ui-rails', '~> 4.2.1'
 gem 'turbolinks'
 gem 'jbuilder', '>= 1.2'
 #gem 'taps', '>= 0.3.24'
@@ -55,7 +56,6 @@ gem 'kaminari'
 gem 'activevalidators', '>= 2.0.2'
 gem 'bcrypt-ruby', '>= 3.0.0'
 # http://railscasts.com/episodes/213-calendars-revised?view=asciicast
-gem 'jquery-ui-rails'
 
 # https://github.com/lubieniebieski/bootstrap-datetimepicker-rails
 # gem "bootstrap-datetimepicker-rails", "~> 0.0.11"
