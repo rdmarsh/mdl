@@ -41,7 +41,7 @@ gem 'jquery-ui-rails', '~> 4.2.1'
 gem 'turbolinks'
 gem 'jbuilder', '>= 1.2'
 #gem 'taps', '>= 0.3.24'
-gem 'simple_form'
+gem 'simple_form', '~> 3.1.0'
 gem 'show_for', '~> 0.3.0'
 # railscast 230
 gem 'inherited_resources'
