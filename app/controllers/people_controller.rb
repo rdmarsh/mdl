@@ -42,9 +42,9 @@ class PeopleController < ApplicationController
     if @person.save
       # write a create message to the activity log
       @person.create_activity :create, owner: current_user
-      flash[:info] = "Successfully created person '" + @person.name + "'"
+      flash[:info] = t('successfully_created').humanize + " " + t('person') + " '" + @person.name + "'"
     else
-      flash[:error] = "Could not create person '" + @person.name + "'"
+      flash[:error] = t('could_not_create').humanize + " " + t('person') + " '" + @person.name + "'"
     end
     
     respond_with(@person)

@@ -53,9 +53,9 @@ class AddressesController < ApplicationController
     if @address.save
       # write a create message to the activity log
       @address.create_activity :create, owner: current_user
-      flash[:info] = "Successfully created address '" + @address.name + "'"
+      flash[:info] = t('successfully_created' 'address'.singularize.humanize) + " '" + @address.name + "'"
     else
-      flash[:error] = "Could not create address '" + @address.name + "'"
+      flash[:error] = t('could_not_create' 'address'.singularize.humanize) + " '" + @address.name + "'"
     end
     
     respond_with(@address)
@@ -82,9 +82,9 @@ class AddressesController < ApplicationController
     if @address.update_attributes(address_params)
       # write an update message to the activity log
       @address.create_activity :update, owner: current_user
-      flash[:info] = "Successfully updated address '" + @address.name + "'"
+      flash[:info] = t('successfully_updated' 'address'.singularize.humanize + " '" + @address.name + "'"
     else
-      flash[:error] = "Could not update address '" + @address.name + "'"
+      flash[:error] = t('could_not_update' 'address'.singularize.humanize + " '" + @address.name + "'"
     end
     
     respond_with(@address)
@@ -96,9 +96,9 @@ class AddressesController < ApplicationController
     # write an update message to the activity log, it fails with a "cannot call create unless the parent is saved" inside the if statement, so I've put it here. It works out anyway, as we can show both successes and failures
     @address.create_activity :destroy, owner: current_user
     if @address.destroy
-      flash[:info] = "Successfully deleted address '" + @address.name + "'"
+      flash[:info] = t('successfully_deleted' 'address'.singularize.humanize) + " '" + @address.name + "'"
     else
-      flash[:error] = "Could not delete address '" + @address.name + "'"
+      flash[:error] = t('could_not_delete' 'address').singularize.humanize + " '" + @address.name + "'"
     end
     
     respond_with(@address)

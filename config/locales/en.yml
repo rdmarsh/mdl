@@ -126,6 +126,7 @@ en:
   operating_system_family: OS family
   
   person: person
+  people: people
   
   manufacturer: manufacturer
   
@@ -190,6 +191,14 @@ en:
   time_zone:  time_zone
   postcode:  postcode
   description:  description
+  
+  #flash messages
+  successfully_created: successfully created
+  could_not_create: could not create
+  successfully_updated: successfully updated
+  could_not_update: could not update
+  successfully_deleted: successfully deleted
+  could_not_delete: could not delete
   
 
 # timeformat for iso8601

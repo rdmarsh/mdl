@@ -19,6 +19,7 @@
           %span{:class => 'caret'}
       - @consoles.each do |r|
         %tr
+          %td= link_to r.slug, r
           %td= link_to r.name, r
           %td= r.console_type
   = paginate @consoles
