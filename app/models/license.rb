@@ -18,6 +18,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 class License < ActiveRecord::Base
+  has_paper_trail
   include PublicActivity::Common
   
   # friendly IDs, better URLs

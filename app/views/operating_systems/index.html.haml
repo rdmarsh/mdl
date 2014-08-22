@@ -9,6 +9,9 @@
     %tbody
       %thead
         %th
+          = sortable "slug"
+          %span{:class => 'caret'}
+        %th
           = sortable "name"
           %span{:class => 'caret'}
         %th
@@ -25,6 +28,7 @@
         %th= link_to t('system').pluralize.humanize, systems_path
       - @operating_systems.each do |r|
         %tr
+          %td= link_to r.slug, r
           %td= link_to r.name, r
           %td= r.release
           %td= link_to r.operating_system_family.name, operating_system_family_path(r.operating_system_family.slug)

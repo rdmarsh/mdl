@@ -18,17 +18,26 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 class Address < ActiveRecord::Base
+  has_paper_trail
   include PublicActivity::Common
   
   # friendly IDs, better URLs
   extend FriendlyId
-  friendly_id :name, use: :slugged
+  friendly_id :slug_candidates, use: :slugged
   
   # regenerate new slugs?
   def should_generate_new_friendly_id?
     name_changed?
   end
   
+  # Try building a slug based on the following fields in
+  # increasing order of specificity.
+  def slug_candidates
+    [
+      :name,
+      # [:name, :address_id]
+    ]
+  end
   
   
   
@@ -78,4 +87,5 @@ class Address < ActiveRecord::Base
   def address
     [street_address_1, street_address_2, city, state, postcode, country].compact.join(', ')
   end
+  
 end

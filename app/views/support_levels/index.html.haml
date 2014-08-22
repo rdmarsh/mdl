@@ -9,6 +9,9 @@
     %tbody
       %thead
         %th
+          = sortable "slug"
+          %span{:class => 'caret'}
+        %th
           = sortable "name"
           %span{:class => 'caret'}
         %th= sortable "hours"
@@ -18,6 +21,7 @@
         %th= link_to t('system').pluralize.humanize, systems_path
       - @support_levels.each do |r|
         %tr
+          %td= link_to r.slug, r
           %td= link_to r.name, r
           %td= r.hours
           %td= r.days

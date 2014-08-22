@@ -9,11 +9,15 @@
     %tbody
       %thead
         %th
+          = sortable "slug"
+          %span{:class => 'caret'}
+        %th
           = sortable "name"
           %span{:class => 'caret'}
         %th= link_to t('organisation').singularize.humanize, organisations_path
       - @people.each do |r|
         %tr
+          %td= link_to r.slug, r
           %td= link_to r.name, r
           %td= link_to r.organisation.name, organisation_path(r.organisation.slug)
   = paginate @people

@@ -23,7 +23,7 @@ class Relationship < ActiveRecord::Base
   
   # friendly IDs, better URLs
   extend FriendlyId
-  friendly_id :name, use: :slugged
+  friendly_id :slug_candidates, use: :slugged
   
   # regenerate new slugs?
   def should_generate_new_friendly_id?
@@ -32,12 +32,12 @@ class Relationship < ActiveRecord::Base
   
   # Try building a slug based on the following fields in
   # increasing order of specificity.
-  # def slug_candidates
-  #   [
-  #     :name,
-  #     [:name, :organisation_id]
-  #   ]
-  # end
+  def slug_candidates
+    [
+      :name,
+      # [:name, :organisation_id]
+    ]
+  end
   
   before_validation :strip_blanks
   

@@ -18,11 +18,12 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 class Environment < ActiveRecord::Base
+  has_paper_trail
   include PublicActivity::Common
   
   # friendly IDs, better URLs
   extend FriendlyId
-  friendly_id :name, use: :slugged
+  friendly_id :slug_candidates, use: :slugged
   
   # regenerate new slugs?
   def should_generate_new_friendly_id?
@@ -31,12 +32,12 @@ class Environment < ActiveRecord::Base
   
   # Try building a slug based on the following fields in
   # increasing order of specificity.
-  # def slug_candidates
-  #   [
-  #     :name,
-  #     [:name, :organisation_id]
-  #   ]
-  # end
+  def slug_candidates
+    [
+      :name,
+      # [:name, :environment_id]
+    ]
+  end
   
   before_validation :strip_blanks
   

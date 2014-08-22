@@ -9,12 +9,16 @@
     %tbody
       %thead
         %th
+          = sortable "slug"
+          %span{:class => 'caret'}
+        %th
           = sortable "name"
           %span{:class => 'caret'}
         %th= sortable "website"
         %th= link_to t('device_model').pluralize.humanize, device_models_path
       - @manufacturers.each do |r|
         %tr
+          %td= link_to r.slug, r
           %td= link_to r.name, r
           %td= link_to r.website, r.website
           %td= link_to r.device_models.count, manufacturer_device_models_path(r.slug)

@@ -9,6 +9,9 @@
     %tbody
       %thead
         %th
+          = sortable "slug"
+          %span{:class => 'caret'}
+        %th
           = sortable "name"
           %span{:class => 'caret'}
         %th
@@ -31,6 +34,7 @@
           %span{:class => 'caret'}
       - @addresses.each do |r|
         %tr
+          %td= link_to r.slug, r
           %td= link_to r.name, r
           %td= r.street_address_1
           %td= r.street_address_2

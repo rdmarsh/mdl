@@ -18,11 +18,12 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 class Person < ActiveRecord::Base
+  has_paper_trail
   include PublicActivity::Common
   
   # friendly IDs, better URLs
   extend FriendlyId
-  friendly_id :name, use: :slugged
+  friendly_id :slug_candidates, use: :slugged
   
   # regenerate new slugs?
   def should_generate_new_friendly_id?
