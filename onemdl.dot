@@ -1,0 +1,46 @@
+digraph onemdl {
+	address -> organisation;
+	address -> person;
+
+	console -> system;
+
+	device_model -> device_type;
+	device_model -> manufacturer;
+	system -> device_model;
+
+	device_model -> device_type;
+	
+	system -> environment;
+
+	license_type -> organisation;
+
+	licence -> license_type;
+
+	licence -> organisation;
+
+	system -> licence;
+
+	device_model -> manufacturer;
+
+
+	network_interface -> network_use;
+	network_interface -> system;
+
+	operating_system -> operating_system_family;
+
+	operating_system -> organisation;
+
+	system -> operating_system;
+
+	organisation -> relationship;
+
+	system -> service_level;
+
+	system -> support_level;
+
+
+	system -> organisation;
+	person -> organisation;
+	notes -> organisation;
+
+}	
