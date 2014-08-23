@@ -53,7 +53,7 @@ class Address < ActiveRecord::Base
   # belongs to
   # belongs_to :addressable, polymorphic: true
   belongs_to :organisation, polymorphic: true
-  
+  belongs_to :person #polymorphic??? todo
   
   
   

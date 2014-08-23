@@ -82,9 +82,9 @@ class AddressesController < ApplicationController
     if @address.update_attributes(address_params)
       # write an update message to the activity log
       @address.create_activity :update, owner: current_user
-      flash[:info] = t('successfully_updated' 'address'.singularize.humanize + " '" + @address.name + "'"
+      flash[:info] = t('successfully_updated' 'address'.singularize.humanize) + " '" + @address.name + "'"
     else
-      flash[:error] = t('could_not_update' 'address'.singularize.humanize + " '" + @address.name + "'"
+      flash[:error] = t('could_not_update' 'address'.singularize.humanize) + " '" + @address.name + "'"
     end
     
     respond_with(@address)
@@ -98,7 +98,7 @@ class AddressesController < ApplicationController
     if @address.destroy
       flash[:info] = t('successfully_deleted' 'address'.singularize.humanize) + " '" + @address.name + "'"
     else
-      flash[:error] = t('could_not_delete' 'address').singularize.humanize + " '" + @address.name + "'"
+      flash[:error] = t('could_not_delete' 'address'.singularize.humanize) + " '" + @address.name + "'"
     end
     
     respond_with(@address)

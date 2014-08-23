@@ -48,6 +48,7 @@ class System < ActiveRecord::Base
   belongs_to :service_level
   belongs_to :support_level
   belongs_to :operating_system
+  belongs_to :licence
   
   # has many
   has_many :network_interfaces, dependent: :restrict_with_error
