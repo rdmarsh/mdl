@@ -2,7 +2,9 @@
 
 * [Travis CI ![Build Status](https://travis-ci.org/rdmarsh/onemdl.png?branch=master)](https://travis-ci.org/rdmarsh/onemdl)
 
-OneMDL is a ruby on rails based application designed to collate information about IT assets. It is designed to be most useful to System Administrators and Service Desk personal.
+OneMDL is a ruby on rails based application designed to collate information
+about IT assets. It is designed to be most useful to System Administrators and
+Service Desk personal.
 
 * Ruby version 2.1.1
 * Rails version 4.1.0
@@ -95,12 +97,13 @@ Create a video of development with Gource:
 	
 ----
 
-# Bugs
+# Bugs and todo
 
-* licence show is inconsistant, needs name and slug
+* license show is inconsistent, needs name and slug
 * make sure everything has a slug and ids are gone
 * network use index page not working
-* 
+* migrate manufacture into organisation
+* migrate datacenter into organisation
 
 # Licence
 
