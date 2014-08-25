@@ -1,8 +1,7 @@
 digraph onemdl {
 	rankdir=LR
-	arrowtail=none
 
-	device_model -> system [style=tapered]
+	device_model -> system
 	device_type -> device_model
 	environment -> system
 	licence -> system
