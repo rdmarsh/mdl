@@ -67,6 +67,10 @@ How to deploy to production.
 
 * `bundle update`
 
+## Logic graph
+
+* ![logic graph](https://raw.githubusercontent.com/rdmarsh/onemdl/master/onemdl.png "Logic Graph")
+
 ## Gource
 
 Create a video of development with Gource:
