@@ -1,46 +1,27 @@
 digraph onemdl {
-	address -> organisation;
-	address -> person;
+	rankdir=LR
+	arrowtail=none
 
-	console -> system;
-
-	device_model -> device_type;
-	device_model -> manufacturer;
-	system -> device_model;
-
-	device_model -> device_type;
-	
-	system -> environment;
-
-	license_type -> organisation;
-
-	licence -> license_type;
-
-	licence -> organisation;
-
-	system -> licence;
-
-	device_model -> manufacturer;
-
-
-	network_interface -> network_use;
-	network_interface -> system;
-
-	operating_system -> operating_system_family;
-
-	operating_system -> organisation;
-
-	system -> operating_system;
-
-	organisation -> relationship;
-
-	system -> service_level;
-
-	system -> support_level;
-
-
-	system -> organisation;
-	person -> organisation;
-	notes -> organisation;
-
-}	
+	device_model -> system [style=tapered]
+	device_type -> device_model
+	environment -> system
+	licence -> system
+	license_type -> licence
+	manufacturer -> device_model
+	network_use -> network_interface
+	operating_system -> system
+	operating_system_family -> operating_system
+	organisation -> address
+	organisation -> licence
+	organisation -> license_type
+	organisation -> notes
+	organisation -> operating_system
+	organisation -> person
+	organisation -> system
+	person -> address
+	relationship -> organisation
+	service_level -> system
+	support_level -> system
+	system -> console
+	system -> network_interface
+}
