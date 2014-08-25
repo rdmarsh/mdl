@@ -69,7 +69,7 @@ How to deploy to production.
 
 ## Logic graph
 
-* ![logic graph](https://raw.githubusercontent.com/rdmarsh/onemdl/master/onemdl.png "Logic Graph")
+![logic graph](https://raw.githubusercontent.com/rdmarsh/onemdl/master/onemdl.png "Logic Graph")
 
 ## Gource
 
