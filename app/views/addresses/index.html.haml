@@ -14,6 +14,7 @@
         %th
           = sortable "name"
           %span{:class => 'caret'}
+        %th= link_to t('organisation').singularize.humanize, organisations_path
         %th
           = sortable "street_address"
           %span{:class => 'caret'}
@@ -36,6 +37,7 @@
         %tr
           %td= link_to r.slug, r
           %td= link_to r.name, r
+          %td= link_to r.organisation.name, organisation_path(r.organisation.slug)
           %td= r.street_address_1
           %td= r.street_address_2
           %td= r.city
