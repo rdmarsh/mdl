@@ -1,7 +1,7 @@
 namespace :db do
   desc "Fill database with sample data"
   task populate: :environment do
-    Faker::Config.locale = "en-au"
+    Faker::Config.locale = "en-AU"
     require 'populator'
     
     Organisation.populate(10) do |organisation|
