@@ -53,7 +53,11 @@ gem 'country_select'
 gem 'public_activity'
 gem 'kaminari'
 # gem 'bootstrap-kaminari-views'
-gem 'activevalidators', '>= 2.0.2'
+# gem 'activevalidators', '>= 2.0.2'
+
+gem 'activevalidators', '~> 3.2.0'
+# https://github.com/franckverrot/activevalidators
+
 gem 'bcrypt-ruby', '>= 3.0.0'
 # http://railscasts.com/episodes/213-calendars-revised?view=asciicast
 
