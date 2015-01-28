@@ -109,8 +109,7 @@ group :doc do
 end
 
 group :production do
-  #doing this to just get this going gem 'pg', '>= 0.15.1'
-  gem 'sqlite3', '>= 1.3.7'
+  gem 'pg', '>= 0.15.1'
   gem 'rails_12factor', '0.0.2' #for heroku
   gem 'unicorn'
 end
