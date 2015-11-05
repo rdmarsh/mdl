@@ -88,13 +88,13 @@ gem 'sprockets', '~> 2.11'
 group :development, :test do
   gem 'minitest', '~> 5.3.3'
   gem 'nokogiri'
-  gem 'guard-rspec', '>= 2.5.0'
+  gem 'guard-rspec', '~> 2.5.0'
   gem 'ruby_gntp'
   gem 'launchy'
   gem 'sqlite3', '>= 1.3.7'
   gem 'rspec-rails', '2.13.1'
   gem 'spork-rails', github: 'sporkrb/spork-rails'
-  gem 'guard-spork', '1.5.0'
+  gem 'guard-spork', '~> 1.5.0'
   gem 'childprocess', '0.3.9'
 end
 
@@ -109,7 +109,7 @@ group :doc do
 end
 
 group :production do
-  gem 'pg', '>= 0.15.1'
+#  gem 'pg', '~> 0.18.0'
   gem 'rails_12factor', '0.0.2' #for heroku
   gem 'unicorn'
 end

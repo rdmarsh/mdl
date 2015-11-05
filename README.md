@@ -27,7 +27,7 @@ Onemdl is registered on ohloh.net at https://www.ohloh.net/p/onemdl
 ** If you've been granted read/write accesss: `git remote set-url origin git@github.com:rdmarsh/onemdl.git`
 * `gem install bundler`
 * `bundle install`
-* `bundle exec rake db:migrate`
+* `bundle exec rake db:drop db:create db:migrate`
 
 * Set your timezone in /config/application.rb, eg:
 
@@ -47,7 +47,7 @@ config.time_zone = 'Central Time (US & Canada)'
 
 ### Database creation
 
-* `bundle exec rake db:migrate`
+* `bundle exec rake db:drop db:create db:migrate`
 
 ### Database initialization
 
@@ -68,6 +68,17 @@ How to deploy to production.
 ### update
 
 * `bundle update`
+
+### start dev server
+
+* `rails server`
+
+## Git
+
+* `git add .`
+* `git commit -m "comment"`
+* `git push origin master`
+
 
 ## Logic graph
 
