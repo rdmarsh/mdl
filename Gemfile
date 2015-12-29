@@ -18,31 +18,35 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 source 'https://rubygems.org'
-ruby '2.1.1'
-
-gem 'rails', '4.1.0'
+ruby '2.2.3'
+gem 'rails', '4.2.4'
 
 # better watching of mac filesystem
 gem 'rb-fsevent'
 
 # HTML Abstraction Markup Language
-gem 'haml', '~> 4.0.5'
+gem 'haml', '~> 4.1'
 
 # bootstrap-sass
-#gem 'sass-rails', '~> 4.0.3'
-#gem 'bootstrap-sass', '~> 3.1.1.1'
+gem 'sass-rails', '~> 5.0'
+gem 'uglifier', '>= 1.3.0'
+gem 'coffee-rails', '~> 4.1.0'
+
+gem 'jquery-rails'
+gem 'jquery-ui-rails', '~> 4.2.1'
+gem 'turbolinks'
+gem 'jbuilder', '~> 2.0'
+
+
+gem 'bootstrap-sass', '~> 3.2'
+gem 'autoprefixer-rails'
+gem 'font-awesome-sass'
 
 gem 'faker', '>= 1.1.2'
 gem 'populator'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '>= 4.0.0'
-gem 'jquery-rails', '~> 3.1.0'
-gem 'jquery-ui-rails', '~> 4.2.1'
-gem 'turbolinks'
-gem 'jbuilder', '>= 1.2'
 #gem 'taps', '>= 0.3.24'
 gem 'simple_form', '~> 3.1.0.rc2'
-gem 'show_for', '~> 0.3.0'
+gem 'show_for'
 # railscast 230
 gem 'inherited_resources'
 gem 'has_scope'
@@ -93,7 +97,7 @@ group :development, :test do
   gem 'launchy'
   gem 'sqlite3', '>= 1.3.7'
   gem 'rspec-rails', '2.13.1'
-  gem 'spork-rails', github: 'sporkrb/spork-rails'
+  gem 'spork-rails'
   gem 'guard-spork', '~> 1.5.0'
   gem 'childprocess', '0.3.9'
 end
